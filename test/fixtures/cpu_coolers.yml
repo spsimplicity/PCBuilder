@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  parttype: cpu_cooler
+  model: MyString
+  manufacturer: MyString
+  manufacturerwebsite: MyString
+  price: 1
+  googleprice: MyString
+  maxmemheight: 1
+  height: 1.5
+  width: 1.5
+  length: 1.5

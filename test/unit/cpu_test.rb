@@ -9,13 +9,13 @@ class CpuTest < ActiveSupport::TestCase
   
   test "Rejects null type value" do
       cpu = cpus(:GoodCpuOne)
-	  cpu.type = nil
+	  cpu.parttype = nil
 	  assert !cpu.valid?
   end
   
   test "Rejects over length limit type value" do
       cpu = cpus(:GoodCpuOne)
-	  cpu.type = 'x'*15
+	  cpu.parttype = 'x'*15
 	  assert !cpu.valid?
   end
   
@@ -60,11 +60,11 @@ class CpuTest < ActiveSupport::TestCase
   end
   
   test "Rejects negative price value" do
-      assert !(:NegativeCpuPrice).valid?
+      assert !cpus(:NegativeCpuPrice).valid?
   end
   
   test "Rejects zero price value" do
-      assert !(:ZeroCpuPrice).valid?
+      assert !cpus(:ZeroCpuPrice).valid?
   end
   
   test "Rejects null manufacturer website value" do
@@ -98,11 +98,11 @@ class CpuTest < ActiveSupport::TestCase
   end
   
   test "Rejects zero frequency value" do
-      assert !(:ZeroCpuFrequency).valid?
+      assert !cpus(:ZeroCpuFrequency).valid?
   end
   
   test "Rejects negative frequency value" do
-      assert !(:NegativeCpuFrequency).valid?
+      assert !cpus(:NegativeCpuFrequency).valid?
   end
   
   test "Rejects null sockettype value" do
@@ -123,16 +123,24 @@ class CpuTest < ActiveSupport::TestCase
 	  assert !cpu.valid?
   end
   
+  test "Rejects zero fsb value" do
+      assert !cpus(:ZeroCpuFsb).valid?
+  end
+  
+  test "Rejects negative fsb value" do
+      assert !cpus(:NegativeCpuFsb).valid?
+  end
+  
   test "Rejects negative l1cache value" do
-      assert !(:NegativeCpuL1Cache).valid?
+      assert !cpus(:NegativeCpuL1Cache).valid?
   end
   
   test "Rejects negative l2cache value" do
-      assert !(:NegativeCpuL2Cache).valid?
+      assert !cpus(:NegativeCpuL2Cache).valid?
   end
   
   test "Rejects negative l3cache value" do
-      assert !(:NegativeCpuL3Cache).valid?
+      assert !cpus(:NegativeCpuL3Cache).valid?
   end
   
   test "Rejects null cores value" do
@@ -142,11 +150,11 @@ class CpuTest < ActiveSupport::TestCase
   end
   
   test "Rejects negative cores value" do
-      assert !(:NegativeCpuCores).valid?
+      assert !cpus(:NegativeCpuCores).valid?
   end
   
   test "Rejects zero cores value" do
-      assert !(:ZeroCpuCores).valid?
+      assert !cpus(:ZeroCpuCores).valid?
   end
   
   test "Rejects null watts value" do
@@ -174,7 +182,7 @@ class CpuTest < ActiveSupport::TestCase
   end
   
   test "Rejects negative powerpin value" do
-      asert !cpus(:NegativeCpuPowerPin).valid?
+      assert !cpus(:NegativeCpuPowerPin).valid?
   end
   
   test "Rejects negative maxmemory value" do
@@ -192,11 +200,11 @@ class CpuTest < ActiveSupport::TestCase
   end
   
   test "Rejects negative memchanneltype value" do
-      assert !cpus(:NegativeMemChannelType).valid?
+      assert !cpus(:NegativeCpuMemChannelType).valid?
   end
   
   test "Rejects zero memchanneltype value" do
-      assert !cpus(:ZeroMemChannelType).valid?
+      assert !cpus(:ZeroCpuMemChannelType).valid?
   end
   
   test "Rejects null memchanneltype value" do

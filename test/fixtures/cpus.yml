@@ -5,7 +5,7 @@
 # below each fixture, per the syntax in the comments below
 #
 GoodCpuOne: 
-  type: cpu
+  parttype: cpu
   model: 880
   manufacturer: Intel
   series: i7
@@ -25,7 +25,7 @@ GoodCpuOne:
   memchanneltype: 3
 
 GoodCpuTwo: 
-  type: cpu
+  parttype: cpu
   model: 1055t
   manufacturer: AMD
   series: Phenom II X6
@@ -45,7 +45,7 @@ GoodCpuTwo:
   memchanneltype: 2
   
 NonCpuType: 
-  type: Hard Drive
+  parttype: Hard Drive
   model: 1055t
   manufacturer: AMD
   series: Phenom II X6
@@ -65,7 +65,7 @@ NonCpuType:
   memchanneltype: 2
   
 NegativeCpuPrice: 
-  type: Hard Drive
+  parttype: cpu
   model: 1055t
   manufacturer: AMD
   series: Phenom II X6
@@ -85,7 +85,7 @@ NegativeCpuPrice:
   memchanneltype: 2
   
 ZeroCpuPrice: 
-  type: Hard Drive
+  parttype: cpu
   model: 1055t
   manufacturer: AMD
   series: Phenom II X6
@@ -105,7 +105,7 @@ ZeroCpuPrice:
   memchanneltype: 2
 
 ZeroCpuFrequency: 
-  type: Hard Drive
+  parttype: cpu
   model: 1055t
   manufacturer: AMD
   series: Phenom II X6
@@ -125,7 +125,7 @@ ZeroCpuFrequency:
   memchanneltype: 2
   
 NegativeCpuFrequency: 
-  type: Hard Drive
+  parttype: cpu
   model: 1055t
   manufacturer: AMD
   series: Phenom II X6
@@ -144,8 +144,48 @@ NegativeCpuFrequency:
   maxmemory: 16
   memchanneltype: 2
   
+NegativeCpuFsb: 
+  parttype: cpu
+  model: 1055t
+  manufacturer: AMD
+  series: Phenom II X6
+  price: 200
+  manufacturerwebsite: http://ark.intel.com/Product.aspx?id=48500
+  googleprice: http://www.google.com/products?q=intel+core+i7+880&hl=en&aq=f
+  frequency: 3
+  sockettype: AM3
+  fsb: -5200
+  l1cache:
+  l2cache:
+  l3cache:
+  cores: 4
+  watts: 125
+  powerpin: 8
+  maxmemory: 16
+  memchanneltype: 2
+  
+ZeroCpuFsb: 
+  parttype: cpu
+  model: 1055t
+  manufacturer: AMD
+  series: Phenom II X6
+  price: 200
+  manufacturerwebsite: http://ark.intel.com/Product.aspx?id=48500
+  googleprice: http://www.google.com/products?q=intel+core+i7+880&hl=en&aq=f
+  frequency: 3
+  sockettype: AM3
+  fsb: 0
+  l1cache:
+  l2cache:
+  l3cache:
+  cores: 4
+  watts: 125
+  powerpin: 8
+  maxmemory: 16
+  memchanneltype: 2
+  
 NegativeCpuL1Cache: 
-  type: Hard Drive
+  parttype: cpu
   model: 1055t
   manufacturer: AMD
   series: Phenom II X6
@@ -165,7 +205,7 @@ NegativeCpuL1Cache:
   memchanneltype: 2
   
 NegativeCpuL2Cache: 
-  type: Hard Drive
+  parttype: cpu
   model: 1055t
   manufacturer: AMD
   series: Phenom II X6
@@ -185,7 +225,7 @@ NegativeCpuL2Cache:
   memchanneltype: 2
   
 NegativeCpuL3Cache: 
-  type: Hard Drive
+  parttype: cpu
   model: 1055t
   manufacturer: AMD
   series: Phenom II X6
@@ -205,7 +245,7 @@ NegativeCpuL3Cache:
   memchanneltype: 2
   
 NegativeCpuCores: 
-  type: Hard Drive
+  parttype: cpu
   model: 1055t
   manufacturer: AMD
   series: Phenom II X6
@@ -225,7 +265,7 @@ NegativeCpuCores:
   memchanneltype: 2
   
 ZeroCpuCores: 
-  type: Hard Drive
+  parttype: cpu
   model: 1055t
   manufacturer: AMD
   series: Phenom II X6
@@ -245,7 +285,7 @@ ZeroCpuCores:
   memchanneltype: 2
   
 ZeroCpuWatts: 
-  type: Hard Drive
+  parttype: cpu
   model: 1055t
   manufacturer: AMD
   series: Phenom II X6
@@ -265,7 +305,7 @@ ZeroCpuWatts:
   memchanneltype: 2
   
 ZeroCpuWatts: 
-  type: Hard Drive
+  parttype: cpu
   model: 1055t
   manufacturer: AMD
   series: Phenom II X6
@@ -285,7 +325,7 @@ ZeroCpuWatts:
   memchanneltype: 2
   
 NegativeCpuWatts: 
-  type: Hard Drive
+  parttype: cpu
   model: 1055t
   manufacturer: AMD
   series: Phenom II X6
@@ -305,7 +345,7 @@ NegativeCpuWatts:
   memchanneltype: 2
   
 ZeroCpuPowerPin: 
-  type: Hard Drive
+  parttype: cpu
   model: 1055t
   manufacturer: AMD
   series: Phenom II X6
@@ -325,7 +365,7 @@ ZeroCpuPowerPin:
   memchanneltype: 2
   
 NegativeCpuPowerPin: 
-  type: Hard Drive
+  parttype: cpu
   model: 1055t
   manufacturer: AMD
   series: Phenom II X6
@@ -345,7 +385,7 @@ NegativeCpuPowerPin:
   memchanneltype: 2
   
 NegativeCpuMaxMemory: 
-  type: Hard Drive
+  parttype: cpu
   model: 1055t
   manufacturer: AMD
   series: Phenom II X6
@@ -365,7 +405,7 @@ NegativeCpuMaxMemory:
   memchanneltype: 2
   
 ZeroCpuMaxMemory: 
-  type: Hard Drive
+  parttype: cpu
   model: 1055t
   manufacturer: AMD
   series: Phenom II X6
@@ -385,7 +425,7 @@ ZeroCpuMaxMemory:
   memchanneltype: 2
   
 NegativeCpuMemChannelType: 
-  type: Hard Drive
+  parttype: cpu
   model: 1055t
   manufacturer: AMD
   series: Phenom II X6
@@ -405,7 +445,7 @@ NegativeCpuMemChannelType:
   memchanneltype: -2
   
 ZeroCpuMemChannelType: 
-  type: Hard Drive
+  parttype: cpu
   model: 1055t
   manufacturer: AMD
   series: Phenom II X6

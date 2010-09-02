@@ -1,7 +1,7 @@
 class CreateCpus < ActiveRecord::Migration
   def self.up
     create_table :cpus do |t|
-      t.string :type,                :null => false, :limit => 10
+      t.string :parttype,                :null => false, :limit => 10
       t.string :model,               :null => false, :limit => 10
       t.string :manufacturer,        :null => false, :limit => 10
       t.string :series,              :limit => 30
