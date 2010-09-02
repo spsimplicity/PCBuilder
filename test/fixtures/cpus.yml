@@ -1,0 +1,425 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+# This model initially had no columns defined.  If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+GoodCpuOne: 
+  type: cpu
+  model: 880
+  manufacturer: Intel
+  series: i7
+  price: 200
+  manufacturerwebsite: http://ark.intel.com/Product.aspx?id=48500
+  googleprice: http://www.google.com/products?q=intel+core+i7+880&hl=en&aq=f
+  frequency: 3.0
+  sockettype: 1336
+  fsb: 6400
+  l1cache: 0
+  l2cache: 6
+  l3cache: 0
+  cores: 4
+  watts: 95
+  powerpin: 4
+  maxmemory: 24
+  memchanneltype: 3
+
+GoodCpuTwo: 
+  type: cpu
+  model: 1055t
+  manufacturer: AMD
+  series: Phenom II X6
+  price: 200
+  manufacturerwebsite: http://ark.intel.com/Product.aspx?id=48500
+  googleprice: http://www.google.com/products?q=intel+core+i7+880&hl=en&aq=f
+  frequency: 3.0
+  sockettype: AM3
+  fsb: 5200
+  l1cache: 0
+  l2cache: 6
+  l3cache: 0
+  cores: 4
+  watts: 125
+  powerpin: 8
+  maxmemory: 16
+  memchanneltype: 2
+  
+NonCpuType: 
+  type: Hard Drive
+  model: 1055t
+  manufacturer: AMD
+  series: Phenom II X6
+  price: 200
+  manufacturerwebsite: http://ark.intel.com/Product.aspx?id=48500
+  googleprice: http://www.google.com/products?q=intel+core+i7+880&hl=en&aq=f
+  frequency: 3.0
+  sockettype: AM3
+  fsb: 5200
+  l1cache:
+  l2cache:
+  l3cache:
+  cores: 4
+  watts: 125
+  powerpin: 8
+  maxmemory: 16
+  memchanneltype: 2
+  
+NegativeCpuPrice: 
+  type: Hard Drive
+  model: 1055t
+  manufacturer: AMD
+  series: Phenom II X6
+  price: -200
+  manufacturerwebsite: http://ark.intel.com/Product.aspx?id=48500
+  googleprice: http://www.google.com/products?q=intel+core+i7+880&hl=en&aq=f
+  frequency: 3.0
+  sockettype: AM3
+  fsb: 5200
+  l1cache:
+  l2cache:
+  l3cache:
+  cores: 4
+  watts: 125
+  powerpin: 8
+  maxmemory: 16
+  memchanneltype: 2
+  
+ZeroCpuPrice: 
+  type: Hard Drive
+  model: 1055t
+  manufacturer: AMD
+  series: Phenom II X6
+  price: 0
+  manufacturerwebsite: http://ark.intel.com/Product.aspx?id=48500
+  googleprice: http://www.google.com/products?q=intel+core+i7+880&hl=en&aq=f
+  frequency: 3.0
+  sockettype: AM3
+  fsb: 5200
+  l1cache:
+  l2cache:
+  l3cache:
+  cores: 4
+  watts: 125
+  powerpin: 8
+  maxmemory: 16
+  memchanneltype: 2
+
+ZeroCpuFrequency: 
+  type: Hard Drive
+  model: 1055t
+  manufacturer: AMD
+  series: Phenom II X6
+  price: 200
+  manufacturerwebsite: http://ark.intel.com/Product.aspx?id=48500
+  googleprice: http://www.google.com/products?q=intel+core+i7+880&hl=en&aq=f
+  frequency: 0
+  sockettype: AM3
+  fsb: 5200
+  l1cache:
+  l2cache:
+  l3cache:
+  cores: 4
+  watts: 125
+  powerpin: 8
+  maxmemory: 16
+  memchanneltype: 2
+  
+NegativeCpuFrequency: 
+  type: Hard Drive
+  model: 1055t
+  manufacturer: AMD
+  series: Phenom II X6
+  price: 200
+  manufacturerwebsite: http://ark.intel.com/Product.aspx?id=48500
+  googleprice: http://www.google.com/products?q=intel+core+i7+880&hl=en&aq=f
+  frequency: -3
+  sockettype: AM3
+  fsb: 5200
+  l1cache:
+  l2cache:
+  l3cache:
+  cores: 4
+  watts: 125
+  powerpin: 8
+  maxmemory: 16
+  memchanneltype: 2
+  
+NegativeCpuL1Cache: 
+  type: Hard Drive
+  model: 1055t
+  manufacturer: AMD
+  series: Phenom II X6
+  price: 200
+  manufacturerwebsite: http://ark.intel.com/Product.aspx?id=48500
+  googleprice: http://www.google.com/products?q=intel+core+i7+880&hl=en&aq=f
+  frequency: 3.0
+  sockettype: AM3
+  fsb: 5200
+  l1cache: -1
+  l2cache:
+  l3cache:
+  cores: 4
+  watts: 125
+  powerpin: 8
+  maxmemory: 16
+  memchanneltype: 2
+  
+NegativeCpuL2Cache: 
+  type: Hard Drive
+  model: 1055t
+  manufacturer: AMD
+  series: Phenom II X6
+  price: 200
+  manufacturerwebsite: http://ark.intel.com/Product.aspx?id=48500
+  googleprice: http://www.google.com/products?q=intel+core+i7+880&hl=en&aq=f
+  frequency: 3.0
+  sockettype: AM3
+  fsb: 5200
+  l1cache:
+  l2cache: -1
+  l3cache:
+  cores: 4
+  watts: 125
+  powerpin: 8
+  maxmemory: 16
+  memchanneltype: 2
+  
+NegativeCpuL3Cache: 
+  type: Hard Drive
+  model: 1055t
+  manufacturer: AMD
+  series: Phenom II X6
+  price: 200
+  manufacturerwebsite: http://ark.intel.com/Product.aspx?id=48500
+  googleprice: http://www.google.com/products?q=intel+core+i7+880&hl=en&aq=f
+  frequency: 3.0
+  sockettype: AM3
+  fsb: 5200
+  l1cache:
+  l2cache:
+  l3cache: -1
+  cores: 4
+  watts: 125
+  powerpin: 8
+  maxmemory: 16
+  memchanneltype: 2
+  
+NegativeCpuCores: 
+  type: Hard Drive
+  model: 1055t
+  manufacturer: AMD
+  series: Phenom II X6
+  price: 200
+  manufacturerwebsite: http://ark.intel.com/Product.aspx?id=48500
+  googleprice: http://www.google.com/products?q=intel+core+i7+880&hl=en&aq=f
+  frequency: 3.0
+  sockettype: AM3
+  fsb: 5200
+  l1cache:
+  l2cache:
+  l3cache:
+  cores: -4
+  watts: 125
+  powerpin: 8
+  maxmemory: 16
+  memchanneltype: 2
+  
+ZeroCpuCores: 
+  type: Hard Drive
+  model: 1055t
+  manufacturer: AMD
+  series: Phenom II X6
+  price: 200
+  manufacturerwebsite: http://ark.intel.com/Product.aspx?id=48500
+  googleprice: http://www.google.com/products?q=intel+core+i7+880&hl=en&aq=f
+  frequency: 3.0
+  sockettype: AM3
+  fsb: 5200
+  l1cache:
+  l2cache:
+  l3cache:
+  cores: 0
+  watts: 125
+  powerpin: 8
+  maxmemory: 16
+  memchanneltype: 2
+  
+ZeroCpuWatts: 
+  type: Hard Drive
+  model: 1055t
+  manufacturer: AMD
+  series: Phenom II X6
+  price: 200
+  manufacturerwebsite: http://ark.intel.com/Product.aspx?id=48500
+  googleprice: http://www.google.com/products?q=intel+core+i7+880&hl=en&aq=f
+  frequency: 3.0
+  sockettype: AM3
+  fsb: 5200
+  l1cache:
+  l2cache:
+  l3cache:
+  cores: 4
+  watts: 0
+  powerpin: 8
+  maxmemory: 16
+  memchanneltype: 2
+  
+ZeroCpuWatts: 
+  type: Hard Drive
+  model: 1055t
+  manufacturer: AMD
+  series: Phenom II X6
+  price: 200
+  manufacturerwebsite: http://ark.intel.com/Product.aspx?id=48500
+  googleprice: http://www.google.com/products?q=intel+core+i7+880&hl=en&aq=f
+  frequency: 3.0
+  sockettype: AM3
+  fsb: 5200
+  l1cache:
+  l2cache:
+  l3cache:
+  cores: 4
+  watts: 0
+  powerpin: 8
+  maxmemory: 16
+  memchanneltype: 2
+  
+NegativeCpuWatts: 
+  type: Hard Drive
+  model: 1055t
+  manufacturer: AMD
+  series: Phenom II X6
+  price: 200
+  manufacturerwebsite: http://ark.intel.com/Product.aspx?id=48500
+  googleprice: http://www.google.com/products?q=intel+core+i7+880&hl=en&aq=f
+  frequency: 3.0
+  sockettype: AM3
+  fsb: 5200
+  l1cache:
+  l2cache:
+  l3cache:
+  cores: 4
+  watts: -125
+  powerpin: 8
+  maxmemory: 16
+  memchanneltype: 2
+  
+ZeroCpuPowerPin: 
+  type: Hard Drive
+  model: 1055t
+  manufacturer: AMD
+  series: Phenom II X6
+  price: 200
+  manufacturerwebsite: http://ark.intel.com/Product.aspx?id=48500
+  googleprice: http://www.google.com/products?q=intel+core+i7+880&hl=en&aq=f
+  frequency: 3.0
+  sockettype: AM3
+  fsb: 5200
+  l1cache:
+  l2cache:
+  l3cache:
+  cores: 4
+  watts: 125
+  powerpin: 0
+  maxmemory: 16
+  memchanneltype: 2
+  
+NegativeCpuPowerPin: 
+  type: Hard Drive
+  model: 1055t
+  manufacturer: AMD
+  series: Phenom II X6
+  price: 200
+  manufacturerwebsite: http://ark.intel.com/Product.aspx?id=48500
+  googleprice: http://www.google.com/products?q=intel+core+i7+880&hl=en&aq=f
+  frequency: 3.0
+  sockettype: AM3
+  fsb: 5200
+  l1cache:
+  l2cache:
+  l3cache:
+  cores: 4
+  watts: 125
+  powerpin: -8
+  maxmemory: 16
+  memchanneltype: 2
+  
+NegativeCpuMaxMemory: 
+  type: Hard Drive
+  model: 1055t
+  manufacturer: AMD
+  series: Phenom II X6
+  price: 200
+  manufacturerwebsite: http://ark.intel.com/Product.aspx?id=48500
+  googleprice: http://www.google.com/products?q=intel+core+i7+880&hl=en&aq=f
+  frequency: 3.0
+  sockettype: AM3
+  fsb: 5200
+  l1cache:
+  l2cache:
+  l3cache:
+  cores: 4
+  watts: 125
+  powerpin: 8
+  maxmemory: -16
+  memchanneltype: 2
+  
+ZeroCpuMaxMemory: 
+  type: Hard Drive
+  model: 1055t
+  manufacturer: AMD
+  series: Phenom II X6
+  price: 200
+  manufacturerwebsite: http://ark.intel.com/Product.aspx?id=48500
+  googleprice: http://www.google.com/products?q=intel+core+i7+880&hl=en&aq=f
+  frequency: 3.0
+  sockettype: AM3
+  fsb: 5200
+  l1cache:
+  l2cache:
+  l3cache:
+  cores: 4
+  watts: 125
+  powerpin: 8
+  maxmemory: 0
+  memchanneltype: 2
+  
+NegativeCpuMemChannelType: 
+  type: Hard Drive
+  model: 1055t
+  manufacturer: AMD
+  series: Phenom II X6
+  price: 200
+  manufacturerwebsite: http://ark.intel.com/Product.aspx?id=48500
+  googleprice: http://www.google.com/products?q=intel+core+i7+880&hl=en&aq=f
+  frequency: 3.0
+  sockettype: AM3
+  fsb: 5200
+  l1cache:
+  l2cache:
+  l3cache:
+  cores: 4
+  watts: 125
+  powerpin: 8
+  maxmemory: 16
+  memchanneltype: -2
+  
+ZeroCpuMemChannelType: 
+  type: Hard Drive
+  model: 1055t
+  manufacturer: AMD
+  series: Phenom II X6
+  price: 200
+  manufacturerwebsite: http://ark.intel.com/Product.aspx?id=48500
+  googleprice: http://www.google.com/products?q=intel+core+i7+880&hl=en&aq=f
+  frequency: 3.0
+  sockettype: AM3
+  fsb: 5200
+  l1cache:
+  l2cache:
+  l3cache:
+  cores: 4
+  watts: 125
+  powerpin: 8
+  maxmemory: 16
+  memchanneltype: 0

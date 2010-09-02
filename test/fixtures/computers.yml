@@ -1,0 +1,210 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+GoodComputerOne:
+  id: 1
+  name: Computer1
+  motherboard_id: 1
+  cpu_id: 1
+  cpu_cooler_id: 1
+  power_supply_id: 1
+  case_id: 1
+  user_id: 1
+
+GoodComputerTwo:
+  id: 2
+  name: Computer2
+  motherboard_id: 1
+  cpu_id: 1
+  cpu_cooler_id: 1
+  power_supply_id: 1
+  case_id: 1
+  user_id: 1
+  
+NegativeMotherboardId:
+  id: 3
+  name: Computer3
+  motherboard_id: -1
+  cpu_id: 1
+  cpu_cooler_id: 1
+  power_supply_id: 1
+  case_id: 1
+  user_id: 1
+  
+ZeroMotherboardId:
+  id: 4
+  name: Computer4
+  motherboard_id: 0
+  cpu_id: 1
+  cpu_cooler_id: 1
+  power_supply_id: 1
+  case_id: 1
+  user_id: 1
+  
+NegativeCpuId:
+  id: 5
+  name: Computer5
+  motherboard_id: 1
+  cpu_id: -1
+  cpu_cooler_id: 1
+  power_supply_id: 1
+  case_id: 1
+  user_id: 1
+  
+ZeroCpuId:
+  id: 6
+  name: Computer6
+  motherboard_id: 1
+  cpu_id: 0
+  cpu_cooler_id: 1
+  power_supply_id: 1
+  case_id: 1
+  user_id: 1
+  
+NegativeCpuFanId:
+  id: 7
+  name: Computer7
+  motherboard_id: 1
+  cpu_id: 1
+  cpu_cooler_id: -1
+  power_supply_id: 1
+  case_id: 1
+  user_id: 1
+  
+ZeroCpuFanId:
+  id: 8
+  name: Computer8
+  motherboard_id: 1
+  cpu_id: 1
+  cpu_cooler_id: 0
+  power_supply_id: 1
+  case_id: 1
+  user_id: 1
+  
+NegativePowerSupplyId:
+  id: 9
+  name: Computer9
+  motherboard_id: 1
+  cpu_id: 1
+  cpu_cooler_id: 1
+  power_supply_id: -1
+  case_id: 1
+  user_id: 1
+  
+ZeroPowerSupplyId:
+  id: 10
+  name: Computer10
+  motherboard_id: 1
+  cpu_id: 1
+  cpu_cooler_id: 1
+  power_supply_id: 0
+  case_id: 1
+  user_id: 1
+  
+NegativeCaseId:
+  id: 11
+  name: Computer11
+  motherboard_id: 1
+  cpu_id: 1
+  cpu_cooler_id: 1
+  power_supply_id: 1
+  case_id: -1
+  user_id: 1
+  
+ZeroCaseId:
+  id: 12
+  name: Computer12
+  motherboard_id: 1
+  cpu_id: 1
+  cpu_cooler_id: 1
+  power_supply_id: 1
+  case_id: 0
+  user_id: 1
+  
+NegativeUserId:
+  id: 13
+  name: Computer13
+  motherboard_id: 1
+  cpu_id: 1
+  cpu_cooler_id: 1
+  power_supply_id: 1
+  case_id: 1
+  user_id: -1
+  
+ZeroUserId:
+  id: 14
+  name: Computer14
+  motherboard_id: 1
+  cpu_id: 1
+  cpu_cooler_id: 1
+  power_supply_id: 1
+  case_id: 1
+  user_id: 0
+  
+BlankNameComputer:
+  id: 15
+  motherboard_id: 1
+  cpu_id: 1
+  cpu_cooler_id: 1
+  power_supply_id: 1
+  case_id: 1
+  user_id: 1
+  
+NonExistantMoboId:
+  id: 16
+  name: Computer16
+  motherboard_id: 12342
+  cpu_id: 1
+  cpu_cooler_id: 1
+  power_supply_id: 1
+  case_id: 1
+  user_id: 1
+  
+NonExistantCpuId:
+  id: 17
+  name: Computer17
+  motherboard_id: 1
+  cpu_id: 112332
+  cpu_cooler_id: 1
+  power_supply_id: 1
+  case_id: 1
+  user_id: 1
+  
+NonExistantCpuFanId:
+  id: 18
+  name: Computer18
+  motherboard_id: 1
+  cpu_id: 1
+  cpu_cooler_id: 1232
+  power_supply_id: 1
+  case_id: 1
+  user_id: 1
+
+NonExistantPowerSupplyId:
+  id: 19
+  name: Computer19
+  motherboard_id: 1
+  cpu_id: 1
+  cpu_cooler_id: 1
+  power_supply_id: 13333
+  case_id: 1
+  user_id: 1
+  
+NonExistantCaseId:
+  id: 20
+  name: Computer20
+  motherboard_id: 1
+  cpu_id: 1
+  cpu_cooler_id: 1
+  power_supply_id: 1
+  case_id: 1123223
+  user_id: 1
+  
+NonExistantUserId:
+  id: 21
+  name: Computer21
+  motherboard_id: 1
+  cpu_id: 1
+  cpu_cooler_id: 1
+  power_supply_id: 1
+  case_id: 1
+  user_id: 11232
