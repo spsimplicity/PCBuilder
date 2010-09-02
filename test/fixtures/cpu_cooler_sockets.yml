@@ -1,0 +1,31 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+GoodSocketOne:
+  id: 1
+  cpu_cooler_id: 1
+  sockettype: 1156
+
+GoodSocketTwo:
+  id: 2
+  cpu_cooler_id: 1
+  sockettype: AM3
+  
+CoolerIdNegative:
+  id: 3
+  cpu_cooler_id: -1
+  sockettype: AM3
+  
+CoolerIdZero:
+  id: 4
+  cpu_cooler_id: 0
+  sockettype: AM3
+  
+CoolerIdNonExistant:
+  id: 5
+  cpu_cooler_id: 123345
+  sockettype: AM3
+
+SocketTypeNotUsed:
+  id: 6
+  cpu_cooler_id: 1
+  sockettype: Pentium 4

@@ -15,11 +15,11 @@ class CreateComputers < ActiveRecord::Migration
 	  t.index :user
       t.timestamps
     end
-	#execute "alter table computers add constraint fkToCpuID foreign key(cpuid) references cpus(id)"
-	#execute "alter table computers add constraint fkToCpuFanID foreign key(cpucoolerid) references cpufans(id)"
-	#execute "alter table computers add constraint fkToPsuID foreign key(powersupplyid) references powersupplies(id)"
-	#execute "alter table computers add constraint fkToCaseID foreign key(caseid) references cases(id)"
-	#execute "alter table computers add constraint fkToMoboID foreign key(motherboardid) references motherboards(id)"
+	execute "alter table computers add constraint fkToCpuID foreign key(cpu_id) references cpus(id)"
+	execute "alter table computers add constraint fkToCpuCoolerID foreign key(cpu_cooler_id) references cpu_coolers(id)"
+	#execute "alter table computers add constraint fkToPsuID foreign key(power_supply_id) references power_supplies(id)"
+	#execute "alter table computers add constraint fkToCaseID foreign key(case_id) references cases(id)"
+	#execute "alter table computers add constraint fkToMoboID foreign key(motherboard_id) references motherboards(id)"
 	execute "alter table computers add constraint fkToUserID foreign key(user_id) references users(id)"
   end
 

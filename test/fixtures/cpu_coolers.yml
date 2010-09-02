@@ -1,13 +1,157 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
+GoodCpuCoolerOne:
   parttype: cpu_cooler
-  model: MyString
-  manufacturer: MyString
-  manufacturerwebsite: MyString
-  price: 1
-  googleprice: MyString
-  maxmemheight: 1
-  height: 1.5
-  width: 1.5
-  length: 1.5
+  model: A-70
+  manufacturer: Antec
+  manufacturerwebsite: antec.com
+  price: 60
+  googleprice: google.com
+  maxmemheight: 30
+  height: 160
+  width: 153.5
+  length: 180.5
+  
+GoodCpuCoolerTwo:
+  parttype: cpu_cooler
+  model: NBHS30
+  manufacturer: Noctua
+  manufacturerwebsite: noctua.com
+  price: 60
+  googleprice: google.com
+  maxmemheight: 30
+  height: 160
+  width: 153.5
+  length: 180.5
+  
+PartTypeWrongValue:
+  parttype: cpu
+  model: A-70
+  manufacturer: Antec
+  manufacturerwebsite: antec.com
+  price: 60
+  googleprice: google.com
+  maxmemheight: 30
+  height: 160
+  width: 153.5
+  length: 180.5
+  
+NegativePriceCpuCooler:
+  parttype: cpu_cooler
+  model: A-70
+  manufacturer: Antec
+  manufacturerwebsite: antec.com
+  price: -60
+  googleprice: google.com
+  maxmemheight: 30
+  height: 160
+  width: 153.5
+  length: 180.5
+  
+ZeroPriceCpuCooler:
+  parttype: cpu_cooler
+  model: A-70
+  manufacturer: Antec
+  manufacturerwebsite: antec.com
+  price: 0
+  googleprice: google.com
+  maxmemheight: 30
+  height: 160
+  width: 153.5
+  length: 180.5
+  
+NegativeMaxMemHeightCpuCooler:
+  parttype: cpu_cooler
+  model: A-70
+  manufacturer: Antec
+  manufacturerwebsite: antec.com
+  price: 60
+  googleprice: google.com
+  maxmemheight: -30
+  height: 160
+  width: 153.5
+  length: 180.5
+  
+ZeroMaxMemHeightCpuCooler:
+  parttype: cpu_cooler
+  model: A-70
+  manufacturer: Antec
+  manufacturerwebsite: antec.com
+  price: 60
+  googleprice: google.com
+  maxmemheight: 0
+  height: 160
+  width: 153.5
+  length: 180.5
+  
+NegativeHeightCpuCooler:
+  parttype: cpu_cooler
+  model: A-70
+  manufacturer: Antec
+  manufacturerwebsite: antec.com
+  price: 60
+  googleprice: google.com
+  maxmemheight: 30
+  height: -160
+  width: 153.5
+  length: 180.5
+  
+ZeroHeightCpuCooler:
+  parttype: cpu_cooler
+  model: A-70
+  manufacturer: Antec
+  manufacturerwebsite: antec.com
+  price: 60
+  googleprice: google.com
+  maxmemheight: 30
+  height: 0
+  width: 153.5
+  length: 180.5
+  
+NegativeWidthCpuCooler:
+  parttype: cpu_cooler
+  model: A-70
+  manufacturer: Antec
+  manufacturerwebsite: antec.com
+  price: 60
+  googleprice: google.com
+  maxmemheight: 30
+  height: 160
+  width: -153.5
+  length: 180.5
+  
+ZeroWidthCpuCooler:
+  parttype: cpu_cooler
+  model: A-70
+  manufacturer: Antec
+  manufacturerwebsite: antec.com
+  price: 60
+  googleprice: google.com
+  maxmemheight: 30
+  height: 160
+  width: 0
+  length: 180.5
+  
+NegativeLengthCpuCooler:
+  parttype: cpu_cooler
+  model: A-70
+  manufacturer: Antec
+  manufacturerwebsite: antec.com
+  price: 60
+  googleprice: google.com
+  maxmemheight: 30
+  height: 160
+  width: 153.5
+  length: -180.5
+
+ZeroLengthCpuCooler:
+  parttype: cpu_cooler
+  model: A-70
+  manufacturer: Antec
+  manufacturerwebsite: antec.com
+  price: 60
+  googleprice: google.com
+  maxmemheight: 30
+  height: 160
+  width: 153.5
+  length: 0

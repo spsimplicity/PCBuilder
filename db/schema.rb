@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100902055153) do
+ActiveRecord::Schema.define(:version => 20100902100453) do
 
   create_table "computers", :force => true do |t|
     t.string   "name",            :limit => 50, :default => "Custom Built Computer", :null => false
@@ -24,6 +24,15 @@ ActiveRecord::Schema.define(:version => 20100902055153) do
   end
 
   add_index "computers", ["user_id"], :name => "fkToUserID"
+
+  create_table "cpu_cooler_sockets", :force => true do |t|
+    t.integer  "cpu_cooler_id",               :null => false
+    t.string   "sockettype",    :limit => 10, :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "cpu_cooler_sockets", ["cpu_cooler_id"], :name => "fkToCpuCoolerID"
 
   create_table "cpu_coolers", :force => true do |t|
     t.string   "parttype",            :limit => 15, :null => false

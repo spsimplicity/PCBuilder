@@ -15,11 +15,11 @@ class Computer < ActiveRecord::Base
 	      record.errors.add(attr, msg)
 	  end
   end
-  
-  belongs_to :motherboard
-  belongs_to :cpu
-  belongs_to :cpu_cooler
-  belongs_to :power_supply
-  belongs_to :case
+  #Foreign key validations
+  belongs_to :motherboard, :autosave => true
+  belongs_to :cpu, :autosave => true
+  belongs_to :cpu_cooler, :autosave => true
+  belongs_to :power_supply, :autosave => true
+  belongs_to :case, :autosave => true
   belongs_to :user, :autosave => true
 end
