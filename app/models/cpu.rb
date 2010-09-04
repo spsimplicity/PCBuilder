@@ -1,10 +1,10 @@
 class Cpu < ActiveRecord::Base
 
+    #No attributes are accessible for mass assignment
+    attr_accessible
     #Part Type Validations
     validates_length_of :parttype, :maximum => 10
-	validates_each :parttype do |record, attr, value|
-	    record.errors.add(attr, "Part Type is not CPU") if value != "cpu"
-	end
+	validates_inclusion_of :parttype, :in => %w(CPU cpu Cpu), :message => "Part Type is not CPU"
 	#Model Validations
 	validates_length_of :model, :maximum => 10
 	#Manufacturer Validations

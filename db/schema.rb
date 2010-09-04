@@ -9,7 +9,38 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100902100453) do
+ActiveRecord::Schema.define(:version => 20100904053437) do
+
+  create_table "case_motherboards", :force => true do |t|
+    t.integer  "case_id",                  :null => false
+    t.string   "size",       :limit => 15, :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "case_motherboards", ["case_id"], :name => "fkToCaseID"
+
+  create_table "cases", :force => true do |t|
+    t.string   "parttype",            :limit => 5,  :null => false
+    t.string   "manufacturer",        :limit => 20, :null => false
+    t.integer  "price",                             :null => false
+    t.string   "model",               :limit => 30, :null => false
+    t.string   "series",              :limit => 30
+    t.string   "manufacturerwebsite",               :null => false
+    t.string   "googleprice",                       :null => false
+    t.integer  "totalbays",                         :null => false
+    t.integer  "hddbays",                           :null => false
+    t.integer  "conversionbays",                    :null => false
+    t.integer  "ssdbays",                           :null => false
+    t.integer  "expansionslots",                    :null => false
+    t.integer  "discbays",                          :null => false
+    t.string   "casetype",            :limit => 25, :null => false
+    t.integer  "length",                            :null => false
+    t.integer  "width",                             :null => false
+    t.integer  "height",                            :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "computers", :force => true do |t|
     t.string   "name",            :limit => 50, :default => "Custom Built Computer", :null => false
@@ -23,7 +54,12 @@ ActiveRecord::Schema.define(:version => 20100902100453) do
     t.datetime "updated_at"
   end
 
-  add_index "computers", ["user_id"], :name => "fkToUserID"
+  add_index "computers", ["case_id"], :name => "fkToCaseFromCompID"
+  add_index "computers", ["cpu_cooler_id"], :name => "fkToCpuCoolerFromCompID"
+  add_index "computers", ["cpu_id"], :name => "fkToCpuFromCompID"
+  add_index "computers", ["motherboard_id"], :name => "fkToMoboFromCompID"
+  add_index "computers", ["power_supply_id"], :name => "fkToPsuFromCompID"
+  add_index "computers", ["user_id"], :name => "fkToUserFromCompID"
 
   create_table "cpu_cooler_sockets", :force => true do |t|
     t.integer  "cpu_cooler_id",               :null => false
@@ -68,6 +104,71 @@ ActiveRecord::Schema.define(:version => 20100902100453) do
     t.integer  "powerpin",                          :null => false
     t.integer  "maxmemory",                         :null => false
     t.integer  "memchanneltype",                    :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "memory_speeds", :force => true do |t|
+    t.integer  "motherboard_id", :null => false
+    t.integer  "speed",          :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "memory_speeds", ["motherboard_id"], :name => "fkToMoboID"
+
+  create_table "motherboards", :force => true do |t|
+    t.string   "parttype",            :limit => 15, :null => false
+    t.string   "manufacturer",        :limit => 15, :null => false
+    t.string   "model",               :limit => 40, :null => false
+    t.integer  "price",                             :null => false
+    t.string   "manufacturerwebsite",               :null => false
+    t.string   "googleprice",                       :null => false
+    t.integer  "maxmemory",                         :null => false
+    t.string   "memorytype",          :limit => 5,  :null => false
+    t.integer  "pci_ex16",                          :null => false
+    t.integer  "pci_e2",                            :null => false
+    t.integer  "memoryslots",                       :null => false
+    t.string   "size",                :limit => 15, :null => false
+    t.integer  "cpupowerpin",                       :null => false
+    t.integer  "fsb",                               :null => false
+    t.string   "northbridge",         :limit => 25, :null => false
+    t.string   "southbridge",         :limit => 25
+    t.integer  "mainpower",                         :null => false
+    t.integer  "pci_e",                             :null => false
+    t.integer  "pci",                               :null => false
+    t.boolean  "sli_crossfire",                     :null => false
+    t.string   "sockettype",          :limit => 10, :null => false
+    t.integer  "sata3",                             :null => false
+    t.integer  "sata6",                             :null => false
+    t.integer  "ide",                               :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "power_supplies", :force => true do |t|
+    t.string   "parttype",            :limit => 20, :null => false
+    t.string   "manufacturer",        :limit => 30, :null => false
+    t.string   "manufacturerwebsite",               :null => false
+    t.string   "googleprice",                       :null => false
+    t.integer  "price",                             :null => false
+    t.string   "model",               :limit => 30, :null => false
+    t.string   "series",              :limit => 30, :null => false
+    t.integer  "fansize",                           :null => false
+    t.integer  "mainpower",                         :null => false
+    t.integer  "satapower",                         :null => false
+    t.boolean  "multi_gpu",                         :null => false
+    t.integer  "peripheral",                        :null => false
+    t.string   "energycert",          :limit => 20
+    t.string   "power_supply_type",   :limit => 40, :null => false
+    t.integer  "poweroutput",                       :null => false
+    t.integer  "cpu4_4pin",                         :null => false
+    t.integer  "cpu4pin",                           :null => false
+    t.integer  "cpu8pin",                           :null => false
+    t.integer  "gpu8pin",                           :null => false
+    t.integer  "gpu6pin",                           :null => false
+    t.integer  "gpu6_2pin",                         :null => false
+    t.integer  "length",                            :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

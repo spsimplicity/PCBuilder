@@ -1,7 +1,8 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 GoodCpuCoolerOne:
-  parttype: cpu_cooler
+  id: 1
+  parttype: cpu cooler
   model: A-70
   manufacturer: Antec
   manufacturerwebsite: antec.com
@@ -13,7 +14,8 @@ GoodCpuCoolerOne:
   length: 180.5
   
 GoodCpuCoolerTwo:
-  parttype: cpu_cooler
+  id: 2
+  parttype: cpu cooler
   model: NBHS30
   manufacturer: Noctua
   manufacturerwebsite: noctua.com
@@ -25,6 +27,7 @@ GoodCpuCoolerTwo:
   length: 180.5
   
 PartTypeWrongValue:
+  id: 3
   parttype: cpu
   model: A-70
   manufacturer: Antec
@@ -37,7 +40,8 @@ PartTypeWrongValue:
   length: 180.5
   
 NegativePriceCpuCooler:
-  parttype: cpu_cooler
+  id: 4
+  parttype: cpu cooler
   model: A-70
   manufacturer: Antec
   manufacturerwebsite: antec.com
@@ -49,7 +53,8 @@ NegativePriceCpuCooler:
   length: 180.5
   
 ZeroPriceCpuCooler:
-  parttype: cpu_cooler
+  id: 5
+  parttype: cpu cooler
   model: A-70
   manufacturer: Antec
   manufacturerwebsite: antec.com
@@ -61,7 +66,8 @@ ZeroPriceCpuCooler:
   length: 180.5
   
 NegativeMaxMemHeightCpuCooler:
-  parttype: cpu_cooler
+  id: 6
+  parttype: cpu cooler
   model: A-70
   manufacturer: Antec
   manufacturerwebsite: antec.com
@@ -73,7 +79,8 @@ NegativeMaxMemHeightCpuCooler:
   length: 180.5
   
 ZeroMaxMemHeightCpuCooler:
-  parttype: cpu_cooler
+  id: 7
+  parttype: cpu cooler
   model: A-70
   manufacturer: Antec
   manufacturerwebsite: antec.com
@@ -85,7 +92,8 @@ ZeroMaxMemHeightCpuCooler:
   length: 180.5
   
 NegativeHeightCpuCooler:
-  parttype: cpu_cooler
+  id: 8
+  parttype: cpu cooler
   model: A-70
   manufacturer: Antec
   manufacturerwebsite: antec.com
@@ -97,7 +105,8 @@ NegativeHeightCpuCooler:
   length: 180.5
   
 ZeroHeightCpuCooler:
-  parttype: cpu_cooler
+  id: 9
+  parttype: cpu cooler
   model: A-70
   manufacturer: Antec
   manufacturerwebsite: antec.com
@@ -109,7 +118,8 @@ ZeroHeightCpuCooler:
   length: 180.5
   
 NegativeWidthCpuCooler:
-  parttype: cpu_cooler
+  id: 10
+  parttype: cpu cooler
   model: A-70
   manufacturer: Antec
   manufacturerwebsite: antec.com
@@ -121,7 +131,8 @@ NegativeWidthCpuCooler:
   length: 180.5
   
 ZeroWidthCpuCooler:
-  parttype: cpu_cooler
+  id: 11
+  parttype: cpu cooler
   model: A-70
   manufacturer: Antec
   manufacturerwebsite: antec.com
@@ -133,7 +144,8 @@ ZeroWidthCpuCooler:
   length: 180.5
   
 NegativeLengthCpuCooler:
-  parttype: cpu_cooler
+  id: 12
+  parttype: cpu cooler
   model: A-70
   manufacturer: Antec
   manufacturerwebsite: antec.com
@@ -145,7 +157,8 @@ NegativeLengthCpuCooler:
   length: -180.5
 
 ZeroLengthCpuCooler:
-  parttype: cpu_cooler
+  id: 13
+  parttype: cpu cooler
   model: A-70
   manufacturer: Antec
   manufacturerwebsite: antec.com

@@ -1,0 +1,649 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+GoodMotherboardOne:
+  id: 1
+  parttype: motherboard
+  manufacturer: asus
+  model: Maximus II
+  price: 130
+  manufacturerwebsite: asus.com
+  googleprice: google.com
+  maxmemory: 16
+  memorytype: DDR2
+  pci_ex16: 2
+  pci_e2: 2
+  memoryslots: 4
+  size: ATX
+  cpupowerpin: 8
+  fsb: 1333
+  northbridge: intel p45
+  southbridge: intel ich10
+  mainpower: 24
+  pci_e: 2
+  pci: 0
+  sli_crossfire: true
+  sockettype: 775
+  sata3: 6
+  sata6: 0
+  ide: 1
+  
+GoodMotherboardTwo:
+  id: 2
+  parttype: motherboard
+  manufacturer: msi
+  model: Big Bang
+  price: 300
+  manufacturerwebsite: msi.com
+  googleprice: google.com
+  maxmemory: 24
+  memorytype: DDR3
+  pci_ex16: 4
+  pci_e2: 4
+  memoryslots: 6
+  size: EATX
+  cpupowerpin: 8
+  fsb: 1333
+  northbridge: intel x58
+  southbridge: intel ich10
+  mainpower: 24
+  pci_e: 1
+  pci: 0
+  sli_crossfire: true
+  sockettype: 1336
+  sata3: 6
+  sata6: 2
+  ide: 0
+  
+NonMotherboardParttype:
+  id: 3
+  parttype: cpu
+  manufacturer: asus
+  model: Maximus II
+  price: 130
+  manufacturerwebsite: asus.com
+  googleprice: google.com
+  maxmemory: 16
+  memorytype: DDR2
+  pci_ex16: 2
+  pci_e2: 2
+  memoryslots: 4
+  size: ATX
+  cpupowerpin: 8
+  fsb: 1333
+  northbridge: intel p45
+  southbridge: intel ich10
+  mainpower: 24
+  pci_e: 2
+  pci: 0
+  sli_crossfire: true
+  sockettype: 775
+  sata3: 6
+  sata6: 0
+  ide: 1
+
+NegativeMotherboardPrice:
+  id: 4
+  parttype: motherboard
+  manufacturer: asus
+  model: Maximus II
+  price: -130
+  manufacturerwebsite: asus.com
+  googleprice: google.com
+  maxmemory: 16
+  memorytype: DDR2
+  pci_ex16: 2
+  pci_e2: 2
+  memoryslots: 4
+  size: ATX
+  cpupowerpin: 8
+  fsb: 1333
+  northbridge: intel p45
+  southbridge: intel ich10
+  mainpower: 24
+  pci_e: 2
+  pci: 0
+  sli_crossfire: true
+  sockettype: 775
+  sata3: 6
+  sata6: 0
+  ide: 1
+  
+ZeroMotherboardPrice:
+  id: 5
+  parttype: motherboard
+  manufacturer: asus
+  model: Maximus II
+  price: 0
+  manufacturerwebsite: asus.com
+  googleprice: google.com
+  maxmemory: 16
+  memorytype: DDR2
+  pci_ex16: 2
+  pci_e2: 2
+  memoryslots: 4
+  size: ATX
+  cpupowerpin: 8
+  fsb: 1333
+  northbridge: intel p45
+  southbridge: intel ich10
+  mainpower: 24
+  pci_e: 2
+  pci: 0
+  sli_crossfire: true
+  sockettype: 775
+  sata3: 6
+  sata6: 0
+  ide: 1
+  
+NegativeMotherboardMaxMemory:
+  id: 6
+  parttype: motherboard
+  manufacturer: asus
+  model: Maximus II
+  price: 130
+  manufacturerwebsite: asus.com
+  googleprice: google.com
+  maxmemory: -16
+  memorytype: DDR2
+  pci_ex16: 2
+  pci_e2: 2
+  memoryslots: 4
+  size: ATX
+  cpupowerpin: 8
+  fsb: 1333
+  northbridge: intel p45
+  southbridge: intel ich10
+  mainpower: 24
+  pci_e: 2
+  pci: 0
+  sli_crossfire: true
+  sockettype: 775
+  sata3: 6
+  sata6: 0
+  ide: 1
+  
+ZeroMotherboardMaxMemory:
+  id: 7
+  parttype: motherboard
+  manufacturer: asus
+  model: Maximus II
+  price: 130
+  manufacturerwebsite: asus.com
+  googleprice: google.com
+  maxmemory: 0
+  memorytype: DDR2
+  pci_ex16: 2
+  pci_e2: 2
+  memoryslots: 4
+  size: ATX
+  cpupowerpin: 8
+  fsb: 1333
+  northbridge: intel p45
+  southbridge: intel ich10
+  mainpower: 24
+  pci_e: 2
+  pci: 0
+  sli_crossfire: true
+  sockettype: 775
+  sata3: 6
+  sata6: 0
+  ide: 1
+  
+NonDDRMotherboardMemoryType:
+  id: 8
+  parttype: motherboard
+  manufacturer: asus
+  model: Maximus II
+  price: 130
+  manufacturerwebsite: asus.com
+  googleprice: google.com
+  maxmemory: 16
+  memorytype: SDRAM
+  pci_ex16: 2
+  pci_e2: 2
+  memoryslots: 4
+  size: ATX
+  cpupowerpin: 8
+  fsb: 1333
+  northbridge: intel p45
+  southbridge: intel ich10
+  mainpower: 24
+  pci_e: 2
+  pci: 0
+  sli_crossfire: true
+  sockettype: 775
+  sata3: 6
+  sata6: 0
+  ide: 1
+  
+NegativeMotherboardPCI_EX16:
+  id: 9
+  parttype: motherboard
+  manufacturer: asus
+  model: Maximus II
+  price: 130
+  manufacturerwebsite: asus.com
+  googleprice: google.com
+  maxmemory: 16
+  memorytype: DDR2
+  pci_ex16: -2
+  pci_e2: 2
+  memoryslots: 4
+  size: ATX
+  cpupowerpin: 8
+  fsb: 1333
+  northbridge: intel p45
+  southbridge: intel ich10
+  mainpower: 24
+  pci_e: 2
+  pci: 0
+  sli_crossfire: true
+  sockettype: 775
+  sata3: 6
+  sata6: 0
+  ide: 1
+  
+NegativeMotherboardPCI_E2:
+  id: 10
+  parttype: motherboard
+  manufacturer: asus
+  model: Maximus II
+  price: 130
+  manufacturerwebsite: asus.com
+  googleprice: google.com
+  maxmemory: 16
+  memorytype: DDR2
+  pci_ex16: 2
+  pci_e2: -2
+  memoryslots: 4
+  size: ATX
+  cpupowerpin: 8
+  fsb: 1333
+  northbridge: intel p45
+  southbridge: intel ich10
+  mainpower: 24
+  pci_e: 2
+  pci: 0
+  sli_crossfire: true
+  sockettype: 775
+  sata3: 6
+  sata6: 0
+  ide: 1
+  
+NegativeMotherboardMemorySlots:
+  id: 11
+  parttype: motherboard
+  manufacturer: asus
+  model: Maximus II
+  price: 130
+  manufacturerwebsite: asus.com
+  googleprice: google.com
+  maxmemory: 16
+  memorytype: DDR2
+  pci_ex16: 2
+  pci_e2: 2
+  memoryslots: -4
+  size: ATX
+  cpupowerpin: 8
+  fsb: 1333
+  northbridge: intel p45
+  southbridge: intel ich10
+  mainpower: 24
+  pci_e: 2
+  pci: 0
+  sli_crossfire: true
+  sockettype: 775
+  sata3: 6
+  sata6: 0
+  ide: 1
+  
+ZeroMotherboardMemorySlots:
+  id: 12
+  parttype: motherboard
+  manufacturer: asus
+  model: Maximus II
+  price: 130
+  manufacturerwebsite: asus.com
+  googleprice: google.com
+  maxmemory: 16
+  memorytype: DDR2
+  pci_ex16: 2
+  pci_e2: 2
+  memoryslots: 0
+  size: ATX
+  cpupowerpin: 8
+  fsb: 1333
+  northbridge: intel p45
+  southbridge: intel ich10
+  mainpower: 24
+  pci_e: 2
+  pci: 0
+  sli_crossfire: true
+  sockettype: 775
+  sata3: 6
+  sata6: 0
+  ide: 1
+  
+NonStandardMotherboardSize:
+  id: 13
+  parttype: motherboard
+  manufacturer: asus
+  model: Maximus II
+  price: 130
+  manufacturerwebsite: asus.com
+  googleprice: google.com
+  maxmemory: 16
+  memorytype: DDR2
+  pci_ex16: 2
+  pci_e2: 2
+  memoryslots: 4
+  size: mini
+  cpupowerpin: 8
+  fsb: 1333
+  northbridge: intel p45
+  southbridge: intel ich10
+  mainpower: 24
+  pci_e: 2
+  pci: 0
+  sli_crossfire: true
+  sockettype: 775
+  sata3: 6
+  sata6: 0
+  ide: 1
+  
+NegativeMotherboardCpuPowerPin:
+  id: 14
+  parttype: motherboard
+  manufacturer: asus
+  model: Maximus II
+  price: 130
+  manufacturerwebsite: asus.com
+  googleprice: google.com
+  maxmemory: 16
+  memorytype: DDR2
+  pci_ex16: 2
+  pci_e2: 2
+  memoryslots: 4
+  size: ATX
+  cpupowerpin: -8
+  fsb: 1333
+  northbridge: intel p45
+  southbridge: intel ich10
+  mainpower: 24
+  pci_e: 2
+  pci: 0
+  sli_crossfire: true
+  sockettype: 775
+  sata3: 6
+  sata6: 0
+  ide: 1
+  
+ZeroMotherboardCpuPowerPin:
+  id: 15
+  parttype: motherboard
+  manufacturer: asus
+  model: Maximus II
+  price: 130
+  manufacturerwebsite: asus.com
+  googleprice: google.com
+  maxmemory: 16
+  memorytype: DDR2
+  pci_ex16: 2
+  pci_e2: 2
+  memoryslots: 4
+  size: ATX
+  cpupowerpin: 0
+  fsb: 1333
+  northbridge: intel p45
+  southbridge: intel ich10
+  mainpower: 24
+  pci_e: 2
+  pci: 0
+  sli_crossfire: true
+  sockettype: 775
+  sata3: 6
+  sata6: 0
+  ide: 1
+  
+NegativeMotherboardFSB:
+  id: 16
+  parttype: motherboard
+  manufacturer: asus
+  model: Maximus II
+  price: 130
+  manufacturerwebsite: asus.com
+  googleprice: google.com
+  maxmemory: 16
+  memorytype: DDR2
+  pci_ex16: 2
+  pci_e2: 2
+  memoryslots: 4
+  size: ATX
+  cpupowerpin: 8
+  fsb: -1333
+  northbridge: intel p45
+  southbridge: intel ich10
+  mainpower: 24
+  pci_e: 2
+  pci: 0
+  sli_crossfire: true
+  sockettype: 775
+  sata3: 6
+  sata6: 0
+  ide: 1
+  
+ZeroMotherboardFSB:
+  id: 17
+  parttype: motherboard
+  manufacturer: asus
+  model: Maximus II
+  price: 130
+  manufacturerwebsite: asus.com
+  googleprice: google.com
+  maxmemory: 16
+  memorytype: DDR2
+  pci_ex16: 2
+  pci_e2: 2
+  memoryslots: 4
+  size: ATX
+  cpupowerpin: 8
+  fsb: 0
+  northbridge: intel p45
+  southbridge: intel ich10
+  mainpower: 24
+  pci_e: 2
+  pci: 0
+  sli_crossfire: true
+  sockettype: 775
+  sata3: 6
+  sata6: 0
+  ide: 1
+  
+NegativeMotherboardMainPower:
+  id: 18
+  parttype: motherboard
+  manufacturer: asus
+  model: Maximus II
+  price: 130
+  manufacturerwebsite: asus.com
+  googleprice: google.com
+  maxmemory: 16
+  memorytype: DDR2
+  pci_ex16: 2
+  pci_e2: 2
+  memoryslots: 4
+  size: ATX
+  cpupowerpin: 8
+  fsb: 1333
+  northbridge: intel p45
+  southbridge: intel ich10
+  mainpower: -24
+  pci_e: 2
+  pci: 0
+  sli_crossfire: true
+  sockettype: 775
+  sata3: 6
+  sata6: 0
+  ide: 1
+  
+ZeroMotherboardMainPower:
+  id: 19
+  parttype: motherboard
+  manufacturer: asus
+  model: Maximus II
+  price: 130
+  manufacturerwebsite: asus.com
+  googleprice: google.com
+  maxmemory: 16
+  memorytype: DDR2
+  pci_ex16: 2
+  pci_e2: 2
+  memoryslots: 4
+  size: ATX
+  cpupowerpin: 8
+  fsb: 1333
+  northbridge: intel p45
+  southbridge: intel ich10
+  mainpower: 0
+  pci_e: 2
+  pci: 0
+  sli_crossfire: true
+  sockettype: 775
+  sata3: 6
+  sata6: 0
+  ide: 1
+  
+NegativeMotherboardPCI_E:
+  id: 20
+  parttype: motherboard
+  manufacturer: asus
+  model: Maximus II
+  price: 130
+  manufacturerwebsite: asus.com
+  googleprice: google.com
+  maxmemory: 16
+  memorytype: DDR2
+  pci_ex16: 2
+  pci_e2: 2
+  memoryslots: 4
+  size: ATX
+  cpupowerpin: 8
+  fsb: 1333
+  northbridge: intel p45
+  southbridge: intel ich10
+  mainpower: 24
+  pci_e: -2
+  pci: 0
+  sli_crossfire: true
+  sockettype: 775
+  sata3: 6
+  sata6: 0
+  ide: 1
+  
+NegativeMotherboardPCI:
+  id: 21
+  parttype: motherboard
+  manufacturer: asus
+  model: Maximus II
+  price: 130
+  manufacturerwebsite: asus.com
+  googleprice: google.com
+  maxmemory: 16
+  memorytype: DDR2
+  pci_ex16: 2
+  pci_e2: 2
+  memoryslots: 4
+  size: ATX
+  cpupowerpin: 8
+  fsb: 1333
+  northbridge: intel p45
+  southbridge: intel ich10
+  mainpower: 24
+  pci_e: 2
+  pci: -1
+  sli_crossfire: true
+  sockettype: 775
+  sata3: 6
+  sata6: 0
+  ide: 1
+  
+NegativeMotherboardSata3:
+  id: 22
+  parttype: motherboard
+  manufacturer: asus
+  model: Maximus II
+  price: 130
+  manufacturerwebsite: asus.com
+  googleprice: google.com
+  maxmemory: 16
+  memorytype: DDR2
+  pci_ex16: 2
+  pci_e2: 2
+  memoryslots: 4
+  size: ATX
+  cpupowerpin: 8
+  fsb: 1333
+  northbridge: intel p45
+  southbridge: intel ich10
+  mainpower: 24
+  pci_e: 2
+  pci: 0
+  sli_crossfire: true
+  sockettype: 775
+  sata3: -6
+  sata6: 0
+  ide: 1
+  
+NegativeMotherboardSata6:
+  id: 23
+  parttype: motherboard
+  manufacturer: asus
+  model: Maximus II
+  price: 130
+  manufacturerwebsite: asus.com
+  googleprice: google.com
+  maxmemory: 16
+  memorytype: DDR2
+  pci_ex16: 2
+  pci_e2: 2
+  memoryslots: 4
+  size: ATX
+  cpupowerpin: 8
+  fsb: 1333
+  northbridge: intel p45
+  southbridge: intel ich10
+  mainpower: 24
+  pci_e: 2
+  pci: 0
+  sli_crossfire: true
+  sockettype: 775
+  sata3: 6
+  sata6: -2
+  ide: 1
+  
+NegativeMotherboardIDE:
+  id: 24
+  parttype: motherboard
+  manufacturer: asus
+  model: Maximus II
+  price: 130
+  manufacturerwebsite: asus.com
+  googleprice: google.com
+  maxmemory: 16
+  memorytype: DDR2
+  pci_ex16: 2
+  pci_e2: 2
+  memoryslots: 4
+  size: ATX
+  cpupowerpin: 8
+  fsb: 1333
+  northbridge: intel p45
+  southbridge: intel ich10
+  mainpower: 24
+  pci_e: 2
+  pci: 0
+  sli_crossfire: true
+  sockettype: 775
+  sata3: 6
+  sata6: 0
+  ide: -1

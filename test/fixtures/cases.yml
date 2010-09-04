@@ -1,0 +1,400 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+GoodCaseOne:
+  parttype: Case
+  manufacturer: NZXT
+  price: 130
+  model: Phantom
+  series: Classic
+  manufacturerwebsite: nzxt.com
+  googleprice: google.com
+  totalbays: 11
+  hddbays: 5
+  conversionbays: 0
+  ssdbays: 0
+  expansionslots: 7
+  discbays: 6
+  casetype: Full ATX Tower
+  length: 600
+  width: 350
+  height: 600
+
+GoodCaseTwo:
+  parttype: Case
+  manufacturer: Case Master
+  price: 100
+  model: CM90 II
+  series: Gamer
+  manufacturerwebsite: Casemaster.com
+  googleprice: google.com
+  totalbays: 10
+  hddbays: 6
+  conversionbays: 0
+  ssdbays: 0
+  expansionslots: 6
+  discbays: 4
+  casetype: Mid ATX Tower
+  length: 530
+  width: 300
+  height: 500
+  
+NonCasePartType:
+  parttype: cpu
+  manufacturer: NZXT
+  price: 130
+  model: Phantom
+  series: Classic
+  manufacturerwebsite: naxt.com
+  googleprice: google.com
+  totalbays: 11
+  hddbays: 5
+  conversionbays: 0
+  ssdbays: 0
+  expansionslots: 7
+  discbays: 6
+  casetype: Full ATX
+  length: 600
+  width: 350
+  height: 600
+  
+NegativePriceCase:
+  parttype: Case
+  manufacturer: NZXT
+  price: -130
+  model: Phantom
+  series: Classic
+  manufacturerwebsite: naxt.com
+  googleprice: google.com
+  totalbays: 11
+  hddbays: 5
+  conversionbays: 0
+  ssdbays: 0
+  expansionslots: 7
+  discbays: 6
+  casetype: Full ATX
+  length: 600
+  width: 350
+  height: 600
+  
+ZeroPriceCase:
+  parttype: Case
+  manufacturer: NZXT
+  price: 0
+  model: Phantom
+  series: Classic
+  manufacturerwebsite: naxt.com
+  googleprice: google.com
+  totalbays: 11
+  hddbays: 5
+  conversionbays: 0
+  ssdbays: 0
+  expansionslots: 7
+  discbays: 6
+  casetype: Full ATX
+  length: 600
+  width: 350
+  height: 600
+
+NegativeTotalBaysCase:
+  parttype: Case
+  manufacturer: NZXT
+  price: 130
+  model: Phantom
+  series: Classic
+  manufacturerwebsite: naxt.com
+  googleprice: google.com
+  totalbays: -11
+  hddbays: 5
+  conversionbays: 0
+  ssdbays: 0
+  expansionslots: 7
+  discbays: 6
+  casetype: Full ATX
+  length: 600
+  width: 350
+  height: 600
+  
+ZeroTotalBaysCase:
+  parttype: Case
+  manufacturer: NZXT
+  price: 130
+  model: Phantom
+  series: Classic
+  manufacturerwebsite: naxt.com
+  googleprice: google.com
+  totalbays: 0
+  hddbays: 5
+  conversionbays: 0
+  ssdbays: 0
+  expansionslots: 7
+  discbays: 6
+  casetype: Full ATX
+  length: 600
+  width: 350
+  height: 600
+  
+NegativeHDDBaysCase:
+  parttype: Case
+  manufacturer: NZXT
+  price: 130
+  model: Phantom
+  series: Classic
+  manufacturerwebsite: naxt.com
+  googleprice: google.com
+  totalbays: 11
+  hddbays: -5
+  conversionbays: 0
+  ssdbays: 0
+  expansionslots: 7
+  discbays: 6
+  casetype: Full ATX
+  length: 600
+  width: 350
+  height: 600
+  
+ZeroHDDBaysCase:
+  parttype: Case
+  manufacturer: NZXT
+  price: 130
+  model: Phantom
+  series: Classic
+  manufacturerwebsite: naxt.com
+  googleprice: google.com
+  totalbays: 11
+  hddbays: 0
+  conversionbays: 0
+  ssdbays: 0
+  expansionslots: 7
+  discbays: 6
+  casetype: Full ATX
+  length: 600
+  width: 350
+  height: 600
+  
+NegativeConversionBaysCase:
+  parttype: Case
+  manufacturer: NZXT
+  price: 130
+  model: Phantom
+  series: Classic
+  manufacturerwebsite: naxt.com
+  googleprice: google.com
+  totalbays: 11
+  hddbays: 5
+  conversionbays: -1
+  ssdbays: 0
+  expansionslots: 7
+  discbays: 6
+  casetype: Full ATX
+  length: 600
+  width: 350
+  height: 600
+  
+NegativeSSDBaysCase:
+  parttype: Case
+  manufacturer: NZXT
+  price: 130
+  model: Phantom
+  series: Classic
+  manufacturerwebsite: naxt.com
+  googleprice: google.com
+  totalbays: 11
+  hddbays: 5
+  conversionbays: 0
+  ssdbays: -1
+  expansionslots: 7
+  discbays: 6
+  casetype: Full ATX
+  length: 600
+  width: 350
+  height: 600
+  
+NegativeExpansionSlotsCase:
+  parttype: Case
+  manufacturer: NZXT
+  price: 130
+  model: Phantom
+  series: Classic
+  manufacturerwebsite: naxt.com
+  googleprice: google.com
+  totalbays: 11
+  hddbays: 5
+  conversionbays: 0
+  ssdbays: 0
+  expansionslots: -7
+  discbays: 6
+  casetype: Full ATX
+  length: 600
+  width: 350
+  height: 600
+  
+ZeroExpansionSlotsCase:
+  parttype: Case
+  manufacturer: NZXT
+  price: 130
+  model: Phantom
+  series: Classic
+  manufacturerwebsite: naxt.com
+  googleprice: google.com
+  totalbays: 11
+  hddbays: 5
+  conversionbays: 0
+  ssdbays: 0
+  expansionslots: 0
+  discbays: 6
+  casetype: Full ATX
+  length: 600
+  width: 350
+  height: 600
+  
+NegativeDiscBaysCase:
+  parttype: Case
+  manufacturer: NZXT
+  price: 130
+  model: Phantom
+  series: Classic
+  manufacturerwebsite: naxt.com
+  googleprice: google.com
+  totalbays: 11
+  hddbays: 5
+  conversionbays: 0
+  ssdbays: 0
+  expansionslots: 7
+  discbays: -6
+  casetype: Full ATX
+  length: 600
+  width: 350
+  height: 600
+  
+ZeroDiscBaysCase:
+  parttype: Case
+  manufacturer: NZXT
+  price: 130
+  model: Phantom
+  series: Classic
+  manufacturerwebsite: naxt.com
+  googleprice: google.com
+  totalbays: 11
+  hddbays: 5
+  conversionbays: 0
+  ssdbays: 0
+  expansionslots: 7
+  discbays: 0
+  casetype: Full ATX
+  length: 600
+  width: 350
+  height: 600
+  
+NegativeLengthCase:
+  parttype: Case
+  manufacturer: NZXT
+  price: 130
+  model: Phantom
+  series: Classic
+  manufacturerwebsite: naxt.com
+  googleprice: google.com
+  totalbays: 11
+  hddbays: 5
+  conversionbays: 0
+  ssdbays: 0
+  expansionslots: 7
+  discbays: 6
+  casetype: Full ATX
+  length: -600
+  width: 350
+  height: 600
+  
+ZeroLengthCase:
+  parttype: Case
+  manufacturer: NZXT
+  price: 130
+  model: Phantom
+  series: Classic
+  manufacturerwebsite: naxt.com
+  googleprice: google.com
+  totalbays: 11
+  hddbays: 5
+  conversionbays: 0
+  ssdbays: 0
+  expansionslots: 7
+  discbays: 6
+  casetype: Full ATX
+  length: 0
+  width: 350
+  height: 600
+  
+NegativeWidthCase:
+  parttype: Case
+  manufacturer: NZXT
+  price: 130
+  model: Phantom
+  series: Classic
+  manufacturerwebsite: naxt.com
+  googleprice: google.com
+  totalbays: 11
+  hddbays: 5
+  conversionbays: 0
+  ssdbays: 0
+  expansionslots: 7
+  discbays: 6
+  casetype: Full ATX
+  length: 600
+  width: -350
+  height: 600
+  
+ZeroWidthCase:
+  parttype: Case
+  manufacturer: NZXT
+  price: 130
+  model: Phantom
+  series: Classic
+  manufacturerwebsite: naxt.com
+  googleprice: google.com
+  totalbays: 11
+  hddbays: 5
+  conversionbays: 0
+  ssdbays: 0
+  expansionslots: 7
+  discbays: 6
+  casetype: Full ATX
+  length: 600
+  width: 0
+  height: 600
+  
+NegativeHeightCase:
+  parttype: Case
+  manufacturer: NZXT
+  price: 130
+  model: Phantom
+  series: Classic
+  manufacturerwebsite: naxt.com
+  googleprice: google.com
+  totalbays: 11
+  hddbays: 5
+  conversionbays: 0
+  ssdbays: 0
+  expansionslots: 7
+  discbays: 6
+  casetype: Full ATX
+  length: 600
+  width: 350
+  height: -600
+  
+ZeroHeightCase:
+  parttype: Case
+  manufacturer: NZXT
+  price: 130
+  model: Phantom
+  series: Classic
+  manufacturerwebsite: naxt.com
+  googleprice: google.com
+  totalbays: 11
+  hddbays: 5
+  conversionbays: 0
+  ssdbays: 0
+  expansionslots: 7
+  discbays: 6
+  casetype: Full ATX
+  length: 600
+  width: 350
+  height: 0

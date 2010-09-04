@@ -1,0 +1,36 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+GoodMemorySpeedOne:
+  id: 1
+  motherboard_id: 1
+  speed: 1333
+
+GoodMemorySpeedTwo:
+  id: 2
+  motherboard_id: 2
+  speed: 1
+
+NegativeMotherboardIdMemorySpeed:
+  id: 3
+  motherboard_id: -2
+  speed: 1
+  
+ZeroMotherboardIdMemorySpeed:
+  id: 4
+  motherboard_id: 0
+  speed: 1
+  
+NonExistantMotherboardIdMemorySpeed:
+  id: 5
+  motherboard_id: 1234465
+  speed: 1
+
+NegativeSpeedMemorySpeed:
+  id: 6
+  motherboard_id: 2
+  speed: -800
+  
+ZeroSpeedMemorySpeed:
+  id: 7
+  motherboard_id: 2
+  speed: 0

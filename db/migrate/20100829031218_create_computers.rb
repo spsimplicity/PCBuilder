@@ -13,17 +13,24 @@ class CreateComputers < ActiveRecord::Migration
 	  t.index :power_supply
 	  t.index :case
 	  t.index :user
+	  
       t.timestamps
     end
-	execute "alter table computers add constraint fkToCpuID foreign key(cpu_id) references cpus(id)"
-	execute "alter table computers add constraint fkToCpuCoolerID foreign key(cpu_cooler_id) references cpu_coolers(id)"
-	#execute "alter table computers add constraint fkToPsuID foreign key(power_supply_id) references power_supplies(id)"
-	#execute "alter table computers add constraint fkToCaseID foreign key(case_id) references cases(id)"
-	#execute "alter table computers add constraint fkToMoboID foreign key(motherboard_id) references motherboards(id)"
-	execute "alter table computers add constraint fkToUserID foreign key(user_id) references users(id)"
+	execute "alter table computers add constraint fkToCpuFromCompID foreign key(cpu_id) references cpus(id)"
+	execute "alter table computers add constraint fkToCpuCoolerFromCompID foreign key(cpu_cooler_id) references cpu_coolers(id)"
+	execute "alter table computers add constraint fkToPsuFromCompID foreign key(power_supply_id) references power_supplies(id)"
+	execute "alter table computers add constraint fkToCaseFromCompID foreign key(case_id) references cases(id)"
+	execute "alter table computers add constraint fkToMoboFromCompID foreign key(motherboard_id) references motherboards(id)"
+	execute "alter table computers add constraint fkToUserFromCompID foreign key(user_id) references users(id)"
   end
 
   def self.down
+    execute "alter table computers drop foreign key fkToCpuFromCompID"
+	execute "alter table computers drop foreign key fkToCpuCoolerFromCompID"
+	execute "alter table computers drop foreign key fkToMoboFromCompID"
+	execute "alter table computers drop foreign key fkToUserFromCompID"
+	execute "alter table computers drop foreign key fkToPsuFromCompID"
+	execute "alter table computers drop foreign key fkToCaseFromCompID"
     drop_table :computers
   end
 end

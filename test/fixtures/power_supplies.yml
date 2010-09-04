@@ -1,0 +1,526 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+GoodPowerSupplyOne:
+  id: 1
+  parttype: Power Supply
+  manufacturer: nzxt
+  manufacturerwebsite: nzxt.com
+  googleprice: google.com
+  price: 100
+  model: HALE700
+  series: HALE
+  fansize: 120
+  mainpower: 24
+  satapower: 6
+  multi_gpu: true
+  peripheral: 8
+  energycert: 80 Plus Gold
+  power_supply_type: ATXv12.3
+  poweroutput: 750
+  cpu4_4pin: 1
+  cpu4pin: 1
+  cpu8pin: 0
+  gpu8pin: 2
+  gpu6pin: 1
+  gpu6_2pin: 1
+  length: 140
+
+GoodPowerSupplyTwo:
+  id: 2
+  parttype: Power Supply
+  manufacturer: nzxt
+  manufacturerwebsite: nzxt.com
+  googleprice: google.com
+  price: 100
+  model: HALE1000
+  series: HALE
+  fansize: 140
+  mainpower: 24
+  satapower: 6
+  multi_gpu: true
+  peripheral: 8
+  energycert: 80 Plus Gold
+  power_supply_type: ATXv12.3
+  poweroutput: 750
+  cpu4_4pin: 2
+  cpu4pin: 1
+  cpu8pin: 0
+  gpu8pin: 4
+  gpu6pin: 4
+  gpu6_2pin: 0
+  length: 160
+  
+NonPowerSupplyPartType:
+  id: 3
+  parttype: Motherboard
+  manufacturer: nzxt
+  manufacturerwebsite: nzxt.com
+  googleprice: google.com
+  price: 100
+  model: HALE1000
+  series: HALE
+  fansize: 140
+  mainpower: 24
+  satapower: 6
+  multi_gpu: true
+  peripheral: 8
+  energycert: 80 Plus Gold
+  power_supply_type: ATXv12.3
+  poweroutput: 750
+  cpu4_4pin: 2
+  cpu4pin: 1
+  cpu8pin: 0
+  gpu8pin: 4
+  gpu6pin: 4
+  gpu6_2pin: 0
+  length: 160
+  
+NegativePricePowerSupply:
+  id: 4
+  parttype: Power Supply
+  manufacturer: nzxt
+  manufacturerwebsite: nzxt.com
+  googleprice: google.com
+  price: -100
+  model: HALE1000
+  series: HALE
+  fansize: 140
+  mainpower: 24
+  satapower: 6
+  multi_gpu: true
+  peripheral: 8
+  energycert: 80 Plus Gold
+  power_supply_type: ATXv12.3
+  poweroutput: 750
+  cpu4_4pin: 2
+  cpu4pin: 1
+  cpu8pin: 0
+  gpu8pin: 4
+  gpu6pin: 4
+  gpu6_2pin: 0
+  length: 160
+
+ZeroPricePowerSupply:
+  id: 5
+  parttype: Power Supply
+  manufacturer: nzxt
+  manufacturerwebsite: nzxt.com
+  googleprice: google.com
+  price: 0
+  model: HALE1000
+  series: HALE
+  fansize: 140
+  mainpower: 24
+  satapower: 6
+  multi_gpu: true
+  peripheral: 8
+  energycert: 80 Plus Gold
+  power_supply_type: ATXv12.3
+  poweroutput: 750
+  cpu4_4pin: 2
+  cpu4pin: 1
+  cpu8pin: 0
+  gpu8pin: 4
+  gpu6pin: 4
+  gpu6_2pin: 0
+  length: 160
+  
+NegativeFanSizePowerSupply:
+  id: 6
+  parttype: Power Supply
+  manufacturer: nzxt
+  manufacturerwebsite: nzxt.com
+  googleprice: google.com
+  price: 100
+  model: HALE1000
+  series: HALE
+  fansize: -140
+  mainpower: 24
+  satapower: 6
+  multi_gpu: true
+  peripheral: 8
+  energycert: 80 Plus Gold
+  power_supply_type: ATXv12.3
+  poweroutput: 750
+  cpu4_4pin: 2
+  cpu4pin: 1
+  cpu8pin: 0
+  gpu8pin: 4
+  gpu6pin: 4
+  gpu6_2pin: 0
+  length: 160
+
+ZeroFanSizePowerSupply:
+  id: 7
+  parttype: Power Supply
+  manufacturer: nzxt
+  manufacturerwebsite: nzxt.com
+  googleprice: google.com
+  price: 100
+  model: HALE1000
+  series: HALE
+  fansize: 0
+  mainpower: 24
+  satapower: 6
+  multi_gpu: true
+  peripheral: 8
+  energycert: 80 Plus Gold
+  power_supply_type: ATXv12.3
+  poweroutput: 750
+  cpu4_4pin: 2
+  cpu4pin: 1
+  cpu8pin: 0
+  gpu8pin: 4
+  gpu6pin: 4
+  gpu6_2pin: 0
+  length: 160
+  
+NegativeMainPowerPowerSupply:
+  id: 8
+  parttype: Power Supply
+  manufacturer: nzxt
+  manufacturerwebsite: nzxt.com
+  googleprice: google.com
+  price: 100
+  model: HALE1000
+  series: HALE
+  fansize: 140
+  mainpower: -24
+  satapower: 6
+  multi_gpu: true
+  peripheral: 8
+  energycert: 80 Plus Gold
+  power_supply_type: ATXv12.3
+  poweroutput: 750
+  cpu4_4pin: 2
+  cpu4pin: 1
+  cpu8pin: 0
+  gpu8pin: 4
+  gpu6pin: 4
+  gpu6_2pin: 0
+  length: 160
+
+ZeroMainPowerPowerSupply:
+  id: 9
+  parttype: Power Supply
+  manufacturer: nzxt
+  manufacturerwebsite: nzxt.com
+  googleprice: google.com
+  price: 100
+  model: HALE1000
+  series: HALE
+  fansize: 140
+  mainpower: 0
+  satapower: 6
+  multi_gpu: true
+  peripheral: 8
+  energycert: 80 Plus Gold
+  power_supply_type: ATXv12.3
+  poweroutput: 750
+  cpu4_4pin: 2
+  cpu4pin: 1
+  cpu8pin: 0
+  gpu8pin: 4
+  gpu6pin: 4
+  gpu6_2pin: 0
+  length: 160
+  
+NegativeSataPowerPowerSupply:
+  id: 10
+  parttype: Power Supply
+  manufacturer: nzxt
+  manufacturerwebsite: nzxt.com
+  googleprice: google.com
+  price: 100
+  model: HALE1000
+  series: HALE
+  fansize: 140
+  mainpower: 24
+  satapower: -6
+  multi_gpu: true
+  peripheral: 8
+  energycert: 80 Plus Gold
+  power_supply_type: ATXv12.3
+  poweroutput: 750
+  cpu4_4pin: 2
+  cpu4pin: 1
+  cpu8pin: 0
+  gpu8pin: 4
+  gpu6pin: 4
+  gpu6_2pin: 0
+  length: 160
+  
+NegativePeripheralPowerSupply:
+  id: 11
+  parttype: Power Supply
+  manufacturer: nzxt
+  manufacturerwebsite: nzxt.com
+  googleprice: google.com
+  price: 100
+  model: HALE1000
+  series: HALE
+  fansize: 140
+  mainpower: 24
+  satapower: 6
+  multi_gpu: true
+  peripheral: -8
+  energycert: 80 Plus Gold
+  power_supply_type: ATXv12.3
+  poweroutput: 750
+  cpu4_4pin: 2
+  cpu4pin: 1
+  cpu8pin: 0
+  gpu8pin: 4
+  gpu6pin: 4
+  gpu6_2pin: 0
+  length: 160
+  
+NegativePowerOutputPowerSupply:
+  id: 12
+  parttype: Power Supply
+  manufacturer: nzxt
+  manufacturerwebsite: nzxt.com
+  googleprice: google.com
+  price: 100
+  model: HALE1000
+  series: HALE
+  fansize: 140
+  mainpower: 24
+  satapower: 6
+  multi_gpu: true
+  peripheral: 8
+  energycert: 80 Plus Gold
+  power_supply_type: ATXv12.3
+  poweroutput: -750
+  cpu4_4pin: 2
+  cpu4pin: 1
+  cpu8pin: 0
+  gpu8pin: 4
+  gpu6pin: 4
+  gpu6_2pin: 0
+  length: 160
+
+ZeroPowerOutputPowerSupply:
+  id: 13
+  parttype: Power Supply
+  manufacturer: nzxt
+  manufacturerwebsite: nzxt.com
+  googleprice: google.com
+  price: 100
+  model: HALE1000
+  series: HALE
+  fansize: 140
+  mainpower: 24
+  satapower: 6
+  multi_gpu: true
+  peripheral: 8
+  energycert: 80 Plus Gold
+  power_supply_type: ATXv12.3
+  poweroutput: 0
+  cpu4_4pin: 2
+  cpu4pin: 1
+  cpu8pin: 0
+  gpu8pin: 4
+  gpu6pin: 4
+  gpu6_2pin: 0
+  length: 160
+  
+NegativeCpu4_4PinPowerSupply:
+  id: 14
+  parttype: Power Supply
+  manufacturer: nzxt
+  manufacturerwebsite: nzxt.com
+  googleprice: google.com
+  price: 100
+  model: HALE1000
+  series: HALE
+  fansize: 140
+  mainpower: 24
+  satapower: 6
+  multi_gpu: true
+  peripheral: 8
+  energycert: 80 Plus Gold
+  power_supply_type: ATXv12.3
+  poweroutput: 750
+  cpu4_4pin: -2
+  cpu4pin: 1
+  cpu8pin: 0
+  gpu8pin: 4
+  gpu6pin: 4
+  gpu6_2pin: 0
+  length: 160
+  
+NegativeCpu4PinPowerSupply:
+  id: 15
+  parttype: Power Supply
+  manufacturer: nzxt
+  manufacturerwebsite: nzxt.com
+  googleprice: google.com
+  price: 100
+  model: HALE1000
+  series: HALE
+  fansize: 140
+  mainpower: 24
+  satapower: 6
+  multi_gpu: true
+  peripheral: 8
+  energycert: 80 Plus Gold
+  power_supply_type: ATXv12.3
+  poweroutput: 750
+  cpu4_4pin: 2
+  cpu4pin: -1
+  cpu8pin: 0
+  gpu8pin: 4
+  gpu6pin: 4
+  gpu6_2pin: 0
+  length: 160
+  
+NegativeCpu8PinPowerSupply:
+  id: 16
+  parttype: Power Supply
+  manufacturer: nzxt
+  manufacturerwebsite: nzxt.com
+  googleprice: google.com
+  price: 100
+  model: HALE1000
+  series: HALE
+  fansize: 140
+  mainpower: 24
+  satapower: 6
+  multi_gpu: true
+  peripheral: 8
+  energycert: 80 Plus Gold
+  power_supply_type: ATXv12.3
+  poweroutput: 750
+  cpu4_4pin: 2
+  cpu4pin: 1
+  cpu8pin: -2
+  gpu8pin: 4
+  gpu6pin: 4
+  gpu6_2pin: 0
+  length: 160
+  
+NegativeGpu8PinPowerSupply:
+  id: 17
+  parttype: Power Supply
+  manufacturer: nzxt
+  manufacturerwebsite: nzxt.com
+  googleprice: google.com
+  price: 100
+  model: HALE1000
+  series: HALE
+  fansize: 140
+  mainpower: 24
+  satapower: 6
+  multi_gpu: true
+  peripheral: 8
+  energycert: 80 Plus Gold
+  power_supply_type: ATXv12.3
+  poweroutput: 750
+  cpu4_4pin: 2
+  cpu4pin: 1
+  cpu8pin: 0
+  gpu8pin: -4
+  gpu6pin: 4
+  gpu6_2pin: 0
+  length: 160
+  
+NegativeGpu6PinPowerSupply:
+  id: 18
+  parttype: Power Supply
+  manufacturer: nzxt
+  manufacturerwebsite: nzxt.com
+  googleprice: google.com
+  price: 100
+  model: HALE1000
+  series: HALE
+  fansize: 140
+  mainpower: 24
+  satapower: 6
+  multi_gpu: true
+  peripheral: 8
+  energycert: 80 Plus Gold
+  power_supply_type: ATXv12.3
+  poweroutput: 750
+  cpu4_4pin: 2
+  cpu4pin: 1
+  cpu8pin: 0
+  gpu8pin: 4
+  gpu6pin: -4
+  gpu6_2pin: 0
+  length: 160
+  
+NegativeGpu6_2PinPowerSupply:
+  id: 19
+  parttype: Power Supply
+  manufacturer: nzxt
+  manufacturerwebsite: nzxt.com
+  googleprice: google.com
+  price: 100
+  model: HALE1000
+  series: HALE
+  fansize: 140
+  mainpower: 24
+  satapower: 6
+  multi_gpu: true
+  peripheral: 8
+  energycert: 80 Plus Gold
+  power_supply_type: ATXv12.3
+  poweroutput: 750
+  cpu4_4pin: 2
+  cpu4pin: 1
+  cpu8pin: 0
+  gpu8pin: 4
+  gpu6pin: 4
+  gpu6_2pin: -2
+  length: 160
+  
+NegativeLengthPowerSupply:
+  id: 20
+  parttype: Power Supply
+  manufacturer: nzxt
+  manufacturerwebsite: nzxt.com
+  googleprice: google.com
+  price: 100
+  model: HALE1000
+  series: HALE
+  fansize: 140
+  mainpower: 24
+  satapower: 6
+  multi_gpu: true
+  peripheral: 8
+  energycert: 80 Plus Gold
+  power_supply_type: ATXv12.3
+  poweroutput: 750
+  cpu4_4pin: 2
+  cpu4pin: 1
+  cpu8pin: 0
+  gpu8pin: 4
+  gpu6pin: 4
+  gpu6_2pin: 2
+  length: -160
+  
+ZeroLengthPowerSupply:
+  id: 21
+  parttype: Power Supply
+  manufacturer: nzxt
+  manufacturerwebsite: nzxt.com
+  googleprice: google.com
+  price: 100
+  model: HALE1000
+  series: HALE
+  fansize: 140
+  mainpower: 24
+  satapower: 6
+  multi_gpu: true
+  peripheral: 8
+  energycert: 80 Plus Gold
+  power_supply_type: ATXv12.3
+  poweroutput: 750
+  cpu4_4pin: 2
+  cpu4pin: 1
+  cpu8pin: 0
+  gpu8pin: 4
+  gpu6pin: 4
+  gpu6_2pin: 2
+  length: 0

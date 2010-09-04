@@ -1,0 +1,31 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+GoodCaseMotherboardOne:
+  id: 1
+  case_id: 1
+  size: ATX
+
+GoodCaseMotherboardTwo:
+  id: 2
+  case_id: 1
+  size: EATX
+  
+NegativeCaseIdCaseMotherboard:
+  id: 3
+  case_id: -1
+  size: EATX
+  
+ZeroCaseIdCaseMotherboard:
+  id: 4
+  case_id: 0
+  size: EATX
+  
+NonExistantCaseIdCaseMotherboard:
+  id: 5
+  case_id: 12314334
+  size: EATX
+  
+NonStandardSizeCaseMotherboard:
+  id: 6
+  case_id: 1
+  size: mini

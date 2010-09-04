@@ -19,6 +19,10 @@ class CpuCoolerTest < ActiveSupport::TestCase
 		assert !cooler.valid?
 	end
 	
+	test "Rejects non cpu cooler parttype" do
+	    assert !cpu_coolers(:PartTypeWrongValue).valid?
+	end
+	
 	test "Rejects null model value" do
 	    cooler = cpu_coolers(:GoodCpuCoolerOne)
 		cooler.model = nil
