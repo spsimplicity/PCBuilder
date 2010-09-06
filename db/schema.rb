@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100904053437) do
+ActiveRecord::Schema.define(:version => 20100906021432) do
 
   create_table "case_motherboards", :force => true do |t|
     t.integer  "case_id",                  :null => false
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20100904053437) do
   add_index "case_motherboards", ["case_id"], :name => "fkToCaseID"
 
   create_table "cases", :force => true do |t|
+    t.integer  "part_id",                           :null => false
     t.string   "parttype",            :limit => 5,  :null => false
     t.string   "manufacturer",        :limit => 20, :null => false
     t.integer  "price",                             :null => false
@@ -41,6 +42,8 @@ ActiveRecord::Schema.define(:version => 20100904053437) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "cases", ["part_id"], :name => "fkCaseIdToPart"
 
   create_table "computers", :force => true do |t|
     t.string   "name",            :limit => 50, :default => "Custom Built Computer", :null => false
@@ -71,6 +74,7 @@ ActiveRecord::Schema.define(:version => 20100904053437) do
   add_index "cpu_cooler_sockets", ["cpu_cooler_id"], :name => "fkToCpuCoolerID"
 
   create_table "cpu_coolers", :force => true do |t|
+    t.integer  "part_id",                           :null => false
     t.string   "parttype",            :limit => 15, :null => false
     t.string   "model",               :limit => 30, :null => false
     t.string   "manufacturer",        :limit => 20, :null => false
@@ -85,7 +89,10 @@ ActiveRecord::Schema.define(:version => 20100904053437) do
     t.datetime "updated_at"
   end
 
+  add_index "cpu_coolers", ["part_id"], :name => "fkCpuCoolerIdToPart"
+
   create_table "cpus", :force => true do |t|
+    t.integer  "part_id",                           :null => false
     t.string   "parttype",            :limit => 10, :null => false
     t.string   "model",               :limit => 10, :null => false
     t.string   "manufacturer",        :limit => 10, :null => false
@@ -108,6 +115,31 @@ ActiveRecord::Schema.define(:version => 20100904053437) do
     t.datetime "updated_at"
   end
 
+  add_index "cpus", ["part_id"], :name => "fkCpuIdToPart"
+
+  create_table "has_parts", :force => true do |t|
+    t.integer  "computer_id",               :null => false
+    t.integer  "part_id",                   :null => false
+    t.string   "parttype",    :limit => 20, :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "has_parts", ["computer_id"], :name => "fkComputer"
+  add_index "has_parts", ["part_id"], :name => "fkPart_Parttype"
+
+  create_table "incompatibles", :force => true do |t|
+    t.integer  "part1_id",                 :null => false
+    t.string   "part1type",  :limit => 20, :null => false
+    t.integer  "part2_id",                 :null => false
+    t.string   "part2type",  :limit => 20, :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "incompatibles", ["part1_id"], :name => "fkPart1"
+  add_index "incompatibles", ["part2_id"], :name => "fkPart2"
+
   create_table "memory_speeds", :force => true do |t|
     t.integer  "motherboard_id", :null => false
     t.integer  "speed",          :null => false
@@ -118,6 +150,7 @@ ActiveRecord::Schema.define(:version => 20100904053437) do
   add_index "memory_speeds", ["motherboard_id"], :name => "fkToMoboID"
 
   create_table "motherboards", :force => true do |t|
+    t.integer  "part_id",                           :null => false
     t.string   "parttype",            :limit => 15, :null => false
     t.string   "manufacturer",        :limit => 15, :null => false
     t.string   "model",               :limit => 40, :null => false
@@ -146,7 +179,18 @@ ActiveRecord::Schema.define(:version => 20100904053437) do
     t.datetime "updated_at"
   end
 
+  add_index "motherboards", ["part_id"], :name => "fkMotherboarIdToPart"
+
+  create_table "parts", :force => true do |t|
+    t.string   "parttype",   :limit => 20, :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "parts", ["parttype"], :name => "partTypeKey"
+
   create_table "power_supplies", :force => true do |t|
+    t.integer  "part_id",                           :null => false
     t.string   "parttype",            :limit => 20, :null => false
     t.string   "manufacturer",        :limit => 30, :null => false
     t.string   "manufacturerwebsite",               :null => false
@@ -172,6 +216,8 @@ ActiveRecord::Schema.define(:version => 20100904053437) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "power_supplies", ["part_id"], :name => "fkPowerSupplyIdToPart"
 
   create_table "users", :force => true do |t|
     t.string   "name",               :limit => 30,  :null => false

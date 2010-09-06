@@ -1,11 +1,9 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-# This model initially had no columns defined.  If you add columns to the
-# model remove the '{}' from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-GoodCpuOne: 
-  parttype: cpu
+GoodCpuOne:
+  id: 1
+  part_id: 1
+  parttype: CPU
   model: 880
   manufacturer: Intel
   series: i7
@@ -25,7 +23,9 @@ GoodCpuOne:
   memchanneltype: 3
 
 GoodCpuTwo: 
-  parttype: cpu
+  id: 2
+  part_id: 1
+  parttype: CPU
   model: 1055t
   manufacturer: AMD
   series: Phenom II X6
@@ -45,6 +45,8 @@ GoodCpuTwo:
   memchanneltype: 2
   
 NonCpuType: 
+  id: 3
+  part_id: 1
   parttype: Hard Drive
   model: 1055t
   manufacturer: AMD
@@ -65,7 +67,9 @@ NonCpuType:
   memchanneltype: 2
   
 NegativeCpuPrice: 
-  parttype: cpu
+  id: 4
+  part_id: 1
+  parttype: CPU
   model: 1055t
   manufacturer: AMD
   series: Phenom II X6
@@ -85,7 +89,9 @@ NegativeCpuPrice:
   memchanneltype: 2
   
 ZeroCpuPrice: 
-  parttype: cpu
+  id: 5
+  part_id: 1
+  parttype: CPU
   model: 1055t
   manufacturer: AMD
   series: Phenom II X6
@@ -105,7 +111,9 @@ ZeroCpuPrice:
   memchanneltype: 2
 
 ZeroCpuFrequency: 
-  parttype: cpu
+  id: 6
+  part_id: 1
+  parttype: CPU
   model: 1055t
   manufacturer: AMD
   series: Phenom II X6
@@ -125,7 +133,9 @@ ZeroCpuFrequency:
   memchanneltype: 2
   
 NegativeCpuFrequency: 
-  parttype: cpu
+  id: 7
+  part_id: 1
+  parttype: CPU
   model: 1055t
   manufacturer: AMD
   series: Phenom II X6
@@ -145,7 +155,9 @@ NegativeCpuFrequency:
   memchanneltype: 2
   
 NegativeCpuFsb: 
-  parttype: cpu
+  id: 8
+  part_id: 1
+  parttype: CPU
   model: 1055t
   manufacturer: AMD
   series: Phenom II X6
@@ -165,7 +177,9 @@ NegativeCpuFsb:
   memchanneltype: 2
   
 ZeroCpuFsb: 
-  parttype: cpu
+  id: 9
+  part_id: 1
+  parttype: CPU
   model: 1055t
   manufacturer: AMD
   series: Phenom II X6
@@ -185,7 +199,9 @@ ZeroCpuFsb:
   memchanneltype: 2
   
 NegativeCpuL1Cache: 
-  parttype: cpu
+  id: 10
+  part_id: 1
+  parttype: CPU
   model: 1055t
   manufacturer: AMD
   series: Phenom II X6
@@ -205,7 +221,9 @@ NegativeCpuL1Cache:
   memchanneltype: 2
   
 NegativeCpuL2Cache: 
-  parttype: cpu
+  id: 11
+  part_id: 1
+  parttype: CPU
   model: 1055t
   manufacturer: AMD
   series: Phenom II X6
@@ -225,7 +243,9 @@ NegativeCpuL2Cache:
   memchanneltype: 2
   
 NegativeCpuL3Cache: 
-  parttype: cpu
+  id: 12
+  part_id: 1
+  parttype: CPU
   model: 1055t
   manufacturer: AMD
   series: Phenom II X6
@@ -245,7 +265,9 @@ NegativeCpuL3Cache:
   memchanneltype: 2
   
 NegativeCpuCores: 
-  parttype: cpu
+  id: 13
+  part_id: 1
+  parttype: CPU
   model: 1055t
   manufacturer: AMD
   series: Phenom II X6
@@ -265,7 +287,9 @@ NegativeCpuCores:
   memchanneltype: 2
   
 ZeroCpuCores: 
-  parttype: cpu
+  id: 14
+  part_id: 1
+  parttype: CPU
   model: 1055t
   manufacturer: AMD
   series: Phenom II X6
@@ -285,7 +309,9 @@ ZeroCpuCores:
   memchanneltype: 2
   
 ZeroCpuWatts: 
-  parttype: cpu
+  id: 15
+  part_id: 1
+  parttype: CPU
   model: 1055t
   manufacturer: AMD
   series: Phenom II X6
@@ -305,7 +331,9 @@ ZeroCpuWatts:
   memchanneltype: 2
   
 ZeroCpuWatts: 
-  parttype: cpu
+  id: 16
+  part_id: 1
+  parttype: CPU
   model: 1055t
   manufacturer: AMD
   series: Phenom II X6
@@ -325,7 +353,9 @@ ZeroCpuWatts:
   memchanneltype: 2
   
 NegativeCpuWatts: 
-  parttype: cpu
+  id: 17
+  part_id: 1
+  parttype: CPU
   model: 1055t
   manufacturer: AMD
   series: Phenom II X6
@@ -345,7 +375,9 @@ NegativeCpuWatts:
   memchanneltype: 2
   
 ZeroCpuPowerPin: 
-  parttype: cpu
+  id: 18
+  part_id: 1
+  parttype: CPU
   model: 1055t
   manufacturer: AMD
   series: Phenom II X6
@@ -365,7 +397,9 @@ ZeroCpuPowerPin:
   memchanneltype: 2
   
 NegativeCpuPowerPin: 
-  parttype: cpu
+  id: 19
+  part_id: 1
+  parttype: CPU
   model: 1055t
   manufacturer: AMD
   series: Phenom II X6
@@ -385,7 +419,9 @@ NegativeCpuPowerPin:
   memchanneltype: 2
   
 NegativeCpuMaxMemory: 
-  parttype: cpu
+  id: 20
+  part_id: 1
+  parttype: CPU
   model: 1055t
   manufacturer: AMD
   series: Phenom II X6
@@ -405,7 +441,9 @@ NegativeCpuMaxMemory:
   memchanneltype: 2
   
 ZeroCpuMaxMemory: 
-  parttype: cpu
+  id: 21
+  part_id: 1
+  parttype: CPU
   model: 1055t
   manufacturer: AMD
   series: Phenom II X6
@@ -425,7 +463,9 @@ ZeroCpuMaxMemory:
   memchanneltype: 2
   
 NegativeCpuMemChannelType: 
-  parttype: cpu
+  id: 22
+  part_id: 1
+  parttype: CPU
   model: 1055t
   manufacturer: AMD
   series: Phenom II X6
@@ -445,7 +485,9 @@ NegativeCpuMemChannelType:
   memchanneltype: -2
   
 ZeroCpuMemChannelType: 
-  parttype: cpu
+  id: 23
+  part_id: 1
+  parttype: CPU
   model: 1055t
   manufacturer: AMD
   series: Phenom II X6
@@ -463,3 +505,69 @@ ZeroCpuMemChannelType:
   powerpin: 8
   maxmemory: 16
   memchanneltype: 0
+  
+NegativeCpuPartId: 
+  id: 24
+  part_id: 1
+  parttype: CPU
+  model: 1055t
+  manufacturer: AMD
+  series: Phenom II X6
+  price: 200
+  manufacturerwebsite: http://ark.intel.com/Product.aspx?id=48500
+  googleprice: http://www.google.com/products?q=intel+core+i7+880&hl=en&aq=f
+  frequency: 3.0
+  sockettype: AM3
+  fsb: 5200
+  l1cache:
+  l2cache:
+  l3cache:
+  cores: 4
+  watts: 125
+  powerpin: 8
+  maxmemory: 16
+  memchanneltype: 2
+  
+ZeroCpuPartId: 
+  id: 25
+  part_id: 1
+  parttype: CPU
+  model: 1055t
+  manufacturer: AMD
+  series: Phenom II X6
+  price: 200
+  manufacturerwebsite: http://ark.intel.com/Product.aspx?id=48500
+  googleprice: http://www.google.com/products?q=intel+core+i7+880&hl=en&aq=f
+  frequency: 3.0
+  sockettype: AM3
+  fsb: 5200
+  l1cache:
+  l2cache:
+  l3cache:
+  cores: 4
+  watts: 125
+  powerpin: 8
+  maxmemory: 16
+  memchanneltype: 2
+  
+NonExistantCpuPartId: 
+  id: 26
+  part_id: 1123241
+  parttype: CPU
+  model: 1055t
+  manufacturer: AMD
+  series: Phenom II X6
+  price: 200
+  manufacturerwebsite: http://ark.intel.com/Product.aspx?id=48500
+  googleprice: http://www.google.com/products?q=intel+core+i7+880&hl=en&aq=f
+  frequency: 3.0
+  sockettype: AM3
+  fsb: 5200
+  l1cache:
+  l2cache:
+  l3cache:
+  cores: 4
+  watts: 125
+  powerpin: 8
+  maxmemory: 16
+  memchanneltype: 2

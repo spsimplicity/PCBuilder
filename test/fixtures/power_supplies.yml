@@ -1,6 +1,7 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 GoodPowerSupplyOne:
+  part_id: 1
   id: 1
   parttype: Power Supply
   manufacturer: nzxt
@@ -26,6 +27,7 @@ GoodPowerSupplyOne:
   length: 140
 
 GoodPowerSupplyTwo:
+  part_id: 1
   id: 2
   parttype: Power Supply
   manufacturer: nzxt
@@ -51,6 +53,7 @@ GoodPowerSupplyTwo:
   length: 160
   
 NonPowerSupplyPartType:
+  part_id: 1
   id: 3
   parttype: Motherboard
   manufacturer: nzxt
@@ -76,6 +79,7 @@ NonPowerSupplyPartType:
   length: 160
   
 NegativePricePowerSupply:
+  part_id: 1
   id: 4
   parttype: Power Supply
   manufacturer: nzxt
@@ -101,6 +105,7 @@ NegativePricePowerSupply:
   length: 160
 
 ZeroPricePowerSupply:
+  part_id: 1
   id: 5
   parttype: Power Supply
   manufacturer: nzxt
@@ -126,6 +131,7 @@ ZeroPricePowerSupply:
   length: 160
   
 NegativeFanSizePowerSupply:
+  part_id: 1
   id: 6
   parttype: Power Supply
   manufacturer: nzxt
@@ -151,6 +157,7 @@ NegativeFanSizePowerSupply:
   length: 160
 
 ZeroFanSizePowerSupply:
+  part_id: 1
   id: 7
   parttype: Power Supply
   manufacturer: nzxt
@@ -176,6 +183,7 @@ ZeroFanSizePowerSupply:
   length: 160
   
 NegativeMainPowerPowerSupply:
+  part_id: 1
   id: 8
   parttype: Power Supply
   manufacturer: nzxt
@@ -201,6 +209,7 @@ NegativeMainPowerPowerSupply:
   length: 160
 
 ZeroMainPowerPowerSupply:
+  part_id: 1
   id: 9
   parttype: Power Supply
   manufacturer: nzxt
@@ -226,6 +235,7 @@ ZeroMainPowerPowerSupply:
   length: 160
   
 NegativeSataPowerPowerSupply:
+  part_id: 1
   id: 10
   parttype: Power Supply
   manufacturer: nzxt
@@ -251,6 +261,7 @@ NegativeSataPowerPowerSupply:
   length: 160
   
 NegativePeripheralPowerSupply:
+  part_id: 1
   id: 11
   parttype: Power Supply
   manufacturer: nzxt
@@ -276,6 +287,7 @@ NegativePeripheralPowerSupply:
   length: 160
   
 NegativePowerOutputPowerSupply:
+  part_id: 1
   id: 12
   parttype: Power Supply
   manufacturer: nzxt
@@ -301,6 +313,7 @@ NegativePowerOutputPowerSupply:
   length: 160
 
 ZeroPowerOutputPowerSupply:
+  part_id: 1
   id: 13
   parttype: Power Supply
   manufacturer: nzxt
@@ -326,6 +339,7 @@ ZeroPowerOutputPowerSupply:
   length: 160
   
 NegativeCpu4_4PinPowerSupply:
+  part_id: 1
   id: 14
   parttype: Power Supply
   manufacturer: nzxt
@@ -351,6 +365,7 @@ NegativeCpu4_4PinPowerSupply:
   length: 160
   
 NegativeCpu4PinPowerSupply:
+  part_id: 1
   id: 15
   parttype: Power Supply
   manufacturer: nzxt
@@ -376,6 +391,7 @@ NegativeCpu4PinPowerSupply:
   length: 160
   
 NegativeCpu8PinPowerSupply:
+  part_id: 1
   id: 16
   parttype: Power Supply
   manufacturer: nzxt
@@ -401,6 +417,7 @@ NegativeCpu8PinPowerSupply:
   length: 160
   
 NegativeGpu8PinPowerSupply:
+  part_id: 1
   id: 17
   parttype: Power Supply
   manufacturer: nzxt
@@ -426,6 +443,7 @@ NegativeGpu8PinPowerSupply:
   length: 160
   
 NegativeGpu6PinPowerSupply:
+  part_id: 1
   id: 18
   parttype: Power Supply
   manufacturer: nzxt
@@ -451,6 +469,7 @@ NegativeGpu6PinPowerSupply:
   length: 160
   
 NegativeGpu6_2PinPowerSupply:
+  part_id: 1
   id: 19
   parttype: Power Supply
   manufacturer: nzxt
@@ -476,6 +495,7 @@ NegativeGpu6_2PinPowerSupply:
   length: 160
   
 NegativeLengthPowerSupply:
+  part_id: 1
   id: 20
   parttype: Power Supply
   manufacturer: nzxt
@@ -501,6 +521,7 @@ NegativeLengthPowerSupply:
   length: -160
   
 ZeroLengthPowerSupply:
+  part_id: 1
   id: 21
   parttype: Power Supply
   manufacturer: nzxt
@@ -524,3 +545,81 @@ ZeroLengthPowerSupply:
   gpu6pin: 4
   gpu6_2pin: 2
   length: 0
+  
+NegativePartIdPowerSupply:
+  part_id: -1
+  id: 22
+  parttype: Power Supply
+  manufacturer: nzxt
+  manufacturerwebsite: nzxt.com
+  googleprice: google.com
+  price: 100
+  model: HALE1000
+  series: HALE
+  fansize: 140
+  mainpower: 24
+  satapower: 6
+  multi_gpu: true
+  peripheral: 8
+  energycert: 80 Plus Gold
+  power_supply_type: ATXv12.3
+  poweroutput: 750
+  cpu4_4pin: 2
+  cpu4pin: 1
+  cpu8pin: 0
+  gpu8pin: 4
+  gpu6pin: 4
+  gpu6_2pin: 2
+  length: 160
+  
+ZeroPartIdPowerSupply:
+  part_id: 0
+  id: 23
+  parttype: Power Supply
+  manufacturer: nzxt
+  manufacturerwebsite: nzxt.com
+  googleprice: google.com
+  price: 100
+  model: HALE1000
+  series: HALE
+  fansize: 140
+  mainpower: 24
+  satapower: 6
+  multi_gpu: true
+  peripheral: 8
+  energycert: 80 Plus Gold
+  power_supply_type: ATXv12.3
+  poweroutput: 750
+  cpu4_4pin: 2
+  cpu4pin: 1
+  cpu8pin: 0
+  gpu8pin: 4
+  gpu6pin: 4
+  gpu6_2pin: 2
+  length: 160
+  
+NonExistantPartIdPowerSupply:
+  part_id: 123124
+  id: 24
+  parttype: Power Supply
+  manufacturer: nzxt
+  manufacturerwebsite: nzxt.com
+  googleprice: google.com
+  price: 100
+  model: HALE1000
+  series: HALE
+  fansize: 140
+  mainpower: 24
+  satapower: 6
+  multi_gpu: true
+  peripheral: 8
+  energycert: 80 Plus Gold
+  power_supply_type: ATXv12.3
+  poweroutput: 750
+  cpu4_4pin: 2
+  cpu4pin: 1
+  cpu8pin: 0
+  gpu8pin: 4
+  gpu6pin: 4
+  gpu6_2pin: 2
+  length: 160

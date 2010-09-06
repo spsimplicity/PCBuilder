@@ -220,4 +220,22 @@ class CaseTest < ActiveSupport::TestCase
 	test "Rejects zero height" do
 	    assert !cases(:ZeroHeightCase).valid?
 	end
+	
+	test "Rejects null part id" do
+	    compcase = cases(:GoodCaseOne)
+		compcase.part_id = nil
+		assert !compcase.valid?
+	end
+	
+	test "Rejects negative part id" do
+	    assert !cases(:NegativePartIdCase).valid?
+	end
+	
+	test "Rejects zero part id" do
+	    assert !cases(:ZeroPartIdCase).valid?
+	end
+	
+	test "Rejects non existant part id" do
+	    assert !cases(:NonExistantPartIdCase).valid?
+	end
 end

@@ -212,4 +212,22 @@ class CpuTest < ActiveSupport::TestCase
 	  cpu.memchanneltype = nil
 	  assert !cpu.valid?
   end
+  
+  test "Rejects null part_id" do
+      cpu = cpus(:GoodCpuOne)
+	  cpu.part_id = nil
+	  assert !cpu.valid?
+  end
+  
+  test "Rejects negative part_id" do
+      assert !cpus(:NegativeCpuPartId).valid?
+  end
+  
+  test "Rejects zero part_id" do
+      assert !cpus(:ZeroCpuPartId).valid?
+  end
+  
+  test "Rejects non existant part_id" do
+      assert !cpus(:NonExistantCpuPartId).valid?
+  end
 end

@@ -17,5 +17,5 @@ class CaseMotherboard < ActiveRecord::Base
 	validates_inclusion_of :size, :in => %w(Micro\ ATX ATX EATX XL\ ATX), 
 	    :message => "Size is not a standard size"
 	#Foreign key validations
-    belongs_to :case, :autosave => true
+    belongs_to :case
 end

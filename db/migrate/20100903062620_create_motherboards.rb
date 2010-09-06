@@ -1,6 +1,7 @@
 class CreateMotherboards < ActiveRecord::Migration
   def self.up
     create_table :motherboards do |t|
+	  t.belongs_to :part,            :null => false
       t.string :parttype,            :null => false, :limit => 15
       t.string :manufacturer,        :null => false, :limit => 15
       t.string :model,               :null => false, :limit => 40
@@ -23,14 +24,17 @@ class CreateMotherboards < ActiveRecord::Migration
       t.boolean :sli_crossfire,      :null => false
       t.string :sockettype,          :null => false, :limit => 10
       t.integer :sata3,              :null => false
-      t.integer :sata6,               :null => false
+      t.integer :sata6,              :null => false
       t.integer :ide,                :null => false
+	  t.index :part
 
       t.timestamps
     end
+	execute "alter table motherboards add constraint fkMotherboarIdToPart foreign key(part_id) references parts(id)"
   end
 
   def self.down
+    execute "alter table motherboards drop foreign key fkMotherboarIdToPart"
     drop_table :motherboards
   end
 end

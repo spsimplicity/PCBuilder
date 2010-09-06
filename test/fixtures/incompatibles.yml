@@ -1,0 +1,71 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+GoodIncompatibilityOne:
+  id: 1
+  part1_id: 1
+  part1type: Motherboard
+  part2_id: 1
+  part2type: CPU
+
+GoodIncompatibilityTwo:
+  id: 2
+  part1_id: 1
+  part1type: Hard Drive
+  part2_id: 1
+  part2type: Case
+  
+NegativePart1Incompatibility:
+  id: 3
+  part1_id: -2
+  part1type: Hard Drive
+  part2_id: 3
+  part2type: Case
+  
+ZeroPart1Incompatibility:
+  id: 4
+  part1_id: 0
+  part1type: Hard Drive
+  part2_id: 3
+  part2type: Case
+  
+NonExistantPart1Incompatibility:
+  id: 5
+  part1_id: 234234123
+  part1type: Hard Drive
+  part2_id: 3
+  part2type: Case
+  
+NonSupportedPart1TypeIncompatibility:
+  id: 6
+  part1_id: 2
+  part1type: Floppy
+  part2_id: 3
+  part2type: Cpu
+  
+NegativePart2Incompatibility:
+  id: 7
+  part1_id: 2
+  part1type: Hard Drive
+  part2_id: -3
+  part2type: Case
+  
+ZeroPart2Incompatibility:
+  id: 8
+  part1_id: 2
+  part1type: Hard Drive
+  part2_id: 0
+  part2type: Case
+  
+NonExistantPart2Incompatibility:
+  id: 9
+  part1_id: 2
+  part1type: Hard Drive
+  part2_id: 234234123
+  part2type: Case
+
+NonSupportedPart2TypeIncompatibility:
+  id: 10
+  part1_id: 2
+  part1type: Hard Drive
+  part2_id: 3
+  part2type: Floppy

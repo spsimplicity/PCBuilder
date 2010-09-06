@@ -28,4 +28,4 @@ NonExistantCaseIdCaseMotherboard:
 NonStandardSizeCaseMotherboard:
   id: 6
   case_id: 1
-  size: mini
+  size: MINI

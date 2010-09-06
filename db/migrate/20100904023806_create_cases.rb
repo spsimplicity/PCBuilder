@@ -1,6 +1,7 @@
 class CreateCases < ActiveRecord::Migration
   def self.up
     create_table :cases do |t|
+	  t.belongs_to :part,            :null => false
       t.string :parttype,            :null => false, :limit => 5
       t.string :manufacturer,        :null => false, :limit => 20
       t.integer :price,              :null => false
@@ -18,12 +19,15 @@ class CreateCases < ActiveRecord::Migration
       t.integer :length,             :null => false
       t.integer :width,              :null => false
       t.integer :height,             :null => false
-
+	  t.index :part
+	  
       t.timestamps
     end
+	execute "alter table cases add constraint fkCaseIdToPart foreign key(part_id) references parts(id)"
   end
 
   def self.down
+    execute "alter table cases drop foreign key fkCaseIdToPart"
     drop_table :cases
   end
 end

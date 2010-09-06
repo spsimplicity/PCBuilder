@@ -14,5 +14,5 @@ class MemorySpeed < ActiveRecord::Base
 	#Speed validations
 	validates_numericality_of :speed, :greater_than => 0
 	#Foreign key validations
-    belongs_to :motherboard, :autosave => true
+    belongs_to :motherboard
 end

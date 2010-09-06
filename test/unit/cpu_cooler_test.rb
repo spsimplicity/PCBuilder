@@ -134,4 +134,22 @@ class CpuCoolerTest < ActiveSupport::TestCase
 	test "Rejects Negative length value" do
 	    assert !cpu_coolers(:NegativeLengthCpuCooler).valid?
 	end
+	
+	test "Rejects null part_id" do
+	    cooler = cpu_coolers(:GoodCpuCoolerOne)
+		cooler.part_id = nil
+		assert !cooler.valid?
+	end
+	
+	test "Rejects negative part_id" do
+	    assert !cpu_coolers(:NegativePartIdCpuCooler).valid?
+	end
+	
+	test "Rejects zero part_id" do
+	    assert !cpu_coolers(:ZeroPartIdCpuCooler).valid?
+	end
+	
+	test "Rejects non existant part_id" do
+	    assert !cpu_coolers(:NonExistantPartIdCpuCooler).valid?
+	end
 end

@@ -4,14 +4,21 @@ class Case < ActiveRecord::Base
     attr_accessible
 	#Parttype validations
 	validates_length_of :parttype, :maximum => 5
-	validates_inclusion_of :parttype, :in => %w(Case case), :message => "Part Type is not Case"
+	validates_inclusion_of :parttype, :in => %w(Case), :message => "Part Type is not Case"
 	#Manufacturer validations
 	validates_length_of :manufacturer, :maximum => 20
-	#Price, Totalbays, Hddbays, Expansionslots, Discbays, Length, Width, Height validations
+	#Price, Totalbays, Hddbays, Expansionslots, Discbays, Length, Width, Height, Part_id validations
 	validates_numericality_of :price, :totalbays, :hddbays, :expansionslots, :discbays, 
-	    :length, :width, :height, :greater_than => 0
+	    :length, :width, :height, :part_id, :greater_than => 0
 	validates_presence_of :price, :totalbays, :hddbays, :expansionslots, :discbays, :length,
-	    :width, :height
+	    :width, :height, :part_id
+	validates_each :part_id do |record, attr, value|
+		begin
+			find(value)
+		rescue => msg
+			record.errors.add(attr, msg)
+		end
+	end
 	#Model and Series validations
 	validates_length_of :series, :model, :maximum => 30
 	#Manufacturerwebsite and Googleprice validations
@@ -23,4 +30,5 @@ class Case < ActiveRecord::Base
 	validates_length_of :casetype, :maximum => 25
 	#Foreign key validations
 	has_many :case_motherboards, :foreign_key => "case_id", :autosave => true, :dependent => :destroy
+	belongs_to :part, :autosave => true
 end

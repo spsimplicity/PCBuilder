@@ -1,8 +1,9 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 GoodMotherboardOne:
+  part_id: 1
   id: 1
-  parttype: motherboard
+  parttype: Motherboard
   manufacturer: asus
   model: Maximus II
   price: 130
@@ -28,8 +29,9 @@ GoodMotherboardOne:
   ide: 1
   
 GoodMotherboardTwo:
+  part_id: 1
   id: 2
-  parttype: motherboard
+  parttype: Motherboard
   manufacturer: msi
   model: Big Bang
   price: 300
@@ -55,8 +57,9 @@ GoodMotherboardTwo:
   ide: 0
   
 NonMotherboardParttype:
+  part_id: 1
   id: 3
-  parttype: cpu
+  parttype: CPU
   manufacturer: asus
   model: Maximus II
   price: 130
@@ -82,8 +85,9 @@ NonMotherboardParttype:
   ide: 1
 
 NegativeMotherboardPrice:
+  part_id: 1
   id: 4
-  parttype: motherboard
+  parttype: Motherboard
   manufacturer: asus
   model: Maximus II
   price: -130
@@ -109,8 +113,9 @@ NegativeMotherboardPrice:
   ide: 1
   
 ZeroMotherboardPrice:
+  part_id: 1
   id: 5
-  parttype: motherboard
+  parttype: Motherboard
   manufacturer: asus
   model: Maximus II
   price: 0
@@ -136,8 +141,9 @@ ZeroMotherboardPrice:
   ide: 1
   
 NegativeMotherboardMaxMemory:
+  part_id: 1
   id: 6
-  parttype: motherboard
+  parttype: Motherboard
   manufacturer: asus
   model: Maximus II
   price: 130
@@ -163,8 +169,9 @@ NegativeMotherboardMaxMemory:
   ide: 1
   
 ZeroMotherboardMaxMemory:
+  part_id: 1
   id: 7
-  parttype: motherboard
+  parttype: Motherboard
   manufacturer: asus
   model: Maximus II
   price: 130
@@ -190,8 +197,9 @@ ZeroMotherboardMaxMemory:
   ide: 1
   
 NonDDRMotherboardMemoryType:
+  part_id: 1
   id: 8
-  parttype: motherboard
+  parttype: Motherboard
   manufacturer: asus
   model: Maximus II
   price: 130
@@ -217,8 +225,9 @@ NonDDRMotherboardMemoryType:
   ide: 1
   
 NegativeMotherboardPCI_EX16:
+  part_id: 1
   id: 9
-  parttype: motherboard
+  parttype: Motherboard
   manufacturer: asus
   model: Maximus II
   price: 130
@@ -244,8 +253,9 @@ NegativeMotherboardPCI_EX16:
   ide: 1
   
 NegativeMotherboardPCI_E2:
+  part_id: 1
   id: 10
-  parttype: motherboard
+  parttype: Motherboard
   manufacturer: asus
   model: Maximus II
   price: 130
@@ -271,8 +281,9 @@ NegativeMotherboardPCI_E2:
   ide: 1
   
 NegativeMotherboardMemorySlots:
+  part_id: 1
   id: 11
-  parttype: motherboard
+  parttype: Motherboard
   manufacturer: asus
   model: Maximus II
   price: 130
@@ -298,8 +309,9 @@ NegativeMotherboardMemorySlots:
   ide: 1
   
 ZeroMotherboardMemorySlots:
+  part_id: 1
   id: 12
-  parttype: motherboard
+  parttype: Motherboard
   manufacturer: asus
   model: Maximus II
   price: 130
@@ -325,8 +337,9 @@ ZeroMotherboardMemorySlots:
   ide: 1
   
 NonStandardMotherboardSize:
+  part_id: 1
   id: 13
-  parttype: motherboard
+  parttype: Motherboard
   manufacturer: asus
   model: Maximus II
   price: 130
@@ -352,8 +365,9 @@ NonStandardMotherboardSize:
   ide: 1
   
 NegativeMotherboardCpuPowerPin:
+  part_id: 1
   id: 14
-  parttype: motherboard
+  parttype: Motherboard
   manufacturer: asus
   model: Maximus II
   price: 130
@@ -379,8 +393,9 @@ NegativeMotherboardCpuPowerPin:
   ide: 1
   
 ZeroMotherboardCpuPowerPin:
+  part_id: 1
   id: 15
-  parttype: motherboard
+  parttype: Motherboard
   manufacturer: asus
   model: Maximus II
   price: 130
@@ -406,8 +421,9 @@ ZeroMotherboardCpuPowerPin:
   ide: 1
   
 NegativeMotherboardFSB:
+  part_id: 1
   id: 16
-  parttype: motherboard
+  parttype: Motherboard
   manufacturer: asus
   model: Maximus II
   price: 130
@@ -433,8 +449,9 @@ NegativeMotherboardFSB:
   ide: 1
   
 ZeroMotherboardFSB:
+  part_id: 1
   id: 17
-  parttype: motherboard
+  parttype: Motherboard
   manufacturer: asus
   model: Maximus II
   price: 130
@@ -460,8 +477,9 @@ ZeroMotherboardFSB:
   ide: 1
   
 NegativeMotherboardMainPower:
+  part_id: 1
   id: 18
-  parttype: motherboard
+  parttype: Motherboard
   manufacturer: asus
   model: Maximus II
   price: 130
@@ -487,8 +505,9 @@ NegativeMotherboardMainPower:
   ide: 1
   
 ZeroMotherboardMainPower:
+  part_id: 1
   id: 19
-  parttype: motherboard
+  parttype: Motherboard
   manufacturer: asus
   model: Maximus II
   price: 130
@@ -514,8 +533,9 @@ ZeroMotherboardMainPower:
   ide: 1
   
 NegativeMotherboardPCI_E:
+  part_id: 1
   id: 20
-  parttype: motherboard
+  parttype: Motherboard
   manufacturer: asus
   model: Maximus II
   price: 130
@@ -541,8 +561,9 @@ NegativeMotherboardPCI_E:
   ide: 1
   
 NegativeMotherboardPCI:
+  part_id: 1
   id: 21
-  parttype: motherboard
+  parttype: Motherboard
   manufacturer: asus
   model: Maximus II
   price: 130
@@ -568,8 +589,9 @@ NegativeMotherboardPCI:
   ide: 1
   
 NegativeMotherboardSata3:
+  part_id: 1
   id: 22
-  parttype: motherboard
+  parttype: Motherboard
   manufacturer: asus
   model: Maximus II
   price: 130
@@ -595,8 +617,9 @@ NegativeMotherboardSata3:
   ide: 1
   
 NegativeMotherboardSata6:
+  part_id: 1
   id: 23
-  parttype: motherboard
+  parttype: Motherboard
   manufacturer: asus
   model: Maximus II
   price: 130
@@ -622,8 +645,9 @@ NegativeMotherboardSata6:
   ide: 1
   
 NegativeMotherboardIDE:
+  part_id: 1
   id: 24
-  parttype: motherboard
+  parttype: Motherboard
   manufacturer: asus
   model: Maximus II
   price: 130
@@ -647,3 +671,87 @@ NegativeMotherboardIDE:
   sata3: 6
   sata6: 0
   ide: -1
+  
+NegativeMotherboardPartId:
+  part_id: -1
+  id: 25
+  parttype: Motherboard
+  manufacturer: asus
+  model: Maximus II
+  price: 130
+  manufacturerwebsite: asus.com
+  googleprice: google.com
+  maxmemory: 16
+  memorytype: DDR2
+  pci_ex16: 2
+  pci_e2: 2
+  memoryslots: 4
+  size: ATX
+  cpupowerpin: 8
+  fsb: 1333
+  northbridge: intel p45
+  southbridge: intel ich10
+  mainpower: 24
+  pci_e: 2
+  pci: 0
+  sli_crossfire: true
+  sockettype: 775
+  sata3: 6
+  sata6: 0
+  ide: 1
+  
+ZeroMotherboardPartId:
+  part_id: 0
+  id: 26
+  parttype: Motherboard
+  manufacturer: asus
+  model: Maximus II
+  price: 130
+  manufacturerwebsite: asus.com
+  googleprice: google.com
+  maxmemory: 16
+  memorytype: DDR2
+  pci_ex16: 2
+  pci_e2: 2
+  memoryslots: 4
+  size: ATX
+  cpupowerpin: 8
+  fsb: 1333
+  northbridge: intel p45
+  southbridge: intel ich10
+  mainpower: 24
+  pci_e: 2
+  pci: 0
+  sli_crossfire: true
+  sockettype: 775
+  sata3: 6
+  sata6: 0
+  ide: 1
+  
+NonExistantMotherboardPartId:
+  part_id: 1123123
+  id: 27
+  parttype: Motherboard
+  manufacturer: asus
+  model: Maximus II
+  price: 130
+  manufacturerwebsite: asus.com
+  googleprice: google.com
+  maxmemory: 16
+  memorytype: DDR2
+  pci_ex16: 2
+  pci_e2: 2
+  memoryslots: 4
+  size: ATX
+  cpupowerpin: 8
+  fsb: 1333
+  northbridge: intel p45
+  southbridge: intel ich10
+  mainpower: 24
+  pci_e: 2
+  pci: 0
+  sli_crossfire: true
+  sockettype: 775
+  sata3: 6
+  sata6: 0
+  ide: 1

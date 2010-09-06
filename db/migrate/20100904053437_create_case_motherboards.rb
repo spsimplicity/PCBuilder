@@ -3,6 +3,7 @@ class CreateCaseMotherboards < ActiveRecord::Migration
     create_table :case_motherboards do |t|
       t.belongs_to :case, :null => false
       t.string :size,     :null => false, :limit => 15
+	  t.index :case
 
       t.timestamps
     end

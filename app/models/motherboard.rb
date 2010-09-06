@@ -4,16 +4,22 @@ class Motherboard < ActiveRecord::Base
     attr_accessible
 	#Parttype validations
     validates_length_of :parttype, :maximum => 15
-	validates_inclusion_of :parttype, :in => %w(motherboard Motherboard), 
-	    :message => "Part Type is not motherboard"
+	validates_inclusion_of :parttype, :in => %w(Motherboard), :message => "Part Type is not motherboard"
 	#Manufacturer validations
 	validates_length_of :manufacturer, :maximum => 15
 	#Model validations
 	validates_length_of :model, :maximum => 40
-	#Price, Maxmemory, Memoryslots, Cpupowerpin, Fsb, Mainpower validations
+	#Price, Maxmemory, Memoryslots, Cpupowerpin, Fsb, Mainpower, Part_id validations
 	validates_numericality_of :price, :maxmemory, :memoryslots, :cpupowerpin, :fsb, :mainpower, 
-	    :greater_than => 0
-	validates_presence_of :price, :maxmemory, :memoryslots, :cpupowerpin, :fsb, :mainpower
+	    :part_id, :greater_than => 0
+	validates_presence_of :price, :maxmemory, :memoryslots, :cpupowerpin, :fsb, :mainpower, :part_id
+	validates_each :part_id do |record, attr, value|
+		begin
+			find(value)
+		rescue => msg
+			record.errors.add(attr, msg)
+		end
+	end
 	#Manufacturerwebsite and Googleprice validations
 	validates_length_of :manufacturerwebsite, :googleprice, :maximum => 255
 	#Memorytype validations
@@ -37,4 +43,5 @@ class Motherboard < ActiveRecord::Base
 	validates_length_of :sockettype, :maximum => 10
 	#Foreign key validations
 	has_many :memory_speeds, :foreign_key => "motherboard_id", :autosave => true, :dependent => :destroy
+	belongs_to :part, :autosave => true
 end

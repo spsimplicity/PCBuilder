@@ -16,5 +16,5 @@ class CpuCoolerSocket < ActiveRecord::Base
 	validates_length_of :sockettype, :maximum => 10
 	validates_inclusion_of :sockettype, :in => %w(1336 1156 775 AM3), :message => "Socket type not supported"
 	#Foreign key validations
-	belongs_to :cpu_cooler, :autosave => true
+	belongs_to :cpu_cooler
 end

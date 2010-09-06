@@ -292,4 +292,22 @@ class MotherboardTest < ActiveSupport::TestCase
 	test "Rejects negative ide" do
 	    assert !motherboards(:NegativeMotherboardIDE).valid?
 	end
+	
+	test "Rejects null part_id" do
+	    mobo = motherboards(:GoodMotherboardOne)
+		mobo.part_id = nil
+		assert !mobo.valid?
+	end
+	
+	test "Rejects negative part_id" do
+	    assert !motherboards(:NegativeMotherboardPartId).valid?
+	end
+	
+	test "Rejects zero part_id" do
+	    assert !motherboards(:ZeroMotherboardPartId).valid?
+	end
+	
+	test "Rejects non existant part_id" do
+	    assert !motherboards(:NonExistantMotherboardPartId).valid?
+	end
 end

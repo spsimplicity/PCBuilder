@@ -1,6 +1,8 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 GoodCaseOne:
+  id: 1
+  part_id: 1
   parttype: Case
   manufacturer: NZXT
   price: 130
@@ -20,6 +22,8 @@ GoodCaseOne:
   height: 600
 
 GoodCaseTwo:
+  id: 2
+  part_id: 1
   parttype: Case
   manufacturer: Case Master
   price: 100
@@ -39,7 +43,9 @@ GoodCaseTwo:
   height: 500
   
 NonCasePartType:
-  parttype: cpu
+  id: 3
+  part_id: 1
+  parttype: CPU
   manufacturer: NZXT
   price: 130
   model: Phantom
@@ -58,6 +64,8 @@ NonCasePartType:
   height: 600
   
 NegativePriceCase:
+  id: 4
+  part_id: 1
   parttype: Case
   manufacturer: NZXT
   price: -130
@@ -77,6 +85,8 @@ NegativePriceCase:
   height: 600
   
 ZeroPriceCase:
+  id: 5
+  part_id: 1
   parttype: Case
   manufacturer: NZXT
   price: 0
@@ -96,6 +106,8 @@ ZeroPriceCase:
   height: 600
 
 NegativeTotalBaysCase:
+  id: 6
+  part_id: 1
   parttype: Case
   manufacturer: NZXT
   price: 130
@@ -115,6 +127,8 @@ NegativeTotalBaysCase:
   height: 600
   
 ZeroTotalBaysCase:
+  id: 7
+  part_id: 1
   parttype: Case
   manufacturer: NZXT
   price: 130
@@ -134,6 +148,8 @@ ZeroTotalBaysCase:
   height: 600
   
 NegativeHDDBaysCase:
+  id: 8
+  part_id: 1
   parttype: Case
   manufacturer: NZXT
   price: 130
@@ -153,6 +169,8 @@ NegativeHDDBaysCase:
   height: 600
   
 ZeroHDDBaysCase:
+  id: 9
+  part_id: 1
   parttype: Case
   manufacturer: NZXT
   price: 130
@@ -172,6 +190,8 @@ ZeroHDDBaysCase:
   height: 600
   
 NegativeConversionBaysCase:
+  id: 10
+  part_id: 1
   parttype: Case
   manufacturer: NZXT
   price: 130
@@ -191,6 +211,8 @@ NegativeConversionBaysCase:
   height: 600
   
 NegativeSSDBaysCase:
+  id: 11
+  part_id: 1
   parttype: Case
   manufacturer: NZXT
   price: 130
@@ -210,6 +232,8 @@ NegativeSSDBaysCase:
   height: 600
   
 NegativeExpansionSlotsCase:
+  id: 12
+  part_id: 1
   parttype: Case
   manufacturer: NZXT
   price: 130
@@ -229,6 +253,8 @@ NegativeExpansionSlotsCase:
   height: 600
   
 ZeroExpansionSlotsCase:
+  id: 13
+  part_id: 1
   parttype: Case
   manufacturer: NZXT
   price: 130
@@ -248,6 +274,8 @@ ZeroExpansionSlotsCase:
   height: 600
   
 NegativeDiscBaysCase:
+  id: 14
+  part_id: 1
   parttype: Case
   manufacturer: NZXT
   price: 130
@@ -267,6 +295,8 @@ NegativeDiscBaysCase:
   height: 600
   
 ZeroDiscBaysCase:
+  id: 15
+  part_id: 1
   parttype: Case
   manufacturer: NZXT
   price: 130
@@ -286,6 +316,8 @@ ZeroDiscBaysCase:
   height: 600
   
 NegativeLengthCase:
+  id: 16
+  part_id: 1
   parttype: Case
   manufacturer: NZXT
   price: 130
@@ -305,6 +337,8 @@ NegativeLengthCase:
   height: 600
   
 ZeroLengthCase:
+  id: 17
+  part_id: 1
   parttype: Case
   manufacturer: NZXT
   price: 130
@@ -324,6 +358,8 @@ ZeroLengthCase:
   height: 600
   
 NegativeWidthCase:
+  id: 18
+  part_id: 1
   parttype: Case
   manufacturer: NZXT
   price: 130
@@ -343,6 +379,8 @@ NegativeWidthCase:
   height: 600
   
 ZeroWidthCase:
+  id: 19
+  part_id: 1
   parttype: Case
   manufacturer: NZXT
   price: 130
@@ -362,6 +400,8 @@ ZeroWidthCase:
   height: 600
   
 NegativeHeightCase:
+  id: 20
+  part_id: 1
   parttype: Case
   manufacturer: NZXT
   price: 130
@@ -381,6 +421,8 @@ NegativeHeightCase:
   height: -600
   
 ZeroHeightCase:
+  id: 21
+  part_id: 1
   parttype: Case
   manufacturer: NZXT
   price: 130
@@ -398,3 +440,66 @@ ZeroHeightCase:
   length: 600
   width: 350
   height: 0
+  
+NegativePartIdCase:
+  id: 22
+  part_id: -1
+  parttype: Case
+  manufacturer: NZXT
+  price: 130
+  model: Phantom
+  series: Classic
+  manufacturerwebsite: naxt.com
+  googleprice: google.com
+  totalbays: 11
+  hddbays: 5
+  conversionbays: 0
+  ssdbays: 0
+  expansionslots: 7
+  discbays: 6
+  casetype: Full ATX
+  length: 600
+  width: 350
+  height: 600
+  
+ZeroPartIdCase:
+  id: 23
+  part_id: 0
+  parttype: Case
+  manufacturer: NZXT
+  price: 130
+  model: Phantom
+  series: Classic
+  manufacturerwebsite: naxt.com
+  googleprice: google.com
+  totalbays: 11
+  hddbays: 5
+  conversionbays: 0
+  ssdbays: 0
+  expansionslots: 7
+  discbays: 6
+  casetype: Full ATX
+  length: 600
+  width: 350
+  height: 600
+  
+NonExistantPartIdCase:
+  id: 24
+  part_id: 12312434
+  parttype: Case
+  manufacturer: NZXT
+  price: 130
+  model: Phantom
+  series: Classic
+  manufacturerwebsite: naxt.com
+  googleprice: google.com
+  totalbays: 11
+  hddbays: 5
+  conversionbays: 0
+  ssdbays: 0
+  expansionslots: 7
+  discbays: 6
+  casetype: Full ATX
+  length: 600
+  width: 350
+  height: 600

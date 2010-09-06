@@ -256,4 +256,22 @@ class PowerSupplyTest < ActiveSupport::TestCase
 	test "Rejecte zero length" do
 	    assert !power_supplies(:ZeroLengthPowerSupply).valid?
 	end
+	
+	test "Rejects null part_id" do
+	    power = power_supplies(:GoodPowerSupplyOne)
+		power.part_id = nil
+		assert !power.valid?
+	end
+	
+	test "Rejects negative part_id" do
+	    assert !power_supplies(:NegativePartIdPowerSupply).valid?
+	end
+	
+	test "Rejects zero part_id" do
+	    assert !power_supplies(:ZeroPartIdPowerSupply).valid?
+	end
+	
+	test "Rejects non existant part_id" do
+	    assert !power_supplies(:NonExistantPartIdPowerSupply).valid?
+	end
 end

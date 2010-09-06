@@ -1,6 +1,7 @@
 class CreatePowerSupplies < ActiveRecord::Migration
   def self.up
     create_table :power_supplies do |t|
+	  t.belongs_to :part,            :null => false
       t.string :parttype,            :null => false, :limit => 20
       t.string :manufacturer,        :null => false, :limit => 30
       t.string :manufacturerwebsite, :null => false
@@ -23,12 +24,15 @@ class CreatePowerSupplies < ActiveRecord::Migration
       t.integer :gpu6pin,            :null => false
       t.integer :gpu6_2pin,          :null => false
       t.integer :length,             :null => false
+	  t.index :part
 
       t.timestamps
     end
+	execute "alter table power_supplies add constraint fkPowerSupplyIdToPart foreign key(part_id) references parts(id)"
   end
 
   def self.down
+    execute "alter table power_supplies drop foreign key fkPowerSupplyIdToPart"
     drop_table :power_supplies
   end
 end

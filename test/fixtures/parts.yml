@@ -1,0 +1,45 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+GoodPartOne:
+  id: 1
+  parttype: Motherboard
+
+GoodPartTwo:
+  id: 2
+  parttype: Power Supply
+  
+GoodPartThree:
+  id: 3
+  parttype: CPU
+
+GoodPartFour:
+  id: 4
+  parttype: CPU Cooler
+
+GoodPartFive:
+  id: 5
+  parttype: Graphics Card
+
+GoodPartSix:
+  id: 6
+  parttype: Hard Drive
+
+GoodPartSeven:
+  id: 7
+  parttype: Disc Drive
+
+GoodPartEight:
+  id: 8
+  parttype: Case
+
+GoodPartNine:
+  id: 9
+  parttype: Monitor
+
+GoodPartTen:
+  id: 10
+  parttype: Memory  
+
+NotAcceptedPartTypePart:
+  id: 11
+  parttype: Floppy Drive
