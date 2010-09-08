@@ -20,6 +20,7 @@ GoodCaseOne:
   length: 600
   width: 350
   height: 600
+  maxcoolerheight: 160
 
 GoodCaseTwo:
   id: 2
@@ -41,6 +42,7 @@ GoodCaseTwo:
   length: 530
   width: 300
   height: 500
+  maxcoolerheight: 160
   
 NonCasePartType:
   id: 3
@@ -62,6 +64,7 @@ NonCasePartType:
   length: 600
   width: 350
   height: 600
+  maxcoolerheight: 160
   
 NegativePriceCase:
   id: 4
@@ -83,6 +86,7 @@ NegativePriceCase:
   length: 600
   width: 350
   height: 600
+  maxcoolerheight: 160
   
 ZeroPriceCase:
   id: 5
@@ -104,6 +108,7 @@ ZeroPriceCase:
   length: 600
   width: 350
   height: 600
+  maxcoolerheight: 160
 
 NegativeTotalBaysCase:
   id: 6
@@ -125,6 +130,7 @@ NegativeTotalBaysCase:
   length: 600
   width: 350
   height: 600
+  maxcoolerheight: 160
   
 ZeroTotalBaysCase:
   id: 7
@@ -146,6 +152,7 @@ ZeroTotalBaysCase:
   length: 600
   width: 350
   height: 600
+  maxcoolerheight: 160
   
 NegativeHDDBaysCase:
   id: 8
@@ -167,6 +174,7 @@ NegativeHDDBaysCase:
   length: 600
   width: 350
   height: 600
+  maxcoolerheight: 160
   
 ZeroHDDBaysCase:
   id: 9
@@ -188,6 +196,7 @@ ZeroHDDBaysCase:
   length: 600
   width: 350
   height: 600
+  maxcoolerheight: 160
   
 NegativeConversionBaysCase:
   id: 10
@@ -209,6 +218,7 @@ NegativeConversionBaysCase:
   length: 600
   width: 350
   height: 600
+  maxcoolerheight: 160
   
 NegativeSSDBaysCase:
   id: 11
@@ -230,6 +240,7 @@ NegativeSSDBaysCase:
   length: 600
   width: 350
   height: 600
+  maxcoolerheight: 160
   
 NegativeExpansionSlotsCase:
   id: 12
@@ -251,6 +262,7 @@ NegativeExpansionSlotsCase:
   length: 600
   width: 350
   height: 600
+  maxcoolerheight: 160
   
 ZeroExpansionSlotsCase:
   id: 13
@@ -272,6 +284,7 @@ ZeroExpansionSlotsCase:
   length: 600
   width: 350
   height: 600
+  maxcoolerheight: 160
   
 NegativeDiscBaysCase:
   id: 14
@@ -293,6 +306,7 @@ NegativeDiscBaysCase:
   length: 600
   width: 350
   height: 600
+  maxcoolerheight: 160
   
 ZeroDiscBaysCase:
   id: 15
@@ -314,6 +328,7 @@ ZeroDiscBaysCase:
   length: 600
   width: 350
   height: 600
+  maxcoolerheight: 160
   
 NegativeLengthCase:
   id: 16
@@ -335,6 +350,7 @@ NegativeLengthCase:
   length: -600
   width: 350
   height: 600
+  maxcoolerheight: 160
   
 ZeroLengthCase:
   id: 17
@@ -356,6 +372,7 @@ ZeroLengthCase:
   length: 0
   width: 350
   height: 600
+  maxcoolerheight: 160
   
 NegativeWidthCase:
   id: 18
@@ -377,6 +394,7 @@ NegativeWidthCase:
   length: 600
   width: -350
   height: 600
+  maxcoolerheight: 160
   
 ZeroWidthCase:
   id: 19
@@ -398,6 +416,7 @@ ZeroWidthCase:
   length: 600
   width: 0
   height: 600
+  maxcoolerheight: 160
   
 NegativeHeightCase:
   id: 20
@@ -419,6 +438,7 @@ NegativeHeightCase:
   length: 600
   width: 350
   height: -600
+  maxcoolerheight: 160
   
 ZeroHeightCase:
   id: 21
@@ -440,6 +460,7 @@ ZeroHeightCase:
   length: 600
   width: 350
   height: 0
+  maxcoolerheight: 160
   
 NegativePartIdCase:
   id: 22
@@ -461,6 +482,7 @@ NegativePartIdCase:
   length: 600
   width: 350
   height: 600
+  maxcoolerheight: 160
   
 ZeroPartIdCase:
   id: 23
@@ -482,6 +504,7 @@ ZeroPartIdCase:
   length: 600
   width: 350
   height: 600
+  maxcoolerheight: 160
   
 NonExistantPartIdCase:
   id: 24
@@ -503,3 +526,48 @@ NonExistantPartIdCase:
   length: 600
   width: 350
   height: 600
+  maxcoolerheight: 160
+  
+NegativeMaxCoolerHeightCase:
+  id: 22
+  part_id: 1
+  parttype: Case
+  manufacturer: NZXT
+  price: 130
+  model: Phantom
+  series: Classic
+  manufacturerwebsite: naxt.com
+  googleprice: google.com
+  totalbays: 11
+  hddbays: 5
+  conversionbays: 0
+  ssdbays: 0
+  expansionslots: 7
+  discbays: 6
+  casetype: Full ATX
+  length: 600
+  width: 350
+  height: 600
+  maxcoolerheight: -160
+  
+ZeroMaxCoolerHeightCase:
+  id: 23
+  part_id: 1
+  parttype: Case
+  manufacturer: NZXT
+  price: 130
+  model: Phantom
+  series: Classic
+  manufacturerwebsite: naxt.com
+  googleprice: google.com
+  totalbays: 11
+  hddbays: 5
+  conversionbays: 0
+  ssdbays: 0
+  expansionslots: 7
+  discbays: 6
+  casetype: Full ATX
+  length: 600
+  width: 350
+  height: 600
+  maxcoolerheight: 0

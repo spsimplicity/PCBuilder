@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(:version => 20100906021432) do
     t.integer  "length",                            :null => false
     t.integer  "width",                             :null => false
     t.integer  "height",                            :null => false
+    t.integer  "maxcoolerheight",                   :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

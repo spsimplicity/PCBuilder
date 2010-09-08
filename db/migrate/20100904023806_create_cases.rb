@@ -19,6 +19,7 @@ class CreateCases < ActiveRecord::Migration
       t.integer :length,             :null => false
       t.integer :width,              :null => false
       t.integer :height,             :null => false
+	  t.integer :maxcoolerheight,    :null => false
 	  t.index :part
 	  
       t.timestamps
