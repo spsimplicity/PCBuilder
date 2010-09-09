@@ -1,0 +1,231 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+# This model initially had no columns defined.  If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+
+GoodHardDriveOne:
+  id: 1
+  part_id: 1
+  parttype: Hard Drive
+  manufacturer: Western Digital
+  model: bigHdd
+  series: Caviar Black
+  price: 150
+  interface: SATA 3
+  capacity: 1
+  rpm: 10000
+  cache: 32
+  manufacturerwebsite: westerndigital.com
+  googleprice: google.com
+
+GoodHardDriveTwo:
+  id: 2
+  part_id: 1
+  parttype: Hard Drive
+  manufacturer: Samsung
+  model: bigHdd
+  series: Speeding
+  price: 150
+  interface: SATA 6
+  capacity: 1
+  rpm: 7200
+  cache: 32
+  manufacturerwebsite: samsung.com
+  googleprice: google.com
+
+NegativePartIdHardDrive:
+  id: 3
+  part_id: -1
+  parttype: Hard Drive
+  manufacturer: Western Digital
+  model: bigHdd
+  series: Caviar Black
+  price: 150
+  interface: SATA 3
+  capacity: 1
+  rpm: 10000
+  cache: 32
+  manufacturerwebsite: westerndigital.com
+  googleprice: google.com
+  
+ZeroPartIdHardDrive:
+  id: 4
+  part_id: 0
+  parttype: Hard Drive
+  manufacturer: Western Digital
+  model: bigHdd
+  series: Caviar Black
+  price: 150
+  interface: SATA 3
+  capacity: 1
+  rpm: 10000
+  cache: 32
+  manufacturerwebsite: westerndigital.com
+  googleprice: google.com
+  
+NonExistantPartIdHardDrive:
+  id: 5
+  part_id: 1123213313
+  parttype: Hard Drive
+  manufacturer: Western Digital
+  model: bigHdd
+  series: Caviar Black
+  price: 150
+  interface: SATA 3
+  capacity: 1
+  rpm: 10000
+  cache: 32
+  manufacturerwebsite: westerndigital.com
+  googleprice: google.com
+  
+NonHDDPartTypeHardDrive:
+  id: 6
+  part_id: 1
+  parttype: Disc Drive
+  manufacturer: Western Digital
+  model: bigHdd
+  series: Caviar Black
+  price: 150
+  interface: SATA 3
+  capacity: 1
+  rpm: 10000
+  cache: 32
+  manufacturerwebsite: westerndigital.com
+  googleprice: google.com
+  
+NegativePriceHardDrive:
+  id: 7
+  part_id: 1
+  parttype: Hard Drive
+  manufacturer: Western Digital
+  model: bigHdd
+  series: Caviar Black
+  price: -150
+  interface: SATA 3
+  capacity: 1
+  rpm: 10000
+  cache: 32
+  manufacturerwebsite: westerndigital.com
+  googleprice: google.com
+  
+ZeroPriceHardDrive:
+  id: 8
+  part_id: 1
+  parttype: Hard Drive
+  manufacturer: Western Digital
+  model: bigHdd
+  series: Caviar Black
+  price: 0
+  interface: SATA 3
+  capacity: 1
+  rpm: 10000
+  cache: 32
+  manufacturerwebsite: westerndigital.com
+  googleprice: google.com
+  
+NotSupportedInterfaceHardDrive:
+  id: 9
+  part_id: 1
+  parttype: Hard Drive
+  manufacturer: Western Digital
+  model: bigHdd
+  series: Caviar Black
+  price: 150
+  interface: USB
+  capacity: 1
+  rpm: 10000
+  cache: 32
+  manufacturerwebsite: westerndigital.com
+  googleprice: google.com
+  
+NegativeCapacityHardDrive:
+  id: 10
+  part_id: 1
+  parttype: Hard Drive
+  manufacturer: Western Digital
+  model: bigHdd
+  series: Caviar Black
+  price: 150
+  interface: SATA 3
+  capacity: -1
+  rpm: 10000
+  cache: 32
+  manufacturerwebsite: westerndigital.com
+  googleprice: google.com
+  
+ZeroCapacityHardDrive:
+  id: 11
+  part_id: 1
+  parttype: Hard Drive
+  manufacturer: Western Digital
+  model: bigHdd
+  series: Caviar Black
+  price: 150
+  interface: SATA 3
+  capacity: 0
+  rpm: 10000
+  cache: 32
+  manufacturerwebsite: westerndigital.com
+  googleprice: google.com
+  
+NegativeRPMHardDrive:
+  id: 12
+  part_id: 1
+  parttype: Hard Drive
+  manufacturer: Western Digital
+  model: bigHdd
+  series: Caviar Black
+  price: 150
+  interface: SATA 3
+  capacity: 1
+  rpm: -10000
+  cache: 32
+  manufacturerwebsite: westerndigital.com
+  googleprice: google.com
+  
+ZeroRPMHardDrive:
+  id: 13
+  part_id: 1
+  parttype: Hard Drive
+  manufacturer: Western Digital
+  model: bigHdd
+  series: Caviar Black
+  price: 150
+  interface: SATA 3
+  capacity: 1
+  rpm: 0
+  cache: 32
+  manufacturerwebsite: westerndigital.com
+  googleprice: google.com
+  
+NegativeCacheHardDrive:
+  id: 14
+  part_id: 1
+  parttype: Hard Drive
+  manufacturer: Western Digital
+  model: bigHdd
+  series: Caviar Black
+  price: 150
+  interface: SATA 3
+  capacity: -1
+  rpm: 10000
+  cache: -32
+  manufacturerwebsite: westerndigital.com
+  googleprice: google.com
+  
+ZeroCacheHardDrive:
+  id: 15
+  part_id: 1
+  parttype: Hard Drive
+  manufacturer: Western Digital
+  model: bigHdd
+  series: Caviar Black
+  price: 150
+  interface: SATA 3
+  capacity: 0
+  rpm: 10000
+  cache: 0
+  manufacturerwebsite: westerndigital.com
+  googleprice: google.com

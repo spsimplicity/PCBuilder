@@ -6,11 +6,7 @@ class CaseMotherboard < ActiveRecord::Base
 	validates_numericality_of :case_id, :greater_than => 0
 	validates_presence_of :case_id
 	validates_each :case_id do |record, attr, value|
-        begin
-	        find(value)
-        rescue => msg
-	        record.errors.add(attr, msg)
-	    end
+	    record.errors.add("Case does not exist") if Case.find_by_id(value) == nil
     end
 	#Size validations
 	validates_length_of :size, :maximum => 15

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100906021432) do
+ActiveRecord::Schema.define(:version => 20100908085821) do
 
   create_table "case_motherboards", :force => true do |t|
     t.integer  "case_id",                  :null => false
@@ -117,6 +117,25 @@ ActiveRecord::Schema.define(:version => 20100906021432) do
   end
 
   add_index "cpus", ["part_id"], :name => "fkCpuIdToPart"
+
+  create_table "hard_drives", :force => true do |t|
+    t.integer  "part_id",                           :null => false
+    t.string   "parttype",            :limit => 15, :null => false
+    t.string   "manufacturer",        :limit => 30, :null => false
+    t.string   "model",               :limit => 40, :null => false
+    t.string   "series",              :limit => 25
+    t.integer  "price",                             :null => false
+    t.string   "interface",           :limit => 20, :null => false
+    t.integer  "capacity",                          :null => false
+    t.integer  "rpm",                               :null => false
+    t.integer  "cache"
+    t.string   "manufacturerwebsite",               :null => false
+    t.string   "googleprice",                       :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "hard_drives", ["part_id"], :name => "fkHddToPart"
 
   create_table "has_parts", :force => true do |t|
     t.integer  "computer_id",               :null => false

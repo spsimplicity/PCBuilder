@@ -13,11 +13,7 @@ class Case < ActiveRecord::Base
 	validates_presence_of :price, :totalbays, :hddbays, :expansionslots, :discbays, :length,
 	    :width, :height, :part_id
 	validates_each :part_id do |record, attr, value|
-		begin
-			find(value)
-		rescue => msg
-			record.errors.add(attr, msg)
-		end
+	    record.errors.add("Part does not exist") if Part.find_by_id(value) == nil
 	end
 	#Model and Series validations
 	validates_length_of :series, :model, :maximum => 30

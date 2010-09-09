@@ -17,11 +17,7 @@ class Cpu < ActiveRecord::Base
 	validates_presence_of :price, :frequency, :fsb, :cores, :watts, :powerpin, 
 	    :maxmemory, :memchanneltype, :part_id
 	validates_each :part_id do |record, attr, value|
-		begin
-			find(value)
-		rescue => msg
-			record.errors.add(attr, msg)
-		end
+	    record.errors.add("Part does not exist") if Part.find_by_id(value) == nil
 	end
 	#Manufacturer Website Validations
 	validates_length_of :manufacturerwebsite, :maximum => 255

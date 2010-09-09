@@ -6,11 +6,7 @@ class CpuCoolerSocket < ActiveRecord::Base
 	validates_presence_of :cpu_cooler_id
 	validates_numericality_of :cpu_cooler_id, :greater_than => 0
 	validates_each :cpu_cooler_id do |record, attr, value|
-		begin
-			find(value)
-		rescue => msg
-			record.errors.add(attr, msg)
-		end
+	    record.errors.add("CPU Cooler does not exist") if CpuCooler.find_by_id(value) == nil
 	end
 	#Sockettype validations
 	validates_length_of :sockettype, :maximum => 10

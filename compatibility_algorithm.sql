@@ -49,6 +49,7 @@ BEGIN
     DECLARE expansionSlots INT;
     DECLARE discBays INT;
     DECLARE maxCoolerHeight INT;
+    DECLARE transferType INT;
     DECLARE done INT DEFAULT 0;
     /*Cursors for each part*/
     DECLARE motherboardCur CURSOR FOR
@@ -74,9 +75,9 @@ BEGIN
     /*DECLARE discDriveCur CURSOR FOR
         SELECT part_id, parttype
         FROM disc_drives;*/
-    /*DECLARE hardDriveCur cursor FOR
-        SELECT part_id, parttype
-        FROM hard_drives;*/
+    DECLARE hardDriveCur cursor FOR
+        SELECT part_id, parttype, interface
+        FROM hard_drives;
     DECLARE caseCur CURSOR FOR
         SELECT id, part_id, parttype, totalbays, hddbays, conversionbays, ssdbays, 
             expansionslots, discbays, length, width, height, maxcoolerheight
@@ -90,7 +91,7 @@ BEGIN
       WHEN 'Motherboard' THEN
         /*Get the data for the Motherboard being checked*/
         SELECT maxmemory, memorytype, pci_ex16, pci_e2, memoryslots, size, cpupowerpin, fsb,
-            mainpower, sli_crossfire, sockettype, sata3, sata6, ide 
+            mainpower, sli_crossfire, sockettype, sata3, sata6, ide
         INTO maxMemory, memoryType, pciex16, pcie2, memorySlots, moboSize, moboCpuPower, fsb, 
             moboMainPower, multiGpu, moboSocketType, sata3, sata6, ide
         FROM motherboards
@@ -138,10 +139,21 @@ BEGIN
         
         END LOOP graphicsLoop;*/
         /*For each Hard Drive*/
-        /*OPEN hardDriveCur;
+        OPEN hardDriveCur;
         hddLoop:LOOP
-        
-        END LOOP hddLoop;*/        
+            FETCH hardDriveCur INTO part2Id, part2Type, transferType;
+            IF done = 1 THEN
+                LEAVE hddLoop;
+            END IF;
+            IF (transferType = 'SATA 3' || transferType = 'SATA 6')
+                && sata3 = 0 && sata6 = 0 THEN
+                INSERT INTO incompatibles(part1_id, part1type, part2_id, part2Type)
+                VALUES (part1Id, parttype, part2Id, part2Type);
+            ELSEIF transferType = 'IDE/PATA' && ide = 0 THEN
+                INSERT INTO incompatibles(part1_id, part1type, part2_id, part2Type)
+                VALUES (part1Id, parttype, part2Id, part2Type);
+            END IF;
+        END LOOP hddLoop;      
         /*For each Disc Drive*/
         /*OPEN discDriveCur;
         discLoop:LOOP
@@ -321,10 +333,21 @@ BEGIN
         FROM power_supplies
         WHERE part1Id = part_id;
         /*For each Hard Drive*/
-        /*OPEN hardDriveCur;
+        OPEN hardDriveCur;
         hddLoop:LOOP
-        
-        END LOOP hddLoop;*/        
+            FETCH hardDriveCur INTO part_id, parttype, interfaceType;
+            IF done = 1 THEN
+                LEAVE hddLoop;
+            END IF;
+            IF peripheral = 0 && interfaceType = 'IDE/PATA' THEN
+                INSERT INTO incompatibles(part1_id, part1type, part2_id, part2Type)
+                VALUES (part1Id, parttype, part2Id, part2Type);
+            ELSEIF sataPower = 0 && 
+                (interfaceType = 'SATA 3' || interfaceType = 'SATA 6') THEN
+                INSERT INTO incompatibles(part1_id, part1type, part2_id, part2Type)
+                VALUES (part1Id, parttype, part2Id, part2Type);
+            END IF;
+        END LOOP hddLoop;      
         /*For each Disc Drive*/
         /*OPEN discDriveCur;
         discLoop:LOOP
@@ -409,7 +432,14 @@ BEGIN
             IF done = 1 THEN
                 LEAVE motherboardLoop;
             END IF;
-        
+            IF (transferType = 'SATA 3' || transferType = 'SATA 6')
+                && sata3 = 0 && sata6 = 0 THEN
+                INSERT INTO incompatibles(part1_id, part1type, part2_id, part2Type)
+                VALUES (part1Id, parttype, part2Id, part2Type);
+            ELSEIF transferType = 'IDE/PATA' && ide = 0 THEN
+                INSERT INTO incompatibles(part1_id, part1type, part2_id, part2Type)
+                VALUES (part1Id, parttype, part2Id, part2Type);
+            END IF;
         END LOOP motherboardLoop;
         /*For each Power Supply*/
         OPEN powerSupplyCur;
@@ -420,7 +450,14 @@ BEGIN
             IF done = 1 THEN
                 LEAVE powerLoop;
             END IF;
-        
+            IF peripheral = 0 && interfaceType = 'IDE/PATA' THEN
+                INSERT INTO incompatibles(part1_id, part1type, part2_id, part2Type)
+                VALUES (part1Id, parttype, part2Id, part2Type);
+            ELSEIF sataPower = 0 && 
+                (interfaceType = 'SATA 3' || interfaceType = 'SATA 6') THEN
+                INSERT INTO incompatibles(part1_id, part1type, part2_id, part2Type)
+                VALUES (part1Id, parttype, part2Id, part2Type);
+            END IF;
         END LOOP powerLoop;
       WHEN 'Case' THEN
         /*Get data for Case being checked*/

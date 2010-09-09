@@ -6,11 +6,7 @@ class Incompatible < ActiveRecord::Base
 	validates_numericality_of :part1_id, :part2_id, :greater_than => 0
 	validates_presence_of :part1_id, :part2_id
 	validates_each :part1_id, :part2_id do |record, attr, value|
-        begin
-	        find(value)
-        rescue => msg
-	        record.errors.add(attr, msg)
-	    end
+	    record.errors.add("Part does not exist") if Part.find_by_id(value) == nil
     end
 	#Part2type. Part3type validations
 	validates_length_of :part1type, :part2type, :maximum => 20

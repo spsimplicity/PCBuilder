@@ -529,7 +529,7 @@ NonExistantPartIdCase:
   maxcoolerheight: 160
   
 NegativeMaxCoolerHeightCase:
-  id: 22
+  id: 25
   part_id: 1
   parttype: Case
   manufacturer: NZXT
@@ -551,7 +551,7 @@ NegativeMaxCoolerHeightCase:
   maxcoolerheight: -160
   
 ZeroMaxCoolerHeightCase:
-  id: 23
+  id: 26
   part_id: 1
   parttype: Case
   manufacturer: NZXT

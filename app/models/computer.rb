@@ -8,19 +8,30 @@ class Computer < ActiveRecord::Base
 	validates_presence_of :motherboard_id, :cpu_id, :case_id, :cpu_cooler_id, :power_supply_id, :user_id
 	validates_numericality_of :motherboard_id, :cpu_id, :case_id,
 	    :cpu_cooler_id, :power_supply_id, :user_id, :only_integer => true, :greater_than => 0
-	validates_each :motherboard_id, :cpu_id, :case_id, :cpu_cooler_id, :power_supply_id, :user_id do |record, attr, value|
- 	    begin	
-	        find(value)
-		rescue => msg
-		    record.errors.add(attr, msg)
-		end
+	validates_each :motherboard_id do |record, attr, value|
+	    record.errors.add("Motherboard does not exist") if Motherboard.find_by_id(value) == nil
+	end
+	validates_each :cpu_id do |record, attr, value|
+	    record.errors.add("CPU does not exist") if Cpu.find_by_id(value) == nil
+	end
+	validates_each :case_id do |record, attr, value|
+	    record.errors.add("Case does not exist") if Case.find_by_id(value) == nil
+	end
+	validates_each :cpu_cooler_id do |record, attr, value|
+	    record.errors.add("CPU Cooler does not exist") if CpuCooler.find_by_id(value) == nil
+	end
+	validates_each :power_supply_id do |record, attr, value|
+	    record.errors.add("Power Supply does not exist") if PowerSupply.find_by_id(value) == nil
+	end
+	validates_each :user_id do |record, attr, value|
+	    record.errors.add("User does not exist") if User.find_by_id(value) == nil
 	end
 	#Foreign key validations
-	belongs_to :motherboard
-	belongs_to :cpu
-	belongs_to :cpu_cooler
-	belongs_to :power_supply
-	belongs_to :case
+	belongs_to :motherboard, :autosave => true
+	belongs_to :cpu, :autosave => true
+	belongs_to :cpu_cooler, :autosave => true
+	belongs_to :power_supply, :autosave => true
+	belongs_to :case, :autosave => true
 	belongs_to :user, :autosave => true
 	has_many :has_parts, :foreign_key => "computer_id", :autosave => true
 end

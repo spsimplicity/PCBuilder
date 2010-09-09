@@ -14,11 +14,7 @@ class Motherboard < ActiveRecord::Base
 	    :part_id, :greater_than => 0
 	validates_presence_of :price, :maxmemory, :memoryslots, :cpupowerpin, :fsb, :mainpower, :part_id
 	validates_each :part_id do |record, attr, value|
-		begin
-			find(value)
-		rescue => msg
-			record.errors.add(attr, msg)
-		end
+	    record.errors.add("Part does not exist") if Part.find_by_id(value) == nil
 	end
 	#Manufacturerwebsite and Googleprice validations
 	validates_length_of :manufacturerwebsite, :googleprice, :maximum => 255

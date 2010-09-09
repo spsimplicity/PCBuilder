@@ -14,11 +14,7 @@ class PowerSupply < ActiveRecord::Base
 	    :greater_than => 0
 	validates_presence_of :price, :fansize, :mainpower, :poweroutput, :length, :part_id
 	validates_each :part_id do |record, attr, value|
-		begin
-			find(value)
-		rescue => msg
-			record.errors.add(attr, msg)
-		end
+	    record.errors.add("Part does not exist") if Part.find_by_id(value) == nil
 	end
 	#Satapower, Peripheral, Cpu4_4pin, Cpu4pin, Cpu8pin, Gpu8pin, Gpu6pin, Gpu6_2pin validations
 	validates_numericality_of :satapower, :peripheral, :cpu4_4pin, :cpu4pin, :cpu8pin, 
