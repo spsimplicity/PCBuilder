@@ -1,0 +1,43 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+GoodReadSpeedOne:
+  id: 1
+  disc_drife_id: 1
+  readtype: CD-ROM
+  speed: 48
+
+GoodReadSpeedTwo:
+  id: 2
+  disc_drife_id: 2
+  readtype: DVD-R
+  speed: 16
+
+NegativeDriveIdReadSpeed:
+  id: 3
+  disc_drife_id: -2
+  readtype: DVD-R
+  speed: 16
+
+ZeroDriveIdReadSpeed:
+  id: 4
+  disc_drife_id: 0
+  readtype: DVD-R
+  speed: 16
+
+NonExistantDriveIdReadSpeed:
+  id: 5
+  disc_drife_id: 123124344
+  readtype: DVD-R
+  speed: 16
+
+NegativeSpeedReadSpeed:
+  id: 6
+  disc_drife_id: 2
+  readtype: DVD-R
+  speed: -16
+
+ZeroSpeedReadSpeed:
+  id: 7
+  disc_drife_id: 2
+  readtype: DVD-R
+  speed: 0

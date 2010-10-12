@@ -1,0 +1,461 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+GoodMemoryOne:
+  id: 1
+  part_id: 1
+  parttype: Memory
+  manufacturer: Kingston
+  manufacturerwebsite: kingston.com
+  price: 200
+  googleprice: google.com
+  model: asdh1233
+  series: Hyper-x
+  speed: 1600
+  timings: 8-8-8-20
+  capacity: 4
+  multichanneltype: 2
+  memorytype: DDR3
+  pinnumber: 240
+  dimms: 2
+  totalcapacity: 8
+  voltage: 1.65
+
+GoodMemoryTwo:
+  id: 2
+  part_id: 2
+  parttype: Memory
+  manufacturer: Corsair
+  manufacturerwebsite: corsair.com
+  price: 250
+  googleprice: google.com
+  model: abcd1234
+  series: Dominator
+  speed: 1800
+  timings: 6-6-6-18
+  capacity: 2
+  multichanneltype: 3
+  memorytype: DDR3
+  pinnumber: 240
+  dimms: 3
+  totalcapacity: 6
+  voltage: 1.65
+
+NegativePartIdMemory:
+  id: 3
+  part_id: -1
+  parttype: Memory
+  manufacturer: Kingston
+  manufacturerwebsite: kingston.com
+  price: 200
+  googleprice: google.com
+  model: asdh1233
+  series: Hyper-x
+  speed: 1600
+  timings: 8-8-8-20
+  capacity: 4
+  multichanneltype: 2
+  memorytype: DDR3
+  pinnumber: 240
+  dimms: 2
+  totalcapacity: 8
+  voltage: 1.65
+
+ZeroPartIdMemory:
+  id: 4
+  part_id: 0
+  parttype: Memory
+  manufacturer: Kingston
+  manufacturerwebsite: kingston.com
+  price: 200
+  googleprice: google.com
+  model: asdh1233
+  series: Hyper-x
+  speed: 1600
+  timings: 8-8-8-20
+  capacity: 4
+  multichanneltype: 2
+  memorytype: DDR3
+  pinnumber: 240
+  dimms: 2
+  totalcapacity: 8
+  voltage: 1.65
+
+NonExistantPartIdMemory:
+  id: 5
+  part_id: 12343424
+  parttype: Memory
+  manufacturer: Kingston
+  manufacturerwebsite: kingston.com
+  price: 200
+  googleprice: google.com
+  model: asdh1233
+  series: Hyper-x
+  speed: 1600
+  timings: 8-8-8-20
+  capacity: 4
+  multichanneltype: 2
+  memorytype: DDR3
+  pinnumber: 240
+  dimms: 2
+  totalcapacity: 8
+  voltage: 1.65
+
+NonMemoryPartTypeMemory:
+  id: 6
+  part_id: 1
+  parttype: Hard Drive
+  manufacturer: Kingston
+  manufacturerwebsite: kingston.com
+  price: 200
+  googleprice: google.com
+  model: asdh1233
+  series: Hyper-x
+  speed: 1600
+  timings: 8-8-8-20
+  capacity: 4
+  multichanneltype: 2
+  memorytype: DDR3
+  pinnumber: 240
+  dimms: 2
+  totalcapacity: 8
+  voltage: 1.65
+
+NegativePriceMemory:
+  id: 7
+  part_id: 1
+  parttype: Memory
+  manufacturer: Kingston
+  manufacturerwebsite: kingston.com
+  price: -200
+  googleprice: google.com
+  model: asdh1233
+  series: Hyper-x
+  speed: 1600
+  timings: 8-8-8-20
+  capacity: 4
+  multichanneltype: 2
+  memorytype: DDR3
+  pinnumber: 240
+  dimms: 2
+  totalcapacity: 8
+  voltage: 1.65
+
+ZeroPriceMemory:
+  id: 8
+  part_id: 1
+  parttype: Memory
+  manufacturer: Kingston
+  manufacturerwebsite: kingston.com
+  price: 0
+  googleprice: google.com
+  model: asdh1233
+  series: Hyper-x
+  speed: 1600
+  timings: 8-8-8-20
+  capacity: 4
+  multichanneltype: 2
+  memorytype: DDR3
+  pinnumber: 240
+  dimms: 2
+  totalcapacity: 8
+  voltage: 1.65
+
+NegativeSpeedMemory:
+  id: 9
+  part_id: 1
+  parttype: Memory
+  manufacturer: Kingston
+  manufacturerwebsite: kingston.com
+  price: 200
+  googleprice: google.com
+  model: asdh1233
+  series: Hyper-x
+  speed: -1600
+  timings: 8-8-8-20
+  capacity: 4
+  multichanneltype: 2
+  memorytype: DDR3
+  pinnumber: 240
+  dimms: 2
+  totalcapacity: 8
+  voltage: 1.65
+
+ZeroSpeedMemory:
+  id: 10
+  part_id: 1
+  parttype: Memory
+  manufacturer: Kingston
+  manufacturerwebsite: kingston.com
+  price: 200
+  googleprice: google.com
+  model: asdh1233
+  series: Hyper-x
+  speed: 0
+  timings: 8-8-8-20
+  capacity: 4
+  multichanneltype: 2
+  memorytype: DDR3
+  pinnumber: 240
+  dimms: 2
+  totalcapacity: 8
+  voltage: 1.65
+
+NegativeCapacityMemory:
+  id: 11
+  part_id: 1
+  parttype: Memory
+  manufacturer: Kingston
+  manufacturerwebsite: kingston.com
+  price: 200
+  googleprice: google.com
+  model: asdh1233
+  series: Hyper-x
+  speed: 1600
+  timings: 8-8-8-20
+  capacity: -4
+  multichanneltype: 2
+  memorytype: DDR3
+  pinnumber: 240
+  dimms: 2
+  totalcapacity: 8
+  voltage: 1.65
+
+ZeroCapacityMemory:
+  id: 12
+  part_id: 1
+  parttype: Memory
+  manufacturer: Kingston
+  manufacturerwebsite: kingston.com
+  price: 200
+  googleprice: google.com
+  model: asdh1233
+  series: Hyper-x
+  speed: 1600
+  timings: 8-8-8-20
+  capacity: 0
+  multichanneltype: 2
+  memorytype: DDR3
+  pinnumber: 240
+  dimms: 2
+  totalcapacity: 8
+  voltage: 1.65
+
+NegativeMultiChannelMemory:
+  id: 13
+  part_id: 1
+  parttype: Memory
+  manufacturer: Kingston
+  manufacturerwebsite: kingston.com
+  price: 200
+  googleprice: google.com
+  model: asdh1233
+  series: Hyper-x
+  speed: 1600
+  timings: 8-8-8-20
+  capacity: 4
+  multichanneltype: -2
+  memorytype: DDR3
+  pinnumber: 240
+  dimms: 2
+  totalcapacity: 8
+  voltage: 1.65
+
+ZeroMultiChannelMemory:
+  id: 14
+  part_id: 1
+  parttype: Memory
+  manufacturer: Kingston
+  manufacturerwebsite: kingston.com
+  price: 200
+  googleprice: google.com
+  model: asdh1233
+  series: Hyper-x
+  speed: 1600
+  timings: 8-8-8-20
+  capacity: 4
+  multichanneltype: 0
+  memorytype: DDR3
+  pinnumber: 240
+  dimms: 2
+  totalcapacity: 8
+  voltage: 1.65
+
+NonDDRMemory:
+  id: 15
+  part_id: 1
+  parttype: Memory
+  manufacturer: Kingston
+  manufacturerwebsite: kingston.com
+  price: 200
+  googleprice: google.com
+  model: asdh1233
+  series: Hyper-x
+  speed: 1600
+  timings: 8-8-8-20
+  capacity: 4
+  multichanneltype: 0
+  memorytype: SDRAM
+  pinnumber: 240
+  dimms: 2
+  totalcapacity: 8
+  voltage: 1.65
+
+NegativePinMemory:
+  id: 16
+  part_id: 1
+  parttype: Memory
+  manufacturer: Kingston
+  manufacturerwebsite: kingston.com
+  price: 200
+  googleprice: google.com
+  model: asdh1233
+  series: Hyper-x
+  speed: 1600
+  timings: 8-8-8-20
+  capacity: 4
+  multichanneltype: 2
+  memorytype: DDR3
+  pinnumber: -240
+  dimms: 2
+  totalcapacity: 8
+  voltage: 1.65
+
+ZeroPinMemory:
+  id: 17
+  part_id: 1
+  parttype: Memory
+  manufacturer: Kingston
+  manufacturerwebsite: kingston.com
+  price: 200
+  googleprice: google.com
+  model: asdh1233
+  series: Hyper-x
+  speed: 1600
+  timings: 8-8-8-20
+  capacity: 4
+  multichanneltype: 2
+  memorytype: DDR3
+  pinnumber: 0
+  dimms: 2
+  totalcapacity: 8
+  voltage: 1.65
+
+NegativeDimmMemory:
+  id: 18
+  part_id: 1
+  parttype: Memory
+  manufacturer: Kingston
+  manufacturerwebsite: kingston.com
+  price: 200
+  googleprice: google.com
+  model: asdh1233
+  series: Hyper-x
+  speed: 1600
+  timings: 8-8-8-20
+  capacity: 4
+  multichanneltype: 2
+  memorytype: DDR3
+  pinnumber: 240
+  dimms: -2
+  totalcapacity: 8
+  voltage: 1.65
+
+ZeroDimmMemory:
+  id: 19
+  part_id: 1
+  parttype: Memory
+  manufacturer: Kingston
+  manufacturerwebsite: kingston.com
+  price: 200
+  googleprice: google.com
+  model: asdh1233
+  series: Hyper-x
+  speed: 1600
+  timings: 8-8-8-20
+  capacity: 4
+  multichanneltype: 2
+  memorytype: DDR3
+  pinnumber: 240
+  dimms: 0
+  totalcapacity: 8
+  voltage: 1.65
+
+NegativeTotalCapacityMemory:
+  id: 20
+  part_id: 1
+  parttype: Memory
+  manufacturer: Kingston
+  manufacturerwebsite: kingston.com
+  price: 200
+  googleprice: google.com
+  model: asdh1233
+  series: Hyper-x
+  speed: 1600
+  timings: 8-8-8-20
+  capacity: 4
+  multichanneltype: 2
+  memorytype: DDR3
+  pinnumber: 240
+  dimms: 2
+  totalcapacity: -8
+  voltage: 1.65
+
+ZeroTotalCapacityMemory:
+  id: 21
+  part_id: 1
+  parttype: Memory
+  manufacturer: Kingston
+  manufacturerwebsite: kingston.com
+  price: 200
+  googleprice: google.com
+  model: asdh1233
+  series: Hyper-x
+  speed: 1600
+  timings: 8-8-8-20
+  capacity: 4
+  multichanneltype: 2
+  memorytype: DDR3
+  pinnumber: 240
+  dimms: 2
+  totalcapacity: 0
+  voltage: 1.65
+
+NegativeVoltageMemory:
+  id: 22
+  part_id: 1
+  parttype: Memory
+  manufacturer: Kingston
+  manufacturerwebsite: kingston.com
+  price: 200
+  googleprice: google.com
+  model: asdh1233
+  series: Hyper-x
+  speed: 1600
+  timings: 8-8-8-20
+  capacity: 4
+  multichanneltype: 2
+  memorytype: DDR3
+  pinnumber: 240
+  dimms: 2
+  totalcapacity: 8
+  voltage: -1.65
+
+ZeroVoltageMemory:
+  id: 23
+  part_id: 1
+  parttype: Memory
+  manufacturer: Kingston
+  manufacturerwebsite: kingston.com
+  price: 200
+  googleprice: google.com
+  model: asdh1233
+  series: Hyper-x
+  speed: 1600
+  timings: 8-8-8-20
+  capacity: 4
+  multichanneltype: 2
+  memorytype: DDR3
+  pinnumber: 240
+  dimms: 2
+  totalcapacity: 8
+  voltage: 0

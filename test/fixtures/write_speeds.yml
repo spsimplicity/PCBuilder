@@ -1,0 +1,43 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+GoodWriteSpeedOne:
+  id: 1
+  disc_drife_id: 1
+  writetype: DVD+RW
+  speed: 8
+
+GoodWriteSpeedTwo:
+  id: 2
+  disc_drife_id: 2
+  writetype: DVD+R
+  speed: 24
+
+NegativeDriveIdWriteSpeed:
+  id: 3
+  disc_drife_id: -2
+  writetype: DVD+R
+  speed: 24
+
+ZeroDriveIdWriteSpeed:
+  id: 4
+  disc_drife_id: 0
+  writetype: DVD+R
+  speed: 24
+
+NonExistantDriveIdWriteSpeed:
+  id: 5
+  disc_drife_id: 12334234
+  writetype: DVD+R
+  speed: 24
+
+NegativeSpeedWriteSpeed:
+  id: 6
+  disc_drife_id: 2
+  writetype: DVD+R
+  speed: -24
+
+ZeroSpeedWriteSpeed:
+  id: 7
+  disc_drife_id: 2
+  writetype: DVD+R
+  speed: 0

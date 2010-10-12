@@ -15,4 +15,9 @@ class Part < ActiveRecord::Base
 	has_many :has_parts, :foreign_key => "part_id", :autosave => true, :dependent => :destroy
 	belongs_to :incompatibles, :foreign_key => "part2_id", :autosave => true, :dependent => :destroy
 	has_many :incompatibles, :foreign_key => "part1_id", :autosave => true, :dependent => :destroy
+	has_many :hard_drives, :foreign_key => "part_id", :autosave => true, :dependent => :destroy
+	has_many :disc_drives, :foreign_key => "part_id", :autosave => true, :dependent => :destroy
+	has_many :gaphics_carts, :foreign_key => "part_id", :autosave => true, :dependent => :destroy
+	has_many :monitors, :foreign_key => "part_id", :autosave => true, :dependent => :destroy
+	has_many :memorys, :foreign_key => "part_id", :autosave => true, :dependent => :destroy
 end

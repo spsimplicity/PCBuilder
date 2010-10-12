@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100908085821) do
+ActiveRecord::Schema.define(:version => 20100926010319) do
 
   create_table "case_motherboards", :force => true do |t|
     t.integer  "case_id",                  :null => false
@@ -118,19 +118,101 @@ ActiveRecord::Schema.define(:version => 20100908085821) do
 
   add_index "cpus", ["part_id"], :name => "fkCpuIdToPart"
 
-  create_table "hard_drives", :force => true do |t|
+  create_table "disc_drives", :force => true do |t|
+    t.integer  "part_id",                           :null => false
+    t.string   "parttype",            :limit => 10, :null => false
+    t.string   "manufacturer",        :limit => 30, :null => false
+    t.string   "manufacturerwebsite",               :null => false
+    t.integer  "price",                             :null => false
+    t.string   "googleprice",                       :null => false
+    t.string   "model",               :limit => 20, :null => false
+    t.string   "interface",           :limit => 10, :null => false
+    t.integer  "cache"
+    t.string   "drivetype",           :limit => 15, :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "disc_drives", ["part_id"], :name => "fkDdToPart"
+
+  create_table "displays", :force => true do |t|
+    t.integer  "part_id",                           :null => false
+    t.string   "parttype",            :limit => 10, :null => false
+    t.string   "manufacturer",        :limit => 20, :null => false
+    t.string   "manufacturerwebsite",               :null => false
+    t.integer  "price",                             :null => false
+    t.string   "googleprice",                       :null => false
+    t.string   "model",               :limit => 30, :null => false
+    t.string   "contrastratio",       :limit => 15, :null => false
+    t.integer  "length"
+    t.integer  "width"
+    t.integer  "height"
+    t.string   "resolution",          :limit => 15, :null => false
+    t.string   "monitortype",         :limit => 5,  :null => false
+    t.integer  "screensize",                        :null => false
+    t.boolean  "widescreen",                        :null => false
+    t.float    "displaycolors"
+    t.integer  "vga",                               :null => false
+    t.integer  "hdmi",                              :null => false
+    t.integer  "svideo",                            :null => false
+    t.integer  "dvi",                               :null => false
+    t.integer  "displayport",                       :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "displays", ["part_id"], :name => "fkDisToPart"
+
+  create_table "graphics_cards", :force => true do |t|
     t.integer  "part_id",                           :null => false
     t.string   "parttype",            :limit => 15, :null => false
-    t.string   "manufacturer",        :limit => 30, :null => false
-    t.string   "model",               :limit => 40, :null => false
-    t.string   "series",              :limit => 25
+    t.string   "manufacturer",        :limit => 20, :null => false
+    t.string   "chipmanufacturer",    :limit => 10, :null => false
     t.integer  "price",                             :null => false
-    t.string   "interface",           :limit => 20, :null => false
-    t.integer  "capacity",                          :null => false
-    t.integer  "rpm",                               :null => false
-    t.integer  "cache"
+    t.string   "model",               :limit => 50, :null => false
+    t.string   "series",              :limit => 30
+    t.integer  "coreclock",                         :null => false
+    t.integer  "shaderclock"
+    t.integer  "memoryclock",                       :null => false
+    t.integer  "memorysize",                        :null => false
+    t.string   "memorytype",          :limit => 5,  :null => false
+    t.integer  "directx",                           :null => false
+    t.string   "width",               :limit => 10, :null => false
+    t.integer  "length",                            :null => false
+    t.string   "interface",           :limit => 15, :null => false
+    t.string   "gpu",                 :limit => 10, :null => false
+    t.boolean  "multigpusupport",                   :null => false
+    t.string   "maxresolution",       :limit => 10, :null => false
+    t.integer  "hdmi",                              :null => false
+    t.integer  "dvi",                               :null => false
+    t.integer  "displayport",                       :null => false
+    t.integer  "vga",                               :null => false
+    t.integer  "svideo",                            :null => false
+    t.integer  "minpower",                          :null => false
+    t.integer  "multigpupower"
+    t.integer  "power6pin",                         :null => false
+    t.integer  "power8pin",                         :null => false
     t.string   "manufacturerwebsite",               :null => false
     t.string   "googleprice",                       :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "graphics_cards", ["part_id"], :name => "fkGcToPart"
+
+  create_table "hard_drives", :force => true do |t|
+    t.integer  "part_id",             :null => false
+    t.string   "parttype",            :null => false
+    t.string   "manufacturer",        :null => false
+    t.string   "manufacturerwebsite", :null => false
+    t.string   "googleprice",         :null => false
+    t.string   "model",               :null => false
+    t.string   "series"
+    t.integer  "price",               :null => false
+    t.string   "interface",           :null => false
+    t.integer  "capacity",            :null => false
+    t.integer  "rpm",                 :null => false
+    t.integer  "cache"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -159,6 +241,30 @@ ActiveRecord::Schema.define(:version => 20100908085821) do
 
   add_index "incompatibles", ["part1_id"], :name => "fkPart1"
   add_index "incompatibles", ["part2_id"], :name => "fkPart2"
+
+  create_table "memories", :force => true do |t|
+    t.integer  "part_id",                           :null => false
+    t.string   "parttype",            :limit => 10, :null => false
+    t.string   "manufacturer",        :limit => 20, :null => false
+    t.string   "manufacturerwebsite",               :null => false
+    t.integer  "price",                             :null => false
+    t.string   "googleprice",                       :null => false
+    t.string   "model",               :limit => 30, :null => false
+    t.string   "series",              :limit => 30
+    t.integer  "speed",                             :null => false
+    t.string   "timings",             :limit => 15, :null => false
+    t.integer  "capacity",                          :null => false
+    t.integer  "multichanneltype",                  :null => false
+    t.string   "memorytype",          :limit => 5,  :null => false
+    t.integer  "pinnumber",                         :null => false
+    t.integer  "dimms",                             :null => false
+    t.integer  "totalcapacity",                     :null => false
+    t.float    "voltage",                           :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "memories", ["part_id"], :name => "fkMemToPart"
 
   create_table "memory_speeds", :force => true do |t|
     t.integer  "motherboard_id", :null => false
@@ -207,8 +313,6 @@ ActiveRecord::Schema.define(:version => 20100908085821) do
     t.datetime "updated_at"
   end
 
-  add_index "parts", ["parttype"], :name => "partTypeKey"
-
   create_table "power_supplies", :force => true do |t|
     t.integer  "part_id",                           :null => false
     t.string   "parttype",            :limit => 20, :null => false
@@ -239,6 +343,16 @@ ActiveRecord::Schema.define(:version => 20100908085821) do
 
   add_index "power_supplies", ["part_id"], :name => "fkPowerSupplyIdToPart"
 
+  create_table "read_speeds", :force => true do |t|
+    t.integer  "disc_drife_id",               :null => false
+    t.string   "readtype",      :limit => 15, :null => false
+    t.integer  "speed",                       :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "read_speeds", ["disc_drife_id"], :name => "fkRSpeedToDd"
+
   create_table "users", :force => true do |t|
     t.string   "name",               :limit => 30,  :null => false
     t.string   "email",              :limit => 50,  :null => false
@@ -248,5 +362,15 @@ ActiveRecord::Schema.define(:version => 20100908085821) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "write_speeds", :force => true do |t|
+    t.integer  "disc_drife_id",               :null => false
+    t.string   "writetype",     :limit => 15, :null => false
+    t.integer  "speed",                       :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "write_speeds", ["disc_drife_id"], :name => "fkWSpeedToDd"
 
 end

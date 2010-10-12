@@ -1,0 +1,144 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+GoodDiscDriveOne:
+  id: 1
+  part_id: 1
+  parttype: Disc Drive
+  manufacturer: asus
+  manufacturerwebsite: asus.com
+  price: 1
+  googleprice: google.com
+  model: abcd123
+  interface: SATA
+  cache: 1
+  drivetype: DVD Burner
+
+GoodDiscDriveTwo:
+  id: 2
+  part_id: 2
+  parttype: Disc Drive
+  manufacturer: samsung
+  manufacturerwebsite: samsung.com
+  price: 1
+  googleprice: google.com
+  model: abcd123
+  interface: SATA
+  cache: 1
+  drivetype: Blu Ray Reader
+
+NegativePartIdDiscDrive:
+  id: 3
+  part_id: -1
+  parttype: Disc Drive
+  manufacturer: asus
+  manufacturerwebsite: asus.com
+  price: 1
+  googleprice: google.com
+  model: abcd123
+  interface: SATA
+  cache: 1
+  drivetype: DVD Burner
+
+ZeroPartIdDiscDrive:
+  id: 4
+  part_id: 0
+  parttype: Disc Drive
+  manufacturer: asus
+  manufacturerwebsite: asus.com
+  price: 1
+  googleprice: google.com
+  model: abcd123
+  interface: SATA
+  cache: 1
+  drivetype: DVD Burner
+
+NonExistantPartIdDiscDrive:
+  id: 5
+  part_id: 123134134
+  parttype: Disc Drive
+  manufacturer: asus
+  manufacturerwebsite: asus.com
+  price: 1
+  googleprice: google.com
+  model: abcd123
+  interface: SATA
+  cache: 1
+  drivetype: DVD Burner
+
+NonDrivePartTypeDiscDrive:
+  id: 6
+  part_id: 1
+  parttype: Floppy
+  manufacturer: asus
+  manufacturerwebsite: asus.com
+  price: 1
+  googleprice: google.com
+  model: abcd123
+  interface: SATA
+  cache: 1
+  drivetype: DVD Burner
+
+NegativePriceDiscDrive:
+  id: 7
+  part_id: 1
+  parttype: Disc Drive
+  manufacturer: asus
+  manufacturerwebsite: asus.com
+  price: -1
+  googleprice: google.com
+  model: abcd123
+  interface: SATA
+  cache: 1
+  drivetype: DVD Burner
+
+ZeroPriceDiscDrive:
+  id: 8
+  part_id: 1
+  parttype: Disc Drive
+  manufacturer: asus
+  manufacturerwebsite: asus.com
+  price: 0
+  googleprice: google.com
+  model: abcd123
+  interface: SATA
+  cache: 1
+  drivetype: DVD Burner
+
+NonSupportedInterfaceDiscDrive:
+  id: 9
+  part_id: 1
+  parttype: Floppy
+  manufacturer: asus
+  manufacturerwebsite: asus.com
+  price: 1
+  googleprice: google.com
+  model: abcd123
+  interface: USB
+  cache: 1
+  drivetype: DVD Burner
+
+NegativeCacheDiscDrive:
+  id: 10
+  part_id: 1
+  parttype: Disc Drive
+  manufacturer: asus
+  manufacturerwebsite: asus.com
+  price: 1
+  googleprice: google.com
+  model: abcd123
+  interface: SATA
+  cache: -1
+  drivetype: DVD Burner
+
+ZeroCacheDiscDrive:
+  id: 11
+  part_id: 1
+  parttype: Disc Drive
+  manufacturer: asus
+  manufacturerwebsite: asus.com
+  price: 1
+  googleprice: google.com
+  model: abcd123
+  interface: SATA
+  cache: 0
+  drivetype: DVD Burner

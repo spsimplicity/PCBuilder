@@ -1,0 +1,1060 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+GoodGraphicsCardOne:
+  id: 1
+  part_id: 1
+  parttype: Graphics Card
+  manufacturer: XFX
+  chipmanufacturer: ATI
+  price: 1
+  model: abcd123
+  series: 5870
+  coreclock: 900
+  memoryclock: 1600
+  memorysize: 2
+  memorytype: DDR5
+  directx: 11
+  width: Dual
+  length: 110
+  interface: PCIE-x16 2.0
+  gpu: 5850
+  multigpusupport: true
+  maxresolution: 1280x1024
+  hdmi: 1
+  dvi: 1
+  displayport: 1
+  vga: 1
+  svideo: 1
+  minpower: 1
+  multigpupower: 1
+  power6pin: 1
+  power8pin: 1
+  manufacturerwebsite: xfx.com
+  googleprice: google.com
+
+GoodGraphicsCardTwo:
+  id: 2
+  part_id: 2
+  parttype: Graphics Card
+  manufacturer: EVGA
+  chipmanufacturer: Nvidia
+  price: 1
+  model: abcd123
+  series: OC
+  coreclock: 1000
+  shaderclock: 1700
+  memoryclock: 1800
+  memorysize: 1
+  memorytype: DDR5
+  directx: 11
+  width: Triple
+  length: 120
+  interface: PCIE-x16 2.0
+  gpu: GTX 480
+  multigpusupport: false
+  maxresolution: 1280x1024
+  hdmi: 1
+  dvi: 1
+  displayport: 1
+  vga: 1
+  svideo: 1
+  minpower: 1
+  multigpupower: 1
+  power6pin: 1
+  power8pin: 1
+  manufacturerwebsite: evga.com
+  googleprice: google.com
+
+NegativePartIdGraphicsCard:
+  id: 3
+  part_id: -1
+  parttype: Graphics Card
+  manufacturer: XFX
+  chipmanufacturer: ATI
+  price: 1
+  model: abcd123
+  series: 5870
+  coreclock: 900
+  memoryclock: 1600
+  memorysize: 2
+  memorytype: DDR5
+  directx: 11
+  width: Dual
+  length: 110
+  interface: PCIE-x16 2.0
+  gpu: 5850
+  multigpusupport: true
+  maxresolution: 1280x1024
+  hdmi: 1
+  dvi: 1
+  displayport: 1
+  vga: 1
+  svideo: 1
+  minpower: 1
+  multigpupower: 1
+  power6pin: 1
+  power8pin: 1
+  manufacturerwebsite: xfx.com
+  googleprice: google.com
+
+ZeroPartIdGraphicsCard:
+  id: 4
+  part_id: 0
+  parttype: Graphics Card
+  manufacturer: XFX
+  chipmanufacturer: ATI
+  price: 1
+  model: abcd123
+  series: 5870
+  coreclock: 900
+  memoryclock: 1600
+  memorysize: 2
+  memorytype: DDR5
+  directx: 11
+  width: Dual
+  length: 110
+  interface: PCIE-x16 2.0
+  gpu: 5850
+  multigpusupport: true
+  maxresolution: 1280x1024
+  hdmi: 1
+  dvi: 1
+  displayport: 1
+  vga: 1
+  svideo: 1
+  minpower: 1
+  multigpupower: 1
+  power6pin: 1
+  power8pin: 1
+  manufacturerwebsite: xfx.com
+  googleprice: google.com
+
+NonExistantPartIdGraphicsCard:
+  id: 5
+  part_id: 123344343
+  parttype: Graphics Card
+  manufacturer: XFX
+  chipmanufacturer: ATI
+  price: 1
+  model: abcd123
+  series: 5870
+  coreclock: 900
+  memoryclock: 1600
+  memorysize: 2
+  memorytype: DDR5
+  directx: 11
+  width: Dual
+  length: 110
+  interface: PCIE-x16 2.0
+  gpu: 5850
+  multigpusupport: true
+  maxresolution: 1280x1024
+  hdmi: 1
+  dvi: 1
+  displayport: 1
+  vga: 1
+  svideo: 1
+  minpower: 1
+  multigpupower: 1
+  power6pin: 1
+  power8pin: 1
+  manufacturerwebsite: xfx.com
+  googleprice: google.com
+
+NonGpuGraphicsCard:
+  id: 6
+  part_id: 1
+  parttype: Sound Card
+  manufacturer: XFX
+  chipmanufacturer: ATI
+  price: 1
+  model: abcd123
+  series: 5870
+  coreclock: 900
+  memoryclock: 1600
+  memorysize: 2
+  memorytype: DDR5
+  directx: 11
+  width: Dual
+  length: 110
+  interface: PCIE-x16 2.0
+  gpu: 5850
+  multigpusupport: true
+  maxresolution: 1280x1024
+  hdmi: 1
+  dvi: 1
+  displayport: 1
+  vga: 1
+  svideo: 1
+  minpower: 1
+  multigpupower: 1
+  power6pin: 1
+  power8pin: 1
+  manufacturerwebsite: xfx.com
+  googleprice: google.com
+
+NegativePriceGraphicsCard:
+  id: 7
+  part_id: 1
+  parttype: Graphics Card
+  manufacturer: XFX
+  chipmanufacturer: ATI
+  price: -1
+  model: abcd123
+  series: 5870
+  coreclock: 900
+  memoryclock: 1600
+  memorysize: 2
+  memorytype: DDR5
+  directx: 11
+  width: Dual
+  length: 110
+  interface: PCIE-x16 2.0
+  gpu: 5850
+  multigpusupport: true
+  maxresolution: 1280x1024
+  hdmi: 1
+  dvi: 1
+  displayport: 1
+  vga: 1
+  svideo: 1
+  minpower: 1
+  multigpupower: 1
+  power6pin: 1
+  power8pin: 1
+  manufacturerwebsite: xfx.com
+  googleprice: google.com
+
+ZeroPriceGraphicsCard:
+  id: 8
+  part_id: 1
+  parttype: Graphics Card
+  manufacturer: XFX
+  chipmanufacturer: ATI
+  price: 0
+  model: abcd123
+  series: 5870
+  coreclock: 900
+  memoryclock: 1600
+  memorysize: 2
+  memorytype: DDR5
+  directx: 11
+  width: Dual
+  length: 110
+  interface: PCIE-x16 2.0
+  gpu: 5850
+  multigpusupport: true
+  maxresolution: 1280x1024
+  hdmi: 1
+  dvi: 1
+  displayport: 1
+  vga: 1
+  svideo: 1
+  minpower: 1
+  multigpupower: 1
+  power6pin: 1
+  power8pin: 1
+  manufacturerwebsite: xfx.com
+  googleprice: google.com
+
+NegativeCoreClockGraphicsCard:
+  id: 9
+  part_id: 1
+  parttype: Graphics Card
+  manufacturer: XFX
+  chipmanufacturer: ATI
+  price: 1
+  model: abcd123
+  series: 5870
+  coreclock: -900
+  memoryclock: 1600
+  memorysize: 2
+  memorytype: DDR5
+  directx: 11
+  width: Dual
+  length: 110
+  interface: PCIE-x16 2.0
+  gpu: 5850
+  multigpusupport: true
+  maxresolution: 1280x1024
+  hdmi: 1
+  dvi: 1
+  displayport: 1
+  vga: 1
+  svideo: 1
+  minpower: 1
+  multigpupower: 1
+  power6pin: 1
+  power8pin: 1
+  manufacturerwebsite: xfx.com
+  googleprice: google.com
+
+ZeroCoreClockGraphicsCard:
+  id: 10
+  part_id: 1
+  parttype: Graphics Card
+  manufacturer: XFX
+  chipmanufacturer: ATI
+  price: 1
+  model: abcd123
+  series: 5870
+  coreclock: 0
+  memoryclock: 1600
+  memorysize: 2
+  memorytype: DDR5
+  directx: 11
+  width: Dual
+  length: 110
+  interface: PCIE-x16 2.0
+  gpu: 5850
+  multigpusupport: true
+  maxresolution: 1280x1024
+  hdmi: 1
+  dvi: 1
+  displayport: 1
+  vga: 1
+  svideo: 1
+  minpower: 1
+  multigpupower: 1
+  power6pin: 1
+  power8pin: 1
+  manufacturerwebsite: xfx.com
+  googleprice: google.com
+
+NegativeShaderClockGraphicsCard:
+  id: 11
+  part_id: 1
+  parttype: Graphics Card
+  manufacturer: XFX
+  chipmanufacturer: ATI
+  price: 1
+  model: abcd123
+  series: 5870
+  coreclock: 900
+  shaderclock: -1000
+  memoryclock: 1600
+  memorysize: 2
+  memorytype: DDR5
+  directx: 11
+  width: Dual
+  length: 110
+  interface: PCIE-x16 2.0
+  gpu: 5850
+  multigpusupport: true
+  maxresolution: 1280x1024
+  hdmi: 1
+  dvi: 1
+  displayport: 1
+  vga: 1
+  svideo: 1
+  minpower: 1
+  multigpupower: 1
+  power6pin: 1
+  power8pin: 1
+  manufacturerwebsite: xfx.com
+  googleprice: google.com
+
+ZeroShaderClockGraphicsCard:
+  id: 12
+  part_id: 1
+  parttype: Graphics Card
+  manufacturer: XFX
+  chipmanufacturer: ATI
+  price: 1
+  model: abcd123
+  series: 5870
+  coreclock: 900
+  shaderclock: 0
+  memoryclock: 1600
+  memorysize: 2
+  memorytype: DDR5
+  directx: 11
+  width: Dual
+  length: 110
+  interface: PCIE-x16 2.0
+  gpu: 5850
+  multigpusupport: true
+  maxresolution: 1280x1024
+  hdmi: 1
+  dvi: 1
+  displayport: 1
+  vga: 1
+  svideo: 1
+  minpower: 1
+  multigpupower: 1
+  power6pin: 1
+  power8pin: 1
+  manufacturerwebsite: xfx.com
+  googleprice: google.com
+
+NegativeMemoryClockGraphicsCard:
+  id: 13
+  part_id: 1
+  parttype: Graphics Card
+  manufacturer: XFX
+  chipmanufacturer: ATI
+  price: 1
+  model: abcd123
+  series: 5870
+  coreclock: 900
+  memoryclock: -1600
+  memorysize: 2
+  memorytype: DDR5
+  directx: 11
+  width: Dual
+  length: 110
+  interface: PCIE-x16 2.0
+  gpu: 5850
+  multigpusupport: true
+  maxresolution: 1280x1024
+  hdmi: 1
+  dvi: 1
+  displayport: 1
+  vga: 1
+  svideo: 1
+  minpower: 1
+  multigpupower: 1
+  power6pin: 1
+  power8pin: 1
+  manufacturerwebsite: xfx.com
+  googleprice: google.com
+
+ZeroMemoryClockGraphicsCard:
+  id: 14
+  part_id: 1
+  parttype: Graphics Card
+  manufacturer: XFX
+  chipmanufacturer: ATI
+  price: 1
+  model: abcd123
+  series: 5870
+  coreclock: 900
+  memoryclock: 0
+  memorysize: 2
+  memorytype: DDR5
+  directx: 11
+  width: Dual
+  length: 110
+  interface: PCIE-x16 2.0
+  gpu: 5850
+  multigpusupport: true
+  maxresolution: 1280x1024
+  hdmi: 1
+  dvi: 1
+  displayport: 1
+  vga: 1
+  svideo: 1
+  minpower: 1
+  multigpupower: 1
+  power6pin: 1
+  power8pin: 1
+  manufacturerwebsite: xfx.com
+  googleprice: google.com
+
+NegativeMemorySizeGraphicsCard:
+  id: 15
+  part_id: 1
+  parttype: Graphics Card
+  manufacturer: XFX
+  chipmanufacturer: ATI
+  price: 1
+  model: abcd123
+  series: 5870
+  coreclock: 900
+  memoryclock: 1600
+  memorysize: -2
+  memorytype: DDR5
+  directx: 11
+  width: Dual
+  length: 110
+  interface: PCIE-x16 2.0
+  gpu: 5850
+  multigpusupport: true
+  maxresolution: 1280x1024
+  hdmi: 1
+  dvi: 1
+  displayport: 1
+  vga: 1
+  svideo: 1
+  minpower: 1
+  multigpupower: 1
+  power6pin: 1
+  power8pin: 1
+  manufacturerwebsite: xfx.com
+  googleprice: google.com
+
+ZeroMemorySizeGraphicsCard:
+  id: 16
+  part_id: 1
+  parttype: Graphics Card
+  manufacturer: XFX
+  chipmanufacturer: ATI
+  price: 1
+  model: abcd123
+  series: 5870
+  coreclock: 900
+  memoryclock: 1600
+  memorysize: 0
+  memorytype: DDR5
+  directx: 11
+  width: Dual
+  length: 110
+  interface: PCIE-x16 2.0
+  gpu: 5850
+  multigpusupport: true
+  maxresolution: 1280x1024
+  hdmi: 1
+  dvi: 1
+  displayport: 1
+  vga: 1
+  svideo: 1
+  minpower: 1
+  multigpupower: 1
+  power6pin: 1
+  power8pin: 1
+  manufacturerwebsite: xfx.com
+  googleprice: google.com
+
+NegativeDirectXGraphicsCard:
+  id: 17
+  part_id: 1
+  parttype: Graphics Card
+  manufacturer: XFX
+  chipmanufacturer: ATI
+  price: 1
+  model: abcd123
+  series: 5870
+  coreclock: 900
+  memoryclock: 1600
+  memorysize: 2
+  memorytype: DDR5
+  directx: -11
+  width: Dual
+  length: 110
+  interface: PCIE-x16 2.0
+  gpu: 5850
+  multigpusupport: true
+  maxresolution: 1280x1024
+  hdmi: 1
+  dvi: 1
+  displayport: 1
+  vga: 1
+  svideo: 1
+  minpower: 1
+  multigpupower: 1
+  power6pin: 1
+  power8pin: 1
+  manufacturerwebsite: xfx.com
+  googleprice: google.com
+
+ZeroDirectXGraphicsCard:
+  id: 18
+  part_id: 1
+  parttype: Graphics Card
+  manufacturer: XFX
+  chipmanufacturer: ATI
+  price: 1
+  model: abcd123
+  series: 5870
+  coreclock: 900
+  memoryclock: 1600
+  memorysize: 2
+  memorytype: DDR5
+  directx: 0
+  width: Dual
+  length: 110
+  interface: PCIE-x16 2.0
+  gpu: 5850
+  multigpusupport: true
+  maxresolution: 1280x1024
+  hdmi: 1
+  dvi: 1
+  displayport: 1
+  vga: 1
+  svideo: 1
+  minpower: 1
+  multigpupower: 1
+  power6pin: 1
+  power8pin: 1
+  manufacturerwebsite: xfx.com
+  googleprice: google.com
+
+NegativeLengthGraphicsCard:
+  id: 19
+  part_id: 1
+  parttype: Graphics Card
+  manufacturer: XFX
+  chipmanufacturer: ATI
+  price: 1
+  model: abcd123
+  series: 5870
+  coreclock: 900
+  memoryclock: 1600
+  memorysize: 2
+  memorytype: DDR5
+  directx: 11
+  width: Dual
+  length: -110
+  interface: PCIE-x16 2.0
+  gpu: 5850
+  multigpusupport: true
+  maxresolution: 1280x1024
+  hdmi: 1
+  dvi: 1
+  displayport: 1
+  vga: 1
+  svideo: 1
+  minpower: 1
+  multigpupower: 1
+  power6pin: 1
+  power8pin: 1
+  manufacturerwebsite: xfx.com
+  googleprice: google.com
+
+ZeroLengthGraphicsCard:
+  id: 20
+  part_id: 1
+  parttype: Graphics Card
+  manufacturer: XFX
+  chipmanufacturer: ATI
+  price: 1
+  model: abcd123
+  series: 5870
+  coreclock: 900
+  memoryclock: 1600
+  memorysize: 2
+  memorytype: DDR5
+  directx: 11
+  width: Dual
+  length: 0
+  interface: PCIE-x16 2.0
+  gpu: 5850
+  multigpusupport: true
+  maxresolution: 1280x1024
+  hdmi: 1
+  dvi: 1
+  displayport: 1
+  vga: 1
+  svideo: 1
+  minpower: 1
+  multigpupower: 1
+  power6pin: 1
+  power8pin: 1
+  manufacturerwebsite: xfx.com
+  googleprice: google.com
+
+NegativeHDMIGraphicsCard:
+  id: 21
+  part_id: 1
+  parttype: Graphics Card
+  manufacturer: XFX
+  chipmanufacturer: ATI
+  price: 1
+  model: abcd123
+  series: 5870
+  coreclock: 900
+  memoryclock: 1600
+  memorysize: 2
+  memorytype: DDR5
+  directx: 11
+  width: Dual
+  length: 110
+  interface: PCIE-x16 2.0
+  gpu: 5850
+  multigpusupport: true
+  maxresolution: 1280x1024
+  hdmi: -1
+  dvi: 1
+  displayport: 1
+  vga: 1
+  svideo: 1
+  minpower: 1
+  multigpupower: 1
+  power6pin: 1
+  power8pin: 1
+  manufacturerwebsite: xfx.com
+  googleprice: google.com
+
+NegativeDVIGraphicsCard:
+  id: 22
+  part_id: 1
+  parttype: Graphics Card
+  manufacturer: XFX
+  chipmanufacturer: ATI
+  price: 1
+  model: abcd123
+  series: 5870
+  coreclock: 900
+  memoryclock: 1600
+  memorysize: 2
+  memorytype: DDR5
+  directx: 11
+  width: Dual
+  length: 110
+  interface: PCIE-x16 2.0
+  gpu: 5850
+  multigpusupport: true
+  maxresolution: 1280x1024
+  hdmi: 1
+  dvi: -1
+  displayport: 1
+  vga: 1
+  svideo: 1
+  minpower: 1
+  multigpupower: 1
+  power6pin: 1
+  power8pin: 1
+  manufacturerwebsite: xfx.com
+  googleprice: google.com
+
+NegativeVGAGraphicsCard:
+  id: 23
+  part_id: 1
+  parttype: Graphics Card
+  manufacturer: XFX
+  chipmanufacturer: ATI
+  price: 1
+  model: abcd123
+  series: 5870
+  coreclock: 900
+  memoryclock: 1600
+  memorysize: 2
+  memorytype: DDR5
+  directx: 11
+  width: Dual
+  length: 110
+  interface: PCIE-x16 2.0
+  gpu: 5850
+  multigpusupport: true
+  maxresolution: 1280x1024
+  hdmi: 1
+  dvi: 1
+  displayport: 1
+  vga: -1
+  svideo: 1
+  minpower: 1
+  multigpupower: 1
+  power6pin: 1
+  power8pin: 1
+  manufacturerwebsite: xfx.com
+  googleprice: google.com
+
+NegativeDisplayPortGraphicsCard:
+  id: 24
+  part_id: 1
+  parttype: Graphics Card
+  manufacturer: XFX
+  chipmanufacturer: ATI
+  price: 1
+  model: abcd123
+  series: 5870
+  coreclock: 900
+  memoryclock: 1600
+  memorysize: 2
+  memorytype: DDR5
+  directx: 11
+  width: Dual
+  length: 110
+  interface: PCIE-x16 2.0
+  gpu: 5850
+  multigpusupport: true
+  maxresolution: 1280x1024
+  hdmi: 1
+  dvi: 1
+  displayport: -1
+  vga: 1
+  svideo: 1
+  minpower: 1
+  multigpupower: 1
+  power6pin: 1
+  power8pin: 1
+  manufacturerwebsite: xfx.com
+  googleprice: google.com
+
+NegativeSVideoGraphicsCard:
+  id: 25
+  part_id: 1
+  parttype: Graphics Card
+  manufacturer: XFX
+  chipmanufacturer: ATI
+  price: 1
+  model: abcd123
+  series: 5870
+  coreclock: 900
+  memoryclock: 1600
+  memorysize: 2
+  memorytype: DDR5
+  directx: 11
+  width: Dual
+  length: 110
+  interface: PCIE-x16 2.0
+  gpu: 5850
+  multigpusupport: true
+  maxresolution: 1280x1024
+  hdmi: 1
+  dvi: 1
+  displayport: 1
+  vga: 1
+  svideo: -1
+  minpower: 1
+  multigpupower: 1
+  power6pin: 1
+  power8pin: 1
+  manufacturerwebsite: xfx.com
+  googleprice: google.com
+
+NegativeMinPowerGraphicsCard:
+  id: 26
+  part_id: 1
+  parttype: Graphics Card
+  manufacturer: XFX
+  chipmanufacturer: ATI
+  price: 1
+  model: abcd123
+  series: 5870
+  coreclock: 900
+  memoryclock: 1600
+  memorysize: 2
+  memorytype: DDR5
+  directx: 11
+  width: Dual
+  length: 110
+  interface: PCIE-x16 2.0
+  gpu: 5850
+  multigpusupport: true
+  maxresolution: 1280x1024
+  hdmi: 1
+  dvi: 1
+  displayport: 1
+  vga: 1
+  svideo: 1
+  minpower: -1
+  multigpupower: 1
+  power6pin: 1
+  power8pin: 1
+  manufacturerwebsite: xfx.com
+  googleprice: google.com
+
+ZeroMinPowerGraphicsCard:
+  id: 27
+  part_id: 1
+  parttype: Graphics Card
+  manufacturer: XFX
+  chipmanufacturer: ATI
+  price: 1
+  model: abcd123
+  series: 5870
+  coreclock: 900
+  memoryclock: 1600
+  memorysize: 2
+  memorytype: DDR5
+  directx: 11
+  width: Dual
+  length: 110
+  interface: PCIE-x16 2.0
+  gpu: 5850
+  multigpusupport: true
+  maxresolution: 1280x1024
+  hdmi: 1
+  dvi: 1
+  displayport: 1
+  vga: 1
+  svideo: 1
+  minpower: 0
+  multigpupower: 1
+  power6pin: 1
+  power8pin: 1
+  manufacturerwebsite: xfx.com
+  googleprice: google.com
+
+NegativeMultiGpuPowerGraphicsCard:
+  id: 28
+  part_id: 1
+  parttype: Graphics Card
+  manufacturer: XFX
+  chipmanufacturer: ATI
+  price: 1
+  model: abcd123
+  series: 5870
+  coreclock: 900
+  memoryclock: 1600
+  memorysize: 2
+  memorytype: DDR5
+  directx: 11
+  width: Dual
+  length: 110
+  interface: PCIE-x16 2.0
+  gpu: 5850
+  multigpusupport: true
+  maxresolution: 1280x1024
+  hdmi: 1
+  dvi: 1
+  displayport: 1
+  vga: 1
+  svideo: 1
+  minpower: 1
+  multigpupower: -1
+  power6pin: 1
+  power8pin: 1
+  manufacturerwebsite: xfx.com
+  googleprice: google.com
+
+ZeroMultiGpuPowerGraphicsCard:
+  id: 29
+  part_id: 1
+  parttype: Graphics Card
+  manufacturer: XFX
+  chipmanufacturer: ATI
+  price: 1
+  model: abcd123
+  series: 5870
+  coreclock: 900
+  memoryclock: 1600
+  memorysize: 2
+  memorytype: DDR5
+  directx: 11
+  width: Dual
+  length: 110
+  interface: PCIE-x16 2.0
+  gpu: 5850
+  multigpusupport: true
+  maxresolution: 1280x1024
+  hdmi: 1
+  dvi: 1
+  displayport: 1
+  vga: 1
+  svideo: 1
+  minpower: 1
+  multigpupower: 0
+  power6pin: 1
+  power8pin: 1
+  manufacturerwebsite: xfx.com
+  googleprice: google.com
+
+NegativePower6PinGraphicsCard:
+  id: 30
+  part_id: 1
+  parttype: Graphics Card
+  manufacturer: XFX
+  chipmanufacturer: ATI
+  price: 1
+  model: abcd123
+  series: 5870
+  coreclock: 900
+  memoryclock: 1600
+  memorysize: 2
+  memorytype: DDR5
+  directx: 11
+  width: Dual
+  length: 110
+  interface: PCIE-x16 2.0
+  gpu: 5850
+  multigpusupport: true
+  maxresolution: 1280x1024
+  hdmi: 1
+  dvi: 1
+  displayport: 1
+  vga: 1
+  svideo: 1
+  minpower: 1
+  multigpupower: 1
+  power6pin: -1
+  power8pin: 1
+  manufacturerwebsite: xfx.com
+  googleprice: google.com
+
+ZeroPower6PinGraphicsCard:
+  id: 31
+  part_id: 1
+  parttype: Graphics Card
+  manufacturer: XFX
+  chipmanufacturer: ATI
+  price: 1
+  model: abcd123
+  series: 5870
+  coreclock: 900
+  memoryclock: 1600
+  memorysize: 2
+  memorytype: DDR5
+  directx: 11
+  width: Dual
+  length: 110
+  interface: PCIE-x16 2.0
+  gpu: 5850
+  multigpusupport: true
+  maxresolution: 1280x1024
+  hdmi: 1
+  dvi: 1
+  displayport: 1
+  vga: 1
+  svideo: 1
+  minpower: 1
+  multigpupower: 1
+  power6pin: 0
+  power8pin: 1
+  manufacturerwebsite: xfx.com
+  googleprice: google.com
+
+NegativePower8PinGraphicsCard:
+  id: 32
+  part_id: 1
+  parttype: Graphics Card
+  manufacturer: XFX
+  chipmanufacturer: ATI
+  price: 1
+  model: abcd123
+  series: 5870
+  coreclock: 900
+  memoryclock: 1600
+  memorysize: 2
+  memorytype: DDR5
+  directx: 11
+  width: Dual
+  length: 110
+  interface: PCIE-x16 2.0
+  gpu: 5850
+  multigpusupport: true
+  maxresolution: 1280x1024
+  hdmi: 1
+  dvi: 1
+  displayport: 1
+  vga: 1
+  svideo: 1
+  minpower: 1
+  multigpupower: 1
+  power6pin: 1
+  power8pin: -1
+  manufacturerwebsite: xfx.com
+  googleprice: google.com
+
+ZeroPower8PinGraphicsCard:
+  id: 33
+  part_id: 1
+  parttype: Graphics Card
+  manufacturer: XFX
+  chipmanufacturer: ATI
+  price: 1
+  model: abcd123
+  series: 5870
+  coreclock: 900
+  memoryclock: 1600
+  memorysize: 2
+  memorytype: DDR5
+  directx: 11
+  width: Dual
+  length: 110
+  interface: PCIE-x16 2.0
+  gpu: 5850
+  multigpusupport: true
+  maxresolution: 1280x1024
+  hdmi: 1
+  dvi: 1
+  displayport: 1
+  vga: 1
+  svideo: 1
+  minpower: 1
+  multigpupower: 1
+  power6pin: 1
+  power8pin: 0
+  manufacturerwebsite: xfx.com
+  googleprice: google.com
