@@ -11,6 +11,7 @@ GoodMotherboardOne:
   googleprice: google.com
   maxmemory: 16
   memorytype: DDR2
+  memchannel: 2
   pci_ex16: 2
   pci_e2: 2
   memoryslots: 4
@@ -22,7 +23,8 @@ GoodMotherboardOne:
   mainpower: 24
   pci_e: 2
   pci: 0
-  sli_crossfire: true
+  crossfire: true
+  sli: true
   sockettype: 775
   sata3: 6
   sata6: 0
@@ -39,6 +41,7 @@ GoodMotherboardTwo:
   googleprice: google.com
   maxmemory: 24
   memorytype: DDR3
+  memchannel: 2
   pci_ex16: 4
   pci_e2: 4
   memoryslots: 6
@@ -50,7 +53,8 @@ GoodMotherboardTwo:
   mainpower: 24
   pci_e: 1
   pci: 0
-  sli_crossfire: true
+  crossfire: true
+  sli: true
   sockettype: 1336
   sata3: 6
   sata6: 2
@@ -67,6 +71,7 @@ NonMotherboardParttype:
   googleprice: google.com
   maxmemory: 16
   memorytype: DDR2
+  memchannel: 2
   pci_ex16: 2
   pci_e2: 2
   memoryslots: 4
@@ -78,7 +83,8 @@ NonMotherboardParttype:
   mainpower: 24
   pci_e: 2
   pci: 0
-  sli_crossfire: true
+  crossfire: true
+  sli: true
   sockettype: 775
   sata3: 6
   sata6: 0
@@ -95,6 +101,7 @@ NegativeMotherboardPrice:
   googleprice: google.com
   maxmemory: 16
   memorytype: DDR2
+  memchannel: 2
   pci_ex16: 2
   pci_e2: 2
   memoryslots: 4
@@ -106,7 +113,8 @@ NegativeMotherboardPrice:
   mainpower: 24
   pci_e: 2
   pci: 0
-  sli_crossfire: true
+  crossfire: true
+  sli: true
   sockettype: 775
   sata3: 6
   sata6: 0
@@ -123,6 +131,7 @@ ZeroMotherboardPrice:
   googleprice: google.com
   maxmemory: 16
   memorytype: DDR2
+  memchannel: 2
   pci_ex16: 2
   pci_e2: 2
   memoryslots: 4
@@ -134,7 +143,8 @@ ZeroMotherboardPrice:
   mainpower: 24
   pci_e: 2
   pci: 0
-  sli_crossfire: true
+  crossfire: true
+  sli: true
   sockettype: 775
   sata3: 6
   sata6: 0
@@ -151,6 +161,7 @@ NegativeMotherboardMaxMemory:
   googleprice: google.com
   maxmemory: -16
   memorytype: DDR2
+  memchannel: 2
   pci_ex16: 2
   pci_e2: 2
   memoryslots: 4
@@ -162,7 +173,8 @@ NegativeMotherboardMaxMemory:
   mainpower: 24
   pci_e: 2
   pci: 0
-  sli_crossfire: true
+  crossfire: true
+  sli: true
   sockettype: 775
   sata3: 6
   sata6: 0
@@ -179,6 +191,7 @@ ZeroMotherboardMaxMemory:
   googleprice: google.com
   maxmemory: 0
   memorytype: DDR2
+  memchannel: 2
   pci_ex16: 2
   pci_e2: 2
   memoryslots: 4
@@ -190,7 +203,8 @@ ZeroMotherboardMaxMemory:
   mainpower: 24
   pci_e: 2
   pci: 0
-  sli_crossfire: true
+  crossfire: true
+  sli: true
   sockettype: 775
   sata3: 6
   sata6: 0
@@ -207,6 +221,7 @@ NonDDRMotherboardMemoryType:
   googleprice: google.com
   maxmemory: 16
   memorytype: SDRAM
+  memchannel: 2
   pci_ex16: 2
   pci_e2: 2
   memoryslots: 4
@@ -218,7 +233,8 @@ NonDDRMotherboardMemoryType:
   mainpower: 24
   pci_e: 2
   pci: 0
-  sli_crossfire: true
+  crossfire: true
+  sli: true
   sockettype: 775
   sata3: 6
   sata6: 0
@@ -235,6 +251,7 @@ NegativeMotherboardPCI_EX16:
   googleprice: google.com
   maxmemory: 16
   memorytype: DDR2
+  memchannel: 2
   pci_ex16: -2
   pci_e2: 2
   memoryslots: 4
@@ -246,7 +263,8 @@ NegativeMotherboardPCI_EX16:
   mainpower: 24
   pci_e: 2
   pci: 0
-  sli_crossfire: true
+  crossfire: true
+  sli: true
   sockettype: 775
   sata3: 6
   sata6: 0
@@ -263,6 +281,7 @@ NegativeMotherboardPCI_E2:
   googleprice: google.com
   maxmemory: 16
   memorytype: DDR2
+  memchannel: 2
   pci_ex16: 2
   pci_e2: -2
   memoryslots: 4
@@ -274,7 +293,8 @@ NegativeMotherboardPCI_E2:
   mainpower: 24
   pci_e: 2
   pci: 0
-  sli_crossfire: true
+  crossfire: true
+  sli: true
   sockettype: 775
   sata3: 6
   sata6: 0
@@ -291,6 +311,7 @@ NegativeMotherboardMemorySlots:
   googleprice: google.com
   maxmemory: 16
   memorytype: DDR2
+  memchannel: 2
   pci_ex16: 2
   pci_e2: 2
   memoryslots: -4
@@ -302,7 +323,8 @@ NegativeMotherboardMemorySlots:
   mainpower: 24
   pci_e: 2
   pci: 0
-  sli_crossfire: true
+  crossfire: true
+  sli: true
   sockettype: 775
   sata3: 6
   sata6: 0
@@ -319,6 +341,7 @@ ZeroMotherboardMemorySlots:
   googleprice: google.com
   maxmemory: 16
   memorytype: DDR2
+  memchannel: 2
   pci_ex16: 2
   pci_e2: 2
   memoryslots: 0
@@ -330,7 +353,8 @@ ZeroMotherboardMemorySlots:
   mainpower: 24
   pci_e: 2
   pci: 0
-  sli_crossfire: true
+  crossfire: true
+  sli: true
   sockettype: 775
   sata3: 6
   sata6: 0
@@ -347,6 +371,7 @@ NonStandardMotherboardSize:
   googleprice: google.com
   maxmemory: 16
   memorytype: DDR2
+  memchannel: 2
   pci_ex16: 2
   pci_e2: 2
   memoryslots: 4
@@ -358,7 +383,8 @@ NonStandardMotherboardSize:
   mainpower: 24
   pci_e: 2
   pci: 0
-  sli_crossfire: true
+  crossfire: true
+  sli: true
   sockettype: 775
   sata3: 6
   sata6: 0
@@ -375,6 +401,7 @@ NegativeMotherboardCpuPowerPin:
   googleprice: google.com
   maxmemory: 16
   memorytype: DDR2
+  memchannel: 2
   pci_ex16: 2
   pci_e2: 2
   memoryslots: 4
@@ -386,7 +413,8 @@ NegativeMotherboardCpuPowerPin:
   mainpower: 24
   pci_e: 2
   pci: 0
-  sli_crossfire: true
+  crossfire: true
+  sli: true
   sockettype: 775
   sata3: 6
   sata6: 0
@@ -403,6 +431,7 @@ ZeroMotherboardCpuPowerPin:
   googleprice: google.com
   maxmemory: 16
   memorytype: DDR2
+  memchannel: 2
   pci_ex16: 2
   pci_e2: 2
   memoryslots: 4
@@ -414,7 +443,8 @@ ZeroMotherboardCpuPowerPin:
   mainpower: 24
   pci_e: 2
   pci: 0
-  sli_crossfire: true
+  crossfire: true
+  sli: true
   sockettype: 775
   sata3: 6
   sata6: 0
@@ -431,6 +461,7 @@ NegativeMotherboardFSB:
   googleprice: google.com
   maxmemory: 16
   memorytype: DDR2
+  memchannel: 2
   pci_ex16: 2
   pci_e2: 2
   memoryslots: 4
@@ -442,7 +473,8 @@ NegativeMotherboardFSB:
   mainpower: 24
   pci_e: 2
   pci: 0
-  sli_crossfire: true
+  crossfire: true
+  sli: true
   sockettype: 775
   sata3: 6
   sata6: 0
@@ -459,6 +491,7 @@ ZeroMotherboardFSB:
   googleprice: google.com
   maxmemory: 16
   memorytype: DDR2
+  memchannel: 2
   pci_ex16: 2
   pci_e2: 2
   memoryslots: 4
@@ -470,7 +503,8 @@ ZeroMotherboardFSB:
   mainpower: 24
   pci_e: 2
   pci: 0
-  sli_crossfire: true
+  crossfire: true
+  sli: true
   sockettype: 775
   sata3: 6
   sata6: 0
@@ -487,6 +521,7 @@ NegativeMotherboardMainPower:
   googleprice: google.com
   maxmemory: 16
   memorytype: DDR2
+  memchannel: 2
   pci_ex16: 2
   pci_e2: 2
   memoryslots: 4
@@ -498,7 +533,8 @@ NegativeMotherboardMainPower:
   mainpower: -24
   pci_e: 2
   pci: 0
-  sli_crossfire: true
+  crossfire: true
+  sli: true
   sockettype: 775
   sata3: 6
   sata6: 0
@@ -515,6 +551,7 @@ ZeroMotherboardMainPower:
   googleprice: google.com
   maxmemory: 16
   memorytype: DDR2
+  memchannel: 2
   pci_ex16: 2
   pci_e2: 2
   memoryslots: 4
@@ -526,7 +563,8 @@ ZeroMotherboardMainPower:
   mainpower: 0
   pci_e: 2
   pci: 0
-  sli_crossfire: true
+  crossfire: true
+  sli: true
   sockettype: 775
   sata3: 6
   sata6: 0
@@ -543,6 +581,7 @@ NegativeMotherboardPCI_E:
   googleprice: google.com
   maxmemory: 16
   memorytype: DDR2
+  memchannel: 2
   pci_ex16: 2
   pci_e2: 2
   memoryslots: 4
@@ -554,7 +593,8 @@ NegativeMotherboardPCI_E:
   mainpower: 24
   pci_e: -2
   pci: 0
-  sli_crossfire: true
+  crossfire: true
+  sli: true
   sockettype: 775
   sata3: 6
   sata6: 0
@@ -571,6 +611,7 @@ NegativeMotherboardPCI:
   googleprice: google.com
   maxmemory: 16
   memorytype: DDR2
+  memchannel: 2
   pci_ex16: 2
   pci_e2: 2
   memoryslots: 4
@@ -582,7 +623,8 @@ NegativeMotherboardPCI:
   mainpower: 24
   pci_e: 2
   pci: -1
-  sli_crossfire: true
+  crossfire: true
+  sli: true
   sockettype: 775
   sata3: 6
   sata6: 0
@@ -599,6 +641,7 @@ NegativeMotherboardSata3:
   googleprice: google.com
   maxmemory: 16
   memorytype: DDR2
+  memchannel: 2
   pci_ex16: 2
   pci_e2: 2
   memoryslots: 4
@@ -610,7 +653,8 @@ NegativeMotherboardSata3:
   mainpower: 24
   pci_e: 2
   pci: 0
-  sli_crossfire: true
+  crossfire: true
+  sli: true
   sockettype: 775
   sata3: -6
   sata6: 0
@@ -627,6 +671,7 @@ NegativeMotherboardSata6:
   googleprice: google.com
   maxmemory: 16
   memorytype: DDR2
+  memchannel: 2
   pci_ex16: 2
   pci_e2: 2
   memoryslots: 4
@@ -638,7 +683,8 @@ NegativeMotherboardSata6:
   mainpower: 24
   pci_e: 2
   pci: 0
-  sli_crossfire: true
+  crossfire: true
+  sli: true
   sockettype: 775
   sata3: 6
   sata6: -2
@@ -655,6 +701,7 @@ NegativeMotherboardIDE:
   googleprice: google.com
   maxmemory: 16
   memorytype: DDR2
+  memchannel: 2
   pci_ex16: 2
   pci_e2: 2
   memoryslots: 4
@@ -666,7 +713,8 @@ NegativeMotherboardIDE:
   mainpower: 24
   pci_e: 2
   pci: 0
-  sli_crossfire: true
+  crossfire: true
+  sli: true
   sockettype: 775
   sata3: 6
   sata6: 0
@@ -683,6 +731,7 @@ NegativeMotherboardPartId:
   googleprice: google.com
   maxmemory: 16
   memorytype: DDR2
+  memchannel: 2
   pci_ex16: 2
   pci_e2: 2
   memoryslots: 4
@@ -694,7 +743,8 @@ NegativeMotherboardPartId:
   mainpower: 24
   pci_e: 2
   pci: 0
-  sli_crossfire: true
+  crossfire: true
+  sli: true
   sockettype: 775
   sata3: 6
   sata6: 0
@@ -711,6 +761,7 @@ ZeroMotherboardPartId:
   googleprice: google.com
   maxmemory: 16
   memorytype: DDR2
+  memchannel: 2
   pci_ex16: 2
   pci_e2: 2
   memoryslots: 4
@@ -722,7 +773,8 @@ ZeroMotherboardPartId:
   mainpower: 24
   pci_e: 2
   pci: 0
-  sli_crossfire: true
+  crossfire: true
+  sli: true
   sockettype: 775
   sata3: 6
   sata6: 0
@@ -739,6 +791,7 @@ NonExistantMotherboardPartId:
   googleprice: google.com
   maxmemory: 16
   memorytype: DDR2
+  memchannel: 2
   pci_ex16: 2
   pci_e2: 2
   memoryslots: 4
@@ -750,7 +803,8 @@ NonExistantMotherboardPartId:
   mainpower: 24
   pci_e: 2
   pci: 0
-  sli_crossfire: true
+  crossfire: true
+  sli: true
   sockettype: 775
   sata3: 6
   sata6: 0

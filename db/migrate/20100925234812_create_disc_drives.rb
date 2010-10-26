@@ -20,6 +20,7 @@ class CreateDiscDrives < ActiveRecord::Migration
 
   def self.down
     execute "alter table disc_drives drop foreign key fkDdToPart"
+    execute "alter table disc_drives drop key fkDdToPart"
     drop_table :disc_drives
   end
 end

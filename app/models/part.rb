@@ -4,7 +4,7 @@ class Part < ActiveRecord::Base
     attr_accessible
 	#Parttype validations
 	validates_length_of :parttype, :maximum => 20
-	validates_inclusion_of :parttype, :in => %w(CPU Case Motherboard Memory Monitor Power\ Supply
+	validates_inclusion_of :parttype, :in => %w(FAKE CPU Case Motherboard Memory Monitor Power\ Supply
 		Hard\ Drive Disc\ Drive CPU\ Cooler Graphics\ Card), :message => "Parttype is not supported"
 	#Foreign key validations
 	has_many :cpus, :foreign_key => "part_id", :autosave => true, :dependent => :destroy

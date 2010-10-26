@@ -18,8 +18,8 @@ class CreateCpus < ActiveRecord::Migration
       t.integer :cores,              :null => false
       t.integer :watts,              :null => false
       t.integer :powerpin,           :null => false
-      t.integer :maxmemory,          :null => false
-      t.integer :memchanneltype,     :null => false
+      t.integer :maxmemory
+      t.integer :memchanneltype
 	  t.index :part
 	  
       t.timestamps
@@ -29,6 +29,7 @@ class CreateCpus < ActiveRecord::Migration
 
   def self.down
     execute "alter table cpus drop foreign key fkCpuIdToPart"
+    execute "alter table cpus drop key fkCpuIdToPart"
     drop_table :cpus
   end
 end

@@ -9,11 +9,12 @@ BEGIN
     DECLARE socketsMatch INT DEFAULT 0;
     /*The socket of the CPU Cooler*/
     DECLARE cpuCoolerSocket VARCHAR(10);
+    DECLARE loopDone INT DEFAULT 0;
     /*Cursor to get each socket for the specific CPU Cooler*/
     DECLARE coolerSocketsCur CURSOR FOR 
         SELECT sockettype
         FROM cpu_cooler_sockets
-        WHERE coolerId = cpu_cooler_id;
+        WHERE coolerId = cpu_cooler_sockets.cpu_cooler_id;
     /*Handler to set varaible to leave loop when no sets left*/
     DECLARE CONTINUE HANDLER FOR NOT FOUND SET loopDone = 1;
     /*For each CPU Cooler socket*/

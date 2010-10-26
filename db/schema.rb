@@ -110,8 +110,8 @@ ActiveRecord::Schema.define(:version => 20100926010319) do
     t.integer  "cores",                             :null => false
     t.integer  "watts",                             :null => false
     t.integer  "powerpin",                          :null => false
-    t.integer  "maxmemory",                         :null => false
-    t.integer  "memchanneltype",                    :null => false
+    t.integer  "maxmemory"
+    t.integer  "memchanneltype"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -285,6 +285,7 @@ ActiveRecord::Schema.define(:version => 20100926010319) do
     t.string   "googleprice",                       :null => false
     t.integer  "maxmemory",                         :null => false
     t.string   "memorytype",          :limit => 5,  :null => false
+    t.integer  "memchannel",                        :null => false
     t.integer  "pci_ex16",                          :null => false
     t.integer  "pci_e2",                            :null => false
     t.integer  "memoryslots",                       :null => false
@@ -296,7 +297,8 @@ ActiveRecord::Schema.define(:version => 20100926010319) do
     t.integer  "mainpower",                         :null => false
     t.integer  "pci_e",                             :null => false
     t.integer  "pci",                               :null => false
-    t.boolean  "sli_crossfire",                     :null => false
+    t.boolean  "crossfire",                         :null => false
+    t.boolean  "sli",                               :null => false
     t.string   "sockettype",          :limit => 10, :null => false
     t.integer  "sata3",                             :null => false
     t.integer  "sata6",                             :null => false

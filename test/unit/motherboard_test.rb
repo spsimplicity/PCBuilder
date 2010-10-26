@@ -245,9 +245,15 @@ class MotherboardTest < ActiveSupport::TestCase
 	    assert !motherboards(:NegativeMotherboardPCI).valid?
 	end
 	
-	test "Rejects null sli_crossfire" do
+	test "Rejects null crossfire" do
 	    mobo = motherboards(:GoodMotherboardOne)
-		mobo.sli_crossfire = nil
+		mobo.crossfire = nil
+		assert !mobo.valid?
+	end
+	
+	test "Rejects null sli" do
+	    mobo = motherboards(:GoodMotherboardOne)
+		mobo.sli = nil
 		assert !mobo.valid?
 	end
 	

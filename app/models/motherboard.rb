@@ -9,10 +9,11 @@ class Motherboard < ActiveRecord::Base
 	validates_length_of :manufacturer, :maximum => 15
 	#Model validations
 	validates_length_of :model, :maximum => 40
-	#Price, Maxmemory, Memoryslots, Cpupowerpin, Fsb, Mainpower, Part_id validations
+	#Price, Maxmemory, Memoryslots, Memchannel, Cpupowerpin, Fsb, Mainpower, Part_id validations
 	validates_numericality_of :price, :maxmemory, :memoryslots, :cpupowerpin, :fsb, :mainpower, 
-	    :part_id, :greater_than => 0
-	validates_presence_of :price, :maxmemory, :memoryslots, :cpupowerpin, :fsb, :mainpower, :part_id
+	    :part_id, :memchannel, :greater_than => 0
+	validates_presence_of :price, :maxmemory, :memoryslots, :cpupowerpin, :fsb, :mainpower, :part_id,
+  	    :memchannel
 	validates_each :part_id do |record, attr, value|
 	    record.errors.add("Part does not exist") if Part.find_by_id(value) == nil
 	end
@@ -28,13 +29,13 @@ class Motherboard < ActiveRecord::Base
 	validates_presence_of :pci_ex16, :pci_e2, :pci_e, :pci, :sata3, :sata6, :ide
 	#Size validations
 	validates_length_of :size, :maximum => 15
-	validates_inclusion_of :size, :in => %w(Micro\ ATX ATX EATX XL\ ATX), 
+	validates_inclusion_of :size, :in => %w(Micro\ ATX ATX EATX XL-ATX), 
 	    :message => "Size is not a standard size"
 	#Northbridge and Southbridge validations
 	validates_length_of :northbridge, :southbridge, :maximum => 25
 	validates_presence_of :northbridge
-	#Sli_Crossfire validations
-	validates_presence_of :sli_crossfire	
+	#Sli, Crossfire validations
+	validates_inclusion_of :crossfire, :sli, :in => [true, false]
 	#Sockettype validations
 	validates_length_of :sockettype, :maximum => 10
 	#Foreign key validations

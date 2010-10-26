@@ -26,11 +26,17 @@ class CreateComputers < ActiveRecord::Migration
 
   def self.down
     execute "alter table computers drop foreign key fkToCpuFromCompID"
+    execute "alter table computers drop key fkToCpuFromCompID"
 	execute "alter table computers drop foreign key fkToCpuCoolerFromCompID"
+	execute "alter table computers drop key fkToCpuCoolerFromCompID"
 	execute "alter table computers drop foreign key fkToMoboFromCompID"
+	execute "alter table computers drop key fkToMoboFromCompID"
 	execute "alter table computers drop foreign key fkToUserFromCompID"
+	execute "alter table computers drop key fkToUserFromCompID"
 	execute "alter table computers drop foreign key fkToPsuFromCompID"
+	execute "alter table computers drop key fkToPsuFromCompID"
 	execute "alter table computers drop foreign key fkToCaseFromCompID"
+	execute "alter table computers drop key fkToCaseFromCompID"
     drop_table :computers
   end
 end

@@ -10,6 +10,7 @@ class CreateMotherboards < ActiveRecord::Migration
       t.string :googleprice,         :null => false
       t.integer :maxmemory,          :null => false
       t.string :memorytype,          :null => false, :limit => 5
+	  t.integer :memchannel,         :null => false
       t.integer :pci_ex16,           :null => false
       t.integer :pci_e2,             :null => false
       t.integer :memoryslots,        :null => false
@@ -21,7 +22,8 @@ class CreateMotherboards < ActiveRecord::Migration
       t.integer :mainpower,          :null => false
       t.integer :pci_e,              :null => false
       t.integer :pci,                :null => false
-      t.boolean :sli_crossfire,      :null => false
+      t.boolean :crossfire,          :null => false
+	  t.boolean :sli,                :null => false
       t.string :sockettype,          :null => false, :limit => 10
       t.integer :sata3,              :null => false
       t.integer :sata6,              :null => false
@@ -35,6 +37,7 @@ class CreateMotherboards < ActiveRecord::Migration
 
   def self.down
     execute "alter table motherboards drop foreign key fkMotherboarIdToPart"
+    execute "alter table motherboards drop key fkMotherboarIdToPart"
     drop_table :motherboards
   end
 end

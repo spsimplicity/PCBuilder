@@ -22,6 +22,7 @@ class CreateHardDrives < ActiveRecord::Migration
 
   def self.down
     execute "alter table drop foreign key fkHddToPart"
+    execute "alter table drop key fkHddToPart"
     drop_table :hard_drives
   end
 end

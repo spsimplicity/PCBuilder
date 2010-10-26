@@ -193,24 +193,12 @@ class CpuTest < ActiveSupport::TestCase
       assert !cpus(:ZeroCpuMaxMemory).valid?
   end
   
-  test "Rejects null maxmemory value" do
-      cpu = cpus(:GoodCpuOne)
-	  cpu.maxmemory = nil
-	  assert !cpu.valid?
-  end
-  
   test "Rejects negative memchanneltype value" do
       assert !cpus(:NegativeCpuMemChannelType).valid?
   end
   
   test "Rejects zero memchanneltype value" do
       assert !cpus(:ZeroCpuMemChannelType).valid?
-  end
-  
-  test "Rejects null memchanneltype value" do
-      cpu = cpus(:GoodCpuOne)
-	  cpu.memchanneltype = nil
-	  assert !cpu.valid?
   end
   
   test "Rejects null part_id" do

@@ -2,9 +2,11 @@ class PowerSupply < ActiveRecord::Base
     
 	#No attributes are accessible for mass assignment
     attr_accessible
-	#Parttype, Energycert validations
-	validates_length_of :parttype, :energycert, :maximum => 20
+	#Parttype validations
+	validates_length_of :parttype, :maximum => 20
 	validates_inclusion_of :parttype, :in => %w(Power\ Supply), :message => "Part Type is not power supply"
+	#Energycert validations
+	validates_length_of :energycert, :maximum => 20, :allow_nil => true
 	#Manufacturer, Model, Series validations
 	validates_length_of :manufacturer, :model, :series, :maximum => 30
 	#Manufacturerwebsite and Googleprice validations
@@ -22,7 +24,7 @@ class PowerSupply < ActiveRecord::Base
 	validates_presence_of :satapower, :peripheral, :cpu4_4pin, :cpu4pin, :cpu8pin, :gpu8pin, 
 	    :gpu6pin, :gpu6_2pin
 	#Multi_gpu validations
-	validates_presence_of :multi_gpu
+	validates_inclusion_of :multi_gpu, :in => [true, false]
 	#Power_supply_type validations
 	validates_length_of :power_supply_type, :maximum => 40
 	#Foreign key validations

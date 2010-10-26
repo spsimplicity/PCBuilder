@@ -27,6 +27,7 @@ class CreateMemories < ActiveRecord::Migration
 
   def self.down
     execute "alter table memories drop foreign key fkMemToPart"
+    execute "alter table memories drop key fkMemToPart"
     drop_table :memories
   end
 end

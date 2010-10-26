@@ -40,6 +40,7 @@ class CreateGraphicsCards < ActiveRecord::Migration
 
   def self.down
     execute "alter table graphics_cards drop foreign key fkGcToPart"
+    execute "alter table graphics_cards drop key fkGcToPart"
     drop_table :graphics_cards
   end
 end

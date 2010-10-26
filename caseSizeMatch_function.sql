@@ -9,6 +9,7 @@ BEGIN
     DECLARE caseMoboSize VARCHAR(15);
     /*Flag to determine if the sizes match*/
     DECLARE caseSizeMatch INT DEFAULT 0;
+    DECLARE loopDone INT DEFAULT 0;
     /*Gets all the sizes for the specific Case*/
     DECLARE caseSizeCur CURSOR FOR 
         SELECT size

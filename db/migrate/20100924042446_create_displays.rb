@@ -30,6 +30,7 @@ class CreateDisplays < ActiveRecord::Migration
 
   def self.down
     execute "alter table displays drop foreign key fkDisToPart"
+    execute "alter table displays drop key fkDisToPart"
     drop_table :displays
   end
 end

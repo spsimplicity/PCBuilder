@@ -29,6 +29,7 @@ class CreateCases < ActiveRecord::Migration
 
   def self.down
     execute "alter table cases drop foreign key fkCaseIdToPart"
+    execute "alter table cases drop key fkCaseIdToPart"
     drop_table :cases
   end
 end

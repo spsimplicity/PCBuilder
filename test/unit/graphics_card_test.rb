@@ -323,10 +323,6 @@ class GraphicsCardTest < ActiveSupport::TestCase
 	    assert !graphics_cards(:NegativePower6PinGraphicsCard).valid?
 	end
 	
-	test "Rejects zero power6pin" do
-	    assert !graphics_cards(:ZeroPower6PinGraphicsCard).valid?
-	end
-	
 	test "Rejects null power8pin" do
 	    gc = graphics_cards(:GoodGraphicsCardOne)
 		gc.power8pin = nil
@@ -335,10 +331,6 @@ class GraphicsCardTest < ActiveSupport::TestCase
 	
 	test "Rejects negative power8pin" do
 	    assert !graphics_cards(:NegativePower8PinGraphicsCard).valid?
-	end
-	
-	test "Rejects zero power8pin" do
-	    assert !graphics_cards(:ZeroPower8PinGraphicsCard).valid?
 	end
 	
 	test "Rejects null manufacturerwebsite" do

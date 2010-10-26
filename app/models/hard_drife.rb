@@ -19,9 +19,11 @@ class HardDrife < ActiveRecord::Base
 	validates_length_of :model, :maximum => 30
 	#Series validations
 	validates_length_of :series, :maximum => 20, :allow_nil => true
-	#Price, Capacity, RPM, Cache validations
-	validates_numericality_of :price, :capacity, :rpm, :cache, :greater_than => 0
+	#Price, Capacity, RPM validations
+	validates_numericality_of :price, :capacity, :rpm, :greater_than => 0
 	validates_presence_of :price, :capacity, :rpm
+	#Cache validations
+	validates_numericality_of :cache, :greater_than => 0, :allow_nil => true
 	#Interface validations
 	validates_length_of :interface, :maximum => 10
 	validates_inclusion_of :interface, :in => %w(SATA\ 3 SATA\ 6 IDE/PATA), :message => "Interface is not SATA 3/6 or IDE/PATA"
