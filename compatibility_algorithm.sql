@@ -339,6 +339,7 @@ BEGIN
         END LOOP powerLoop;
         */
         /*For each CPU Cooler*/
+		SELECT part2type;
         OPEN cpuCoolerCur;
         coolerLoop:LOOP
             FETCH cpuCoolerCur INTO primId, part2Id, part2Type, maxMemHeight, coolerHeight,
@@ -346,8 +347,10 @@ BEGIN
             IF done = 1 THEN
                 LEAVE coolerLoop;
             END IF;
+			SELECT part2type;
             /*Its incompatible if no sockets match*/
             IF coolerSocketMatch(primId, cpuSocketType) = 0 THEN
+                SELECT part2type;
                 INSERT INTO incompatibles(part1_id, part1type, part2_id, part2Type, created_at, updated_at)
                 VALUES (part1Id, parttype, part2Id, part2Type, cast(now() as DATETIME), cast(now() as DATETIME));
             END IF;
@@ -393,7 +396,7 @@ BEGIN
             END IF;
         END LOOP caseLoop;
         */
-        /*For each CPU
+        /*For each CPU*/
         OPEN cpuCur;
         cpuLoop:LOOP
             FETCH cpuCur INTO part2Id, part2Type, cpuSocketType, fsb, watts, cpuPower, maxMemory,
@@ -401,7 +404,7 @@ BEGIN
             IF done = 1 THEN
                 LEAVE cpuLoop;
             END IF;
-            /*Incompatible if sockets do not match
+            /*Incompatible if sockets do not match*/
             IF coolerSocketMatch(primId, cpuSocketType) = 0 THEN
                 INSERT INTO incompatibles(part1_id, part1type, part2_id, part2Type)
                 VALUES (part1Id, parttype, part2Id, part2Type);

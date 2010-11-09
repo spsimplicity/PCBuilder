@@ -1,12 +1,12 @@
-CPU,550,Core i3,Intel,147,http://ark.intel.com/Product.aspx?id=48505,http://www.google.com/products?q=Core+i3+550,3.2,LGA 1156,2.5GT/s,0,1MB,4MB,2,73,4,16GB,2
-CPU,670,Core i5,Intel,284,http://ark.intel.com/Product.aspx?id=43556,http://www.google.com/products?q=Core+i5+670,3.46,LGA 1156,2.5GT/s,0,1MB,4MB,2,73,4,16GB,2
-CPU,680,Core i5,Intel,294,http://ark.intel.com/Product.aspx?id=48504,http://www.google.com/products?q=Core+i5+680,3.6,LGA 1156,2.5GT/s,0,1MB,4MB,2,73,4,16GB,2
-CPU,975,Core i7,Intel,1050,http://ark.intel.com/Product.aspx?id=37153,http://www.google.com/products?q=Core+i7+975,3.33,LGA 1366,6.4GT/s,0,1MB,8MB,4,130,8,24GB,3
-CPU,980X,Core i7,Intel,1200,http://ark.intel.com/Product.aspx?id=47932,http://www.google.com/products?q=Core+i7+980x,3.33,LGA 1366,6.4GT/s,0,1.5MB,12MB,6,130,8,24GB,3
-CPU,Q9550s,Core 2 Quad,Intel,350,http://ark.intel.com/Product.aspx?id=40815,http://www.google.com/products/catalog?q=Core+2+Quad+Q9550s,2.83,LGA 775,1333MT/s,0,12MB,0,4,65,4,nil,nil
-CPU,Q9650,Core 2 Quad,Intel,330,http://ark.intel.com/Product.aspx?id=35428,http://www.google.com/products/catalog?q=Core+2+Quad+Q9650,3,LGA 775,1333MT/s,0,12MB,0,4,95,4,nil,nil
-CPU,E8500,Core 2 Duo,Intel,200,http://ark.intel.com/Product.aspx?id=33911,http://www.google.com/products/catalog?q=Core+2+Duo+E8500,3.16,LGA 775,1333MT/s,0,6MB,0,2,65,4,nil,nil
-CPU,E8600,Core 2 Duo,Intel,285,http://ark.intel.com/Product.aspx?id=35605,http://www.google.com/products/catalog?q=Core+2+Duo+E8600,3.33,LGA 775,1333MT/s,0,6MB,0,2,65,4,nil,nil
+CPU,550,Core i3,Intel,147,http://ark.intel.com/Product.aspx?id=48505,http://www.google.com/products?q=Core+i3+550,3.2,1156,2.5GT/s,0,1MB,4MB,2,73,4,16GB,2
+CPU,670,Core i5,Intel,284,http://ark.intel.com/Product.aspx?id=43556,http://www.google.com/products?q=Core+i5+670,3.46,1156,2.5GT/s,0,1MB,4MB,2,73,4,16GB,2
+CPU,680,Core i5,Intel,294,http://ark.intel.com/Product.aspx?id=48504,http://www.google.com/products?q=Core+i5+680,3.6,1156,2.5GT/s,0,1MB,4MB,2,73,4,16GB,2
+CPU,975,Core i7,Intel,1050,http://ark.intel.com/Product.aspx?id=37153,http://www.google.com/products?q=Core+i7+975,3.33,1366,6.4GT/s,0,1MB,8MB,4,130,8,24GB,3
+CPU,980X,Core i7,Intel,1200,http://ark.intel.com/Product.aspx?id=47932,http://www.google.com/products?q=Core+i7+980x,3.33,1366,6.4GT/s,0,1.5MB,12MB,6,130,8,24GB,3
+CPU,Q9550s,Core 2 Quad,Intel,350,http://ark.intel.com/Product.aspx?id=40815,http://www.google.com/products/catalog?q=Core+2+Quad+Q9550s,2.83,775,1333MT/s,0,12MB,0,4,65,4,nil,nil
+CPU,Q9650,Core 2 Quad,Intel,330,http://ark.intel.com/Product.aspx?id=35428,http://www.google.com/products/catalog?q=Core+2+Quad+Q9650,3,775,1333MT/s,0,12MB,0,4,95,4,nil,nil
+CPU,E8500,Core 2 Duo,Intel,200,http://ark.intel.com/Product.aspx?id=33911,http://www.google.com/products/catalog?q=Core+2+Duo+E8500,3.16,775,1333MT/s,0,6MB,0,2,65,4,nil,nil
+CPU,E8600,Core 2 Duo,Intel,285,http://ark.intel.com/Product.aspx?id=35605,http://www.google.com/products/catalog?q=Core+2+Duo+E8600,3.33,775,1333MT/s,0,6MB,0,2,65,4,nil,nil
 CPU,255,Athlon II X2,AMD,75,http://products.amd.com/en-us/DesktopCPUDetail.aspx?id=627,http://www.google.com/products/catalog?q=Athlon+II+x2+255,3.1,AM3,4 GT/s,512KB,2MB,0,2,65,4,nil,nil
 CPU,260,Athlon II X2,AMD,85,http://products.amd.com/en-us/DesktopCPUDetail.aspx?id=680,http://www.google.com/products/catalog?q=Athlon+II+x2+260,3.2,AM3,4 GT/s,512KB,2MB,0,2,65,4,nil,nil
 CPU,440,Athlon II X3,AMD,85,http://products.amd.com/en-us/DesktopCPUDetail.aspx?id=626,http://www.google.com/products/catalog?q=Athlon+II+x3+440,3,AM3,4 GT/s,1.1MB,1.5MB,0,3,95,4,nil,nil
