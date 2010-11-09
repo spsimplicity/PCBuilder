@@ -10,11 +10,12 @@ BEGIN
     /*The socket of the CPU Cooler*/
     DECLARE cpuCoolerSocket VARCHAR(10);
     DECLARE loopDone INT DEFAULT 0;
+	DECLARE cmp INT DEFAULT 2;
     /*Cursor to get each socket for the specific CPU Cooler*/
     DECLARE coolerSocketsCur CURSOR FOR 
         SELECT sockettype
         FROM cpu_cooler_sockets
-        WHERE coolerId = cpu_cooler_sockets.cpu_cooler_id;
+        WHERE coolerId = cpu_cooler_id;
     /*Handler to set varaible to leave loop when no sets left*/
     DECLARE CONTINUE HANDLER FOR NOT FOUND SET loopDone = 1;
     /*For each CPU Cooler socket*/
@@ -25,8 +26,9 @@ BEGIN
             LEAVE socketsLoop;
         END IF;
         /*If the sizes match set the flag to 1*/
-        IF cpuCoolerSocket = socketToMatch THEN
+        IF STRCMP(cpuCoolerSocket, socketToMatch) = 0 THEN
             SET socketsMatch = 1;
+			SET loopDone = 1;
         END IF;
     END LOOP socketsLoop;
     

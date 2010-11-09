@@ -625,4 +625,13 @@ namespace :db do
 	desc "Load All Parts"
 	task :loadparts => [:environment, 'db:reset', :fake, :memory, :graphicscards, :harddrives,
 	    :discdrives, :monitors, :cpus, :coolers, :cases, :powersupplies, :motherboards]
+	
+	desc "Print all cpus and coolers"
+	task :printing => :environment do
+	    cpus = Cpu.find(:all)
+		coolers = CpuCooler.find(:all)
+	end
+	
+	desc "Loads all parts and calls incompatibility algorithm"
+	task :determineCompatibility => [:environment, 'db:reset', :fake, :cpus, :coolers, :printing]
 end
