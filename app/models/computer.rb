@@ -5,7 +5,6 @@ class Computer < ActiveRecord::Base
 	#Name validations
 	validates_length_of :name, :maximum => 50
 	#Motherboard_id, cpu_id, cpu_cooler_id, power_supply_id, case_id, and user_id validations
-	validates_presence_of :motherboard_id, :cpu_id, :case_id, :cpu_cooler_id, :power_supply_id, :user_id
 	validates_numericality_of :motherboard_id, :cpu_id, :case_id,
 	    :cpu_cooler_id, :power_supply_id, :user_id, :only_integer => true, :greater_than => 0
 	validates_each :motherboard_id do |record, attr, value|

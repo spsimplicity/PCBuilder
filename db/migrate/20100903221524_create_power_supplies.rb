@@ -32,7 +32,6 @@ class CreatePowerSupplies < ActiveRecord::Migration
   end
 
   def self.down
-    execute "alter table power_supplies drop foreign key fkPowerSupplyIdToPart"
     execute "alter table power_supplies drop key fkPowerSupplyIdToPart"
     drop_table :power_supplies
   end

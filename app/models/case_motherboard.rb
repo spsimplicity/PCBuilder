@@ -10,7 +10,7 @@ class CaseMotherboard < ActiveRecord::Base
     end
 	#Size validations
 	validates_length_of :size, :maximum => 15
-	validates_inclusion_of :size, :in => %w(Micro\ ATX ATX EATX XL\ ATX), 
+	validates_inclusion_of :size, :in => %w(Micro\ ATX EATX ATX XL\ ATX), 
 	    :message => "Size is not a standard size"
 	#Foreign key validations
     belongs_to :case

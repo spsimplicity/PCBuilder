@@ -12,7 +12,6 @@ class CreateWriteSpeeds < ActiveRecord::Migration
   end
 
   def self.down
-    execute "alter table write_speeds drop foreign key fkWSpeedToDd"
     execute "alter table write_speeds drop key fkWSpeedToDd"
     drop_table :write_speeds
   end

@@ -11,7 +11,6 @@ class CreateCaseMotherboards < ActiveRecord::Migration
   end
 
   def self.down
-    execute "alter table case_motherboards drop foreign key fkToCaseID"
     execute "alter table case_motherboards drop key fkToCaseID"
     drop_table :case_motherboards
   end

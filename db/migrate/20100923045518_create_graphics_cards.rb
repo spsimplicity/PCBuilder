@@ -18,7 +18,7 @@ class CreateGraphicsCards < ActiveRecord::Migration
       t.integer :length,             :null => false
       t.string :interface,           :null => false, :limit => 15
       t.string :gpu,                 :null => false, :limit => 10
-      t.boolean :multigpusupport,    :null => false
+      t.integer :multigpusupport,    :null => false
 	  t.string :maxresolution,       :null => false, :limit => 10
       t.integer :hdmi,               :null => false
       t.integer :dvi,                :null => false
@@ -39,7 +39,6 @@ class CreateGraphicsCards < ActiveRecord::Migration
   end
 
   def self.down
-    execute "alter table graphics_cards drop foreign key fkGcToPart"
     execute "alter table graphics_cards drop key fkGcToPart"
     drop_table :graphics_cards
   end

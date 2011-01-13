@@ -11,7 +11,6 @@ class CreateMemorySpeeds < ActiveRecord::Migration
   end
 
   def self.down
-	execute "alter table memory_speeds drop foreign key fkToMoboID"
     execute "alter table memory_speeds drop key fkToMoboID"
     drop_table :memory_speeds
   end

@@ -2,12 +2,12 @@ class CreateComputers < ActiveRecord::Migration
   def self.up
     create_table :computers do |t|
       t.string :name,             :null => false, :limit => 50, :default => 'Custom Built Computer'
-      t.belongs_to :motherboard,  :null => false
-      t.belongs_to :cpu,          :null => false
-      t.belongs_to :cpu_cooler,   :null => false
-      t.belongs_to :power_supply, :null => false
-      t.belongs_to :case,         :null => false
-      t.belongs_to :user,         :null => false
+      t.belongs_to :motherboard
+      t.belongs_to :cpu
+      t.belongs_to :cpu_cooler
+      t.belongs_to :power_supply
+      t.belongs_to :case
+      t.belongs_to :user
       t.index :cpu
 	  t.index :cpu_cooler
 	  t.index :power_supply
@@ -25,17 +25,11 @@ class CreateComputers < ActiveRecord::Migration
   end
 
   def self.down
-    execute "alter table computers drop foreign key fkToCpuFromCompID"
     execute "alter table computers drop key fkToCpuFromCompID"
-	execute "alter table computers drop foreign key fkToCpuCoolerFromCompID"
 	execute "alter table computers drop key fkToCpuCoolerFromCompID"
-	execute "alter table computers drop foreign key fkToMoboFromCompID"
 	execute "alter table computers drop key fkToMoboFromCompID"
-	execute "alter table computers drop foreign key fkToUserFromCompID"
 	execute "alter table computers drop key fkToUserFromCompID"
-	execute "alter table computers drop foreign key fkToPsuFromCompID"
 	execute "alter table computers drop key fkToPsuFromCompID"
-	execute "alter table computers drop foreign key fkToCaseFromCompID"
 	execute "alter table computers drop key fkToCaseFromCompID"
     drop_table :computers
   end

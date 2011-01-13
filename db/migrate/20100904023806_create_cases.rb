@@ -20,6 +20,7 @@ class CreateCases < ActiveRecord::Migration
       t.integer :width,              :null => false
       t.integer :height,             :null => false
 	  t.integer :maxcoolerheight,    :null => false
+	  t.integer :maxgpulength,       :null => false
 	  t.index :part
 	  
       t.timestamps
@@ -28,7 +29,6 @@ class CreateCases < ActiveRecord::Migration
   end
 
   def self.down
-    execute "alter table cases drop foreign key fkCaseIdToPart"
     execute "alter table cases drop key fkCaseIdToPart"
     drop_table :cases
   end

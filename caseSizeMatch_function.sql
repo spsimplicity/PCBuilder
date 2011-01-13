@@ -1,7 +1,5 @@
 DELIMITER $$
-
 DROP FUNCTION IF EXISTS caseSizeMatch$$
-
 CREATE FUNCTION caseSizeMatch(caseId INT, sizeToMatch VARCHAR(15))
     RETURNS INT DETERMINISTIC
 BEGIN
@@ -14,7 +12,7 @@ BEGIN
     DECLARE caseSizeCur CURSOR FOR 
         SELECT size
         FROM case_motherboards
-        WHERE caseId = id;
+        WHERE caseId = case_id;
     /*Handler to set variable to signify there are no sizes left*/
     DECLARE CONTINUE HANDLER FOR NOT FOUND SET loopDone = 1;
     /*For each Case Motherboard size*/
@@ -25,12 +23,12 @@ BEGIN
             LEAVE sizeLoop;
         END IF;
         /*If the sizes match set the flag to 1*/
-        IF caseMoboSize = sizeToMatch THEN
+        IF STRCMP(caseMoboSize,sizeToMatch) = 0 THEN
             SET caseSizeMatch = 1;
+			SET loopDone = 1;
         END IF;
     END LOOP sizeLoop;
     
     RETURN caseSizeMatch;
 END$$
-
 DELIMITER ;

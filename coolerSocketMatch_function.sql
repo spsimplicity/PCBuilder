@@ -1,7 +1,5 @@
 DELIMITER $$
-
 DROP FUNCTION IF EXISTS coolerSocketMatch$$
-
 CREATE FUNCTION coolerSocketMatch(coolerId INT, socketToMatch VARCHAR(10))
     RETURNS INT DETERMINISTIC
 BEGIN
@@ -10,7 +8,6 @@ BEGIN
     /*The socket of the CPU Cooler*/
     DECLARE cpuCoolerSocket VARCHAR(10);
     DECLARE loopDone INT DEFAULT 0;
-	DECLARE cmp INT DEFAULT 2;
     /*Cursor to get each socket for the specific CPU Cooler*/
     DECLARE coolerSocketsCur CURSOR FOR 
         SELECT sockettype
@@ -34,5 +31,4 @@ BEGIN
     
     RETURN socketsMatch;
 END$$
-
 DELIMITER ;

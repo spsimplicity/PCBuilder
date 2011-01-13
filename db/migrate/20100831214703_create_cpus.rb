@@ -28,7 +28,6 @@ class CreateCpus < ActiveRecord::Migration
   end
 
   def self.down
-    execute "alter table cpus drop foreign key fkCpuIdToPart"
     execute "alter table cpus drop key fkCpuIdToPart"
     drop_table :cpus
   end

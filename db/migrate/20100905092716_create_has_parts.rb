@@ -15,9 +15,7 @@ class CreateHasParts < ActiveRecord::Migration
   end
 
   def self.down
-    execute "alter table has_parts drop foreign key fkComputer"
     execute "alter table has_parts drop key fkComputer"
-	execute "alter table has_parts drop foreign key fkPart_Parttype"
 	execute "alter table has_parts drop key fkPart_Parttype"
     drop_table :has_parts
   end
