@@ -28,7 +28,6 @@ class GraphicsCard < ActiveRecord::Base
 	#Interface validations
 	validates_length_of :interface, :maximum => 15
 	#Multigpusupport validations
-	validates_inclusion_of :multigpusupport, :in => [true, false]
 	#HDMI, DVI, Displayport, VGA, Svideo, Power6pin, Power8pin validations
 	validates_numericality_of :hdmi, :dvi, :displayport, :vga, :svideo, :power6pin, 
 	    :power8pin, :greater_than_or_equal_to => 0

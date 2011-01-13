@@ -13,9 +13,7 @@ class CreateIncompatibles < ActiveRecord::Migration
   end
 
   def self.down
-    execute "alter table incompatibles drop foreign key fkPart1"
     execute "alter table incompatibles drop key fkPart1"
-	execute "alter table incompatibles drop foreign key fkPart2"
 	execute "alter table incompatibles drop key fkPart2"
     drop_table :incompatibles
   end

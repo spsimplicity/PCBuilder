@@ -29,7 +29,7 @@ class Motherboard < ActiveRecord::Base
 	validates_presence_of :pci_ex16, :pci_e2, :pci_e, :pci, :sata3, :sata6, :ide
 	#Size validations
 	validates_length_of :size, :maximum => 15
-	validates_inclusion_of :size, :in => %w(Micro\ ATX ATX EATX XL-ATX), 
+	validates_inclusion_of :size, :in => %w(Micro\ ATX ATX EATX XL\ ATX), 
 	    :message => "Size is not a standard size"
 	#Northbridge and Southbridge validations
 	validates_length_of :northbridge, :southbridge, :maximum => 25

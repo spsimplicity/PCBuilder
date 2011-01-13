@@ -19,6 +19,7 @@ class CreateMotherboards < ActiveRecord::Migration
       t.integer :fsb,                :null => false
       t.string :northbridge,         :null => false, :limit => 25
       t.string :southbridge,         :limit => 25
+	  t.boolean :hydra,              :null => false
       t.integer :mainpower,          :null => false
       t.integer :pci_e,              :null => false
       t.integer :pci,                :null => false
@@ -36,7 +37,6 @@ class CreateMotherboards < ActiveRecord::Migration
   end
 
   def self.down
-    execute "alter table motherboards drop foreign key fkMotherboarIdToPart"
     execute "alter table motherboards drop key fkMotherboarIdToPart"
     drop_table :motherboards
   end

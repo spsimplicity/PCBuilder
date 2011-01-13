@@ -11,7 +11,6 @@ class CreateCpuCoolerSockets < ActiveRecord::Migration
   end
 
   def self.down
-    execute "alter table cpu_cooler_sockets drop foreign key fkToCpuCoolerID"
     execute "alter table cpu_cooler_sockets drop key fkToCpuCoolerID"
     drop_table :cpu_cooler_sockets
   end

@@ -22,7 +22,7 @@ class Memory < ActiveRecord::Base
 	#Series validations
 	validates_length_of :series, :maximum => 30, :allow_nil => true
 	#Timings validations
-	validates_length_of :timings, :maximum => 10
+	validates_length_of :timings, :maximum => 15
 	#Memorytype validations
 	validates_length_of :memorytype, :maximum => 5
 	validates_format_of :memorytype, :with => /DDR/, :message => "Memory type is not DDR"
