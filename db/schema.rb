@@ -48,13 +48,13 @@ ActiveRecord::Schema.define(:version => 20101115040910) do
   add_index "cases", ["part_id"], :name => "fkCaseIdToPart"
 
   create_table "computers", :force => true do |t|
-    t.string   "name",            :limit => 50, :default => "Custom Built Computer", :null => false
-    t.integer  "motherboard_id",                                                     :null => false
-    t.integer  "cpu_id",                                                             :null => false
-    t.integer  "cpu_cooler_id",                                                      :null => false
-    t.integer  "power_supply_id",                                                    :null => false
-    t.integer  "case_id",                                                            :null => false
-    t.integer  "user_id",                                                            :null => false
+    t.string   "name",            :limit => 50, :default => "Custom Built Computer"
+    t.integer  "motherboard_id"
+    t.integer  "cpu_id"
+    t.integer  "cpu_cooler_id"
+    t.integer  "power_supply_id"
+    t.integer  "case_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
