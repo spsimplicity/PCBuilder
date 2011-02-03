@@ -1,0 +1,104 @@
+#Components
+{
+    position: relative;
+    width: 1024px;
+	height: 1080px;
+    margin: 50px 0 0 0;
+	padding: 0 0 0 0;
+	background-color: #3d4244;
+	z-index: 8000;
+	float: left;
+}
+
+.component-line {
+    clear:left;
+	z-index: 7000;
+}
+
+.component {
+    width: 225px; /*224px;*/
+    height: 350px; /* 349px; */
+    background-color:rgb(33, 34, 33);
+    clear:none;
+    float:left;
+}
+
+.component-top-left {
+    border-bottom:1px solid rgb(91, 101, 102);
+    border-right:1px solid rgb(91, 101, 102);
+}
+
+.component-top-middle {
+    border-bottom:1px solid rgb(91, 101, 102);
+    border-right:1px solid rgb(91, 101, 102);
+    border-left:1px solid rgb(91, 101, 102);
+}
+
+.component-top-right {
+    border-bottom:1px solid rgb(91, 101, 102);
+    border-left:1px solid rgb(91, 101, 102);    
+}
+
+.component-middle-left{
+    border-bottom:1px solid rgb(91, 101, 102);
+    border-right:1px solid rgb(91, 101, 102);
+    border-top:1px solid rgb(91, 101, 102);    
+}
+
+.component-middle {
+    border:1px solid rgb(91, 101, 102);     
+}
+
+.component-middle-right {
+    border-bottom:1px solid rgb(91, 101, 102);
+    border-left:1px solid rgb(91, 101, 102);
+    border-top:1px solid rgb(91, 101, 102);       
+}
+
+.component-bottom-left {
+    border-right:1px solid rgb(91, 101, 102);
+    border-top:1px solid rgb(91, 101, 102);       
+}
+
+.component-bottom-middle {
+    border-left:1px solid rgb(91, 101, 102);
+    border-right:1px solid rgb(91, 101, 102);
+    border-top:1px solid rgb(91, 101, 102);       
+}
+
+.component-bottom-right {
+    border-left:1px solid rgb(91, 101, 102);
+    border-top:1px solid rgb(91, 101, 102);        
+}
+
+p.component-title {
+    margin-top:3em;
+    margin-left:3em;
+    margin-right:3em;
+    margin-bottom:1em;
+    height:5em;
+    background-color:white;
+    color:red;
+    text-align:center;
+    line-height:5em;
+    font-size:12pt;
+}
+
+p.component-description {
+    font-size:10pt;
+    color:white;
+    margin-left:3em; 
+    margin-right:3em;
+    margin-top:1em;
+    text-align:left;
+}
+
+p.component-required {
+    color:white;
+    text-align:center;
+    font-size:13pt;
+}
+
+.component-empty {
+    background-color: rgb(61, 66, 68);
+}

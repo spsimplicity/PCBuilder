@@ -1,0 +1,310 @@
+body {
+    background-color: #212221;
+    font-family:Arial;
+    padding:0px;
+    margin:0px;
+}
+
+#Center
+{
+    background-color: #3d4244;
+	min-width: 1024px;
+	max-width: 1480px;
+	min-height: 1280;
+	margin: 0 auto 0 auto;
+	position: relative;
+}
+
+#Bound
+{
+    width: 1024px;
+	height: 100%;
+	margin: 0 auto 0 auto;
+}
+
+#Nav
+{
+    width: 1024px;
+	clear: both;
+	z-index: 9000;
+	position: relative;
+	float: left;
+}
+
+#Logo {
+    background-color: #636566;
+    width: 290px;
+    height:150px;
+    position: relative;
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+	float: left;
+}
+
+#Buttons
+{
+    float: left;
+    height: 150px;
+	width: 734px;
+}
+
+.nav_item
+{
+    position: relative;
+    width: 150px;
+	height: 50px;
+	margin-left: 30px;
+	float: left;
+	font-size: larger;
+	z-index: 9050;
+}
+
+.nav_item a
+{
+    text-decoration: none;
+	color: white;
+}
+
+#User_box a
+{
+    padding: 13px 0 0 0;
+	width: 150px;
+	height: 37px;
+    background-color: #636566;
+    float: left;
+}
+
+.nav_item a:hover
+{
+    text-decoration: none;
+    color: #c7291e;
+}
+
+.nav_link
+{
+    padding: 13px 0 0 0;
+	width: 150px;
+	height: 37px;
+    background-color: #636566;
+    float: left;
+}
+
+.dummy
+{
+    width: 150px;
+	height: 37px;
+	float: left;
+	clear: both;
+    background-color: #636566;
+    color: white;
+	padding: 13px 0 0 0;
+}
+
+#Build_box #Build_options
+{
+    display: none;
+	float: left;
+}
+
+#Assembly_box #Assembly_options
+{
+    display: none;
+	float: left;
+}
+
+#Build_box:hover #Build_options
+{
+    display: block;
+}
+
+#Assembly_box:hover #Assembly_options
+{
+    display: block;
+}
+
+.options
+{
+    list-style: none;
+	margin: 0 0 0 13px;
+	padding: 0 0 0 0;
+	font-size: medium;
+}
+
+.options li
+{
+    list-style: none;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	height: 40px;
+	width: 125px;
+}
+
+.option_link
+{
+    border-bottom: 1px solid #636566;
+}
+
+.option_link a
+{
+    background-color: #212221;
+	float: left;
+	height: 30px;
+	width: 125px;
+	padding: 10px 0 0 0;
+}
+
+#Existing #Last_three
+{
+    display: none;
+	float: left;
+}
+
+#Info #Info_categories
+{
+    display: none;
+	float: left;
+}
+
+#Existing:hover #Last_three
+{
+    display: block;
+}
+
+#Info:hover #Info_categories
+{
+    display: block;
+}
+
+#Existing .spacer
+{
+    display: none;
+}
+
+#Existing:hover .spacer
+{
+    display: block;
+}
+
+#Info .spacer
+{
+    display: none;
+}
+
+#Info:hover .spacer
+{
+    display: block;
+}
+
+.spacer
+{
+    background-color: #212221;
+    height: 6px;
+	width: 125px;
+	float: left;
+}
+
+.list_link
+{
+    background-color: #212221;
+    float: left;
+	height: 30px;
+	width: 125px;
+	padding: 10px 0 0 0;
+}
+
+.final_options
+{
+    background-color: #1b1c1b;
+	margin: 0 0 0 15px;
+	padding: 0 0 0 0;
+}
+
+.final_options li
+{
+    width: 110px;
+	height: 19px;
+	padding: 2px 0 0 0;
+	font-size: small;
+}
+
+.bottom_seperator
+{
+    border-bottom: solid 1px #3d4244;
+}
+
+#Signup
+{
+    position: relative;
+    float: left;
+    height: 90px;
+	margin-left: 30px;
+	margin-top: 10px;
+	margin-right: 14px;
+	z-index: 9030;
+	background-color: #636566;
+}
+
+#Close
+{
+    float: left;
+	height: 90px;
+}
+
+#Close a
+{
+    background-color: #212221;
+    text-decoration: none;
+	font-size: larger;
+	color: #c7291e;
+	padding-left: 3px;
+	padding-right: 4px;
+}
+
+#Close a:hover
+{    
+    text-decoration: none;
+    background-color: #636566;
+}
+
+#Sign_info
+{
+    float: left;
+	height: 90px;
+	max-width: 660px;
+	margin-left: 10px;
+}
+
+#Fields
+{
+    float: left;
+	height: 80px;
+	margin-top: 5px;
+}
+
+.label
+{
+    float: left;
+	clear: left;
+}
+
+.field
+{
+    float: left;
+}
+
+#password
+{
+    margin-left: 4px;
+}
+
+#email
+{
+    margin-left: 34px;
+}
+
+#Submit_button
+{
+    float: left;
+	margin-top: 5px;
+	margin-left: 5px;
+}

@@ -1,6 +1,10 @@
 class PartCategoriesController < ApplicationController
-    def login
-	    @user
+    
+	def index
+	    render :categories
+	end
+	
+	def login
 	end
 	
 	def logout

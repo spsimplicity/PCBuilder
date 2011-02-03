@@ -1,0 +1,16 @@
+<div id="Close"><%= link_to_remote "X", :update => 'Signup', :url => {:controller => :application, :action => 'remove'} %></div>
+<div id="Sign_info">
+	<% form_tag :controller => :application, :action => :new do %>
+	    <div id="Fields">
+			<%= label_tag(:username, "Username: ", :class => 'label') %>
+			<%= text_field_tag(:username, nil, :size => 20, :class => 'field') %>
+			<%= label_tag(:password, "Password: ", :class => 'label') %>
+			<%= password_field_tag(:password, nil, :size => 20, :class => 'field') %>
+			<%= label_tag(:email, "Email: ", :class => 'label') %>
+			<%= text_field_tag(:email, nil, :size => 20, :class => 'field') %>
+		</div>
+		<div id="Submit_button">
+		    <%= submit_to_remote 'submit', 'Create User', :update => 'Signup', :url => {:controller => :application, :action => 'new'} %>
+		</div>
+	<% end %>
+</div>

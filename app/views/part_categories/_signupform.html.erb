@@ -1,0 +1,9 @@
+<% form_for :user, :url => {:action => "new"} do |f| %>
+    <%= f.label :username, "Username: " %>
+	<%= f.text_field :username, :class => 'field' %>
+	<%= f.label :password, "Password: " %>
+	<%= f.password_field :password, :class => 'field" %>
+	<%= f.label :email, "Email: " %>
+	<%= f.text_field :email %>
+	<%= submit_tag("Create Account") %>
+<% end %>
