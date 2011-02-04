@@ -1,0 +1,103 @@
+#Components
+{
+    position: relative;
+    width: 1024px;
+	height: 1080px;
+    margin: 50px 0 0 0;
+	padding: 0 0 0 0;
+	background-color: #3d4244;
+	z-index: 8000;
+	float: left;
+}
+
+.component-line {
+    clear:left;
+	z-index: 7000;
+}
+
+.component {
+    width: 190px; /*224px;*/
+    height: 310px; /* 349px; */
+    background-color:#3d4244;
+    clear:none;
+    float:left;
+	margin: 20px 17px 20px 18px;
+}
+
+.component:hover {
+	background-color:red;
+}
+
+.component-top-left {
+    border-bottom:1px solid #3d4244;
+    border-right:1px solid #3d4244;
+}
+
+.component-top-middle {
+    border-bottom:1px solid #3d4244;
+    border-right:1px solid #3d4244;
+    border-left:1px solid #3d4244;
+}
+
+.component-top-right {
+    border-bottom:1px solid #3d4244;
+    border-left:1px solid #3d4244;    
+}
+
+.component-middle-left{
+    border-bottom:1px solid #3d4244;
+    border-right:1px solid #3d4244;
+    border-top:1px solid #3d4244;    
+}
+
+.component-middle {
+    border:1px solid #3d4244;     
+}
+
+.component-middle-right {
+    border-bottom:1px solid #3d4244;
+    border-left:1px solid #3d4244;
+    border-top:1px solid #3d4244;       
+}
+
+.component-bottom-left {
+    border-right:1px solid #3d4244;
+    border-top:1px solid #3d4244;       
+}
+
+.component-bottom-middle {
+    border-left:1px solid #3d4244;
+    border-right:1px solid #3d4244;
+    border-top:1px solid #3d4244;       
+}
+
+.component-bottom-right {
+    border-left:1px solid #3d4244;
+    border-top:1px solid #3d4244;        
+}
+
+.component-title {
+    margin-top:12px;
+    margin-left:32px;
+    margin-right:32px;
+    margin-bottom:1em;
+}
+
+p.component-description {
+    font-size:10pt;
+    color:white;
+    margin-left:25px; 
+    margin-right:25px;
+    margin-top:27px;
+    text-align:left;
+}
+
+p.component-required {
+    color:white;
+    text-align:center;
+    font-size:13pt;
+}
+
+.component-empty {
+    background-color: rgb(61, 66, 68);
+}
