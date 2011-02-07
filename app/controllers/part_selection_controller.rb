@@ -1,0 +1,2 @@
+class PartSelectionController < ApplicationController
+end

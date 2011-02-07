@@ -4,7 +4,6 @@
 		<%= stylesheet_link_tag "nav_body" %>
 		<%= stylesheet_link_tag "category_noborders" %>
 		<%= javascript_include_tag :defaults %>
-		<%= javascript_include_tag "AJAX Scripts" %>
 	</head>
 	<body>
 		<div id="Center">
@@ -16,7 +15,7 @@
 							<% if session[:user] %>
 							    <ul id="User_options" class="options">
 								    <li class="option_link"><center><a href="#">Profile</a></center></li>
-									<li class="option_link"><center><%= link_to "Log out", :controller => :part_categories, :action => :logout %></center></li>
+									<li class="option_link_solo"><center><%= link_to "Log out", :controller => :part_categories, :action => :logout %></center></li>
 								</ul>
 							    <center><span class="dummy">User Info</span></center>
 							<% else %>
@@ -27,7 +26,7 @@
 							<% if session[:user] %>
 								<ul id="Build_options" class="options">
 								    <% if @comps == nil %>
-									    <li id="New" class="option_link_solo"><center><a href="#">New</a></center></li>
+									    <li id="New" class="option_link_solo"><center><%= link_to "New", root_path %></center></li>
 									<% else %>
 									    <li id="New" class="option_link"><center><a href="#">New</a></center></li>
 										<li id="Existing" class="inner_list">
@@ -35,9 +34,9 @@
 											<ul id="Last_three" class="final_options">
 												<% for i in 0..(@comps.length - 1) do %>
 													<% if i == (comps.length - 1) %>
-														<li><center><% link_to @comps[i].name, :controller => :part_categories, :action => :index, :existing => @comps[i].name %></center></li>
+														<li><center><% link_to_remote @comps[i].name, :update => 'Selection', :url => {:controller => :part_categories, :action => :existingBuild, :existing => @comps[i].name} %></center></li>
 													<% else %>
-														<li class="bottom_seperator"><% link_to @comps[i].name, :controller => :part_categories, :action => :index, :existing => @comps[i].name %></center></li>
+														<li class="bottom_seperator"><% link_to_remote @comps[i].name, :update => 'Selection', :url => {:controller => :part_categories, :action => :existingBuild, :existing => @comps[i].name} %></center></li>
 													<% end %>
 												<% end %>												
 											</ul>										
@@ -78,8 +77,8 @@
 						</div>
 						<div id="Signup">
 						    <% if @errors %>
-								<% if @errors["errors"] %>
-									<%= render :partial => "signupform", :locals => {:login_errors => @errors["errors"], :user_found => @errors["found"], :pass_good => @errors["good"]} %>
+								<% if @errors %>
+									<%= render :partial => "signupform", :locals => {:login_errors => @errors, :user_found => @found, :pass_good => @good} %>
 								<% end %>
 							<% end %>
 						</div>

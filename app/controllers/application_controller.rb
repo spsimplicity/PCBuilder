@@ -11,14 +11,14 @@ class ApplicationController < ActionController::Base
 	    render :partial => "signupform"
 	end
 	
-	def new
+	def newUser
 	    @up_errors = false
 		@user = User.new
 		@user.name = params[:username]
 		@user.password = params[:password]
 		@user.password_confirmation = params[:password]
 		@user.email = params[:email]
-		@user.ip = "103.103.1.1"
+		@user.ip = request.remote_ip
 		if(@user.valid?)
 			@user.save!
 			session[:user] = @user
@@ -31,22 +31,24 @@ class ApplicationController < ActionController::Base
 		end
 	end
 	
-	def existing
+	def existingUser
 		@in_errors = false
 		@user = User.find_by_name(params[:username])
 		if @user == nil
 			@in_errors = true
 			@found = false
-	        redirect_to :controller => :part_categories, :action => :index, :in_errors => {"errors", true, "found", false, "good", true}
+			flash[:in_errors] = "found"
+	        redirect_to root_path
 		else
 			if @user.has_password?(params[:password])
 				session[:user] = @user
 				@type = "Log"
-				redirect_to :controller => :part_categories, :action => :index
+				redirect_to root_path
 			else
 				@in_errors = true
 				@good = false
-				redirect_to :controller => :part_categories, :action => :index, :in_errors => {"errors", true, "found", true, "good", false}
+			    flash[:in_errors] = "good"
+				redirect_to root_path
 			end
 		end
 	end
