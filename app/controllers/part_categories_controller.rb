@@ -1,7 +1,13 @@
 class PartCategoriesController < ApplicationController
     
 	def index
+	    if params[:in_errors]
+	        @errors = params[:in_errors]
+		end
 	    render :categories
+		if session[:user]
+		    @comps = Computer.find_by_user_id(session[:user].id)
+		end
 	end
 	
 	def login
@@ -9,7 +15,7 @@ class PartCategoriesController < ApplicationController
 	
 	def logout
 	    session[:user] = nil
-		redirect_to_request.referer
+		redirect_to :action => :index
 	end
 	
 	def loadbuild

@@ -5,21 +5,24 @@ class User < ActiveRecord::Base
 	#Only password, and password_confirmation attributes can be changed with params hash
 	attr_accessible :password, :password_confirmation
 	#Name validations
+	validates_presence_of :name
 	validates_length_of :name, :maximum => 30
 	validates_each :name do |record, attr, value|
 	    record.errors.add(attr, 
-		    " must consist of only alphanumeric characters(including underline)") if value =~ /\W/
+		    " must be alphanumeric characters (including underline)") if value =~ /\W/
 	end
+	validates_uniqueness_of :name, :message => " is already taken"
 	#Email validations
     validates_length_of :email, :maximum => 50
 	validates_format_of :email, :with => /^[A-Za-z0-9._%+-]+@(?:[A-Za-z0-9-]+\.)+[A-Za-z]{2,4}$/, 
-	    :message => "Email address is not accepted or is invalid"
-    validates_confirmation_of :email, :message => "Email confirmation does not match"
+	    :message => " address is not accepted or invalid"
+    #validates_confirmation_of :email, :message => "Email confirmation does not match"
 	#IP validations
 	validates_length_of :ip, :maximum => 30
 	validates_format_of :ip, :with => 
 	    /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/
 	#Password validations
+	validates_presence_of :password
 	validates_length_of :password, :maximum => 30
 	validates_confirmation_of :password, :message => "Password confirmation does not match"
 	#Encrypting the password before it is saved to the database
