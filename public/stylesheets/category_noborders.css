@@ -25,7 +25,7 @@
 }
 
 .component:hover {
-	background-color: #9DBDC6;
+	background-color: #295666;
 }
 
 .component-top-left {
@@ -104,4 +104,5 @@ p.component-required {
 
 .component-empty:hover {
 	background-color: rgb(61, 66, 68);
+	cursor: auto;
 }

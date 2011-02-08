@@ -34,10 +34,10 @@ body {
 #Logo {
     background-color: #636566;
     width: 290px;
-    height:150px;
+    height:75px;
     position: relative;
 	padding: 0 0 0 0;
-	margin: 0 0 0 0;
+	margin: 20px 0 0 0;
 	float: left;
 }
 
@@ -77,7 +77,7 @@ body {
 .nav_item a:hover
 {
     text-decoration: none;
-    color: #c7291e;
+    color: #71D0CE;
 }
 
 .nav_link
@@ -275,7 +275,7 @@ body {
     background-color: #212221;
     text-decoration: none;
 	font-size: larger;
-	color: #c7291e;
+	color: #71D0CE;
 	padding-left: 3px;
 	padding-right: 4px;
 }
@@ -373,7 +373,7 @@ body {
 {
     float: left;
 	clear: left;
-	color: #c7291e;
+	color: #71D0CE;
     margin: 5px 10px 0 10px;
 }
 
@@ -383,7 +383,7 @@ body {
     margin: 5px 0 0 0;
 	padding: 0 0 0 0;
 	clear: left;
-	color: #c7291e;
+	color: #71D0CE;
 }
 
 #Log_header
@@ -393,7 +393,7 @@ body {
 
 #Sign_header
 {
-	color: #c7291e;
+	color: #71D0CE;
 	margin-left: 10px;
 }
 
