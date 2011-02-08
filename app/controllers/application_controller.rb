@@ -5,26 +5,51 @@ class ApplicationController < ActionController::Base
     helper :all # include all helpers, all the time
     protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
-    # Scrub sensitive parameters from your log
-    # filter_parameter_logging :password    
+    filter_parameter_logging :password    
 	
 	def showform
 	    render :partial => "signupform"
 	end
 	
-	def new
-	    @user = User.new
-		@user.name = :username
-		@user.password = :password
-		@user.email = :email
-		@user.ip = "103.103.1.1"
+	def newUser
+	    @up_errors = false
+		@user = User.new
+		@user.name = params[:username]
+		@user.password = params[:password]
+		@user.password_confirmation = params[:password]
+		@user.email = params[:email]
+		@user.ip = request.remote_ip
 		if(@user.valid?)
-		    @user.save!
-		    session[:user] = @user
-	        render :partial => "nothing"
-			redirect_to :controller => :part_categories, :action => 'index'
+			@user.save!
+			session[:user] = @user
+			@type = "Sign"
+			render :partial => "success"
 		else
-		    render :partial => "signupform"
+			@up_errors = true
+			@sign_errors = @user.errors.full_messages
+			render :partial => "signupform"
+		end
+	end
+	
+	def existingUser
+		@in_errors = false
+		@user = User.find_by_name(params[:username])
+		if @user == nil
+			@in_errors = true
+			@found = false
+			flash[:in_errors] = "found"
+	        redirect_to root_path
+		else
+			if @user.has_password?(params[:password])
+				session[:user] = @user
+				@type = "Log"
+				redirect_to root_path
+			else
+				@in_errors = true
+				@good = false
+			    flash[:in_errors] = "good"
+				redirect_to root_path
+			end
 		end
 	end
 	

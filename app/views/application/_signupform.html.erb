@@ -1,16 +1,56 @@
 <div id="Close"><%= link_to_remote "X", :update => 'Signup', :url => {:controller => :application, :action => 'remove'} %></div>
 <div id="Sign_info">
-	<% form_tag :controller => :application, :action => :new do %>
-	    <div id="Fields">
-			<%= label_tag(:username, "Username: ", :class => 'label') %>
-			<%= text_field_tag(:username, nil, :size => 20, :class => 'field') %>
-			<%= label_tag(:password, "Password: ", :class => 'label') %>
-			<%= password_field_tag(:password, nil, :size => 20, :class => 'field') %>
-			<%= label_tag(:email, "Email: ", :class => 'label') %>
-			<%= text_field_tag(:email, nil, :size => 20, :class => 'field') %>
+	<% if @in_errors || @errors %>
+		<div class="errors">
+		    <h4 id="Log_header" class="header">Errors</h4>
+			<% if !@found || !@errors["found"] %>
+			    <p class="log_errors">The Username can not be found</p>
+			<% end %>
+			<% if !@good || !@errors["good"] %>
+			    <p class="log_errors">The Password is invalid</p>
+			<% end %>
+		</div>	
+    <% else %>
+	    <div class="form">
+			<h4 id="New_header" class="header">New User Form</h4>
+			<% form_tag :controller => :application, :action => :newUser do %>
+				<div id="Fields" class="form_fields">
+					<%= label_tag :username, "Username: ", :class => 'label' %>
+					<%= text_field_tag :username, nil, :size => 20, :class => 'field' %>
+					<%= label_tag :password, "Password: ", :class => 'label' %>
+					<%= password_field_tag :password, nil, :size => 20, :class => 'field' %>
+					<%= label_tag :email, "Email: ", :class => 'label' %>
+					<%= text_field_tag :email, nil, :size => 20, :class => 'field' %>
+				</div>
+				<div class="submit_button">
+					<%= submit_to_remote 'submit', 'Create User', :update => 'Signup', :url => {:controller => :application, :action => :newUser} %>
+				</div>
+			<% end %>
 		</div>
-		<div id="Submit_button">
-		    <%= submit_to_remote 'submit', 'Create User', :update => 'Signup', :url => {:controller => :application, :action => 'new'} %>
+	<% end %>
+	<% if @up_errors %>
+		<div id="Signup_errors" class="errors">
+		    <h4 id="Sign_header" class="header">Errors</h4>
+			<% if @sign_errors %>
+			    <% @sign_errors.each do |msg| %>
+				    <p class="sign_errors"><%= msg %></p>
+				<% end %>
+			<% end %>
+		</div>
+	<% else %>
+	    <div id="Login" class="form">
+			<h4 class="header">Sign In Form</h4>
+			<% form_tag :controller => :application, :action => :existingUser do %>
+				<div id="Login_form" class="form_fields">
+					<%= label_tag :username, "Username: ", :class => 'label' %>
+					<%= text_field_tag :username, nil, :size => 20, :class => 'field' %>
+					<%= label_tag :password, "Password: ", :class => 'label' %>
+					<%= password_field_tag :password, nil, :size => 20, :class => 'field' %>
+				</div>
+				<div id="Login_submit" class="submit_button">
+					<%= submit_tag 'Sign In'%>
+				</div>
+			<% end %>
 		</div>
 	<% end %>
 </div>

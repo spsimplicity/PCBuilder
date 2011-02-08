@@ -65,7 +65,7 @@ body {
 	color: white;
 }
 
-#User_box a
+#Signin_link a
 {
     padding: 13px 0 0 0;
 	width: 150px;
@@ -100,6 +100,12 @@ body {
 	padding: 13px 0 0 0;
 }
 
+#User_box #User_options
+{
+    display: none;
+	float: left;
+}
+
 #Build_box #Build_options
 {
     display: none;
@@ -110,6 +116,11 @@ body {
 {
     display: none;
 	float: left;
+}
+
+#User_box:hover #User_options
+{
+    display: block;
 }
 
 #Build_box:hover #Build_options
@@ -145,6 +156,15 @@ body {
 }
 
 .option_link a
+{
+    background-color: #212221;
+	float: left;
+	height: 30px;
+	width: 125px;
+	padding: 10px 0 0 0;
+}
+
+.option_link_solo a
 {
     background-color: #212221;
 	float: left;
@@ -236,18 +256,18 @@ body {
 {
     position: relative;
     float: left;
-    height: 90px;
+    height: 115px;
 	margin-left: 30px;
 	margin-top: 10px;
 	margin-right: 14px;
 	z-index: 9030;
-	background-color: #636566;
 }
 
 #Close
 {
     float: left;
-	height: 90px;
+	height: 115px;
+	background-color: #636566;
 }
 
 #Close a
@@ -269,22 +289,42 @@ body {
 #Sign_info
 {
     float: left;
-	height: 90px;
-	max-width: 660px;
-	margin-left: 10px;
+	height: 115px;
+	padding-left: 10px;
+	background-color: #636566;
 }
 
-#Fields
+.form
 {
+    float: left;
+}
+
+.header
+{
+    float: left;
+    color: white;
+    margin: 5px 0 0 0;
+	padding: 0 0 0 0;
+}
+
+.form_fields
+{    
     float: left;
 	height: 80px;
 	margin-top: 5px;
+	clear: left;
+}
+
+#Login
+{
+    margin-left: 25px;
 }
 
 .label
 {
     float: left;
 	clear: left;
+	color: white;
 }
 
 .field
@@ -302,9 +342,74 @@ body {
     margin-left: 34px;
 }
 
-#Submit_button
+.submit_button
 {
     float: left;
 	margin-top: 5px;
 	margin-left: 5px;
+}
+
+#Login_submit
+{
+    margin-right: 6px;
+}
+
+.errors
+{
+    float: left;
+}
+
+#Signup_errors
+{
+	width: 331px;
+}
+
+#Login_errors
+{
+    width: 230px;
+}
+
+.sign_errors
+{
+    float: left;
+	clear: left;
+	color: #c7291e;
+    margin: 5px 10px 0 10px;
+}
+
+.log_errors
+{
+    float: left;
+    margin: 5px 0 0 0;
+	padding: 0 0 0 0;
+	clear: left;
+	color: #c7291e;
+}
+
+#Log_header
+{    
+	color: #c7291e;
+}
+
+#Sign_header
+{
+	color: #c7291e;
+	margin-left: 10px;
+}
+
+#Login_good
+{
+    color: white;
+}
+
+#Login_good a
+{
+    color: white;
+    text-decoration: none;
+}
+
+#Login_good a:hover
+{    
+    color: #c7291e;
+    text-decoration: none;
 }
