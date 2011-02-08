@@ -18,7 +18,7 @@
 .component {
     width: 190px; /*224px;*/
     height: 310px; /* 349px; */
-    background-color:#3d4244;
+    background-color:rgb(33, 34, 33);
     clear:none;
     float:left;
 	margin: 20px 17px 20px 18px;
@@ -77,7 +77,7 @@
 }
 
 .component-title {
-    margin-top:12px;
+    margin-top:15px;
     margin-left:32px;
     margin-right:32px;
     margin-bottom:1em;
