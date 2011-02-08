@@ -44,7 +44,7 @@ body {
 #Buttons
 {
     float: left;
-    height: 150px;
+    height: 120px;
 	width: 734px;
 }
 
@@ -388,7 +388,7 @@ body {
 
 #Log_header
 {    
-	color: #c7291e;
+	color: #71D0CE;
 }
 
 #Sign_header
@@ -410,6 +410,6 @@ body {
 
 #Login_good a:hover
 {    
-    color: #c7291e;
+    color: #71D0CE;
     text-decoration: none;
 }

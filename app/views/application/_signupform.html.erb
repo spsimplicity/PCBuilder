@@ -1,12 +1,12 @@
 <div id="Close"><%= link_to_remote "X", :update => 'Signup', :url => {:controller => :application, :action => 'remove'} %></div>
 <div id="Sign_info">
-	<% if @in_errors || @errors %>
-		<div class="errors">
+	<% if login_errors %>
+		<div id="Login_errors" class="errors">
 		    <h4 id="Log_header" class="header">Errors</h4>
-			<% if !@found || !@errors["found"] %>
+			<% if user_found == false %>
 			    <p class="log_errors">The Username can not be found</p>
 			<% end %>
-			<% if !@good || !@errors["good"] %>
+			<% if pass_good == false %>
 			    <p class="log_errors">The Password is invalid</p>
 			<% end %>
 		</div>	

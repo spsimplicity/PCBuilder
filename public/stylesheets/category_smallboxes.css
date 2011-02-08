@@ -1,7 +1,7 @@
 #Components
 {
     position: relative;
-    width: 1024px;
+    width: 910px;
 	height: 1080px;
     margin: 50px 0 0 0;
 	padding: 0 0 0 0;
@@ -11,7 +11,7 @@
 }
 
 .component-line {
-    clear:left;
+    position: relative;
 	z-index: 7000;
 }
 
@@ -19,7 +19,6 @@
     width: 190px; /*224px;*/
     height: 310px; /* 349px; */
     background-color:rgb(33, 34, 33);
-    clear:none;
     float:left;
 	margin: 20px 17px 20px 18px;
 }
@@ -84,16 +83,18 @@
     margin-bottom:1em;
 }
 
-p.component-description {
+.component-description {
     font-size:10pt;
-    color:white;
-    margin-left:25px; 
-    margin-right:25px;
-    margin-top:27px;
+    color: white;
+    margin-left:auto; 
+    margin-right:auto;
+    margin-top:10px;
     text-align:left;
+	height: 120px;
+	width: 140px;
 }
 
-p.component-required {
+.component-required {
     color:white;
     text-align:center;
     font-size:13pt;
@@ -106,4 +107,74 @@ p.component-required {
 .component-empty:hover {
 	background-color: rgb(61, 66, 68);
 	cursor: auto;
+}
+
+#Selected_list
+{
+    float: left;
+	position: absolute;
+    list-style: none;
+	z-index: 9999;
+	top: 120px;
+	left: 910px;
+	margin: 70px 0 0 32px;
+	padding: 0 0 0 0;
+}
+
+#Selected_tab
+{
+}
+
+#Selected_link
+{
+	width: 65px;
+	height: 230px;
+	float: left;
+	text-decoration: none;
+}
+
+#Selected_link:hover p
+{
+    color: #71D0CE;
+}
+
+#Selected_div
+{
+	width: 65px;
+	height: 230px;
+	float: left;
+    background-color: #636566;
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+}
+
+.rotated
+{    
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    color: white;
+	font-size: x-large;
+}
+
+#Selected
+{
+	padding: 0 0 0 0;
+	margin: 80px 0 0 0;
+}
+
+#Parts
+{
+	padding: 0 0 0 0;
+	margin: 25px 0 0 0;
+}
+
+#Parts_selected
+{
+    display: none;
+    width: 300px;
+	height: 790px;
+	float: left;
+	margin-right: -300px;
+    background-color: #636566;
 }

@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
     filter_parameter_logging :password    
 	
 	def showform
-	    render :partial => "signupform"
+	    render :partial => "signupform", :locals => {:login_errors => false}
 	end
 	
 	def newUser
@@ -38,7 +38,7 @@ class ApplicationController < ActionController::Base
 			@in_errors = true
 			@found = false
 			flash[:in_errors] = "found"
-	        redirect_to root_path
+	        redirect_to :action => :login
 		else
 			if @user.has_password?(params[:password])
 				session[:user] = @user
@@ -48,9 +48,25 @@ class ApplicationController < ActionController::Base
 				@in_errors = true
 				@good = false
 			    flash[:in_errors] = "good"
-				redirect_to root_path
+				redirect_to :action => :login
 			end
 		end
+	end
+	
+	def login
+	    if flash[:in_errors] == "found"
+	        @errors = true
+			@found = false
+		elsif flash[:in_errors] == "good"
+		    @errors = true
+			@good = false
+		end
+	    render :categories
+	end
+	
+	def logout
+	    session[:user] = nil
+		redirect_to root_path
 	end
 	
 	def remove
