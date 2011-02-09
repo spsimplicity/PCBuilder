@@ -4,23 +4,7 @@
 		<%= stylesheet_link_tag "nav_body" %>
 		<%= stylesheet_link_tag "category_smallboxes" %>
 		<%= javascript_include_tag :defaults %>
-		<%= javascript_include_tag "jquery-1.5" %>
 		<script>
-		    function showSelected()
-			{
-			    var marginSize = parseInt($('#Parts_selected').css("margin-right"));
-				
-				if(marginSize != -300)
-				{
-					$('#Parts_selected').stop().animate({'margin-right':'-300px'}, 200);
-					$('#Parts_selected').css('display', 'none');
-				}
-				else
-				{
-				    $('#Parts_selected').show();
-				    $('#Parts_selected').stop().animate({'margin-right':'0px'}, 200);
-				}
-			}
 		</script>
 	</head>
 	<body>

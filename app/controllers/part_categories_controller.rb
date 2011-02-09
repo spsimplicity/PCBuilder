@@ -12,9 +12,6 @@ class PartCategoriesController < ApplicationController
 	    session[:new_computer] = Computer.find_by_name(params[:existing])
 	end
 	
-	def logout
-	end
-	
 	def loadbuild
 	    @build
 	end
