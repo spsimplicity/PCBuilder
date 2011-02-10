@@ -112,11 +112,11 @@
 #Selected_list
 {
     float: left;
-	position: absolute;
+	position: fixed;
     list-style: none;
 	z-index: 9999;
 	top: 120px;
-	left: 910px;
+	right: 0px;
 	margin: 70px 0 0 32px;
 	padding: 0 0 0 0;
 }
