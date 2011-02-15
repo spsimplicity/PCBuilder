@@ -8,7 +8,7 @@ BEING
 	
     IF STRCMP(hddInter, 'SATA 6') = 0 AND moboS6 = 0 THEN
 		SET supported = 0;
-	ELSEIF STRCMP(hddInter, 'SATA 3') = 0 AND moboSa6 = 0 AND moboS3 = 0 THEN
+	ELSEIF STRCMP(hddInter, 'SATA 3') = 0 AND moboS6 = 0 AND moboS3 = 0 THEN
 		SET supported = 0;
 	ELSEIF STRCMP(hddInter, 'IDE/PATA') = 0 AND moboIde = 0 THEN
 		SET supported = 0;

@@ -2,6 +2,7 @@ class CreateComputers < ActiveRecord::Migration
   def self.up
     create_table :computers do |t|
       t.string :name,             :null => false, :limit => 50, :default => 'Custom Built Computer'
+	  t.integer, :price,          :null => false
       t.belongs_to :motherboard
       t.belongs_to :cpu
       t.belongs_to :cpu_cooler

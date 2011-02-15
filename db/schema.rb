@@ -48,7 +48,8 @@ ActiveRecord::Schema.define(:version => 20101115040910) do
   add_index "cases", ["part_id"], :name => "fkCaseIdToPart"
 
   create_table "computers", :force => true do |t|
-    t.string   "name",            :limit => 50, :default => "Custom Built Computer"
+    t.string   "name",            :null => false, :limit => 50, :default => "Custom Built Computer"
+	t.integer  "price",           :null => false
     t.integer  "motherboard_id"
     t.integer  "cpu_id"
     t.integer  "cpu_cooler_id"
@@ -560,7 +561,7 @@ ActiveRecord::Schema.define(:version => 20101115040910) do
 		
 		IF STRCMP(hddInter, 'SATA 6') = 0 AND moboS6 = 0 THEN
 			SET supported = 0;
-		ELSEIF STRCMP(hddInter, 'SATA 3') = 0 AND moboSa6 = 0 AND moboS3 = 0 THEN
+		ELSEIF STRCMP(hddInter, 'SATA 3') = 0 AND moboS6 = 0 AND moboS3 = 0 THEN
 			SET supported = 0;
 		ELSEIF STRCMP(hddInter, 'IDE/PATA') = 0 AND moboIde = 0 THEN
 			SET supported = 0;
@@ -980,7 +981,7 @@ ActiveRecord::Schema.define(:version => 20101115040910) do
 				IF done = 1 THEN
 					LEAVE powerLoop;
 				END IF;
-				IF psuGpuCompatibility(gpuMinPower, psuPowerOut, gpu8PinPower, gpu6PinPower, 
+				IF gpuPsuCompatibility(gpuMinPower, psuPowerOut, gpu8PinPower, gpu6PinPower, 
 					psuGpu8pin, psuGpu6pin, psuGpu6_2pin) = 0 THEN
 					SET nullTest = duplicateTest(part1id, part2id, part1_type, part2_type);
 				END IF;
@@ -1088,7 +1089,7 @@ ActiveRecord::Schema.define(:version => 20101115040910) do
 				IF done = 1 THEN
 					LEAVE graphicsLoop;
 				END IF;
-				IF psuGpuCompatibility(gpuMinPower, psuPowerOut, gpu8PinPower, gpu6PinPower, 
+				IF gpuPsuCompatibility(gpuMinPower, psuPowerOut, gpu8PinPower, gpu6PinPower, 
 					psuGpu8pin, psuGpu6pin, psuGpu6_2pin) = 0 THEN
 					SET nullTest = duplicateTest(part1id, part2id, part1_type, part2_type);
 				END IF;

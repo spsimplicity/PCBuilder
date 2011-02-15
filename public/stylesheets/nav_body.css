@@ -1,8 +1,10 @@
 body {
+	background-image: url(background_center.jpg) repeat-y;
     background-color: #212221;
     font-family:Arial;
     padding:0px;
     margin:0px;
+	height: 100%;
 }
 
 #Center

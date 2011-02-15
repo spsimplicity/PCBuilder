@@ -9,8 +9,6 @@ task :loadparts => [:environment, 'db:reset', :fake, :memory, :graphicscards, :h
 
 desc "Insert into incompatibles"
 task :compatible => :environment do
-	ActiveRecord::Base.connection.execute("call compatibilityAlgorithmTest(99, 'Memory')")
-=begin
 	cpus = Cpu.find(:all)
 	cpus.each do |cpu|
 		ActiveRecord::Base.connection.execute("call compatibilityAlgorithmTest(#{cpu.part_id}, 'CPU')")
@@ -61,7 +59,6 @@ task :compatible => :environment do
 		ActiveRecord::Base.connection.execute("call compatibilityAlgorithmTest(#{cas.part_id}, 'Case')")
 		ActiveRecord::Base.connection.reconnect!
 	end
-=end
 end
 
 desc "Loads all parts and calls incompatibility algorithm"

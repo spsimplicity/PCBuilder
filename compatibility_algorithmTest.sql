@@ -323,7 +323,7 @@ BEGIN
             IF done = 1 THEN
                 LEAVE powerLoop;
             END IF;
-			IF psuGpuCompatibility(gpuMinPower, psuPowerOut, gpu8PinPower, gpu6PinPower, 
+			IF gpuPsuCompatibility(gpuMinPower, psuPowerOut, gpu8PinPower, gpu6PinPower, 
 			    psuGpu8pin, psuGpu6pin, psuGpu6_2pin) = 0 THEN
 			    SET nullTest = duplicateTest(part1id, part2id, part1_type, part2_type);
             END IF;
@@ -431,7 +431,7 @@ BEGIN
             IF done = 1 THEN
                 LEAVE graphicsLoop;
             END IF;
-            IF psuGpuCompatibility(gpuMinPower, psuPowerOut, gpu8PinPower, gpu6PinPower, 
+            IF gpuPsuCompatibility(gpuMinPower, psuPowerOut, gpu8PinPower, gpu6PinPower, 
 			    psuGpu8pin, psuGpu6pin, psuGpu6_2pin) = 0 THEN
 			    SET nullTest = duplicateTest(part1id, part2id, part1_type, part2_type);
             END IF;
