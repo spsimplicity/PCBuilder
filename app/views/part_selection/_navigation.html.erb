@@ -1,0 +1,84 @@
+<div id="Logo"><%= image_tag "logo.png" %></div>
+<div id="Buttons">
+	<div id="User_box" class="nav_item">
+		<% if session[:user] %>
+			<ul id="User_options" class="options">
+				<li class="option_link"><center><a href="#">Profile</a></center></li>
+				<li class="option_link_solo"><center><%= link_to_remote "Log out", :url => {:controller => :application, :action => :logout} %></center></li>
+			</ul>
+			<center><span class="dummy">User Info</span></center>
+		<% else %>
+			<div id="Signin_link"><center><%= link_to_remote "Sign Up/In", :update => 'Signup', :url => {:controller => 'application', :action => :showform} %></center></div>
+		<% end %>
+	</div>
+	<div id="Build_box" class="nav_item">
+		<% if session[:user] %>
+			<ul id="Build_options" class="options">
+				<% if @comps == nil %>
+					<li id="New" class="option_link_solo"><center><%= link_to "New", root_path %></center></li>
+				<% else %>
+					<li id="New" class="option_link"><center><center><%= link_to "New", root_path %></center></li>
+					<li id="Existing" class="inner_list">
+						<center><a id="Existing_link" class="list_link" href="#">Existing</a></center>
+						<ul id="Last_three" class="final_options">
+						    <% if @comps.length > 3%>
+							    <% for i in 0..3 do %>
+								    <% if i == 3 %>									    
+										<li><center><% link_to_remote @comps[i].name, :update => 'Selection', :url => {:controller => :part_categories, :action => :existingBuild, :existing => @comps[i].name} %></center></li>
+									<% else %>
+										<li class="bottom_seperator"><% link_to_remote @comps[i].name, :update => 'Selection', :url => {:controller => :part_categories, :action => :existingBuild, :existing => @comps[i].name} %></center></li>
+									<% end %>
+								<% end %>
+							<% else %>
+								<% for i in 0..(@comps.length - 1) do %>
+									<% if i == (comps.length - 1) %>
+										<li><center><% link_to_remote @comps[i].name, :update => 'Selection', :url => {:controller => :part_categories, :action => :existingBuild, :existing => @comps[i].name} %></center></li>
+									<% else %>
+										<li class="bottom_seperator"><% link_to_remote @comps[i].name, :update => 'Selection', :url => {:controller => :part_categories, :action => :existingBuild, :existing => @comps[i].name} %></center></li>
+									<% end %>
+								<% end %>
+							<% end %>
+						</ul>										
+						<div class="spacer" id="Spacer1"></div>											
+					</li>
+				<% end %>
+			</ul>
+			<center><span class="dummy">Build</span></center>
+		<% else %>
+			<center><%= link_to "Build New", root_path, :class => "nav_link" %></center>
+		<% end %>
+	</div>
+	<div id="Assembly_box" class="nav_item">
+		<ul id="Assembly_options" class="options">
+			<li id="Tutorial" class="option_link"><center><a href="#">Tutorials</a></center></li>
+			<li id="Part_list" class="option_link"><center><a href="#">Part List</a></center></li>
+			<li id="Info" class="inner_list">
+				<center><a id="Info_link" class="list_link" href="#">Part Info</a></center>
+				<ul id="Info_categories" class="final_options">
+					<li class="bottom_seperator"><center><a href="#">Motherboard</a></center></li>
+					<li class="bottom_seperator"><center><a href="#">Graphics Card</a></center></li>
+					<li class="bottom_seperator"><center><a href="#">CPU</a></center></li>
+					<li class="bottom_seperator"><center><a href="#">Case</a></center></li>
+					<li class="bottom_seperator"><center><a href="#">Hard Drive</a></center></li>
+					<li class="bottom_seperator"><center><a href="#">Disc Drive</a></center></li>
+					<li class="bottom_seperator"><center><a href="#">Monitor</a></center></li>
+					<li class="bottom_seperator"><center><a href="#">CPU Cooler</a></center></li>
+					<li class="bottom_seperator"><center><a href="#">Memory</a></center></li>
+					<li><center><a href="#">Monitor</a></center></li>
+				</ul>
+				<div class="spacer" id="Spacer2"></div>
+			</li>
+		</ul>
+		<center><span class="dummy">Assembly</span></center>
+	</div>
+	<div id="Site_box" class="nav_item">
+		<center><a class="nav_link" href="#">Site Info</a></center>
+	</div>
+	<div id="Signup">
+		<% if @errors %>
+			<% if @errors %>
+				<%= render :partial => "signupform"%>
+			<% end %>
+		<% end %>
+	</div>
+</div>

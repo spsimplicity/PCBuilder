@@ -1,0 +1,236 @@
+#Back_cats
+{
+    background-color: #636566;  
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+
+#Back_cats a
+{
+    float: left;
+	position: absolute;
+	z-index: 9050;
+	left: 0px;
+	top: 120px;
+    font-size: large;
+    background-color: #636566;  
+	color: white;
+	height: 35px;
+	width: 180px;
+	text-decoration: none;
+	margin: 0 0 0 0;
+	padding: 10px 0 0 0;
+}
+
+#Back_cats a:hover
+{
+    color: #71D0CE;
+}
+
+#Parts
+{
+    margin: 0 auto 0 auto;
+	width: 820px;
+}
+
+#Part_nav
+{
+    position: relative;
+    margin: 0 auto 0 auto;
+	padding: 0 0 0 0;
+	width: 820px;
+	float: left;
+}
+
+#Part_nav a
+{
+    float: left;
+    position: relative;
+	padding: 0 0 0 0;
+	color: white;
+	text-decoration: none;
+	font-size: large;
+	margin: 70px 0 0 0;
+}
+
+#Part_nav a:hover
+{
+    color: #71D0CE;
+}
+
+#Header
+{
+    float: left;
+    position: relative;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	color: white;
+	width: 745px;
+}
+
+#Header h1
+{
+    padding: 0 0 0 0;
+	margin: 54px 0 0 0;
+}
+
+#Parts_list
+{
+    position: relative;
+    width: 820px;
+	margin: 0 auto 0 auto;
+	float: left;
+}
+
+.part
+{
+    position: relative;
+	width: inherit;
+    float: left;
+	border-top: solid 4px #212121;
+	color: white;
+}
+
+.always_visible
+{
+    position: relative;
+	width: inherit;
+    float: left;
+}
+
+.part_info
+{
+    position: relative;
+    float: left;
+	width: 760px;
+}
+
+.price
+{
+    position: relative;
+    float: right;
+	margin: 10px 20px 0 0;
+	padding: 0 0 0 0;
+}
+
+.first_row
+{
+    position: relative;
+    padding: 0 0 0 0;
+	margin: 10px 50px 0 0;
+	float: left;
+}
+
+.second_row
+{
+	float: left;
+    position: relative;
+    padding: 0 0 0 0;
+	margin: 10px 80px 0 0;
+}
+
+.beginning
+{
+    clear: left;
+	margin-left: 20px;
+}
+
+.add
+{
+    position: relative;
+    float: left;
+	width: 60px;
+}
+
+.add a
+{
+    position: relative;
+    float: left;
+	text-decoration: none;
+	color: white;
+    background-color: #212121;
+	width: 40px;
+	padding: 5px 0 5px 0;
+	margin: 5px 0 0 0;
+}
+
+.add a:hover
+{
+    color: #71D0CE;
+}
+
+.part_specs
+{
+    position: relative;
+    float: left;
+	width: inherit;
+}
+
+.show_specs
+{
+    position: relative;
+    float: left;
+	width: inherit;
+	height: 25px;
+    background-color: #636566;
+	margin: 10px 0 0 0;
+}
+
+.arrow_button
+{
+    position: relative;
+    border: none;
+    height: 25px;
+	width: 40px;
+    background: url(../images/arrow_up.png) no-repeat;
+	cursor: pointer;
+	margin: 0 auto 0 auto;
+}
+
+#Page_nav
+{
+    margin: 0 auto 0 auto;
+	width: inherit;
+	padding: 0 0 0 0;
+	float: left;
+}
+
+#Page_nav a
+{
+    float: left;
+    position: relative;
+	padding: 0 0 0 0;
+	color: white;
+	text-decoration: none;
+	font-size: large;
+	margin: 30px 0 0 0;
+}
+
+#Page_nav a:hover
+{
+    color: #71D0CE;
+}
+
+#Pages
+{
+	height: 50px;
+	width: 747px;
+	float: left;
+}
+
+#Pages h4
+{    
+	margin: 30px 0 0 0;
+}
+
+#Pages a
+{
+    float: none;
+    position: relative;
+    text-decoration: none;
+	width: 10px;
+	color: white;
+	margin: 0 15px 0 15px;
+	padding: 0 0 0 0;
+	font-size: large;
+}

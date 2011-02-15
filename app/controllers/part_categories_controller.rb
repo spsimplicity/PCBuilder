@@ -1,15 +1,23 @@
 class PartCategoriesController < ApplicationController
-    	
+    
+	def current
+	    puts session[:computer].motherboard
+	    render :partial => "categories_partial"
+	end
+	
 	def newBuild
+	    session[:computer] = Computer.new
+		session[:ids] = nil
 	    render :categories
-		if session[:user]
-		    @comps = Computer.find_by_user_id(session[:user].id)
-		end
-	    session[:new_computer] = Computer.new
 	end
 	
 	def existingBuild
-	    session[:new_computer] = Computer.find_by_name(params[:existing])
+	    render :categories
+	    session[:computer] = Computer.find_by_name(params[:existing], :include => :has_parts)
+		session[:ids] = session[:computer].getIds
+		session[:computer].has_parts.each do |part|
+		    session[:ids].push(part.part_id)
+		end
 	end
 	
 	def loadbuild

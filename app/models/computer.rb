@@ -37,6 +37,7 @@ class Computer < ActiveRecord::Base
 	        record.errors.add("User does not exist") if User.find_by_id(value) == nil
 		end
 	end
+	
 	#Foreign key validations
 	belongs_to :motherboard, :autosave => true
 	belongs_to :cpu, :autosave => true
@@ -45,4 +46,8 @@ class Computer < ActiveRecord::Base
 	belongs_to :case, :autosave => true
 	belongs_to :user, :autosave => true
 	has_many :has_parts, :foreign_key => "computer_id", :autosave => true
+	
+	def getIds
+	    ids = [:motherboard_id, :cpu_id, :case_id, :cpu_cooler_id, :power_supply_id]
+	end
 end

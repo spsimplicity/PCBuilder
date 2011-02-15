@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
     helper :all # include all helpers, all the time
     protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
-    filter_parameter_logging :password    
+    filter_parameter_logging :password
 	
 	def showform
 	    render :partial => "signupform", :locals => {:login_errors => false}
@@ -23,50 +23,52 @@ class ApplicationController < ActionController::Base
 			@user.save!
 			session[:user] = @user
 			@type = "Sign"
-			render :partial => "success"
+			render :update do |page|
+			    page.replace_html 'Nav', :partial => "navigation"
+			end
 		else
 			@up_errors = true
 			@sign_errors = @user.errors.full_messages
-			render :partial => "signupform"
+			render :update do |page|
+			    page.replace_html 'Signup', :partial => "signupform"
+			end
 		end
 	end
 	
 	def existingUser
 		@in_errors = false
+		@found = true
+		@good = true
 		@user = User.find_by_name(params[:username])
 		if @user == nil
 			@in_errors = true
 			@found = false
-			flash[:in_errors] = "found"
-	        redirect_to :action => :login
+	        render :update do |page|
+				page.replace_html 'Signup', :partial => "signupform"
+			end
 		else
 			if @user.has_password?(params[:password])
 				session[:user] = @user
 				@type = "Log"
-				redirect_to root_path
+				render :update do |page|
+					page.replace_html 'Nav', :partial => "navigation"
+				end
 			else
 				@in_errors = true
 				@good = false
-			    flash[:in_errors] = "good"
-				redirect_to :action => :login
+				render :update do |page|
+					page.replace_html 'Signup', :partial => "signupform"
+				end
 			end
 		end
 	end
 	
-	def login
-	    if flash[:in_errors] == "found"
-	        @errors = true
-			@found = false
-		elsif flash[:in_errors] == "good"
-		    @errors = true
-			@good = false
-		end
-	    render :categories
-	end
-	
 	def logout
 	    session[:user] = nil
-		redirect_to root_path
+		session[:computer] = nil
+		render :update do |page|
+			page.replace_html 'Nav', :partial => "navigation"
+		end
 	end
 	
 	def remove
