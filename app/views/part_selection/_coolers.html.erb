@@ -1,17 +1,20 @@
 <div class="part">
 	<div class="always_visibile">
 		<div class="part_info">
-			<p class="first_row beginning"><%= cpu_coolerObj.manufacturer %></p><p class="first_row"><%= cpu_coolerObj.model %></p><p class="price">$<%= cpu_coolerObj.price %></p>
-			<p class="second_row beginning">Max Memory Height: <%= cpu_coolerObj.maxmemheight %></p><p class="second_row">Height: <%= cpu_coolerObj.height %></p><p class="second_row">Width: <%= cpu_coolerObj.width %></p><p class="second_row">Length: <%= cpu_coolerObj.length %></p>
+			<p class="first_row beginning"><%= coolerObj.manufacturer %></p><p class="first_row"><%= coolerObj.model %></p><p class="price">$<%= coolerObj.price %></p>
+			<% if coolerObj.maxmemheight %>
+			    <p class="second_row beginning">Max Memory Height: <%= coolerObj.maxmemheight %></p><p class="second_row">Height: <%= coolerObj.height %></p><p class="second_row">Width: <%= coolerObj.width %></p><p class="second_row">Length: <%= coolerObj.length %></p>
+		    <% else %>
+			    <p class="second_row beginning">Height: <%= coolerObj.height %></p><p class="second_row">Width: <%= coolerObj.width %></p><p class="second_row">Length: <%= coolerObj.length %></p>
+			<% end %>
 		</div>
 		<div class="add">
-			<center><%= link_to_remote "Add", :update => 'Main', :url => {:controller => :part_selection, :action => :add_part, :id => cpu_coolerObj.part_id} %></center>
+			<center><%= link_to "Add", :controller => :part_selection, :action => :add_part, :id => coolerObj.part_id %></center>
 		</div>
 	</div>
 	<div id="specs<%= num %>" class="part_specs" style="display: none">
-		<p>Part Type: <%= cpu_coolerObj.parttype %></p>
-		<p>Part Manufacturer Website: <%= cpu_coolerObj.manufacturerwebsite %></p>
-		<p>Google Price: <%= cpu_coolerObj.googleprice %></p>
+		<p class="beginning">Part Manufacturer Website: <a href="<%= coolerObj.manufacturerwebsite %>" target="_blank"><%= coolerObj.manufacturer %> <%= coolerObj.model %></a></p>
+		<p class="beginning">Google Price: <a href="<%= coolerObj.googleprice %>" target="_blank">Google Shopping Results</a></p>
 	</div>
 	<div class="show_specs">
 		<center><button class="arrow_button" onclick="$('specs<%= num %>').toggle()"></button></center>

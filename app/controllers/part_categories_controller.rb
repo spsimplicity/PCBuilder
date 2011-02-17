@@ -2,7 +2,7 @@ class PartCategoriesController < ApplicationController
     
 	def current
 	    puts session[:computer].motherboard
-	    render :partial => "categories_partial"
+	    render :categories
 	end
 	
 	def newBuild

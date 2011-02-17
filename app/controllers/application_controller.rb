@@ -65,7 +65,6 @@ class ApplicationController < ActionController::Base
 	
 	def logout
 	    session[:user] = nil
-		session[:computer] = nil
 		render :update do |page|
 			page.replace_html 'Nav', :partial => "navigation"
 		end
@@ -73,5 +72,67 @@ class ApplicationController < ActionController::Base
 	
 	def remove
 	    render :partial => "nothing"
+	end
+	
+	def remove_part
+		session[:ids] = []
+		
+	    if session[:computer].motherboard and (session[:computer].motherboard.id.eql?(params[:part_id].to_i))
+		    session[:computer].motherboard = nil
+		elsif session[:computer].cpu and (session[:computer].cpu.id.eql?(params[:part_id].to_i))
+		    session[:computer].cpu = nil
+		elsif session[:computer].cpu_cooler and (session[:computer].cpu_cooler.id.eql?(params[:part_id].to_i))
+		    session[:computer].cpu_cooler = nil
+		elsif session[:computer].power_supply and (session[:computer].power_supply.id.eql?(params[:part_id].to_i))
+		    session[:computer].power_supply = nil
+		elsif session[:computer].case and (session[:computer].case.id.eql?(params[:part_id].to_i))
+		    session[:computer].case = nil
+		else
+		    deleted = false
+		    spot = 0
+		    while !deleted && (spot < session[:computer].has_parts.length)
+			    if session[:computer].has_parts[spot].part_id = params[:part_id].to_i
+				    session[:computer].has_parts.delete_at(spot)
+					deleted = true
+				end
+				spot += 1
+			end
+		end
+		
+	    @reference = request.referer
+	    if @reference.include? "part_categories"
+	        redirect_to :controller => :part_categories, :action => :current
+		elsif @reference.include? "part_selection"
+		    render :partial => "selected_tab_ajax"
+		else
+		    render :fuckinga
+		end
+	end
+	
+	def change_part
+	    @reference = request.referer
+	    if @reference.include?("mobos") && params[:change] == "Motherboards"
+			redirect_to :controller => :part_selection, :action => :mobos
+		elsif @reference.include?("cpus") && params[:change] == "Processors"
+			redirect_to :controller => :part_selection, :action => :cpus
+		elsif @reference.include?("coolers") && params[:change] == "CPU_Coolers"
+			redirect_to :controller => :part_selection, :action => :coolers
+		elsif @reference.include?("discs") && params[:change] == "Disc Drives"
+			redirect_to :controller => :part_selection, :action => :discs
+		elsif @reference.include?("gpus") && params[:change] == "Graphics Cards"
+			redirect_to :controller => :part_selection, :action => :gpus
+		elsif @reference.include?("hdds") && params[:change] == "Hard Drives"
+			redirect_to :controller => :part_selection, :action => :hdds
+		elsif @reference.include?("psus") && params[:change] == "Power Supplies"
+			redirect_to :controller => :part_selection, :action => :psus
+		elsif @reference.include?("memory") && params[:change] == "Memory"
+			redirect_to :controller => :part_selection, :action => :memory
+		elsif @reference.include?("cases") && params[:change] == "Cases"
+			redirect_to :controller => :part_selection, :action => :cases
+		elsif @reference.include?("displays")  && params[:change] == "Displays"
+			redirect_to :controller => :part_selection, :action => :displays
+		else
+	        redirect_to :controller => :part_selection, :action => :init, :part_type => params[:change]
+		end
 	end
 end

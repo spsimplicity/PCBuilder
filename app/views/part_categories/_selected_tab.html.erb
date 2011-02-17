@@ -1,0 +1,58 @@
+<div class="side_tab">
+	<ul id="Selected_options" class="tab_options">
+		<li id="Selected_tab" class="tab">
+			<center><button class="selected_link tab_link" href="" onclick="$('Selected_parts').toggle()">Selected Parts</button></center>
+		</li>
+		<li id="Selected_parts" class="side_menu" style="display: none">
+			<% if session[:computer].motherboard %>
+				<div class="part_selected_options">
+					<div class="part_in">
+						<p class="part_in_info manu"><%= session[:computer].motherboard.manufacturer %></p>
+						<p class="part_in_info"><%= session[:computer].motherboard.model %></p>
+					</div>
+					<%= link_to "Change", :controller => :application, :action => :change_part, :change => "Motherboards" %>
+					<span>|</span>
+					<%= link_to "Remove", :controller => :application, :action => :remove_part, :part_id => session[:computer].motherboard.id %>
+				</div>
+			<% end %>
+			<% if session[:computer].cpu %>
+				<div class="part_selected_options">
+					<div class="part_in">
+						<p class="part_in_info manu"><%= session[:computer].cpu.manufacturer %></p>
+						<p class="part_in_info"><%= session[:computer].cpu.series %></p>
+						<p class="part_in_info"><%= session[:computer].cpu.model %></p>
+					</div>
+					<%= link_to "Change", :controller => :application, :action => :change_part, :change => "Processors" %>
+					<span>|</span>
+					<%= link_to "Remove", :controller => :application, :action => :remove_part, :part_id => session[:computer].cpu.id %>
+				</div>
+			<% end %>
+			<% if session[:computer].cpu_cooler %>
+			    <div class="part_selected_options">
+					<div class="part_in">
+						<p class="part_in_info manu"><%= session[:computer].cpu_cooler.manufacturer %></p>
+						<p class="part_in_info"><%= session[:computer].cpu_cooler.model %></p>
+					</div>
+					<%= link_to "Change", :controller => :application, :action => :change_part, :change => "CPU Coolers" %>
+					<span>|</span>
+					<%= link_to "Remove", :controller => :application, :action => :remove_part, :part_id => session[:computer].cpu_cooler.id %>
+				</div>
+			<% end %>
+			<% if session[:computer].power_supply %>
+				<div class="part_selected_options">
+					<div class="part_in">
+						<p class="part_in_info manu"><%= session[:computer].power_supply.manufacturer %></p>
+						<p class="part_in_info"><%= session[:computer].power_supply.model %></p>
+					</div>
+					<%= link_to "Change", :controller => :application, :action => :change_part, :change => "Power Supplies" %>
+					<span>|</span>
+					<%= link_to "Remove", :controller => :application, :action => :remove_part, :part_id => session[:computer].power_supply.id %>
+				</div>
+			<% end %>
+			<% !if session[:computer].has_parts.empty? %>
+				<% session[:computer].has_parts.each do |part| %>
+				<% end %>
+			<% end %>
+		</li>
+	</ul>
+<div>

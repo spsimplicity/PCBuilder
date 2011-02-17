@@ -103,6 +103,7 @@
     position: relative;
     float: left;
 	width: 760px;
+	margin: 0 0 10px 0;
 }
 
 .price
@@ -164,6 +165,28 @@
     position: relative;
     float: left;
 	width: inherit;
+    background-color: #636566;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+
+.part_specs p
+{
+	margin: 10px 0 0 20px;
+	padding: 0 0 0 0;
+}
+
+.part_specs a
+{
+    color: white;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	text-decoration: none;
+}
+
+.part_specs a:hover
+{
+    color: #71D0CE;
 }
 
 .show_specs
@@ -173,7 +196,7 @@
 	width: inherit;
 	height: 25px;
     background-color: #636566;
-	margin: 10px 0 0 0;
+	margin: 0 0 0 0;
 }
 
 .arrow_button

@@ -181,6 +181,55 @@
     background-color: #636566;
 }
 
+.part_selected_options
+{
+    width: inherit;
+    float: left;
+	color: white;
+	font-size: small;
+	margin: 10px 0 0 0;
+}
+
+.part_selected_options span
+{
+    float: left;
+	margin: 0 5px 0 5px;
+	padding: 0 0 0 0;
+}
+
+.part_in
+{
+    float: left;
+	width: 190px;	
+	max-width: 190px;
+}
+
+.part_in_info
+{
+    float: left;
+	margin: 0 5px 0 0;
+	padding: 0 0 0 0;
+}
+
+.manu
+{
+    margin: 0 5px 0 0;
+}
+
+.part_selected_options a
+{
+    float: left;
+	text-decoration: none;
+	color: white;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+
+.part_selected_options a:hover
+{
+    color: #71D0CE;    
+}
+
 .side_menu
 {
     background-color: #636566;
