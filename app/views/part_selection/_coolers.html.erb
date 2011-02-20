@@ -1,12 +1,15 @@
 <div class="part">
 	<div class="always_visibile">
 		<div class="part_info">
-			<p class="first_row beginning"><%= coolerObj.manufacturer %></p><p class="first_row"><%= coolerObj.model %></p><p class="price">$<%= coolerObj.price %></p>
+			<p class="first_row beginning"><%= coolerObj.manufacturer %></p>
+			<p class="first_row"><%= coolerObj.model %></p>
+			<p class="price">$<%= coolerObj.price %></p>
 			<% if coolerObj.maxmemheight %>
-			    <p class="second_row beginning">Max Memory Height: <%= coolerObj.maxmemheight %></p><p class="second_row">Height: <%= coolerObj.height %></p><p class="second_row">Width: <%= coolerObj.width %></p><p class="second_row">Length: <%= coolerObj.length %></p>
-		    <% else %>
-			    <p class="second_row beginning">Height: <%= coolerObj.height %></p><p class="second_row">Width: <%= coolerObj.width %></p><p class="second_row">Length: <%= coolerObj.length %></p>
-			<% end %>
+			    <p class="second_row beginning">Max Memory Height: <%= coolerObj.maxmemheight %></p>
+		    <% end %>
+			<p class="second_row beginning">Height: <%= coolerObj.height %></p>
+			<p class="second_row">Width: <%= coolerObj.width %></p>
+			<p class="second_row">Length: <%= coolerObj.length %></p>
 		</div>
 		<div class="add">
 			<center><%= link_to "Add", :controller => :part_selection, :action => :add_part, :id => coolerObj.part_id %></center>

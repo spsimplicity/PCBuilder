@@ -1,19 +1,28 @@
 <div class="part">
 	<div class="always_visibile">
 		<div class="part_info">
-			<p class="first_row beginning"><%= hddObj.manufacturer %></p><p class="first_row"><%= hddObj.model %></p><p class="price">$<%= hddObj.price %></p>
-			<p class="second_row beginning">Capacity: <%= hddObj.capacity %></p><p class="second_row">RPM: <%= hddObj.rpm %></p><p class="second_row">Interface: <%= hddObj.interface %></p>
+			<p class="first_row beginning"><%= hddObj.manufacturer %></p>
+			<% if hddObj.series != "nil" %>
+		        <p class="first_row"><%= hddObj.series %></p>
+			<% end %>
+			<p class="first_row"><%= hddObj.model %></p>
+			<p class="price">$<%= hddObj.price %></p>
+			<% if hddObj.capacity < 10 %>
+			    <p class="second_row beginning">Capacity: <%= hddObj.capacity %>TB</p>
+			<% else %>
+			    <p class="second_row beginning">Capacity: <%= hddObj.capacity %>GB</p>
+			<% end %>
+			<p class="second_row">RPM: <%= hddObj.rpm %></p>
+			<p class="second_row">Interface: <%= hddObj.interface %></p>
 		</div>
 		<div class="add">
-			<center><%= link_to_remote "Add", :update => 'Main', :url => {:controller => :part_selection, :action => :add_part, :id => hddObj.part_id} %></center>
+			<center><%= link_to "Add", :controller => :part_selection, :action => :add_part, :id => hddObj.part_id %></center>
 		</div>
 	</div>
 	<div id="specs<%= num %>" class="part_specs" style="display: none">
-		<p>Part Type: <%= hddObj.parttype %></p>
-		<p>Manufacturer Website: <%= hddObj.manufacturerwebsite %></p>
-		<p>Google Price: <%= hddObj.googleprice %></p>
-		<p>Series: <%= hddObj.series %></p>
 		<p>Cache: <%= hddObj.cache %></p>
+		<p>Manufacturer Website: <a href="<%= hddObj.manufacturerwebsite %>" target="_blank"><%= hddObj.manufacturer %> <%= hddObj.model %></a></p>
+		<p>Google Price: <a href="<%= hddObj.googleprice %>" target="_blank">Google Shopping Results</a></p>
 	</div>
 	<div class="show_specs">
 		<center><button class="arrow_button" onclick="$('specs<%= num %>').toggle()"></button></center>

@@ -9,7 +9,38 @@
 		</div>
 	</div>
 	<div id="specs<%= num %>" class="part_specs" style="display: none">
-		
+	    <div class="col">
+			<p>PCI-E X16 Slots: <%= moboObj.pci_ex16 %></p>
+			<p>PCI-E 2.0 Slots: <%= moboObj.pci_e2 %></p>
+			<p>PCI-E Slots: <%= moboObj.pci_e %></p>
+			<p>PCI Slots: <%= moboObj.pci %></p>
+			<p>Memory Slots: <%= moboObj.memoryslots %></p>
+		</div>
+	    <div class="col">
+			<p>Front Side Bus: <%= moboObj.fsb %><p/>
+			<p>North Bridge: <%= moboObj.northbridge %></p>
+			<% if moboObj.southbridge != "nil" %>
+				<p>South Bridge: <%= moboObj.southbridge %></p>
+			<% end %>		
+			<p>SATA 3 Ports: <%= moboObj.sata3 %></p>
+			<p>SATA 6 Ports: <%= moboObj.sata6 %></p>
+			<p>IDE Ports: <%= moboObj.ide %></p>
+		</div>
+	    <div class="col">
+		    <p>Max Memory: <%= moboObj.maxmemory %></p>
+			<p>Memory Channel Type: <%= moboObj.memchannel %></p>
+			<% if moboObj.hydra %>
+				<p>Contains Lucid Hydra Chip</p>
+			<% end %>
+			<% if moboObj.crossfire %>
+				<p>Crossfire Ready</p>
+			<% end %>
+			<% if moboObj.sli %>
+				<p>SLI Ready</p>
+			<% end %>
+			<p>Manufacturer Website: <a href="<%= moboObj.manufacturerwebsite %>" target="_blank"><%= moboObj.manufacturer %> <%= moboObj.model %></a></p>
+			<p>Google Price: <a href="<%= moboObj.googleprice %>" target="_blank">Google Shopping Results</a></p>
+		</div>
 	</div>
 	<div class="show_specs">
 		<center><button class="arrow_button" onclick="$('specs<%= num %>').toggle()"></button></center>

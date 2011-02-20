@@ -12,7 +12,7 @@
 	<div id="Content">
 		<div id="Parts">
 			<div id="Part_nav">
-			    <%= link_to_remote "Prev", :controller => :part_selection, :action => :previous %>
+			    <%= link_to "Prev", :controller => :part_selection, :action => :previous %>
 				<div id="Header">
 					<h1 id="Part_heading" align="center"><%= session[:part_type] %></h1>
 				</div>
@@ -27,14 +27,13 @@
 							<% elsif session[:part_type] == "Processors" %>
 								<%= render :partial => "processor", :locals => {:cpuObj => @parts[i], :num => i} %>
 							<% elsif session[:part_type] == "CPU Coolers" %>
-							    <% if @parts == nil %><%= render :partial => "OMFG" %><% end %>
 								<%= render :partial => "coolers", :locals => {:coolerObj => @parts[i], :num => i} %>
 							<% elsif session[:part_type] == "Disc Drives" %>
-								<%= render :partial => "optical", :locals => {:moboObj => @parts[i], :num => i} %>
+								<%= render :partial => "optical", :locals => {:disc_driveObj => @parts[i], :num => i} %>
 							<% elsif session[:part_type] == "Graphics Cards" %>
-								<%= render :partial => "graphics", :locals => {:moboObj => @parts[i], :num => i} %>
+								<%= render :partial => "graphics", :locals => {:gpuObj => @parts[i], :num => i} %>
 							<% elsif session[:part_type] == "Hard Drives" %>
-								<%= render :partial => "harddrive", :locals => {:moboObj => @parts[i], :num => i} %>
+								<%= render :partial => "harddrive", :locals => {:hddObj => @parts[i], :num => i} %>
 							<% elsif session[:part_type] == "Power Supplies" %>
 								<%= render :partial => "powersupply", :locals => {:moboObj => @parts[i], :num => i} %>
 							<% elsif session[:part_type] == "Memory" %>
@@ -54,11 +53,11 @@
 							<% elsif session[:part_type] == "CPU Coolers" %>
 								<%= render :partial => "coolers", :locals => {:coolerObj => @parts[i], :num => i} %>
 							<% elsif session[:part_type] == "Disc Drives" %>
-								<%= render :partial => "optical", :locals => {:moboObj => @parts[i], :num => i} %>
+								<%= render :partial => "optical", :locals => {:disc_driveObj => @parts[i], :num => i} %>
 							<% elsif session[:part_type] == "Graphics Cards" %>
-								<%= render :partial => "graphics", :locals => {:moboObj => @parts[i], :num => i} %>
+								<%= render :partial => "graphics", :locals => {:gpuObj => @parts[i], :num => i} %>
 							<% elsif session[:part_type] == "Hard Drives" %>
-								<%= render :partial => "harddrive", :locals => {:moboObj => @parts[i], :num => i} %>
+								<%= render :partial => "harddrive", :locals => {:hddObj => @parts[i], :num => i} %>
 							<% elsif session[:part_type] == "Power Supplies" %>
 								<%= render :partial => "powersupply", :locals => {:moboObj => @parts[i], :num => i} %>
 							<% elsif session[:part_type] == "Memory" %>
@@ -79,11 +78,11 @@
 						<% elsif session[:part_type] == "CPU Coolers" %>
 							<%= render :partial => "coolers", :locals => {:coolerObj => @parts[i], :num => i} %>
 						<% elsif session[:part_type] == "Disc Drives" %>
-							<%= render :partial => "optical", :locals => {:moboObj => @parts[i], :num => i} %>
+							<%= render :partial => "optical", :locals => {:disc_driveObj => @parts[i], :num => i} %>
 						<% elsif session[:part_type] == "Graphics Cards" %>
-							<%= render :partial => "graphics", :locals => {:moboObj => @parts[i], :num => i} %>
+							<%= render :partial => "graphics", :locals => {:gpuObj => @parts[i], :num => i} %>
 						<% elsif session[:part_type] == "Hard Drives" %>
-							<%= render :partial => "harddrive", :locals => {:moboObj => @parts[i], :num => i} %>
+							<%= render :partial => "harddrive", :locals => {:hddObj => @parts[i], :num => i} %>
 						<% elsif session[:part_type] == "Power Supplies" %>
 							<%= render :partial => "powersupply", :locals => {:moboObj => @parts[i], :num => i} %>
 						<% elsif session[:part_type] == "Memory" %>
@@ -103,11 +102,11 @@
 						<% elsif session[:part_type] == "CPU Coolers" %>
 							<%= render :partial => "coolers", :locals => {:coolerObj => @parts[i], :num => i} %>
 						<% elsif session[:part_type] == "Disc Drives" %>
-							<%= render :partial => "optical", :locals => {:moboObj => @parts[i], :num => i} %>
+							<%= render :partial => "optical", :locals => {:disc_driveObj => @parts[i], :num => i} %>
 						<% elsif session[:part_type] == "Graphics Cards" %>
-							<%= render :partial => "graphics", :locals => {:moboObj => @parts[i], :num => i} %>
+							<%= render :partial => "graphics", :locals => {:gpuObj => @parts[i], :num => i} %>
 						<% elsif session[:part_type] == "Hard Drives" %>
-							<%= render :partial => "harddrive", :locals => {:moboObj => @parts[i], :num => i} %>
+							<%= render :partial => "harddrive", :locals => {:hddObj => @parts[i], :num => i} %>
 						<% elsif session[:part_type] == "Power Supplies" %>
 							<%= render :partial => "powersupply", :locals => {:moboObj => @parts[i], :num => i} %>
 						<% elsif session[:part_type] == "Memory" %>
@@ -121,7 +120,7 @@
 				<% end %>
 			</div>
 			<div id="Page_nav">
-			    <%= link_to_remote "Prev", :controller => :part_selection, :action => :previous %>
+			    <%= link_to "Prev", :controller => :part_selection, :action => :previous %>
 				<div id="Pages">
 					<h4 align="center">
 						<% for i in (1..session[:max]) %>
@@ -138,6 +137,12 @@
 		</div>
 	</div>
 	<div id="Selected" class="side_tab">
-		<%= render :partial => "selected_tab_ajax" %>
+		<%= render :partial => "selected_tab_ajax", :locals => {
+		    :comp_mobo => Motherboard.find_by_part_id(session[:computer].motherboard_id),
+			:comp_cpu => Cpu.find_by_part_id(session[:computer].cpu_id),
+			:comp_cooler => CpuCooler.find_by_part_id(session[:computer].cpu_cooler_id),
+			:comp_case => Case.find_by_part_id(session[:computer].case_id),
+			:comp_power => PowerSupply.find_by_part_id(session[:computer].power_supply_id)
+		} %>
 	<div>
 </div>

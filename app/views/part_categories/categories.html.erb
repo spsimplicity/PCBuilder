@@ -2,7 +2,7 @@
 	<div id="Content">
 		<div id="components">
 			<div class="component-line"> 
-				    <div id="Motherboard" class="component component-top-left" <% if session[:computer].motherboard %> style="background-color: #268358;" <% end %> >
+				    <div id="Motherboard" class="component component-top-left" <% if session[:computer].motherboard_id %> style="background-color: #268358;" <% end %> >
 				    <% link_to :controller => :part_selection, :action => :init, :part_type => "Motherboards" do %>
 						<center><%= image_tag 'Motherboard.jpg', :class => 'component-title' %></center>
 						<center><p class="category_name">Motherboards</p></center>
@@ -10,7 +10,7 @@
 						<p class="component-required">Required</p>
 					<% end %>
 				</div>
-				<div id="CPU" class="component component-top-middle" <% if session[:computer].cpu %> style="background-color: #268358;" <% end %> >
+				<div id="CPU" class="component component-top-middle" <% if session[:computer].cpu_id %> style="background-color: #268358;" <% end %> >
 					<% link_to :controller => :part_selection, :action => :init, :part_type => "Processors" do %>
 						<center><%= image_tag "CPU.jpg", :class => "component-title" %></center>
 						<center><p class="category_name">Processors</p></center>
@@ -18,7 +18,7 @@
 						<p class="component-required">Required</p>
 					<% end %>
 				</div>
-				<div id="CPU-Cooler" class="component component-top-middle" <% if session[:computer].cpu_cooler %> style="background-color: #268358;" <% end %> >
+				<div id="CPU-Cooler" class="component component-top-middle" <% if session[:computer].cpu_cooler_id %> style="background-color: #268358;" <% end %> >
 					<% link_to :controller => :part_selection, :action => :init, :part_type => "CPU Coolers" do %>
 						<center><%= image_tag "Cooler.jpg", :class => "component-title" %></center>
 						<center><p class="category_name">Coolers</p></center>
@@ -26,7 +26,7 @@
 						<p class="component-required"></p>
 					<% end %>
 				</div>
-				<div id="Disc-Drive" class="component component-top-right">
+				<div id="Disc-Drive" class="component component-top-right" <% if @dd %> style="background-color: #268358;" <% end %> >
 					<% link_to :controller => :part_selection, :action => :init, :part_type => "Disc Drives" do %>
 						<center><%= image_tag "DD.jpg", :class => "component-title" %></center>
 						<center><p class="category_name">Disc Drives</p></center>
@@ -36,7 +36,7 @@
 				</div>
 			</div>
 			<div class="component-line">
-				<div id="Graphics-Card" class="component component-middle-left">
+				<div id="Graphics-Card" class="component component-middle-left" <% if @gpu %> style="background-color: #268358;" <% end %> >
 					<% link_to :controller => :part_selection, :action => :init, :part_type => "Graphics Cards" do %>
 						<center><%= image_tag "Graphics_Card.jpg", :class => "component-title" %></center>
 						<center><p class="category_name">Graphics Cards</p></center>
@@ -44,7 +44,7 @@
 						<p class="component-required"></p>
 					<% end %>
 				</div>
-				<div id="Hard-Drive" class="component component-middle">
+				<div id="Hard-Drive" class="component component-middle" <% if @hdd %> style="background-color: #268358;" <% end %> >
 					<% link_to :controller => :part_selection, :action => :init, :part_type => "Hard Drives" do %>
 						<center><%= image_tag "HDD.jpg", :class => "component-title" %></center>
 						<center><p class="category_name">Hard Drives</p></center>
@@ -52,7 +52,7 @@
 						<p class="component-required">Required</p>
 					<% end %>
 				</div>
-				<div id="Power-Supply" class="component component-middle" <% if session[:computer].power_supply %> style="background-color: #268358;" <% end %> >
+				<div id="Power-Supply" class="component component-middle" <% if session[:computer].power_supply_id %> style="background-color: #268358;" <% end %> >
 					<% link_to :controller => :part_selection, :action => :init, :part_type => "Power Supplies" do %>
 						<center><%= image_tag "Power_Supply.jpg", :class => "component-title" %></center>
 						<center><p class="category_name">Power Supplies</p></center>
@@ -60,7 +60,7 @@
 						<p class="component-required">Required</p>
 					<% end %>
 				</div>
-				<div id="Memory" class="component component-middle-right">
+				<div id="Memory" class="component component-middle-right" <% if @mem %> style="background-color: #268358;" <% end %> >
 					<% link_to :controller => :part_selection, :action => :init, :part_type => "Memory" do %>
 						<center><%= image_tag "Ram.jpg", :class => "component-title" %></center>
 						<center><p class="category_name">Memory</p></center>
@@ -70,7 +70,7 @@
 				</div>
 			</div>
 			<div class="component-line">
-				<div id="Case" class="component component-bottom-left" <% if session[:computer].case %> style="background-color: #268358;" <% end %> >
+				<div id="Case" class="component component-bottom-left" <% if session[:computer].case_id %> style="background-color: #268358;" <% end %> >
 					<% link_to :controller => :part_selection, :action => :init, :part_type => "Cases" do %>
 						<center><%= image_tag "Case.jpg", :class => "component-title" %></center>
 						<center><p class="category_name">Cases</p></center>
@@ -78,7 +78,7 @@
 						<p class="component-required">Required</p>
 					<% end %>
 				</div>
-				<div id="Monitor" class="component component-bottom-middle">
+				<div id="Monitor" class="component component-bottom-middle" <% if @mon %> style="background-color: #268358;" <% end %> >
 					<% link_to :controller => :part_selection, :action => :init, :part_type => "Displays" do %>
 						<center><%= image_tag "Display.jpg", :class => "component-title" %></center>
 						<center><p class="category_name">Displays</p></center>
@@ -89,14 +89,20 @@
 				<div class="component component-bottom-middle component-empty">
 				</div>
 				<div class="component component-bottom-right component-empty">
-					<p style="margin:1em; font-size:13pt"><span style="color: #71D0CE">*</span><span style="color:white">Required items are needed only if you are making a complete system.</span></p>
+					<p style="margin:1em; font-size:13pt"><span style="color: #71D0CE">* </span><span style="color:white">Required items are needed only if you are making a complete system.</span></p>
 					</br>
-					<p style="margin:1em; font-size:13pt"><span style="color: #268358">*</span><span style="color:white">A green box signifies that a part from this category has been chosen.</span></p>
+					<p style="margin:1em; font-size:13pt"><span style="color: #268358">* </span><span style="color:white">A green box signifies that a part from this category has been chosen.</span></p>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div id="Selected" class="side_tab">		
-		<%= render :partial => "selected_tab" %>
+	<div id="Selected" class="side_tab">
+		<%= render :partial => "selected_tab", :locals => {
+		    :comp_mobo => Motherboard.find_by_part_id(session[:computer].motherboard_id),
+			:comp_cpu => Cpu.find_by_part_id(session[:computer].cpu_id),
+			:comp_cooler => CpuCooler.find_by_part_id(session[:computer].cpu_cooler_id),
+			:comp_case => Case.find_by_part_id(session[:computer].case_id),
+			:comp_power => PowerSupply.find_by_part_id(session[:computer].power_supply_id)
+		} %>
 	<div>
 </div>

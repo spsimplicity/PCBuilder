@@ -24,39 +24,42 @@ class PartSelectionController < ApplicationController
 		end
 	end
 	
-	def add_part		
+	def add_part
 	    if session[:part_type] == "Motherboards"
-		    session[:computer].motherboard = Motherboard.find_by_part_id(params[:id].to_i)
-		elsif session[:part_type] == "Processors" 
-		    session[:computer].cpu = Cpu.find_by_part_id(params[:id].to_i)
+		    session[:computer].motherboard_id = Motherboard.find_by_part_id(params[:id].to_i).part_id
+		elsif session[:part_type] == "Processors"
+		    session[:computer].cpu_id = Cpu.find_by_part_id(params[:id].to_i).part_id
 		elsif session[:part_type] == "CPU Coolers" 
-		    session[:computer].cpu_cooler = CpuCooler.find_by_part_id(params[:id].to_i)
+		    session[:computer].cpu_cooler_id = CpuCooler.find_by_part_id(params[:id].to_i).part_id
 		elsif session[:part_type] == "Power Supplies"
-		    session[:computer].power_supply = PowerSupply.find_by_part_id(params[:id].to_i)
+		    session[:computer].power_supply_id = PowerSupply.find_by_part_id(params[:id].to_i).part_id
+		elsif session[:part_type] == "Graphics Cards"
+		    session[:computer].other_parts.push([GraphicsCard.find_by_part_id(params[:id].to_i).part_id, "Graphics Card"])
+		elsif session[:part_type] == "Hard Drives"
+		    session[:computer].other_parts.push([HardDrife.find_by_part_id(params[:id].to_i).part_id, "Hard Drive"])
 		else
-	        session[:computer].has_parts.build(0, params[:id].to_i, session[:part_type])
 		end
 		redirect_to :controller => :part_categories, :action => :current
 	end
     
 	def reduceParts(parts, type)
-	    if session[:computer].motherboard && type != "Motherboards"
-		    Incompatible.find_all_by_part1_id(session[:computer].motherboard.part_id).each do |inc|
+	    if session[:computer].motherboard_id && type != "Motherboards"
+		    Incompatible.find_all_by_part1_id(session[:computer].motherboard_id).each do |inc|
 				parts = parts.delete_if {|part| part.part_id == inc.part2_id}
 			end
 		end
-		if session[:computer].cpu && type != "Processors"
-		    Incompatible.find_all_by_part1_id(session[:computer].cpu.part_id).each do |inc|
+		if session[:computer].cpu_id && type != "Processors"
+		    Incompatible.find_all_by_part1_id(session[:computer].cpu_id).each do |inc|
 				parts = parts.delete_if {|part| part.part_id == inc.part2_id}
 			end
 		end
-		if session[:computer].cpu_cooler && type != "CPU Coolers"
-		    Incompatible.find_all_by_part1_id(session[:computer].cpu_cooler.part_id).each do |inc|
+		if session[:computer].cpu_cooler_id && type != "CPU Coolers"
+		    Incompatible.find_all_by_part1_id(session[:computer].cpu_cooler_id).each do |inc|
 				parts = parts.delete_if {|part| part.part_id == inc.part2_id}
 			end
 		end
-		if session[:computer].power_supply && type != "Power Supplies"
-		    Incompatible.find_all_by_part1_id(session[:computer].power_supply.part_id).each do |inc|
+		if session[:computer].power_supply_id && type != "Power Supplies"
+		    Incompatible.find_all_by_part1_id(session[:computer].power_supply_id).each do |inc|
 				parts = parts.delete_if {|part| part.part_id == inc.part2_id}
 			end
 		end
@@ -100,6 +103,8 @@ class PartSelectionController < ApplicationController
 	end
 	
 	def discs
+	    @parts = DiscDrife.find(:all, :include => {:write_speeds, :read_speeds})
+		@parts = reduceParts(@parts, "Disc Drives")
 		session[:part_type] = "Disc Drives"
 		if (@parts.length % 10) == 10
 		    session[:max] = @parts.length / 10
@@ -110,6 +115,8 @@ class PartSelectionController < ApplicationController
 	end
 	
 	def gpus
+	    @parts = GraphicsCard.find(:all)
+		@parts = reduceParts(@parts, "Graphics Card")
 		session[:part_type] = "Graphics Cards"
 		if (@parts.length % 10) == 10
 		    session[:max] = @parts.length / 10
@@ -120,6 +127,8 @@ class PartSelectionController < ApplicationController
 	end
 	
 	def hdds
+	    @parts = HardDrife.find(:all)
+		@parts = reduceParts(@parts, "Hard Drives")
 		session[:part_type] = "Hard Drives"
 		if (@parts.length % 10) == 10
 		    session[:max] = @parts.length / 10
@@ -130,6 +139,8 @@ class PartSelectionController < ApplicationController
 	end
 	
 	def psus
+	    @parts = PowerSupply.find(:all)
+		@parts = reduceParts(@parts, "Power Supplies")
 		session[:part_type] = "Power Supplies"
 		if (@parts.length % 10) == 10
 		    session[:max] = @parts.length / 10
@@ -140,6 +151,8 @@ class PartSelectionController < ApplicationController
 	end
 	
 	def memory
+	    @parts = Memory.find(:all)
+		@parts = reduceParts(@parts, "Memory")
 		session[:part_type] = "Memory"
 		if (@parts.length % 10) == 10
 		    session[:max] = @parts.length / 10
@@ -150,6 +163,8 @@ class PartSelectionController < ApplicationController
 	end
 	
 	def cases
+	    @parts = Case.find(:all, :include => :case_motherboards)
+		@parts = reduceParts(@parts, "Cases")
 		session[:part_type] = "Cases"
 		if (@parts.length % 10) == 10
 		    session[:max] = @parts.length / 10
@@ -160,7 +175,9 @@ class PartSelectionController < ApplicationController
 	end
 	
 	def displays
-		session[:part_type] = "Monitors"
+	    @parts = Display.find(:all)
+		@parts = reduceParts(@parts, "Displays")
+		session[:part_type] = "Displays"
 		if (@parts.length % 10) == 10
 		    session[:max] = @parts.length / 10
 		else

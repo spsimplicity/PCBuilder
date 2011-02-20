@@ -1,7 +1,7 @@
 class Computer < ActiveRecord::Base
-  
+    attr_accessor :other_parts
 	#Only name attribute can be changed with params hash
-	attr_accessible :name
+	attr_accessible :name, :other_parts
 	#Name validations
 	validates_length_of :name, :maximum => 50
 	#Motherboard_id, cpu_id, cpu_cooler_id, power_supply_id, case_id, and user_id validations

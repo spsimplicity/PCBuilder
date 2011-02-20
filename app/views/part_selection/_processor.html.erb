@@ -1,40 +1,51 @@
 <div class="part">
 	<div class="always_visibile">
 		<div class="part_info">
+		    <p class="first_row beginning"><%= cpuObj.manufacturer %></p>
 		    <% if cpuObj.series %>
-			    <p class="first_row beginning"><%= cpuObj.manufacturer %></p><p class="first_row"><%= cpuObj.series %></p><p class="first_row"><%= cpuObj.model %></p><p class="price">$<%= cpuObj.price %></p>
-			<% else %>
-			    <p class="first_row beginning"><%= cpuObj.manufacturer %></p><p class="first_row"><%= cpuObj.model %></p><p class="price">$<%= cpuObj.price %></p>
+			    <p class="first_row"><%= cpuObj.series %></p>
 			<% end %>
-			<p class="second_row beginning">Frequency: <%= cpuObj.frequency %></p><p class="second_row">Cores: <%= cpuObj.cores %></p><p class="second_row">Socket Type: <%= cpuObj.sockettype %></p>
+			<p class="first_row"><%= cpuObj.model %></p>
+			<p class="price">$<%= cpuObj.price %></p>
+			<p class="second_row beginning">Frequency: <%= cpuObj.frequency %>GHz</p>
+			<p class="second_row">Cores: <%= cpuObj.cores %></p>
+			<p class="second_row">Socket Type: <%= cpuObj.sockettype %></p>
 		</div>
 		<div class="add">
 			<center><%= link_to "Add", :controller => :part_selection, :action => :add_part, :id => cpuObj.part_id %></center>
 		</div>
 	</div>
 	<div id="specs<%= num %>" class="part_specs" style="display: none">
-		<p>Part Type: <%= cpuObj.parttype %></p>
-		<p>Series: <%= cpuObj.series %></p>
-		<p>Manufacturer Website: <a href="<%= cpuObj.manufacturerwebsite %>" target="_blank"><%= cpuObj.manufacturer %> <%= cpuObj.model %></a></p>
-		<p>Google Price: <a href="<%= cpuObj.googleprice %>" target="_blank">Google Shopping Results</a></p>
-		<p>FSB: <%= cpuObj.fsb %></p>
-		<% if cpuObj.l1cache %>
-		    <p>L1 Cache: <%= cpuObj.l1cache %></p>
-		<% end %>
-		<% if cpuObj.l2cache %>
-		    <p>L2 Cache: <%= cpuObj.l2cache %></p>
-		<% end %>
-		<% if cpuObj.l3cache %>
-		    <p>L3 Cache: <%= cpuObj.l3cache %></p>
-		<% end %>
-		<p>Watts: <%= cpuObj.watts %></p>
-		<p>Power Pin: <%= cpuObj.powerpin %></p>
-		<% if cpuObj.maxmemory %>
-		    <p>Max Memory: <%= cpuObj.maxmemory %></p>
-		<% end %>
-		<% if cpuObj.memchanneltype %>
-		    <p>Memory Channel Type: <%= cpuObj.memchanneltype %></p>
-		<% end %>
+		<div class="col">
+			<% if cpuObj.fsb < 10 %>
+				<p>FSB: <%= cpuObj.fsb %>GT/s</p>
+			<% else %>		    
+				<p>FSB: <%= cpuObj.fsb %>MT/s</p>
+			<% end %>
+			<p>Watts: <%= cpuObj.watts %></p>
+			<p>Power Pin: <%= cpuObj.powerpin %></p>
+			<% if cpuObj.maxmemory %>
+				<p>Max Memory: <%= cpuObj.maxmemory %>GB</p>
+			<% end %>
+		</div>
+		<div class="col">
+			<p>Manufacturer Website: <a href="<%= cpuObj.manufacturerwebsite %>" target="_blank"><%= cpuObj.manufacturer %> <%= cpuObj.model %></a></p>
+			<p>Google Price: <a href="<%= cpuObj.googleprice %>" target="_blank">Google Shopping Results</a></p>
+			<% if cpuObj.memchanneltype %>
+				<p>Memory Channel Type: <%= cpuObj.memchanneltype %></p>
+			<% end %>
+		</div>
+		<div class="col">
+			<% if cpuObj.l1cache != 0%>
+				<p>L1 Cache: <%= cpuObj.l1cache %>KB</p>
+			<% end %>
+			<% if cpuObj.l2cache %>
+				<p>L2 Cache: <%= cpuObj.l2cache %>MB</p>
+			<% end %>
+			<% if cpuObj.l3cache %>
+				<p>L3 Cache: <%= cpuObj.l3cache %>MB</p>
+			<% end %>
+		</div>
 	</div>
 	<div class="show_specs">
 		<center><button class="arrow_button" onclick="$('specs<%= num %>').toggle()"></button></center>
