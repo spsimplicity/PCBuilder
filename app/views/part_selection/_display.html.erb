@@ -1,11 +1,11 @@
 <div class="part">
 	<div class="always_visibile">
 		<div class="part_info">
-			<p class="first_row beginning"><%= moboObj.manufacturer %></p><p class="first_row"><%= moboObj.model %></p><p class="price">$<%= moboObj.price %></p>
-			<p class="second_row beginning">Memorytype: <%= moboObj.memorytype %></p><p class="second_row">Sockettype: <%= moboObj.sockettype %></p><p class="second_row">Size: <%= moboObj.size %></p>
+			<p class="first_row beginning"><%= displayObj.manufacturer %></p><p class="first_row"><%= displayObj.model %></p><p class="price">$<%= displayObj.price %></p>
+			<p class="second_row beginning">Memorytype: <%= displayObj.memorytype %></p><p class="second_row">Sockettype: <%= displayObj.sockettype %></p><p class="second_row">Size: <%= displayObj.size %></p>
 		</div>
 		<div class="add">
-			<center><%= link_to_remote "Add", :update => 'Main', :url => {:controller => :part_selection, :action => :add_part, :id => moboObj.part_id} %></center>
+			<center><%= link_to_remote "Add", :update => 'Main', :url => {:controller => :part_selection, :action => :add_part, :id => displayObj.part_id} %></center>
 		</div>
 	</div>
 	<div id="specs<%= num %>" class="part_specs" style="display: none">

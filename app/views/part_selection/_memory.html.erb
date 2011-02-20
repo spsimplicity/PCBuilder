@@ -1,15 +1,23 @@
 <div class="part">
 	<div class="always_visibile">
 		<div class="part_info">
-			<p class="first_row beginning"><%= moboObj.manufacturer %></p><p class="first_row"><%= moboObj.model %></p><p class="price">$<%= moboObj.price %></p>
-			<p class="second_row beginning">Memorytype: <%= moboObj.memorytype %></p><p class="second_row">Sockettype: <%= moboObj.sockettype %></p><p class="second_row">Size: <%= moboObj.size %></p>
+			<p class="first_row beginning"><%= ramObj.manufacturer %></p><p class="first_row"><%= ramObj.model %></p><p class="price">$<%= ramObj.price %></p>
+			<p class="second_row beginning">Memorytype: <%= ramObj.memorytype %></p><p class="second_row">Capacity: <%= ramObj.capacity %></p><p class="second_row">Speed: <%= ramObj.speed %></p>
 		</div>
 		<div class="add">
-			<center><%= link_to_remote "Add", :update => 'Main', :url => {:controller => :part_selection, :action => :add_part, :id => moboObj.part_id} %></center>
+			<center><%= link_to_remote "Add", :update => 'Main', :url => {:controller => :part_selection, :action => :add_part, :id => ramObj.part_id} %></center>
 		</div>
 	</div>
 	<div id="specs<%= num %>" class="part_specs" style="display: none">
-		
+		<p>Manufacturer Website: <%= ramObj.manufacturerwebsite %></p>
+		<p>Google Price: <%= ramObj.googleprice %></p>
+		<p>Series: <%= ramObj.series %></p>
+		<p>Timings: <%= ramObj.timings %></p>
+		<p>Multichannel Type: <%= ramObj.multichanneltype %></p>
+		<p>Pin Number: <%= ramObj.pinnumber %></p>
+		<p>DIMMs: <%= ramObj.dimms %></p>
+		<p>Total Capacity: <%= ramObj.totalcapacity %></p>
+		<p>Voltage: <%= ramObj.voltage %></p>
 	</div>
 	<div class="show_specs">
 		<center><button class="arrow_button" onclick="$('specs<%= num %>').toggle()"></button></center>
