@@ -2,7 +2,7 @@
 	<div id="Content">
 		<div id="components">
 			<div class="component-line"> 
-				    <div id="Motherboard" class="component component-top-left" <% if session[:computer].motherboard %> style="background-color: #268358;" <% end %> >
+				    <div id="Motherboard" class="component component-top-left" <% if session[:computer].motherboard_id %> style="background-color: #268358;" <% end %> >
 				    <% link_to :controller => :part_selection, :action => :init, :part_type => "Motherboards" do %>
 						<center><%= image_tag 'Motherboard.jpg', :class => 'component-title' %></center>
 						<center><p class="category_name">Motherboards</p></center>
@@ -10,7 +10,7 @@
 						<p class="component-required">Required</p>
 					<% end %>
 				</div>
-				<div id="CPU" class="component component-top-middle" <% if session[:computer].cpu %> style="background-color: #268358;" <% end %> >
+				<div id="CPU" class="component component-top-middle" <% if session[:computer].cpu_id %> style="background-color: #268358;" <% end %> >
 					<% link_to :controller => :part_selection, :action => :init, :part_type => "Processors" do %>
 						<center><%= image_tag "CPU.jpg", :class => "component-title" %></center>
 						<center><p class="category_name">Processors</p></center>
@@ -18,7 +18,7 @@
 						<p class="component-required">Required</p>
 					<% end %>
 				</div>
-				<div id="CPU-Cooler" class="component component-top-middle" <% if session[:computer].cpu_cooler %> style="background-color: #268358;" <% end %> >
+				<div id="CPU-Cooler" class="component component-top-middle" <% if session[:computer].cpu_cooler_id %> style="background-color: #268358;" <% end %> >
 					<% link_to :controller => :part_selection, :action => :init, :part_type => "CPU Coolers" do %>
 						<center><%= image_tag "Cooler.jpg", :class => "component-title" %></center>
 						<center><p class="category_name">Coolers</p></center>
@@ -52,7 +52,7 @@
 						<p class="component-required">Required</p>
 					<% end %>
 				</div>
-				<div id="Power-Supply" class="component component-middle" <% if session[:computer].power_supply %> style="background-color: #268358;" <% end %> >
+				<div id="Power-Supply" class="component component-middle" <% if session[:computer].power_supply_id %> style="background-color: #268358;" <% end %> >
 					<% link_to :controller => :part_selection, :action => :init, :part_type => "Power Supplies" do %>
 						<center><%= image_tag "Power_Supply.jpg", :class => "component-title" %></center>
 						<center><p class="category_name">Power Supplies</p></center>
@@ -70,7 +70,7 @@
 				</div>
 			</div>
 			<div class="component-line">
-				<div id="Case" class="component component-bottom-left" <% if session[:computer].case %> style="background-color: #268358;" <% end %> >
+				<div id="Case" class="component component-bottom-left" <% if session[:computer].case_id %> style="background-color: #268358;" <% end %> >
 					<% link_to :controller => :part_selection, :action => :init, :part_type => "Cases" do %>
 						<center><%= image_tag "Case.jpg", :class => "component-title" %></center>
 						<center><p class="category_name">Cases</p></center>

@@ -77,16 +77,16 @@ class ApplicationController < ActionController::Base
 	def remove_part
 		session[:ids] = []
 		
-	    if session[:computer].motherboard and (session[:computer].motherboard.id.eql?(params[:part_id].to_i))
-		    session[:computer].motherboard = nil
-		elsif session[:computer].cpu and (session[:computer].cpu.id.eql?(params[:part_id].to_i))
-		    session[:computer].cpu = nil
-		elsif session[:computer].cpu_cooler and (session[:computer].cpu_cooler.id.eql?(params[:part_id].to_i))
-		    session[:computer].cpu_cooler = nil
-		elsif session[:computer].power_supply and (session[:computer].power_supply.id.eql?(params[:part_id].to_i))
-		    session[:computer].power_supply = nil
-		elsif session[:computer].case and (session[:computer].case.id.eql?(params[:part_id].to_i))
-		    session[:computer].case = nil
+	    if session[:computer].motherboard_id and (session[:computer].motherboard_id.eql?(params[:part_id].to_i))
+		    session[:computer].motherboard_id = nil
+		elsif session[:computer].cpu_id and (session[:computer].cpu_id.eql?(params[:part_id].to_i))
+		    session[:computer].cpu_id = nil
+		elsif session[:computer].cpu_cooler_id and (session[:computer].cpu_cooler_id.eql?(params[:part_id].to_i))
+		    session[:computer].cpu_cooler_id = nil
+		elsif session[:computer].power_supply_id and (session[:computer].power_supply_id.eql?(params[:part_id].to_i))
+		    session[:computer].power_supply_id = nil
+		elsif session[:computer].case_id and (session[:computer].case_id.eql?(params[:part_id].to_i))
+		    session[:computer].case_id = nil
 		else
 		    deleted = false
 		    spot = 0

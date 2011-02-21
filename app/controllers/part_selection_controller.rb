@@ -24,15 +24,15 @@ class PartSelectionController < ApplicationController
 		end
 	end
 	
-	def add_part		
+	def add_part
 	    if session[:part_type] == "Motherboards"
-		    session[:computer].motherboard = Motherboard.find_by_part_id(params[:id].to_i)
+		    session[:computer].motherboard_id = Motherboard.find_by_part_id(params[:id].to_i).part_id
 		elsif session[:part_type] == "Processors" 
-		    session[:computer].cpu = Cpu.find_by_part_id(params[:id].to_i)
+		    session[:computer].cpu_id = Cpu.find_by_part_id(params[:id].to_i).part_id
 		elsif session[:part_type] == "CPU Coolers" 
-		    session[:computer].cpu_cooler = CpuCooler.find_by_part_id(params[:id].to_i)
+		    session[:computer].cpu_cooler_id = CpuCooler.find_by_part_id(params[:id].to_i).part_id
 		elsif session[:part_type] == "Power Supplies"
-		    session[:computer].power_supply = PowerSupply.find_by_part_id(params[:id].to_i)
+		    session[:computer].power_supply_id = PowerSupply.find_by_part_id(params[:id].to_i).part_id
 		else
 	        session[:computer].has_parts.build(0, params[:id].to_i, session[:part_type])
 		end
@@ -40,23 +40,23 @@ class PartSelectionController < ApplicationController
 	end
     
 	def reduceParts(parts, type)
-	    if session[:computer].motherboard && type != "Motherboards"
-		    Incompatible.find_all_by_part1_id(session[:computer].motherboard.part_id).each do |inc|
+	    if session[:computer].motherboard_id && type != "Motherboards"
+		    Incompatible.find_all_by_part1_id(session[:computer].motherboard_id).each do |inc|
 				parts = parts.delete_if {|part| part.part_id == inc.part2_id}
 			end
 		end
-		if session[:computer].cpu && type != "Processors"
-		    Incompatible.find_all_by_part1_id(session[:computer].cpu.part_id).each do |inc|
+		if session[:computer].cpu_id && type != "Processors"
+		    Incompatible.find_all_by_part1_id(session[:computer].cpu_id).each do |inc|
 				parts = parts.delete_if {|part| part.part_id == inc.part2_id}
 			end
 		end
-		if session[:computer].cpu_cooler && type != "CPU Coolers"
-		    Incompatible.find_all_by_part1_id(session[:computer].cpu_cooler.part_id).each do |inc|
+		if session[:computer].cpu_cooler_id && type != "CPU Coolers"
+		    Incompatible.find_all_by_part1_id(session[:computer].cpu_cooler_id).each do |inc|
 				parts = parts.delete_if {|part| part.part_id == inc.part2_id}
 			end
 		end
-		if session[:computer].power_supply && type != "Power Supplies"
-		    Incompatible.find_all_by_part1_id(session[:computer].power_supply.part_id).each do |inc|
+		if session[:computer].power_supply_id && type != "Power Supplies"
+		    Incompatible.find_all_by_part1_id(session[:computer].power_supply_id).each do |inc|
 				parts = parts.delete_if {|part| part.part_id == inc.part2_id}
 			end
 		end

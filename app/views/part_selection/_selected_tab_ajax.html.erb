@@ -11,7 +11,7 @@
 				</div>
 				<%= link_to "Change", :controller => :application, :action => :change_part, :change => "Motherboards" %>
 				<span>|</span>
-				<%= link_to_remote "Remove", :update => 'Selected', :url => {:controller => :application, :action => :remove_part, :part_id => session[:computer].motherboard.id} %>
+				<%= link_to_remote "Remove", :update => 'Selected', :url => {:controller => :application, :action => :remove_part, :part_id => session[:computer].motherboard_id} %>
 			</div>
 		<% end %>
 		<% if session[:computer].cpu %>
@@ -23,7 +23,7 @@
 					</div>
 					<%= link_to "Change", :controller => :application, :action => :change_part, :change => "Processors" %>
 					<span>|</span>
-					<%= link_to "Remove", :controller => :application, :action => :remove_part, :part_id => session[:computer].cpu.id %>
+					<%= link_to "Remove", :controller => :application, :action => :remove_part, :part_id => session[:computer].cpu_id %>
 				</div>
 		<% end %>
 		<% if session[:computer].cpu_cooler %>
@@ -34,7 +34,7 @@
 					</div>
 					<%= link_to "Change", :controller => :application, :action => :change_part, :change => "CPU Coolers" %>
 					<span>|</span>
-					<%= link_to "Remove", :controller => :application, :action => :remove_part, :part_id => session[:computer].cpu_cooler.id %>
+					<%= link_to "Remove", :controller => :application, :action => :remove_part, :part_id => session[:computer].cpu_cooler_id %>
 				</div>
 		<% end %>
 		<% if session[:computer].power_supply %>
@@ -45,8 +45,10 @@
 					</div>
 					<%= link_to "Change", :controller => :application, :action => :change_part, :change => "Power Supplies" %>
 					<span>|</span>
-					<%= link_to "Remove", :controller => :application, :action => :remove_part, :part_id => session[:computer].power_supply.id %>
+					<%= link_to "Remove", :controller => :application, :action => :remove_part, :part_id => session[:computer].power_supply_id %>
 				</div>
+		<% end %>
+		<% if session[:computer].case_id %>
 		<% end %>
 		<% !if session[:computer].has_parts.empty? %>
 			<% session[:computer].has_parts.each do |part| %>
