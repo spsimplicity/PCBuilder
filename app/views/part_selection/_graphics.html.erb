@@ -12,38 +12,56 @@
 		    <p class="second_row">Core Clock: <%= gpuObj.coreclock %>MHz</p>
 		</div>
 		<div class="add">
-			<center><%= link_to "Add", :controller => :part_selection, :action => :add_part, :id => gpuObj.part_id %></center>
+		    <% if error_case %>
+			    <center><button href="" onclick="alert('<%= error_case %>');">Add</button></center>
+			<% else %>
+			    <center><%= link_to "Add", :controller => :part_selection, :action => :add_part, :id => gpuObj.part_id %></center>
+			<% end %>
 		</div>
 	</div>
 	<div id="specs<%= num %>" class="part_specs" style="display: none">
 	    <div class="col">
 			<p>Interface: <%= gpuObj.interface %></p>
 			<% if gpuObj.shaderclock %>
-				<p>Shader Clock: <%= gpuObj.shaderclock %></p>
+				<p>Shader Clock: <%= gpuObj.shaderclock %>MHz</p>
 			<% end %>
-			<p>Memory Clock: <%= gpuObj.memoryclock %></p>
+			<p>Memory Clock: <%= gpuObj.memoryclock %>MHz</p>
 			<p>Memory Size: <%= gpuObj.memorysize %>GB</p>
 			<p>Memory Type: <%= gpuObj.memorytype %></p>
 			<p>Direct X: <%= gpuObj.directx %></p>
-			<p>Width: <%= gpuObj.width %></p>
-			<p>Lengh: <%= gpuObj.length %></p>
+			<p>Width: <%= gpuObj.width %> slot</p>
 		</div>
 		<div class="col">
-			<p>Multi GPU Support: <%= gpuObj.multigpusupport %></p>
+			<p>Lengh: <%= gpuObj.length %>mm</p>
+		    <% if gpuObj.chipmanufacturer == "ATI" %>
+			    <p>Crossfire Bridges: <%= gpuObj.multigpusupport %></p>
+			<% else %>
+			    <p>SLI Bridges: <%= gpuObj.multigpusupport %></p>
+			<% end %>
 			<p>Max Resolution: <%= gpuObj.maxresolution %></p>
-			<p>HDMI: <%= gpuObj.hdmi %></p>
-			<p>DVI: <%= gpuObj.dvi %></p>
-			<p>Display Port: <%= gpuObj.displayport %></p>
-			<p>VGA: <%= gpuObj.vga %></p>
-			<p>S Video: <%= gpuObj.svideo %></p>
+			<% if gpuObj.hdmi > 0 %>
+			    <p>HDMI Ports: <%= gpuObj.hdmi %></p>
+			<% end %>
+			<% if gpuObj.dvi > 0 %>
+			    <p>DVI Ports: <%= gpuObj.dvi %></p>
+			<% end %>
+			<% if gpuObj.displayport > 0 %>
+			    <p>Display Port Ports: <%= gpuObj.displayport %></p>
+			<% end %>
+			<% if gpuObj.vga > 0 %>
+			    <p>VGA Ports: <%= gpuObj.vga %></p>
+			<% end %>
+			<% if gpuObj.svideo > 0 %>
+			    <p>S Video Ports: <%= gpuObj.svideo %></p>
+			<% end %>
 		</div>
 		<div class="col">
-			<p>Minimum Power: <%= gpuObj.minpower %></p>
-			<p>Multi GPU Power: <%= gpuObj.multigpupower %></p>
+			<p>Minimum Power: <%= gpuObj.minpower %>W</p>
+			<p>Multi GPU Power: <%= gpuObj.multigpupower %>W</p>
 			<p>Power 6-Pin: <%= gpuObj.power6pin %></p>
 			<p>Power 8-Pin: <%= gpuObj.power8pin %></p>
 			<p>Manufacturer Website: <a href="<%= gpuObj.manufacturerwebsite %>" target="_blank"><%= gpuObj.manufacturer %></a></p>
-			<p>Google Price: <a href="<%= gpuObj.googleprice %>" target="_blank">Google Shopping Results</a></p>
+			<p>Google Price: <a href="<%= gpuObj.googleprice %>" target="_blank">Shopping Results</a></p>
 		</div>
 	</div>
 	<div class="show_specs">

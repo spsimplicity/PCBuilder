@@ -105,7 +105,7 @@ class ApplicationController < ActionController::Base
 		elsif @reference.include? "part_selection"
 		    render :partial => "selected_tab_ajax"
 		else
-		    render :fuckinga
+		    render :howdidyougethere
 		end
 	end
 	

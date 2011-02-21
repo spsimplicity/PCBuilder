@@ -160,6 +160,28 @@
     color: #71D0CE;
 }
 
+.add button
+{
+    position: relative;
+    float: left;
+	text-decoration: none;
+	color: white;
+	background-image: none;
+    background-color: #212121;
+	border: none;
+	width: 40px;
+	padding: 5px 0 5px 0;
+	margin: 5px 0 0 0;
+	font-size: medium;
+	font-weight: normal;
+	cursor: pointer;
+}
+
+.add button:hover
+{
+    color: #71D0CE;
+}
+
 .part_specs
 {
     position: relative;

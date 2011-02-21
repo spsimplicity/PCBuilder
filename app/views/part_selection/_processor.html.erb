@@ -18,19 +18,18 @@
 	<div id="specs<%= num %>" class="part_specs" style="display: none">
 		<div class="col">
 			<% if cpuObj.fsb < 10 %>
-				<p>FSB: <%= cpuObj.fsb %>GT/s</p>
+				<p>FSB: <%= cpuObj.fsb %> GT/s</p>
 			<% else %>		    
-				<p>FSB: <%= cpuObj.fsb %>MT/s</p>
+				<p>FSB: <%= cpuObj.fsb %> MT/s</p>
 			<% end %>
 			<p>Watts: <%= cpuObj.watts %></p>
-			<p>Power Pin: <%= cpuObj.powerpin %></p>
 			<% if cpuObj.maxmemory %>
 				<p>Max Memory: <%= cpuObj.maxmemory %>GB</p>
 			<% end %>
 		</div>
 		<div class="col">
 			<p>Manufacturer Website: <a href="<%= cpuObj.manufacturerwebsite %>" target="_blank"><%= cpuObj.manufacturer %> <%= cpuObj.model %></a></p>
-			<p>Google Price: <a href="<%= cpuObj.googleprice %>" target="_blank">Google Shopping Results</a></p>
+			<p>Google Price: <a href="<%= cpuObj.googleprice %>" target="_blank">Shopping Results</a></p>
 			<% if cpuObj.memchanneltype %>
 				<p>Memory Channel Type: <%= cpuObj.memchanneltype %></p>
 			<% end %>

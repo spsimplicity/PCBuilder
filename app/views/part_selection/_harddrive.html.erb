@@ -20,9 +20,17 @@
 		</div>
 	</div>
 	<div id="specs<%= num %>" class="part_specs" style="display: none">
-		<p>Cache: <%= hddObj.cache %></p>
-		<p>Manufacturer Website: <a href="<%= hddObj.manufacturerwebsite %>" target="_blank"><%= hddObj.manufacturer %> <%= hddObj.model %></a></p>
-		<p>Google Price: <a href="<%= hddObj.googleprice %>" target="_blank">Google Shopping Results</a></p>
+	    <div class="col">
+			<% if hddObj.cache %>
+				<p>Cache: <%= hddObj.cache %>MB</p>
+			<% end %>
+		</div>
+	    <div class="col">
+			<p>Manufacturer Website: <a href="<%= hddObj.manufacturerwebsite %>" target="_blank"><%= hddObj.manufacturer %> <%= hddObj.model %></a></p>
+		</div>
+	    <div class="col">
+			<p>Google Price: <a href="<%= hddObj.googleprice %>" target="_blank">Shopping Results</a></p>
+		</div>
 	</div>
 	<div class="show_specs">
 		<center><button class="arrow_button" onclick="$('specs<%= num %>').toggle()"></button></center>

@@ -1,0 +1,49 @@
+<div class="part">
+	<div class="always_visibile">
+		<div class="part_info">
+			<p class="first_row beginning"><%= caseObj.manufacturer %></p>
+			<% if caseObj.series != "nil" %>
+		        <p class="first_row"><%= caseObj.series %></p>
+			<% end %>
+			<p class="first_row"><%= caseObj.model %></p>
+			<p class="price">$<%= caseObj.price %></p>
+			<p class="second_row beginning">Case Type: <%= caseObj.casetype %></p>
+			<p class="second_row">HDD Bays: <%= caseObj.hddbays %></p>
+			<p class="second_row">Disc Bays: <%= caseObj.discbays %></p>
+		</div>
+		<div class="add">
+			<center><%= link_to "Add", :controller => :part_selection, :action => :add_part, :id => caseObj.part_id %></center>
+		</div>
+	</div>
+	<div id="specs<%= num %>" class="part_specs" style="display: none">
+	    <div class="col">
+			<p>Length: <%= caseObj.length %>mm</p>
+			<p>Width: <%= caseObj.width %>mm</p>
+			<p>Height: <%= caseObj.height %>mm</p>
+		</div>
+	    <div class="col">
+		    <p>Max Cooler Height: <%= caseObj.maxcoolerheight %>mm</p>
+			<p>Conversion Bays: <%= caseObj.conversionbays %></p>
+			<p>Expansion Slots: <%= caseObj.expansionslots %></p>
+		</div>
+	    <div class="col">
+		    <p>Max GPU Length: <%= caseObj.maxgpulength %>mm</p>
+			<% @count = 0 %>
+			<% @sizes = "" %>
+			<% caseObj.case_motherboards.each do |mobo_size| %>
+			    <% if @count == 0 %>
+				    <% @sizes += mobo_size.size %>
+				<% else %>
+				    <% @sizes += ", #{mobo_size.size}" %>
+				<% end %>
+				<% @count += 1 %>
+			<% end %>
+			<p>Motherboard Sizes: <%= @sizes %></p>
+			<p>Manufacturer Website: <a href="<%= caseObj.manufacturerwebsite %>" target="_blank"><%= caseObj.manufacturer %> <%= caseObj.model %></a></p>
+			<p>Google Price: <a href="<%= caseObj.googleprice %>" target="_blank">Shopping Results</a></p>
+		</div>
+	</div>
+	<div class="show_specs">
+		<center><button class="arrow_button" onclick="$('specs<%= num %>').toggle()"></button></center>
+	</div>
+</div>
