@@ -1,15 +1,55 @@
 <div class="part">
 	<div class="always_visibile">
 		<div class="part_info">
-			<p class="first_row beginning"><%= moboObj.manufacturer %></p><p class="first_row"><%= moboObj.model %></p><p class="price">$<%= moboObj.price %></p>
-			<p class="second_row beginning">Memorytype: <%= moboObj.memorytype %></p><p class="second_row">Sockettype: <%= moboObj.sockettype %></p><p class="second_row">Size: <%= moboObj.size %></p>
+			<p class="first_row beginning"><%= displayObj.manufacturer %></p>
+			<p class="first_row"><%= displayObj.model %></p>
+			<p class="price">$<%= displayObj.price %></p>
+			<p class="second_row beginning">Monitor Type: <%= displayObj.monitortype %></p>
+			<p class="second_row">Resolution: <%= displayObj.resolution %></p>
+			<p class="second_row">Screen Size: <%= displayObj.screensize %></p>
 		</div>
 		<div class="add">
-			<center><%= link_to_remote "Add", :update => 'Main', :url => {:controller => :part_selection, :action => :add_part, :id => moboObj.part_id} %></center>
+			<center><%= link_to "Add", :controller => :part_selection, :action => :add_part, :id => displayObj.part_id %></center>
 		</div>
 	</div>
 	<div id="specs<%= num %>" class="part_specs" style="display: none">
-		
+		<div class="col">
+			<p>Contrast Ratio: <%= displayObj.contrastratio %></p>
+			<p>Widescreen: <%= displayObj.widescreen %></p>
+			<% if displayObj.vga > 0 %>
+			    <p>VGA Ports: <%= displayObj.vga %></p>
+			<% end %>
+			<% if displayObj.hdmi > 0 %>
+			    <p>HDMI Ports: <%= displayObj.hdmi %></p>
+			<% end %>
+			<% if displayObj.svideo > 0 %>
+			    <p>SVideo Ports: <%= displayObj.svideo %></p>
+			<% end %>
+		</div>
+		<div class="col">
+			<% if displayObj.dvi > 0 %>
+			    <p>DVI Ports: <%= displayObj.dvi %></p>
+			<% end %>
+			<% if displayObj.displayport > 0 %>
+			    <p>Display Port Ports: <%= displayObj.displayport %></p>
+			<% end %>
+		    <p>Manufacturer Website: <a href="<%= displayObj.manufacturerwebsite %>" target="_blank"><%= displayObj.manufacturer %> <%= displayObj.model %></a></p>
+			<p>Google Price: <a href="<%= displayObj.googleprice %>" target="_blank">Shopping Results</a></p>
+		</div>
+		<div class="col">
+			<% if displayObj.displaycolors %>
+			    <p>Display Colors: <%= displayObj.displaycolors %></p>
+			<% end %>
+			<% if displayObj.length %>
+			    <p>Length: <%= displayObj.length %>mm</p>
+			<% end %>
+			<% if displayObj.width %>
+			    <p>Width: <%= displayObj.width %>mm</p>
+			<% end %>
+			<% if displayObj.height %>
+			    <p>Height: <%= displayObj.height %>mm</p>
+			<% end %>
+		</div>
 	</div>
 	<div class="show_specs">
 		<center><button class="arrow_button" onclick="$('specs<%= num %>').toggle()"></button></center>

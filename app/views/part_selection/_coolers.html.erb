@@ -1,20 +1,34 @@
 <div class="part">
 	<div class="always_visibile">
 		<div class="part_info">
-			<p class="first_row beginning"><%= coolerObj.manufacturer %></p><p class="first_row"><%= coolerObj.model %></p><p class="price">$<%= coolerObj.price %></p>
+			<p class="first_row beginning"><%= coolerObj.manufacturer %></p>
+			<p class="first_row"><%= coolerObj.model %></p>
+			<p class="price">$<%= coolerObj.price %></p>
 			<% if coolerObj.maxmemheight %>
-			    <p class="second_row beginning">Max Memory Height: <%= coolerObj.maxmemheight %></p><p class="second_row">Height: <%= coolerObj.height %></p><p class="second_row">Width: <%= coolerObj.width %></p><p class="second_row">Length: <%= coolerObj.length %></p>
-		    <% else %>
-			    <p class="second_row beginning">Height: <%= coolerObj.height %></p><p class="second_row">Width: <%= coolerObj.width %></p><p class="second_row">Length: <%= coolerObj.length %></p>
-			<% end %>
+			    <p class="second_row beginning">Max Memory Height: <%= coolerObj.maxmemheight %></p>
+		    <% end %>
+			<p class="second_row beginning">Height: <%= coolerObj.height %>mm</p>
+			<p class="second_row">Width: <%= coolerObj.width %>mm</p>
+			<p class="second_row">Length: <%= coolerObj.length %>mm</p>
 		</div>
 		<div class="add">
 			<center><%= link_to "Add", :controller => :part_selection, :action => :add_part, :id => coolerObj.part_id %></center>
 		</div>
 	</div>
 	<div id="specs<%= num %>" class="part_specs" style="display: none">
-		<p class="beginning">Part Manufacturer Website: <a href="<%= coolerObj.manufacturerwebsite %>" target="_blank"><%= coolerObj.manufacturer %> <%= coolerObj.model %></a></p>
-		<p class="beginning">Google Price: <a href="<%= coolerObj.googleprice %>" target="_blank">Google Shopping Results</a></p>
+	    <% @count = 0 %>
+		<% @sockets = "" %>
+		<% coolerObj.cpu_cooler_sockets.each do |cooler_socket| %>
+		    <% if @count == 0 %>
+			    <% @sockets += cooler_socket.sockettype %>
+			<% else %>
+			    <% @sockets += ", #{cooler_socket.sockettype}" %>
+			<% end %>
+			<% @count += 1 %>
+		<% end %>
+		<p>Supported Sockets: <%= @sockets %></p>
+		<p>Part Manufacturer Website: <a href="<%= coolerObj.manufacturerwebsite %>" target="_blank"><%= coolerObj.manufacturer %> <%= coolerObj.model %></a></p>
+		<p>Google Price: <a href="<%= coolerObj.googleprice %>" target="_blank">Shopping Results</a></p>
 	</div>
 	<div class="show_specs">
 		<center><button class="arrow_button" onclick="$('specs<%= num %>').toggle()"></button></center>

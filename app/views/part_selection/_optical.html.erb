@@ -1,15 +1,17 @@
 <div class="part">
 	<div class="always_visibile">
 		<div class="part_info">
-			<p class="first_row beginning"><%= disc_driveObj.manufacturer %></p><p class="first_row"><%= disc_driveObj.model %></p><p class="price">$<%= disc_driveObj.price %></p>
-			<p class="second_row beginning">Type: <%= disc_driveObj.drivetype %></p><p class="second_row">Interface: <%= disc_driveObj.interface %></p>
+			<p class="first_row beginning"><%= disc_driveObj.manufacturer %></p>
+			<p class="first_row"><%= disc_driveObj.model %></p>
+			<p class="price">$<%= disc_driveObj.price %></p>
+			<p class="second_row beginning">Type: <%= disc_driveObj.drivetype %></p>
+			<p class="second_row">Interface: <%= disc_driveObj.interface %></p>
 		</div>
 		<div class="add">
 			<center><%= link_to_remote "Add", :update => 'Main', :url => {:controller => :part_selection, :action => :add_part, :id => disc_driveObj.part_id} %></center>
 		</div>
 	</div>
 	<div id="specs<%= num %>" class="part_specs" style="display: none">
-		<p>Part Type: <%= disc_driveObj.parttype %></p>
 		<p>Manufacturer Website: <%= disc_driveObj.manufacturerwebsite %></p>
 		<p>Google Price: <%= disc_driveObj.googleprice %></p>
 		<p>Cache: <%= disc_driveObj.cache %></p>

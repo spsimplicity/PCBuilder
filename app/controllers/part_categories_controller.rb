@@ -1,13 +1,32 @@
 class PartCategoriesController < ApplicationController
     
 	def current
-	    puts session[:computer].motherboard
+	    @gpu = false
+		@mon = false
+		@dd = false
+		@hdd = false
+		@mem = false
+	    session[:computer].other_parts.each do |part|
+		    if part[1].eql?"Graphics Card"
+	            @gpu = true
+			elsif part[1].eql?"Hard Drive"
+	            @hdd = true
+			elsif part[1].eql?"Display"
+	            @mon = true
+			elsif part[1].eql?"Disc Drive"
+	            @dd = true
+			else
+	            @mem = true
+			end
+		end
+		session[:price] = session[:computer].getPrice
 	    render :categories
 	end
 	
 	def newBuild
 	    session[:computer] = Computer.new
-		session[:ids] = nil
+		session[:computer].price = 0
+		session[:computer].other_parts = []
 	    render :categories
 	end
 	
@@ -20,13 +39,6 @@ class PartCategoriesController < ApplicationController
 		end
 	end
 	
-	def loadbuild
-	    @build
-	end
-	
 	def savebuild
-	end
-	
-	def constraints
 	end
 end

@@ -1,12 +1,12 @@
 class Computer < ActiveRecord::Base
-  
+    attr_accessor :other_parts
 	#Only name attribute can be changed with params hash
-	attr_accessible :name
+	attr_accessible :name, :other_parts
 	#Name validations
 	validates_length_of :name, :maximum => 50
 	#Motherboard_id, cpu_id, cpu_cooler_id, power_supply_id, case_id, and user_id validations
 	validates_numericality_of :motherboard_id, :cpu_id, :case_id,
-	    :cpu_cooler_id, :power_supply_id, :user_id, :only_integer => true, :greater_than => 0
+	    :cpu_cooler_id, :power_supply_id, :user_id, :price, :only_integer => true, :greater_than => 0
 	validates_each :motherboard_id do |record, attr, value|
 	    if value != nil
 	        record.errors.add("Motherboard does not exist") if Motherboard.find_by_id(value) == nil
@@ -49,5 +49,9 @@ class Computer < ActiveRecord::Base
 	
 	def getIds
 	    ids = [:motherboard_id, :cpu_id, :case_id, :cpu_cooler_id, :power_supply_id]
+	end
+	
+	def getPrice
+	    price/100.00
 	end
 end

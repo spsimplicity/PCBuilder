@@ -1,15 +1,41 @@
 <div class="part">
 	<div class="always_visibile">
 		<div class="part_info">
-			<p class="first_row beginning"><%= moboObj.manufacturer %></p><p class="first_row"><%= moboObj.model %></p><p class="price">$<%= moboObj.price %></p>
-			<p class="second_row beginning">Memorytype: <%= moboObj.memorytype %></p><p class="second_row">Sockettype: <%= moboObj.sockettype %></p><p class="second_row">Size: <%= moboObj.size %></p>
+			<p class="first_row beginning"><%= ramObj.manufacturer %></p>
+			<% if ramObj.series == "nil" %>
+		        <p class="first_row">Series: <%= ramObj.series %></p>
+			<% end %>
+			<p class="first_row"><%= ramObj.model %></p>
+			<p class="price">$<%= ramObj.price %></p>
+			<p class="second_row beginning">Memorytype: <%= ramObj.memorytype %></p>
+		    <p class="second_row">Total Capacity: <%= ramObj.totalcapacity %>GB</p>
+			<p class="second_row">Speed: <%= ramObj.speed %>MHz</p>
 		</div>
 		<div class="add">
-			<center><%= link_to_remote "Add", :update => 'Main', :url => {:controller => :part_selection, :action => :add_part, :id => moboObj.part_id} %></center>
+			<center><%= link_to "Add", :controller => :part_selection, :action => :add_part, :id => ramObj.part_id %></center>
 		</div>
 	</div>
 	<div id="specs<%= num %>" class="part_specs" style="display: none">
-		
+	    <div class="col">
+			<p>Capacity Per Stick: <%= ramObj.capacity %>GB</p>
+			<p>Pin Number: <%= ramObj.pinnumber %></p>
+			<p>DIMMs: <%= ramObj.dimms %></p>
+		</div>
+	    <div class="col">
+			<p>Voltage: <%= ramObj.voltage %></p>
+			<p>Timings: <%= ramObj.timings %></p>
+			<% if ramObj.multichanneltype == 3 %>
+			    <p>Multichannel Type: Triple</p>
+			<% elsif ramObj.multichanneltype == 2 %>
+			    <p>Multichannel Type: Dual</p>
+			<% else %>
+			    <p>Multichannel Type: Single</p>
+			<% end %>
+		</div>
+	    <div class="col">
+			<p>Manufacturer Website: <a href="<%= ramObj.manufacturerwebsite %>" target="_blank"><%= ramObj.manufacturer %> <%= ramObj.model %></a></p>
+			<p>Google Price: <a href="<%= ramObj.googleprice %>" target="_blank">Shopping Results</a></p>
+		</div>
 	</div>
 	<div class="show_specs">
 		<center><button class="arrow_button" onclick="$('specs<%= num %>').toggle()"></button></center>

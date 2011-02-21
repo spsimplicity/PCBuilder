@@ -12,41 +12,106 @@
 	<div id="Content">
 		<div id="Parts">
 			<div id="Part_nav">
-			    <%= link_to_remote "Prev", :controller => :part_selection, :action => :previous %>
+			    <%= link_to "Prev", :controller => :part_selection, :action => :previous %>
 				<div id="Header">
 					<h1 id="Part_heading" align="center"><%= session[:part_type] %></h1>
 				</div>
 				<%= link_to "Next", :controller => :part_selection, :action => :next %>
 			</div>
 			<div id="Parts_list">
-				<% if session[:page_num] == 1 %>
-				    <% if @parts.length < 10 %>
-					    <% for i in (0..(@parts.length-1)) do %>
+			    <% if @parts.length == 0 %>
+				    <h3 style="color: white;" align="center">No Compatible <%= session[:part_type] %></h3>
+				<% elsif @error %>
+				    <h3 style="color: white;" align="center"><%= @error %></h3>
+				<% else %>
+					<% if session[:page_num] == 1 %>
+						<% if @parts.length < 10 %>
+							<% for i in (0..(@parts.length-1)) do %>
+								<% if session[:part_type] == "Motherboards" %>
+									<%= render :partial => "motherboard", :locals => {:moboObj => @parts[i], :num => i} %>
+								<% elsif session[:part_type] == "Processors" %>
+									<%= render :partial => "processor", :locals => {:cpuObj => @parts[i], :num => i} %>
+								<% elsif session[:part_type] == "CPU Coolers" %>
+									<%= render :partial => "coolers", :locals => {:coolerObj => @parts[i], :num => i} %>
+								<% elsif session[:part_type] == "Disc Drives" %>
+									<%= render :partial => "optical", :locals => {:disc_driveObj => @parts[i], :num => i} %>
+								<% elsif session[:part_type] == "Graphics Cards" %>
+								    <% if @gpuError %>
+									    <%= render :partial => "graphics", :locals => {:gpuObj => @parts[i], :num => i, :error_case => @gpuError} %>
+									<% else %>
+									    <%= render :partial => "graphics", :locals => {:gpuObj => @parts[i], :num => i, :error_case => nil} %>
+									<% end %>
+								<% elsif session[:part_type] == "Hard Drives" %>
+									<%= render :partial => "harddrive", :locals => {:hddObj => @parts[i], :num => i} %>
+								<% elsif session[:part_type] == "Power Supplies" %>
+									<%= render :partial => "powersupply", :locals => {:psuObj => @parts[i], :num => i} %>
+								<% elsif session[:part_type] == "Memory" %>
+									<%= render :partial => "memory", :locals => {:ramObj => @parts[i], :num => i} %>
+								<% elsif session[:part_type] == "Cases" %>
+									<%= render :partial => "pccase", :locals => {:caseObj => @parts[i], :num => i} %>
+								<% else %>
+									<%= render :partial => "display", :locals => {:displayObj => @parts[i], :num => i} %>
+								<% end %>
+							<% end %>
+						<% else %>
+							<% for i in (0..9) do %>
+								<% if session[:part_type] == "Motherboards" %>
+									<%= render :partial => "motherboard", :locals => {:moboObj => @parts[i], :num => i} %>
+								<% elsif session[:part_type] == "Processors" %>
+									<%= render :partial => "processor", :locals => {:cpuObj => @parts[i], :num => i} %>
+								<% elsif session[:part_type] == "CPU Coolers" %>
+									<%= render :partial => "coolers", :locals => {:coolerObj => @parts[i], :num => i} %>
+								<% elsif session[:part_type] == "Disc Drives" %>
+									<%= render :partial => "optical", :locals => {:disc_driveObj => @parts[i], :num => i} %>
+								<% elsif session[:part_type] == "Graphics Cards" %>
+								    <% if @gpuError %>
+									    <%= render :partial => "graphics", :locals => {:gpuObj => @parts[i], :num => i, :error_case => @gpuError} %>
+									<% else %>
+									    <%= render :partial => "graphics", :locals => {:gpuObj => @parts[i], :num => i, :error_case => nil} %>
+									<% end %>
+								<% elsif session[:part_type] == "Hard Drives" %>
+									<%= render :partial => "harddrive", :locals => {:hddObj => @parts[i], :num => i} %>
+								<% elsif session[:part_type] == "Power Supplies" %>
+									<%= render :partial => "powersupply", :locals => {:psuObj => @parts[i], :num => i} %>
+								<% elsif session[:part_type] == "Memory" %>
+									<%= render :partial => "memory", :locals => {:ramObj => @parts[i], :num => i} %>
+								<% elsif session[:part_type] == "Cases" %>
+									<%= render :partial => "pccase", :locals => {:caseObj => @parts[i], :num => i} %>
+								<% else %>
+									<%= render :partial => "display", :locals => {:displayObj => @parts[i], :num => i} %>
+								<% end %>
+							<% end %>
+						<% end %>
+					<% elsif session[:page_num] == session[:max] %>
+						<% for i in (((session[:page_num]*10)-10)..@parts.length-1) do %>
 							<% if session[:part_type] == "Motherboards" %>
 								<%= render :partial => "motherboard", :locals => {:moboObj => @parts[i], :num => i} %>
 							<% elsif session[:part_type] == "Processors" %>
 								<%= render :partial => "processor", :locals => {:cpuObj => @parts[i], :num => i} %>
 							<% elsif session[:part_type] == "CPU Coolers" %>
-							    <% if @parts == nil %><%= render :partial => "OMFG" %><% end %>
 								<%= render :partial => "coolers", :locals => {:coolerObj => @parts[i], :num => i} %>
 							<% elsif session[:part_type] == "Disc Drives" %>
-								<%= render :partial => "optical", :locals => {:moboObj => @parts[i], :num => i} %>
+								<%= render :partial => "optical", :locals => {:disc_driveObj => @parts[i], :num => i} %>
 							<% elsif session[:part_type] == "Graphics Cards" %>
-								<%= render :partial => "graphics", :locals => {:moboObj => @parts[i], :num => i} %>
+								<% if @gpuError %>
+									<%= render :partial => "graphics", :locals => {:gpuObj => @parts[i], :num => i, :error_case => @gpuError} %>
+								<% else %>
+									<%= render :partial => "graphics", :locals => {:gpuObj => @parts[i], :num => i, :error_case => nil} %>
+								<% end %>
 							<% elsif session[:part_type] == "Hard Drives" %>
-								<%= render :partial => "harddrive", :locals => {:moboObj => @parts[i], :num => i} %>
+								<%= render :partial => "harddrive", :locals => {:hddObj => @parts[i], :num => i} %>
 							<% elsif session[:part_type] == "Power Supplies" %>
-								<%= render :partial => "powersupply", :locals => {:moboObj => @parts[i], :num => i} %>
+								<%= render :partial => "powersupply", :locals => {:psuObj => @parts[i], :num => i} %>
 							<% elsif session[:part_type] == "Memory" %>
-								<%= render :partial => "memory", :locals => {:moboObj => @parts[i], :num => i} %>
+								<%= render :partial => "memory", :locals => {:ramObj => @parts[i], :num => i} %>
 							<% elsif session[:part_type] == "Cases" %>
-								<%= render :partial => "case", :locals => {:moboObj => @parts[i], :num => i} %>
+								<%= render :partial => "pccase", :locals => {:caseObj => @parts[i], :num => i} %>
 							<% else %>
-								<%= render :partial => "display", :locals => {:moboObj => @parts[i], :num => i} %>
+								<%= render :partial => "display", :locals => {:displayObj => @parts[i], :num => i} %>
 							<% end %>
 						<% end %>
 					<% else %>
-						<% for i in (0..9) do %>
+						<% for i in (((session[:page_num]*10)-10)..((session[:page_num]*10)-1)) do %>
 							<% if session[:part_type] == "Motherboards" %>
 								<%= render :partial => "motherboard", :locals => {:moboObj => @parts[i], :num => i} %>
 							<% elsif session[:part_type] == "Processors" %>
@@ -54,81 +119,39 @@
 							<% elsif session[:part_type] == "CPU Coolers" %>
 								<%= render :partial => "coolers", :locals => {:coolerObj => @parts[i], :num => i} %>
 							<% elsif session[:part_type] == "Disc Drives" %>
-								<%= render :partial => "optical", :locals => {:moboObj => @parts[i], :num => i} %>
+								<%= render :partial => "optical", :locals => {:disc_driveObj => @parts[i], :num => i} %>
 							<% elsif session[:part_type] == "Graphics Cards" %>
-								<%= render :partial => "graphics", :locals => {:moboObj => @parts[i], :num => i} %>
+								<% if @gpuError %>
+									<%= render :partial => "graphics", :locals => {:gpuObj => @parts[i], :num => i, :error_case => @gpuError} %>
+								<% else %>
+									<%= render :partial => "graphics", :locals => {:gpuObj => @parts[i], :num => i, :error_case => nil} %>
+								<% end %>
 							<% elsif session[:part_type] == "Hard Drives" %>
-								<%= render :partial => "harddrive", :locals => {:moboObj => @parts[i], :num => i} %>
+								<%= render :partial => "harddrive", :locals => {:hddObj => @parts[i], :num => i} %>
 							<% elsif session[:part_type] == "Power Supplies" %>
-								<%= render :partial => "powersupply", :locals => {:moboObj => @parts[i], :num => i} %>
+								<%= render :partial => "powersupply", :locals => {:psuObj => @parts[i], :num => i} %>
 							<% elsif session[:part_type] == "Memory" %>
-								<%= render :partial => "memory", :locals => {:moboObj => @parts[i], :num => i} %>
+								<%= render :partial => "memory", :locals => {:ramObj => @parts[i], :num => i} %>
 							<% elsif session[:part_type] == "Cases" %>
-								<%= render :partial => "case", :locals => {:moboObj => @parts[i], :num => i} %>
+								<%= render :partial => "pccase", :locals => {:caseObj => @parts[i], :num => i} %>
 							<% else %>
-								<%= render :partial => "display", :locals => {:moboObj => @parts[i], :num => i} %>
+								<%= render :partial => "display", :locals => {:displayObj => @parts[i], :num => i} %>
 							<% end %>
-						<% end %>
-					<% end %>
-				<% elsif session[:page_num] == session[:max] %>
-					<% for i in (((session[:page_num]*10)-10)..@parts.length-1) do %>
-						<% if session[:part_type] == "Motherboards" %>
-							<%= render :partial => "motherboard", :locals => {:moboObj => @parts[i], :num => i} %>
-						<% elsif session[:part_type] == "Processors" %>
-							<%= render :partial => "processor", :locals => {:cpuObj => @parts[i], :num => i} %>
-						<% elsif session[:part_type] == "CPU Coolers" %>
-							<%= render :partial => "coolers", :locals => {:coolerObj => @parts[i], :num => i} %>
-						<% elsif session[:part_type] == "Disc Drives" %>
-							<%= render :partial => "optical", :locals => {:moboObj => @parts[i], :num => i} %>
-						<% elsif session[:part_type] == "Graphics Cards" %>
-							<%= render :partial => "graphics", :locals => {:moboObj => @parts[i], :num => i} %>
-						<% elsif session[:part_type] == "Hard Drives" %>
-							<%= render :partial => "harddrive", :locals => {:moboObj => @parts[i], :num => i} %>
-						<% elsif session[:part_type] == "Power Supplies" %>
-							<%= render :partial => "powersupply", :locals => {:moboObj => @parts[i], :num => i} %>
-						<% elsif session[:part_type] == "Memory" %>
-							<%= render :partial => "memory", :locals => {:moboObj => @parts[i], :num => i} %>
-						<% elsif session[:part_type] == "Cases" %>
-							<%= render :partial => "case", :locals => {:moboObj => @parts[i], :num => i} %>
-						<% else %>
-							<%= render :partial => "display", :locals => {:moboObj => @parts[i], :num => i} %>
-						<% end %>
-					<% end %>
-				<% else %>
-					<% for i in (((session[:page_num]*10)-10)..((session[:page_num]*10)-1)) do %>
-						<% if session[:part_type] == "Motherboards" %>
-							<%= render :partial => "motherboard", :locals => {:moboObj => @parts[i], :num => i} %>
-						<% elsif session[:part_type] == "Processors" %>
-							<%= render :partial => "processor", :locals => {:cpuObj => @parts[i], :num => i} %>
-						<% elsif session[:part_type] == "CPU Coolers" %>
-							<%= render :partial => "coolers", :locals => {:coolerObj => @parts[i], :num => i} %>
-						<% elsif session[:part_type] == "Disc Drives" %>
-							<%= render :partial => "optical", :locals => {:moboObj => @parts[i], :num => i} %>
-						<% elsif session[:part_type] == "Graphics Cards" %>
-							<%= render :partial => "graphics", :locals => {:moboObj => @parts[i], :num => i} %>
-						<% elsif session[:part_type] == "Hard Drives" %>
-							<%= render :partial => "harddrive", :locals => {:moboObj => @parts[i], :num => i} %>
-						<% elsif session[:part_type] == "Power Supplies" %>
-							<%= render :partial => "powersupply", :locals => {:moboObj => @parts[i], :num => i} %>
-						<% elsif session[:part_type] == "Memory" %>
-							<%= render :partial => "memory", :locals => {:moboObj => @parts[i], :num => i} %>
-						<% elsif session[:part_type] == "Cases" %>
-							<%= render :partial => "case", :locals => {:moboObj => @parts[i], :num => i} %>
-						<% else %>
-							<%= render :partial => "display", :locals => {:moboObj => @parts[i], :num => i} %>
 						<% end %>
 					<% end %>
 				<% end %>
 			</div>
 			<div id="Page_nav">
-			    <%= link_to_remote "Prev", :controller => :part_selection, :action => :previous %>
+			    <%= link_to "Prev", :controller => :part_selection, :action => :previous %>
 				<div id="Pages">
 					<h4 align="center">
-						<% for i in (1..session[:max]) %>
-						    <% if session[:page_num] == i %>
-							    <a style="color: #71D0CE; cursor: pointer;"><%= i %></a>
-							<% else %>
-						        <%= link_to i, :controller => :part_selection, :action => :jump, :num => i %>
+					    <% if !@error %>
+							<% for i in (1..session[:max]) %>
+								<% if session[:page_num] == i %>
+									<a style="color: #71D0CE; cursor: pointer;"><%= i %></a>
+								<% else %>
+									<%= link_to i, :controller => :part_selection, :action => :jump, :num => i %>
+								<% end %>
 							<% end %>
 						<% end %>
 					</h4>
@@ -138,6 +161,12 @@
 		</div>
 	</div>
 	<div id="Selected" class="side_tab">
-		<%= render :partial => "selected_tab_ajax" %>
+		<%= render :partial => "selected_tab_ajax", :locals => {
+		    :comp_mobo => Motherboard.find_by_part_id(session[:computer].motherboard_id),
+			:comp_cpu => Cpu.find_by_part_id(session[:computer].cpu_id),
+			:comp_cooler => CpuCooler.find_by_part_id(session[:computer].cpu_cooler_id),
+			:comp_case => Case.find_by_part_id(session[:computer].case_id),
+			:comp_power => PowerSupply.find_by_part_id(session[:computer].power_supply_id)
+		} %>
 	<div>
 </div>

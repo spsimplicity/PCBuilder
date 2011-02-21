@@ -65,6 +65,7 @@ class ApplicationController < ActionController::Base
 	
 	def logout
 	    session[:user] = nil
+		session[:computer] = nil
 		render :update do |page|
 			page.replace_html 'Nav', :partial => "navigation"
 		end
@@ -75,24 +76,38 @@ class ApplicationController < ActionController::Base
 	end
 	
 	def remove_part
-		session[:ids] = []
-		
 	    if session[:computer].motherboard_id and (session[:computer].motherboard_id.eql?(params[:part_id].to_i))
+		    session[:computer].price -= Motherboard.find_by_part_id(session[:computer].motherboard_id).price*100
 		    session[:computer].motherboard_id = nil
 		elsif session[:computer].cpu_id and (session[:computer].cpu_id.eql?(params[:part_id].to_i))
+		    session[:computer].price -= Cpu.find_by_part_id(session[:computer].cpu_id).price*100
 		    session[:computer].cpu_id = nil
 		elsif session[:computer].cpu_cooler_id and (session[:computer].cpu_cooler_id.eql?(params[:part_id].to_i))
+		    session[:computer].price -= CpuCooler.find_by_part_id(session[:computer].cpu_cooler_id).price*100
 		    session[:computer].cpu_cooler_id = nil
 		elsif session[:computer].power_supply_id and (session[:computer].power_supply_id.eql?(params[:part_id].to_i))
+		    session[:computer].price -= PowerSupply.find_by_part_id(session[:computer].power_supply_id).price*100
 		    session[:computer].power_supply_id = nil
 		elsif session[:computer].case_id and (session[:computer].case_id.eql?(params[:part_id].to_i))
+		    session[:computer].price -= Case.find_by_part_id(session[:computer].case_id).price*100
 		    session[:computer].case_id = nil
 		else
 		    deleted = false
 		    spot = 0
-		    while !deleted && (spot < session[:computer].has_parts.length)
-			    if session[:computer].has_parts[spot].part_id = params[:part_id].to_i
-				    session[:computer].has_parts.delete_at(spot)
+		    while(spot < session[:computer].other_parts.length)
+			    if session[:computer].other_parts[spot][0] = params[:part_id].to_i && !deleted
+				    if session[:computer].other_parts[spot][1] == "Graphics Card"
+					    session[:computer].price -= GraphicsCard.find_by_part_id(params[:part_id].to_i).price*100
+					elsif session[:computer].other_parts[spot] == "Hard Drive"
+					    session[:computer].price -= HardDrife.find_by_part_id(params[:part_id].to_i).price*100
+					elsif session[:computer].other_parts[spot] == "Disc Drive"
+					    session[:computer].price -= DiscDrife.find_by_part_id(params[:part_id].to_i).price*100
+					elsif session[:computer].other_parts[spot] == "Memory"
+					    session[:computer].price -= Memory.find_by_part_id(params[:part_id].to_i).price*100
+					else
+					    session[:computer].price -= Display.find_by_part_id(params[:part_id].to_i).price*100
+					end
+				    session[:computer].other_parts.delete_at(spot)
 					deleted = true
 				end
 				spot += 1
@@ -105,7 +120,7 @@ class ApplicationController < ActionController::Base
 		elsif @reference.include? "part_selection"
 		    render :partial => "selected_tab_ajax"
 		else
-		    render :fuckinga
+		    render :howdidyougethere
 		end
 	end
 	

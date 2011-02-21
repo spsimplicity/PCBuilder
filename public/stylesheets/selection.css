@@ -103,7 +103,7 @@
     position: relative;
     float: left;
 	width: 760px;
-	margin: 0 0 10px 0;
+	margin: 0 0 0 0;
 }
 
 .price
@@ -160,13 +160,35 @@
     color: #71D0CE;
 }
 
+.add button
+{
+    position: relative;
+    float: left;
+	text-decoration: none;
+	color: white;
+	background-image: none;
+    background-color: #212121;
+	border: none;
+	width: 40px;
+	padding: 5px 0 5px 0;
+	margin: 5px 0 0 0;
+	font-size: medium;
+	font-weight: normal;
+	cursor: pointer;
+}
+
+.add button:hover
+{
+    color: #71D0CE;
+}
+
 .part_specs
 {
     position: relative;
     float: left;
 	width: inherit;
     background-color: #3d4244;
-	margin: -10px 0 10px 0;
+	margin: 0 0 0 0;
 	padding: 0 0 0 0;
 }
 
@@ -196,7 +218,7 @@
 	width: inherit;
 	height: 25px;
     background-color: #636566;
-	margin: 0 0 0 0;
+	margin: 10px 0 0 0;
 }
 
 .arrow_button
@@ -256,4 +278,9 @@
 	margin: 0 15px 0 15px;
 	padding: 0 0 0 0;
 	font-size: large;
+}
+
+.col
+{
+    float: left;
 }
