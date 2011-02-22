@@ -120,30 +120,59 @@
 	color: white;
 }
 
+.side_tab
+{
+	position: fixed;	
+	top: 190px;
+	margin: 0 0 0 0;
+}
+
 .tab_options
 {
-    float: left;
 	position: fixed;
     list-style: none;
 	z-index: 9999;
 	padding: 0 0 0 0;
 }
 
-.side_tab
-{
-    float: left;
-	margin: 0 0 0 0;
-}
-
 #Selected_options
 {
-	top: 190px;
 	right: 0px;
+}
+
+#Comp_price
+{
+    top: 750px;
+	right: 0px;
+}
+
+.price_tab
+{    
+    background-color: #636566;    
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+	width: 80px;
+}
+
+.price_tab h4
+{
+	padding: 5px 0 0 0;
+	margin: 0 0 5px 0;
+	text-align: center;
+	color: white;
+}
+
+.price_tab p
+{
+    font-size: small;
+	padding: 0 0 5px 0;
+	margin: 0 0 0 0;
+	color: white;
+	text-align: center;
 }
 
 #Sort_options
 {
-    top: 190px;
 	left: 0px;
 }
 
