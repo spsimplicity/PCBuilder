@@ -2,7 +2,7 @@
 	<div id="Content">
 		<div id="components">
 			<div class="component-line"> 
-				    <div id="Motherboard" class="component component-top-left" <% if session[:computer].motherboard_id %> style="background-color: #268358;" <% end %> >
+				<div id="Motherboard" class="component component-top-left" <% if session[:computer].motherboard_id %> style="background-color: #268358;" <% end %> >
 				    <% link_to :controller => :part_selection, :action => :init, :part_type => "Motherboards" do %>
 						<center><%= image_tag 'Motherboard.jpg', :class => 'component-title' %></center>
 						<center><p class="category_name">Motherboards</p></center>

@@ -32,8 +32,11 @@ class PartCategoriesController < ApplicationController
 	
 	def existingBuild
 	    render :categories
-	    session[:computer] = Computer.find_by_name_and_user_id(params[:existing], session[:user].id, :include => :has_parts)
-		session[:price] = session[:computer].getPrice
+	    session[:computer] = Computer.find_by_name(params[:existing], :include => :has_parts)
+		session[:ids] = session[:computer].getIds
+		session[:computer].has_parts.each do |part|
+		    session[:ids].push(part.part_id)
+		end
 	end
 	
 	def savebuild

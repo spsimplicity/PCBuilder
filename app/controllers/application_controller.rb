@@ -65,6 +65,7 @@ class ApplicationController < ActionController::Base
 	
 	def logout
 	    session[:user] = nil
+		session[:computer] = nil
 		render :update do |page|
 			page.replace_html 'Nav', :partial => "navigation"
 		end
@@ -75,8 +76,6 @@ class ApplicationController < ActionController::Base
 	end
 	
 	def remove_part
-		session[:ids] = []
-		
 	    if session[:computer].motherboard_id and (session[:computer].motherboard_id.eql?(params[:part_id].to_i))
 		    session[:computer].price -= Motherboard.find_by_part_id(session[:computer].motherboard_id).price*100
 		    session[:computer].motherboard_id = nil
