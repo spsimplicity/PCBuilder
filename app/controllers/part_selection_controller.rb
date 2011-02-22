@@ -26,25 +26,45 @@ class PartSelectionController < ApplicationController
 	
 	def add_part
 	    if session[:part_type] == "Motherboards"
-		    session[:computer].motherboard_id = Motherboard.find_by_part_id(params[:id].to_i).part_id
+		    mobo = Motherboard.find_by_part_id(params[:id].to_i)
+		    session[:computer].motherboard_id = mobo.part_id
+			session[:computer].price += (mobo.price*100)
 		elsif session[:part_type] == "Processors"
-		    session[:computer].cpu_id = Cpu.find_by_part_id(params[:id].to_i).part_id
+		    cpu = Cpu.find_by_part_id(params[:id].to_i)
+		    session[:computer].cpu_id = cpu.part_id
+			session[:computer].price += (cpu.price*100)
 		elsif session[:part_type] == "CPU Coolers" 
-		    session[:computer].cpu_cooler_id = CpuCooler.find_by_part_id(params[:id].to_i).part_id
+		    cooler = CpuCooler.find_by_part_id(params[:id].to_i)
+		    session[:computer].cpu_cooler_id = cooler.part_id
+			session[:computer].price += (cooler.price*100)
 		elsif session[:part_type] == "Power Supplies"
-		    session[:computer].power_supply_id = PowerSupply.find_by_part_id(params[:id].to_i).part_id
+		    power = PowerSupply.find_by_part_id(params[:id].to_i)
+		    session[:computer].power_supply_id = power.part_id
+			session[:computer].price += (power.price*100)
 		elsif session[:part_type] == "Graphics Cards"
-		    session[:computer].other_parts.push([GraphicsCard.find_by_part_id(params[:id].to_i).part_id, "Graphics Card"])
+		    card = GraphicsCard.find_by_part_id(params[:id].to_i)
+		    session[:computer].other_parts.push([card.part_id, "Graphics Card"])
+			session[:computer].price += (card.price*100)
 		elsif session[:part_type] == "Hard Drives"
-		    session[:computer].other_parts.push([HardDrife.find_by_part_id(params[:id].to_i).part_id, "Hard Drive"])
+		    hard = HardDrife.find_by_part_id(params[:id].to_i)
+		    session[:computer].other_parts.push([hard.part_id, "Hard Drive"])
+			session[:computer].price += (hard.price*100)
 		elsif session[:part_type] == "Cases"
-		    session[:computer].case_id = Case.find_by_part_id(params[:id].to_i).part_id
+		    cse = Case.find_by_part_id(params[:id].to_i)
+		    session[:computer].case_id = cse.part_id
+			session[:computer].price += (cse.price*100)
 		elsif session[:part_type] == "Disc Drives"
-		    session[:computer].other_parts.push([DiscDrife.find_by_part_id(params[:id].to_i).part_id, "Disc Drive"])
+		    disc = DiscDrife.find_by_part_id(params[:id].to_i)
+		    session[:computer].other_parts.push([disc.part_id, "Disc Drive"])
+			session[:computer].price += (disc.price*100)
 		elsif session[:part_type] == "Memory"
-		    session[:computer].other_parts.push([Memory.find_by_part_id(params[:id].to_i).part_id, "Memory"])
+		    mem = Memory.find_by_part_id(params[:id].to_i)
+		    session[:computer].other_parts.push([mem.part_id, "Memory"])
+			session[:computer].price += (mem.price*100)
 		else
-		    session[:computer].other_parts.push([Display.find_by_part_id(params[:id].to_i).part_id, "Display"])
+		    dis = Display.find_by_part_id(params[:id].to_i)
+		    session[:computer].other_parts.push([dis.part_id, "Display"])
+			session[:computer].price += (dis.price*100)
 		end
 		redirect_to :controller => :part_categories, :action => :current
 	end
@@ -176,13 +196,15 @@ class PartSelectionController < ApplicationController
 		if !@error
 			@parts = GraphicsCard.find(:all)
 			@parts = reduceParts(@parts, "Graphics Card", slotCount, maxSlots)
-		end
-		session[:part_type] = "Graphics Cards"
-		if (@parts.length % 10) == 10
-		    session[:max] = @parts.length / 10
+			if (@parts.length % 10) == 10
+				session[:max] = @parts.length / 10
+			else
+				session[:max] = (@parts.length / 10) + 1
+			end
 		else
-		    session[:max] = (@parts.length / 10) + 1
+		    @parts = []
 		end
+		session[:part_type] = "Graphics Cards"		
 		render :parts
 	end
 	

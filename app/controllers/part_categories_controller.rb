@@ -19,18 +19,21 @@ class PartCategoriesController < ApplicationController
 	            @mem = true
 			end
 		end
+		session[:price] = session[:computer].getPrice
 	    render :categories
 	end
 	
 	def newBuild
 	    session[:computer] = Computer.new
+		session[:computer].price = 0
 		session[:computer].other_parts = []
 	    render :categories
 	end
 	
 	def existingBuild
 	    render :categories
-	    session[:computer] = Computer.find_by_name_and_user_id(params[:existing], session[:user].id, :include => :has_parts)		
+	    session[:computer] = Computer.find_by_name_and_user_id(params[:existing], session[:user].id, :include => :has_parts)
+		session[:price] = session[:computer].getPrice
 	end
 	
 	def savebuild
