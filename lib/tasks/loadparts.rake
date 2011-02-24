@@ -1,16 +1,11 @@
 #For my desktop
-RAILS_ROOT = 'C:/Users/simplicity/rails_projects/PCBuilder'
+#RAILS_ROOT = 'C:/Users/simplicity/rails_projects/PCBuilder'
 #For my laptop
 #RAILS_ROOT = 'C:/Documents and Settings/Owner/My Documents/Rails Projects/PCBuilder'
 
 desc "Load All Parts"
 task :loadparts => [:environment, 'db:reset', :fake, :memory, :graphicscards, :harddrives,
 	:discdrives, :monitors, :cpus, :coolers, :cases, :powersupplies, :motherboards]
-
-desc "Test"
-task :where => :environment do
-    puts Dir.getwd
-end
 
 desc "Insert into incompatibles"
 task :compatible => :environment do
