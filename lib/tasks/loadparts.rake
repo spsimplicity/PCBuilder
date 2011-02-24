@@ -7,6 +7,11 @@ desc "Load All Parts"
 task :loadparts => [:environment, 'db:reset', :fake, :memory, :graphicscards, :harddrives,
 	:discdrives, :monitors, :cpus, :coolers, :cases, :powersupplies, :motherboards]
 
+desc "Test"
+task :where => :environment do
+    puts Dir.getwd
+end
+
 desc "Insert into incompatibles"
 task :compatible => :environment do
 	cpus = Cpu.find(:all)

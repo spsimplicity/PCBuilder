@@ -8,7 +8,7 @@ task :motherboards => :environment do
     #Line count for error reporting
     count = 0
     begin
-        moboFile = File.open(RAILS_ROOT+'/doc/Motherboard_list - Copy.csv', 'r')
+        moboFile = File.open(Dir.pwd+'/doc/Motherboard_list - Copy.csv', 'r')
 	while line = moboFile.gets
 	    count = count + 1
 	    moboSpecs = line.split(',')
