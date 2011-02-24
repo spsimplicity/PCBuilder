@@ -1,5 +1,5 @@
 #For my desktop
-RAILS_ROOT = 'C:/Users/simplicity/rails_projects/PCBuilder'
+#RAILS_ROOT = 'C:/Users/simplicity/rails_projects/PCBuilder'
 #For my laptop
 #RAILS_ROOT = 'C:/Documents and Settings/Owner/My Documents/Rails Projects/PCBuilder'
 
@@ -8,7 +8,7 @@ task :discdrives => :environment do
     #Line count for error reporting
     count = 0
     begin
-        ddFile = File.open(RAILS_ROOT+'/doc/Disc_Drive_list.csv', 'r')
+        ddFile = File.open(Dir.pwd+'/doc/Disc_Drive_list.csv', 'r')
 	while line = ddFile.gets
 	    count = count + 1
 	    discdSpecs = line.split(',')

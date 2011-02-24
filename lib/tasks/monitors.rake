@@ -1,5 +1,5 @@
 #For my desktop
-RAILS_ROOT = 'C:/Users/simplicity/rails_projects/PCBuilder'
+#RAILS_ROOT = 'C:/Users/simplicity/rails_projects/PCBuilder'
 #For my laptop
 #RAILS_ROOT = 'C:/Documents and Settings/Owner/My Documents/Rails Projects/PCBuilder'
 
@@ -8,7 +8,7 @@ task :monitors => :environment do
     #Line count for error reporting
     count = 0
     begin
-        monitorFile = File.open(RAILS_ROOT+'/doc/monitor_list - Copy.csv', 'r')
+        monitorFile = File.open(Dir.pwd+'/doc/monitor_list - Copy.csv', 'r')
 	while line = monitorFile.gets
             count = count + 1
 	    monitorSpecs = line.split(',')

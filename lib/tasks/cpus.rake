@@ -1,5 +1,5 @@
 #For my desktop
-RAILS_ROOT = 'C:/Users/simplicity/rails_projects/PCBuilder'
+#RAILS_ROOT = 'C:/Users/simplicity/rails_projects/PCBuilder'
 #For my laptop
 #RAILS_ROOT = 'C:/Documents and Settings/Owner/My Documents/Rails Projects/PCBuilder'
 
@@ -8,7 +8,7 @@ task :cpus => :environment do
     #Line count for error reporting
     count = 0
     begin
-        cpuFile = File.open(RAILS_ROOT+'/doc/CPU_list - Copy.csv', 'r')
+        cpuFile = File.open(Dir.pwd+'/doc/CPU_list - Copy.csv', 'r')
 	while line = cpuFile.gets
             count = count + 1
 	    cpuSpecs = line.split(',')

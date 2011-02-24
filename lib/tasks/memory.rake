@@ -1,5 +1,5 @@
 #For my desktop
-RAILS_ROOT = 'C:/Users/simplicity/rails_projects/PCBuilder'
+#RAILS_ROOT = 'C:/Users/simplicity/rails_projects/PCBuilder'
 #For my laptop
 #RAILS_ROOT = 'C:/Documents and Settings/Owner/My Documents/Rails Projects/PCBuilder'
 
@@ -8,7 +8,7 @@ task :memory => :environment do
     #Line count for error reporting
     count = 0
     begin
-        memFile = File.open(RAILS_ROOT+'/doc/memory_list - Copy.csv', 'r')
+        memFile = File.open(Dir.pwd+'/doc/memory_list - Copy.csv', 'r')
 	while line = memFile.gets
             count += 1
 	    memorySpecs = line.split(',')

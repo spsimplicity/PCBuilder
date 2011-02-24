@@ -1,5 +1,5 @@
 #For my desktop
-RAILS_ROOT = 'C:/Users/simplicity/rails_projects/PCBuilder'
+#RAILS_ROOT = 'C:/Users/simplicity/rails_projects/PCBuilder'
 #For my laptop
 #RAILS_ROOT = 'C:/Documents and Settings/Owner/My Documents/Rails Projects/PCBuilder'
 

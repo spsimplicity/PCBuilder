@@ -1,5 +1,5 @@
 #For my desktop
-RAILS_ROOT = 'C:/Users/simplicity/rails_projects/PCBuilder'
+#RAILS_ROOT = 'C:/Users/simplicity/rails_projects/PCBuilder'
 #For my laptop
 #RAILS_ROOT = 'C:/Documents and Settings/Owner/My Documents/Rails Projects/PBuilder'
 
@@ -8,7 +8,7 @@ task :graphicscards => :environment do
     #Line count for error reporting
     count = 0
     begin
-        gcFile = File.open(RAILS_ROOT+'/doc/Graphics_Card_List - Copy.csv', 'r')
+        gcFile = File.open(Dir.pwd+'/doc/Graphics_Card_List - Copy.csv', 'r')
 	while line = gcFile.gets
             count = count + 1
 	    gcSpecs = line.split(',')

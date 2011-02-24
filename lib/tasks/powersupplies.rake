@@ -1,5 +1,5 @@
 #For my Desktop
-RAILS_ROOT = 'C:/Users/simplicity/rails_projects/PCBuilder'
+#RAILS_ROOT = 'C:/Users/simplicity/rails_projects/PCBuilder'
 #For my laptop
 #RAILS_ROOT = 'C:/Documents and Setting/Owner/My Documents/Rails Projects/PCBuilder'
 
@@ -9,7 +9,7 @@ task :powersupplies => :environment do
     count = 0
     begin
         #Open Power Supply csv file
-        powerFile = File.open(RAILS_ROOT+'/doc/Power_Supply_list - Copy.csv', 'r')
+        powerFile = File.open(Dir.pwd+'/doc/Power_Supply_list - Copy.csv', 'r')
 	while line = powerFile.gets
             count = count + 1
 	    psuSpecs = line.split(',')

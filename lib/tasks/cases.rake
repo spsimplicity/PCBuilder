@@ -1,5 +1,5 @@
 #For my Desktop
-RAILS_ROOT = 'C:/Users/simplicity/rails_projects/PCBuilder'
+#RAILS_ROOT = 'C:/Users/simplicity/rails_projects/PCBuilder'
 #For my laptop
 #RAILS_ROOT = 'C:/Documents and Settings/Owner/My Documents/Rails Projects/PCBuilder'
 
@@ -9,7 +9,7 @@ task :cases => :environment do
     count = 0
     begin
         #Open Case list csv file
-	caseFile = File.open(RAILS_ROOT+'/doc/case_list - Copy.csv', 'r')
+	caseFile = File.open(Dir.pwd+'/doc/case_list - Copy.csv', 'r')
 	while line = caseFile.gets
             count = count + 1
 	    caseSpecs = line.split(',')

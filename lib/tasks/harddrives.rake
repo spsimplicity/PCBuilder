@@ -1,5 +1,5 @@
 #For my desktop
-RAILS_ROOT = 'C:/Users/simplicity/rails_projects/PCBuilder'
+#RAILS_ROOT = 'C:/Users/simplicity/rails_projects/PCBuilder'
 #For my laptop
 #RAILS_ROOT = 'C:/Documents and Settings/Owner/My Documents/Rails Projects/PCBuilder'
 
@@ -8,7 +8,7 @@ task :harddrives => :environment do
     #Line count for error reporting
     count = 0
     begin
-        hddFile = File.open(RAILS_ROOT+'/doc/Hard_Drive_List - Copy.csv', 'r')
+        hddFile = File.open(Dir.pwd+'/doc/Hard_Drive_List - Copy.csv', 'r')
 	while line = hddFile.gets
             count = count + 1
 	    hddSpecs = line.split(',')
