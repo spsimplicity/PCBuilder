@@ -2,71 +2,118 @@ class PartSelectionController < ApplicationController
     def init
 	    session[:page_num] = 1
 		if params[:part_type] == "Motherboards"
-			redirect_to :action => :mobos
+			redirect_to :action => :mobos, :change => params[:change]
 		elsif params[:part_type] == "Processors"
-			redirect_to :action => :cpus
+			redirect_to :action => :cpus, :change => params[:change]
 		elsif params[:part_type] == "CPU Coolers"
-			redirect_to :action => :coolers
+			redirect_to :action => :coolers, :change => params[:change]
 		elsif params[:part_type] == "Disc Drives"
-			redirect_to :action => :discs
+			redirect_to :action => :discs, :change => params[:change]
 		elsif params[:part_type] == "Graphics Cards"
-			redirect_to :action => :gpus
+			redirect_to :action => :gpus, :change => params[:change]
 		elsif params[:part_type] == "Hard Drives"
-			redirect_to :action => :hdds
+			redirect_to :action => :hdds, :change => params[:change]
 		elsif params[:part_type] == "Power Supplies"
-			redirect_to :action => :psus
+			redirect_to :action => :psus, :change => params[:change]
 		elsif params[:part_type] == "Memory"
-			redirect_to :action => :memory
+			redirect_to :action => :memory, :change => params[:change]
 		elsif params[:part_type] == "Cases"
-			redirect_to :action => :cases
+			redirect_to :action => :cases, :change => params[:change]
 		else
-			redirect_to :action => :displays
+			redirect_to :action => :displays, :change => params[:change]
 		end
 	end
 	
 	def add_part
 	    if session[:part_type] == "Motherboards"
 		    mobo = Motherboard.find_by_part_id(params[:id].to_i)
+			if (params[:didChange] || session[:computer].motherboard_id)
+			    session[:computer].price -= Motherboard.find_by_part_id(session[:computer].motherboard_id).price
+			end
 		    session[:computer].motherboard_id = mobo.part_id
-			session[:computer].price += (mobo.price*100)
+			session[:computer].price += (mobo.price)
 		elsif session[:part_type] == "Processors"
 		    cpu = Cpu.find_by_part_id(params[:id].to_i)
+			if (params[:didChange] || session[:computer].cpu_id)
+			    session[:computer].price -= Cpu.find_by_part_id(session[:computer].cpu_id).price 
+			end
 		    session[:computer].cpu_id = cpu.part_id
-			session[:computer].price += (cpu.price*100)
+			session[:computer].price += (cpu.price)
 		elsif session[:part_type] == "CPU Coolers" 
 		    cooler = CpuCooler.find_by_part_id(params[:id].to_i)
+			if (params[:didChange] || session[:computer].cpu_cooler_id)
+			    session[:computer].price -= CpuCooler.find_by_part_id(session[:computer].cpu_cooler_id).price 
+			end
 		    session[:computer].cpu_cooler_id = cooler.part_id
-			session[:computer].price += (cooler.price*100)
+			session[:computer].price += (cooler.price)
 		elsif session[:part_type] == "Power Supplies"
 		    power = PowerSupply.find_by_part_id(params[:id].to_i)
+			if (params[:didChange] || session[:computer].power_supply_id)
+			    session[:computer].price -= PowerSupply.find_by_part_id(session[:computer].power_supply_id).price 
+			end
 		    session[:computer].power_supply_id = power.part_id
-			session[:computer].price += (power.price*100)
+			session[:computer].price += (power.price)
 		elsif session[:part_type] == "Graphics Cards"
 		    card = GraphicsCard.find_by_part_id(params[:id].to_i)
+			if params[:didChange]
+			    session[:computer].price -= GraphicsCard.find_by_part_id(params[:didChange].to_i).price 
+				remove(params[:didChange].to_i)
+			end
 		    session[:computer].other_parts.push([card.part_id, "Graphics Card"])
-			session[:computer].price += (card.price*100)
+			session[:computer].price += (card.price)
 		elsif session[:part_type] == "Hard Drives"
 		    hard = HardDrife.find_by_part_id(params[:id].to_i)
+			if params[:didChange]
+			    session[:computer].price -= HardDrife.find_by_part_id(params[:didChange].to_i).price 
+				remove(params[:didChange].to_i)
+			end
 		    session[:computer].other_parts.push([hard.part_id, "Hard Drive"])
-			session[:computer].price += (hard.price*100)
+			session[:computer].price += (hard.price)
 		elsif session[:part_type] == "Cases"
 		    cse = Case.find_by_part_id(params[:id].to_i)
+			if (params[:didChange] || session[:computer].case_id)
+			    session[:computer].price -= Case.find_by_part_id(session[:computer].case_id).price 
+			end
 		    session[:computer].case_id = cse.part_id
-			session[:computer].price += (cse.price*100)
+			session[:computer].price += (cse.price)
 		elsif session[:part_type] == "Disc Drives"
 		    disc = DiscDrife.find_by_part_id(params[:id].to_i)
+			if params[:didChange]
+			    session[:computer].price -= DiscDrife.find_by_part_id(params[:didChange].to_i).price 
+				remove(params[:didChange].to_i)
+			end
 		    session[:computer].other_parts.push([disc.part_id, "Disc Drive"])
-			session[:computer].price += (disc.price*100)
+			session[:computer].price += (disc.price)
 		elsif session[:part_type] == "Memory"
 		    mem = Memory.find_by_part_id(params[:id].to_i)
+			if params[:didChange]
+			    session[:computer].price -= Memory.find_by_part_id(params[:didChange].to_i).price 
+				remove(params[:didChange].to_i)
+			end
 		    session[:computer].other_parts.push([mem.part_id, "Memory"])
-			session[:computer].price += (mem.price*100)
+			session[:computer].price += (mem.price)
 		else
 		    dis = Display.find_by_part_id(params[:id].to_i)
+			if params[:didChange]
+			    session[:computer].price -= Display.find_by_part_id(params[:didChange].to_i).price 
+				remove(params[:didChange].to_i)
+			end
 		    session[:computer].other_parts.push([dis.part_id, "Display"])
-			session[:computer].price += (dis.price*100)
+			session[:computer].price += (dis.price)
 		end
 		redirect_to :controller => :part_categories, :action => :current
+	end
+	
+	def remove(part_id)
+	    deleted = false
+		spot = 0
+	    while spot < session[:computer].other_parts.length && !deleted
+			if session[:computer].other_parts[spot][0] == part_id
+			    session[:computer].other_parts.delete_at(spot)
+			    deleted = true
+			end
+			spot += 1
+		end
 	end
     
 	def reduceParts(parts, type, expSlotsTaken, maxExpSlots)
@@ -123,6 +170,7 @@ class PartSelectionController < ApplicationController
 		else
 		    session[:max] = (@parts.length / 10) + 1
 		end
+		@changing = params[:change]
 		render :parts
 	end
 	
@@ -135,6 +183,7 @@ class PartSelectionController < ApplicationController
 		else
 		    session[:max] = (@parts.length / 10) + 1
 		end
+		@changing = params[:change]
 		render :parts
 	end
 	
@@ -147,6 +196,7 @@ class PartSelectionController < ApplicationController
 		else
 		    session[:max] = (@parts.length / 10) + 1
 		end
+		@changing = params[:change]
 		render :parts
 	end
 	
@@ -159,6 +209,7 @@ class PartSelectionController < ApplicationController
 		else
 		    session[:max] = (@parts.length / 10) + 1
 		end
+		@changing = params[:change]
 		render :parts
 	end
 	
@@ -204,7 +255,8 @@ class PartSelectionController < ApplicationController
 		else
 		    @parts = []
 		end
-		session[:part_type] = "Graphics Cards"		
+		session[:part_type] = "Graphics Cards"
+		@changing = params[:change]		
 		render :parts
 	end
 	
@@ -217,6 +269,7 @@ class PartSelectionController < ApplicationController
 		else
 		    session[:max] = (@parts.length / 10) + 1
 		end
+		@changing = params[:change]
 		render :parts
 	end
 	
@@ -229,6 +282,7 @@ class PartSelectionController < ApplicationController
 		else
 		    session[:max] = (@parts.length / 10) + 1
 		end
+		@changing = params[:change]
 		render :parts
 	end
 	
@@ -241,6 +295,7 @@ class PartSelectionController < ApplicationController
 		else
 		    session[:max] = (@parts.length / 10) + 1
 		end
+		@changing = params[:change]
 		render :parts
 	end
 	
@@ -253,6 +308,7 @@ class PartSelectionController < ApplicationController
 		else
 		    session[:max] = (@parts.length / 10) + 1
 		end
+		@changing = params[:change]
 		render :parts
 	end
 	
@@ -265,6 +321,7 @@ class PartSelectionController < ApplicationController
 		else
 		    session[:max] = (@parts.length / 10) + 1
 		end
+		@changing = params[:change]
 		render :parts
 	end
 	
@@ -272,42 +329,42 @@ class PartSelectionController < ApplicationController
 	    if session[:page_num] > 1
 	        session[:page_num] -= 1
 		end
-		redirect_to :action => :type_determine
+		redirect_to :action => :type_determine, :change => params[:changeIt]
 	end
 	
 	def next
 	    if session[:page_num] < session[:max]
 		    session[:page_num] += 1
 		end
-		redirect_to :action => :type_determine
+		redirect_to :action => :type_determine, :change => params[:changeIt]
 	end
 	
 	def jump
 	    session[:page_num] = params[:num].to_i
-		redirect_to :action => :type_determine
+		redirect_to :action => :type_determine, :change => params[:changeIt]
 	end
 	
 	def type_determine
 	    if session[:part_type] == "Motherboards"
-			redirect_to :action => :mobos
+			redirect_to :action => :mobos, :change => params[:change]
 		elsif session[:part_type] == "Processors"
-			redirect_to :action => :cpus
+			redirect_to :action => :cpus, :change => params[:change]
 		elsif session[:part_type] == "CPU Coolers"
-			redirect_to :action => :coolers
+			redirect_to :action => :coolers, :change => params[:change]
 		elsif session[:part_type] == "Disc Drives"
-			redirect_to :action => :discs
+			redirect_to :action => :discs, :change => params[:change]
 		elsif session[:part_type] == "Graphics Cards"
-			redirect_to :action => :gpus
+			redirect_to :action => :gpus, :change => params[:change]
 		elsif session[:part_type] == "Hard Drives"
-			redirect_to :action => :hdds
+			redirect_to :action => :hdds, :change => params[:change]
 		elsif session[:part_type] == "Power Supplies"
-			redirect_to :action => :psus
+			redirect_to :action => :psus, :change => params[:change]
 		elsif session[:part_type] == "Memory"
-			redirect_to :action => :memory
+			redirect_to :action => :memory, :change => params[:change]
 		elsif session[:part_type] == "Cases"
-			redirect_to :action => :cases
+			redirect_to :action => :cases, :change => params[:change]
 		else
-			redirect_to :action => :displays
+			redirect_to :action => :displays, :change => params[:change]
 		end
 	end
 end

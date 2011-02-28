@@ -15,7 +15,7 @@
 		    <% if error_case %>
 			    <center><button href="" onclick="alert('<%= error_case %>');">Add</button></center>
 			<% else %>
-			    <center><%= link_to "Add", :controller => :part_selection, :action => :add_part, :id => gpuObj.part_id %></center>
+			    <center><%= link_to "Add", :controller => :part_selection, :action => :add_part, :id => gpuObj.part_id, :didChange => makeChange %></center>
 			<% end %>
 		</div>
 	</div>

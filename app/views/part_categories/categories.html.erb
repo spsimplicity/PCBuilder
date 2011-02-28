@@ -3,7 +3,7 @@
 		<div id="components">
 			<div class="component-line"> 
 				<div id="Motherboard" class="component component-top-left" <% if session[:computer].motherboard_id %> style="background-color: #268358;" <% end %> >
-				    <% link_to :controller => :part_selection, :action => :init, :part_type => "Motherboards" do %>
+				    <% link_to :controller => :part_selection, :action => :init, :part_type => "Motherboards", :change => nil do %>
 						<center><%= image_tag 'Motherboard.jpg', :class => 'component-title' %></center>
 						<center><p class="category_name">Motherboards</p></center>
 						<p class="component-description">The backbone of the computer. All parts are connected through the motherboard.</p>
@@ -11,7 +11,7 @@
 					<% end %>
 				</div>
 				<div id="CPU" class="component component-top-middle" <% if session[:computer].cpu_id %> style="background-color: #268358;" <% end %> >
-					<% link_to :controller => :part_selection, :action => :init, :part_type => "Processors" do %>
+					<% link_to :controller => :part_selection, :action => :init, :part_type => "Processors", :change => nil do %>
 						<center><%= image_tag "CPU.jpg", :class => "component-title" %></center>
 						<center><p class="category_name">Processors</p></center>
 						<p class="component-description">The central processing unit for the computer. All tasks on the computer are run by this.</p>
@@ -19,7 +19,7 @@
 					<% end %>
 				</div>
 				<div id="CPU-Cooler" class="component component-top-middle" <% if session[:computer].cpu_cooler_id %> style="background-color: #268358;" <% end %> >
-					<% link_to :controller => :part_selection, :action => :init, :part_type => "CPU Coolers" do %>
+					<% link_to :controller => :part_selection, :action => :init, :part_type => "CPU Coolers", :change => nil do %>
 						<center><%= image_tag "Cooler.jpg", :class => "component-title" %></center>
 						<center><p class="category_name">Coolers</p></center>
 						<p class="component-description">Aftermarket CPU coolers perform much better than stock coolers and increase performance of the CPU.</p>
@@ -27,7 +27,7 @@
 					<% end %>
 				</div>
 				<div id="Disc-Drive" class="component component-top-right" <% if @dd %> style="background-color: #268358;" <% end %> >
-					<% link_to :controller => :part_selection, :action => :init, :part_type => "Disc Drives" do %>
+					<% link_to :controller => :part_selection, :action => :init, :part_type => "Disc Drives", :change => nil do %>
 						<center><%= image_tag "DD.jpg", :class => "component-title" %></center>
 						<center><p class="category_name">Disc Drives</p></center>
 						<p class="component-description">Reads data on discs for the computer and writes information to disc.</p>
@@ -37,7 +37,7 @@
 			</div>
 			<div class="component-line">
 				<div id="Graphics-Card" class="component component-middle-left" <% if @gpu %> style="background-color: #268358;" <% end %> >
-					<% link_to :controller => :part_selection, :action => :init, :part_type => "Graphics Cards" do %>
+					<% link_to :controller => :part_selection, :action => :init, :part_type => "Graphics Cards", :change => nil do %>
 						<center><%= image_tag "Graphics_Card.jpg", :class => "component-title" %></center>
 						<center><p class="category_name">Graphics Cards</p></center>
 						<p class="component-description">Greatly improves movie, rendering, and game performance on your computer.</p>
@@ -45,7 +45,7 @@
 					<% end %>
 				</div>
 				<div id="Hard-Drive" class="component component-middle" <% if @hdd %> style="background-color: #268358;" <% end %> >
-					<% link_to :controller => :part_selection, :action => :init, :part_type => "Hard Drives" do %>
+					<% link_to :controller => :part_selection, :action => :init, :part_type => "Hard Drives", :change => nil do %>
 						<center><%= image_tag "HDD.jpg", :class => "component-title" %></center>
 						<center><p class="category_name">Hard Drives</p></center>
 						<p class="component-description">Stores all the data for your computer.</p>
@@ -53,7 +53,7 @@
 					<% end %>
 				</div>
 				<div id="Power-Supply" class="component component-middle" <% if session[:computer].power_supply_id %> style="background-color: #268358;" <% end %> >
-					<% link_to :controller => :part_selection, :action => :init, :part_type => "Power Supplies" do %>
+					<% link_to :controller => :part_selection, :action => :init, :part_type => "Power Supplies", :change => nil do %>
 						<center><%= image_tag "Power_Supply.jpg", :class => "component-title" %></center>
 						<center><p class="category_name">Power Supplies</p></center>
 						<p class="component-description">Powers each part of your computer. Cannot power more than the specified wattage.</p>
@@ -61,7 +61,7 @@
 					<% end %>
 				</div>
 				<div id="Memory" class="component component-middle-right" <% if @mem %> style="background-color: #268358;" <% end %> >
-					<% link_to :controller => :part_selection, :action => :init, :part_type => "Memory" do %>
+					<% link_to :controller => :part_selection, :action => :init, :part_type => "Memory", :change => nil do %>
 						<center><%= image_tag "Ram.jpg", :class => "component-title" %></center>
 						<center><p class="category_name">Memory</p></center>
 						<p class="component-description">Memory acts as a temporary data storage for applications that are running on your computer.</p>
@@ -71,7 +71,7 @@
 			</div>
 			<div class="component-line">
 				<div id="Case" class="component component-bottom-left" <% if session[:computer].case_id %> style="background-color: #268358;" <% end %> >
-					<% link_to :controller => :part_selection, :action => :init, :part_type => "Cases" do %>
+					<% link_to :controller => :part_selection, :action => :init, :part_type => "Cases", :change => nil do %>
 						<center><%= image_tag "Case.jpg", :class => "component-title" %></center>
 						<center><p class="category_name">Cases</p></center>
 						<p class="component-description">The case houses all the components of your computer</p>
@@ -79,7 +79,7 @@
 					<% end %>
 				</div>
 				<div id="Monitor" class="component component-bottom-middle" <% if @mon %> style="background-color: #268358;" <% end %> >
-					<% link_to :controller => :part_selection, :action => :init, :part_type => "Displays" do %>
+					<% link_to :controller => :part_selection, :action => :init, :part_type => "Displays", :change => nil do %>
 						<center><%= image_tag "Display.jpg", :class => "component-title" %></center>
 						<center><p class="category_name">Displays</p></center>
 						<p class="component-description">The larger the resolution, the more that can be displayed on the screen. Can be paired with other monitor for a multi-display setup.</p>
@@ -87,6 +87,13 @@
 					<% end %>
 				</div>
 				<div class="component component-bottom-middle component-empty">
+				    <% if session[:user] %>
+					    <% form_tag :controller => :part_categories, :action => :savebuild do %>
+						    <%= label_tag :saving, "Save Computer Build", :class => "save_label" %>
+							<%= text_field_tag :saving, nil, :size => 25, :class => "save_field" %>
+							<%= submit_to_remote 'submit', "Save Computer", :update => 'Main', :url => {:controller => :part_cateogires, :action => :savebuild} %>
+						<% end %>
+					<% end %>
 				</div>
 				<div class="component component-bottom-right component-empty">
 					<p style="margin:1em; font-size:13pt"><span style="color: #71D0CE">* </span><span style="color:white">Required items are needed only if you are making a complete system.</span></p>
