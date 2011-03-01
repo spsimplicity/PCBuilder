@@ -40,5 +40,10 @@ class PartCategoriesController < ApplicationController
 	end
 	
 	def savebuild
+	    session[:computer].name = params[:saving]
+	    computer = session[:computer]
+		computer.other_parts.each do |part|
+		    computer.has_parts.build(HasPart.new())
+		end
 	end
 end
