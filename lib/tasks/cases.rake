@@ -1,8 +1,3 @@
-#For my Desktop
-#RAILS_ROOT = 'C:/Users/simplicity/rails_projects/PCBuilder'
-#For my laptop
-RAILS_ROOT = 'C:/Documents and Settings/Owner/My Documents/Rails Projects/PCBuilder'
-
 desc "Load Case data from csv file into the database."
 task :cases => :environment do
     #Line cound for error reporting

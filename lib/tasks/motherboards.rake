@@ -1,8 +1,3 @@
-#For my desktop
-#RAILS_ROOT = 'C:/Users/simplicity/rails_projects/PCBuilder'
-#For my laptop
-RAILS_ROOT = 'C:/Documents and Settings/Owner/My Documents/Rails Projects/PCBuilder'
-
 desc "Loads Motherboard data into the database from a csv file."
 task :motherboards => :environment do
     #Line count for error reporting
