@@ -200,7 +200,7 @@
 
 .part_specs a
 {
-    color: white;
+    color: #71D0CE;
 	margin: 0 0 0 0;
 	padding: 0 0 0 0;
 	text-decoration: none;
@@ -209,6 +209,7 @@
 .part_specs a:hover
 {
     color: #71D0CE;
+	text-decoration: underline;
 }
 
 .show_specs
@@ -226,10 +227,29 @@
     position: relative;
     border: none;
     height: 25px;
-	width: 40px;
-    background: url(../images/arrow_up.png) no-repeat;
+	width: 110px;
+	background: no-repeat;
+    background-image: url(../images/arrow_down.png);
 	cursor: pointer;
 	margin: 0 auto 0 auto;
+	padding: 0 0 0 0;
+}
+
+.arrow_button img
+{
+    float: left;
+}
+
+.arrow_buttom span
+{
+    float: left;
+	color: white;
+	font-size: medium;
+}
+
+.right_span
+{
+    margin-left: 30px;
 }
 
 #Page_nav

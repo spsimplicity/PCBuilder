@@ -1,7 +1,7 @@
 #For my desktop
 #RAILS_ROOT = 'C:/Users/simplicity/rails_projects/PCBuilder'
 #For my laptop
-#RAILS_ROOT = 'C:/Documents and Settings/Owner/My Documents/Rails Projects/PBuilder'
+RAILS_ROOT = 'C:/Documents and Settings/Owner/My Documents/Rails Projects/PCBuilder'
 
 desc "Loads Graphics Card data from csv file into database."
 task :graphicscards => :environment do

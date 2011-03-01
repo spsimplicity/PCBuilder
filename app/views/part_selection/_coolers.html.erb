@@ -12,7 +12,7 @@
 			<p class="second_row">Length: <%= coolerObj.length %>mm</p>
 		</div>
 		<div class="add">
-			<center><%= link_to "Add", :controller => :part_selection, :action => :add_part, :id => coolerObj.part_id %></center>
+			<center><%= link_to "Add", :controller => :part_selection, :action => :add_part, :id => coolerObj.part_id, :didChange => makeChange %></center>
 		</div>
 	</div>
 	<div id="specs<%= num %>" class="part_specs" style="display: none">

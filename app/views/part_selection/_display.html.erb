@@ -9,7 +9,7 @@
 			<p class="second_row">Screen Size: <%= displayObj.screensize %></p>
 		</div>
 		<div class="add">
-			<center><%= link_to "Add", :controller => :part_selection, :action => :add_part, :id => displayObj.part_id %></center>
+			<center><%= link_to "Add", :controller => :part_selection, :action => :add_part, :id => displayObj.part_id, :didChange => makeChange %></center>
 		</div>
 	</div>
 	<div id="specs<%= num %>" class="part_specs" style="display: none">
@@ -52,6 +52,11 @@
 		</div>
 	</div>
 	<div class="show_specs">
-		<center><button class="arrow_button" onclick="$('specs<%= num %>').toggle()"></button></center>
+		<center>
+		    <button id="arrow<%= num %>" class="arrow_button" onclick="getSpecs('specs<%= num %>', 'arrow<%= num %>')">
+			    <span id="Left_span" style="color: white; font-size: small">Show</span>
+				<span class="right_span" style="color: white; font-size: small">Specs</span>
+			</button>
+		</center>
 	</div>
 </div>

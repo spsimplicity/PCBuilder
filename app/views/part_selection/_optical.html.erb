@@ -8,7 +8,7 @@
 			<p class="second_row">Interface: <%= disc_driveObj.interface %></p>
 		</div>
 		<div class="add">
-			<center><%= link_to_remote "Add", :update => 'Main', :url => {:controller => :part_selection, :action => :add_part, :id => disc_driveObj.part_id} %></center>
+			<center><%= link_to "Add", :controller => :part_selection, :action => :add_part, :id => disc_driveObj.part_id, :didChange => makeChange %></center>
 		</div>
 	</div>
 	<div id="specs<%= num %>" class="part_specs" style="display: none">

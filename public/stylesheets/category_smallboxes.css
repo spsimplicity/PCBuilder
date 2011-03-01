@@ -123,7 +123,7 @@
 .side_tab
 {
 	position: fixed;	
-	top: 190px;
+	top: 18%;
 	margin: 0 0 0 0;
 }
 
@@ -142,7 +142,7 @@
 
 #Comp_price
 {
-    top: 750px;
+    top: 25%;
 	right: 0px;
 }
 
@@ -178,26 +178,15 @@
 
 .tab
 {
-	width: 65px;
+	width: 80px;
 	float: left;
     background-color: #636566;    
 	padding: 0 0 0 0;
 	margin: 0 0 0 0;
-	height: 120px;
 }
 
 #Selected_tab
 {
-	height: 140px;
-}
-
-#Parts_selected
-{
-    display: none;
-    width: 300px;
-	height: 790px;
-	float: left;
-    background-color: #636566;
 }
 
 #Selected_parts
@@ -206,7 +195,7 @@
 	z-index: 9900;
     float: left;
 	width: 310px;
-	min-height: 140px;
+	min-height: 54px;
     background-color: #636566;
 }
 
@@ -266,7 +255,6 @@
 
 #Sort_tab
 {
-	height: 130px;
 }
 
 .tab_link
@@ -277,32 +265,24 @@
 	font-size: large; 
 	text-decoration: none;
 	padding: 0 0 0 0;
-	height: 65px;
 }
 
 .tab_link:hover
 {
     color: #71D0CE;
+	cursor: pointer;
 }
 
 .selected_link
 {
-    -webkit-transform: rotate(-90deg);
-    -moz-transform: rotate(-90deg);
-	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-	margin: 35px 0 0 -30px;
-	width: 130px;
+	margin: 5px 0 5px 0;
 	background: none;
 	border: none;
 }
 
 .sort_link
 {
-    -webkit-transform: rotate(90deg);
-    -moz-transform: rotate(90deg);
-	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-	margin: 30px 0 0 -45px;
-	width: 110px;
+	margin: 5px 0 5px 0;
 	background: none;
 	border: none;
 }
@@ -319,4 +299,27 @@
     float: left;
 	padding: 0 0 0 0;
 	margin: 10px 0 0 20px;
+}
+
+.save_label
+{
+    color: white;
+	float: left;
+	font-size: medum;
+	margin: 20px 0 0 0;
+	padding: 0 0 0 0;
+}
+
+.save_field
+{
+    float: left;
+    margin: 10px 0 0 0;
+	padding: 0 0 0 0;
+}
+
+.component-empty input
+{
+    float: left;
+	margin: 20px 0 0 0;
+	padding: 0 5px 0 5px;
 }
