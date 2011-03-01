@@ -25,6 +25,9 @@ class ApplicationController < ActionController::Base
 			@type = "Sign"
 			render :update do |page|
 			    page.replace_html 'Nav', :partial => "navigation"
+				if request.referer.include?("part_categories")
+					page.replace_html 'Main', :partial => "categories_partial"
+				end
 			end
 		else
 			@up_errors = true
@@ -52,6 +55,9 @@ class ApplicationController < ActionController::Base
 				@type = "Log"
 				render :update do |page|
 					page.replace_html 'Nav', :partial => "navigation"
+					if request.referer.include?("part_categories")
+						page.replace_html 'Main', :partial => "categories_partial"
+					end
 				end
 			else
 				@in_errors = true
@@ -67,10 +73,9 @@ class ApplicationController < ActionController::Base
 	    session[:user] = nil
 		session[:computer].user_id = nil
 		render :update do |page|
+			page.replace_html 'Nav', :partial => "navigation"
 		    if request.referer.include?("part_categories")
 			    page.replace_html 'Main', :partial => "categories_partial"
-			else
-			    page.replace_html 'Nav', :partial => "navigation"
 			end
 		end
 	end

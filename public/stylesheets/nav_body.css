@@ -26,8 +26,7 @@ body {
 
 #Main
 {
-    float: left;
-	margin: 0 0 0 125px;
+	margin: 0 auto 0 auto;
 }
 
 #Content

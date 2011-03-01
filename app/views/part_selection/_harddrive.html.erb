@@ -33,6 +33,11 @@
 		</div>
 	</div>
 	<div class="show_specs">
-		<center><button class="arrow_button" onclick="$('specs<%= num %>').toggle()"></button></center>
+		<center>
+		    <button id="arrow<%= num %>" class="arrow_button" onclick="getSpecs('specs<%= num %>', 'arrow<%= num %>', 'Left_span<%= num %>')">
+			    <span id="Left_span<%= num %>" style="color: white; font-size: small">Show</span>
+				<span id="Right_span" style="color: white; font-size: small">Specs</span>
+			</button>
+		</center>
 	</div>
 </div>
