@@ -23,12 +23,7 @@ class ApplicationController < ActionController::Base
 			@user.save!
 			session[:user] = @user
 			@type = "Sign"
-			render :update do |page|
-			    page.replace_html 'Nav', :partial => "navigation"
-				if request.referer.include?("part_categories")
-					page.replace_html 'Main', :partial => "categories_partial"
-				end
-			end
+			redirect_to :controller => :application, :action => :loadIn
 		else
 			@up_errors = true
 			@sign_errors = @user.errors.full_messages
@@ -52,13 +47,8 @@ class ApplicationController < ActionController::Base
 		else
 			if @user.has_password?(params[:password])
 				session[:user] = @user
-				@type = "Log"
-				render :update do |page|
-					page.replace_html 'Nav', :partial => "navigation"
-					if request.referer.include?("part_categories")
-						page.replace_html 'Main', :partial => "categories_partial"
-					end
-				end
+				#session[:user].getLastThree(Computer.find_all_by_user_id(session[:user].id, :order => 'updated_at DESC'))
+				redirect_to :controller => :application, :action => :loadIn
 			else
 				@in_errors = true
 				@good = false
@@ -69,15 +59,19 @@ class ApplicationController < ActionController::Base
 		end
 	end
 	
+	def loadIn
+		render :update do |page|
+			page.replace_html 'Nav', :partial => "navigation"
+			if request.referer.include?("part_categories")
+				page.replace_html 'Main', :partial => "categories_partial"
+			end
+		end
+	end
+	
 	def logout
 	    session[:user] = nil
 		session[:computer].user_id = nil
-		render :update do |page|
-			page.replace_html 'Nav', :partial => "navigation"
-		    if request.referer.include?("part_categories")
-			    page.replace_html 'Main', :partial => "categories_partial"
-			end
-		end
+		redirect_to :controller => :application, :action => :loadIn
 	end
 	
 	def remove

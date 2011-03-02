@@ -87,10 +87,10 @@
 			</div>
 			<div class="component component-bottom-middle component-empty">
 				<% if session[:user] %>
-					<% form_tag :controller => :part_categories, :action => :savebuild do %>
+					<% form_tag :controller => :part_categories, :action => :saveBuild do %>
 						<%= label_tag :saving, "Save Computer Build", :class => "save_label" %>
 						<%= text_field_tag :saving, nil, :size => 25, :class => "save_field" %>
-						<%= submit_to_remote 'submit', "Save Computer", :update => 'Main', :url => {:controller => :part_cateogires, :action => :savebuild} %>
+						<%= submit_tag nil, :disable_with => "Saving..." %>
 					<% end %>
 				<% end %>
 			</div>

@@ -14,28 +14,30 @@
 	<div id="Build_box" class="nav_item">
 		<% if session[:user] %>
 			<ul id="Build_options" class="options">
-				<% if @comps == nil %>
+				<% if session[:user].lastThree == nil %>
 					<li id="New" class="option_link_solo"><center><%= link_to "New", root_path %></center></li>
 				<% else %>
 					<li id="New" class="option_link"><center><center><%= link_to "New", root_path %></center></li>
 					<li id="Existing" class="inner_list">
 						<center><a id="Existing_link" class="list_link" href="#">Existing</a></center>
 						<ul id="Last_three" class="final_options">
-						    <% if @comps.length > 3%>
-							    <% for i in 0..3 do %>
-								    <% if i == 3 %>									    
-										<li><center><% link_to_remote @comps[i].name, :update => 'Selection', :url => {:controller => :part_categories, :action => :existingBuild, :existing => @comps[i].name} %></center></li>
-									<% else %>
-										<li class="bottom_seperator"><% link_to_remote @comps[i].name, :update => 'Selection', :url => {:controller => :part_categories, :action => :existingBuild, :existing => @comps[i].name} %></center></li>
-									<% end %>
+						    <% for i in 0..(session[:user].lastThree.length - 1) do %>
+							    <% @name = session[:user].lastThree[i][0] %>
+							    <% if @name.length > 13 %>
+								    <% @name = truncate(@name, :length => 13) %>
 								<% end %>
-							<% else %>
-								<% for i in 0..(@comps.length - 1) do %>
-									<% if i == (comps.length - 1) %>
-										<li><center><% link_to_remote @comps[i].name, :update => 'Selection', :url => {:controller => :part_categories, :action => :existingBuild, :existing => @comps[i].name} %></center></li>
-									<% else %>
-										<li class="bottom_seperator"><% link_to_remote @comps[i].name, :update => 'Selection', :url => {:controller => :part_categories, :action => :existingBuild, :existing => @comps[i].name} %></center></li>
-									<% end %>
+								<% if i == (session[:user].lastThree.length - 1) %>
+									<li>
+									    <center>
+										    <%= link_to_remote @name, :update => 'Selection', :url => {:controller => :part_categories, :action => :existingBuild, :id => i} %>
+										</center>
+									</li>
+								<% else %>
+									<li class="bottom_seperator">
+									    <center>
+										    <%= link_to_remote @name, :update => 'Selection', :url => {:controller => :part_categories, :action => :existingBuild, :id => i} %>
+										</center>
+								    </li>
 								<% end %>
 							<% end %>
 						</ul>										

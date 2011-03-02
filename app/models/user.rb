@@ -1,9 +1,9 @@
 require 'digest'
 class User < ActiveRecord::Base
 
-	attr_accessor :password
+	attr_accessor :password, :lastThree
 	#Only password, and password_confirmation attributes can be changed with params hash
-	attr_accessible :password, :password_confirmation
+	attr_accessible :password, :password_confirmation, :lastThree
 	#Name validations
 	validates_presence_of :name
 	validates_length_of :name, :maximum => 30
@@ -29,6 +29,19 @@ class User < ActiveRecord::Base
 	before_save :encrypt_password
 	#Relationship between user and computer
 	has_many :computers, :foreign_key => "user_id", :autosave => true, :dependent => :destroy
+	
+	def getLastThree(comps)
+		self.lastThree = []
+		if comps.length > 3
+			for i in 0..2 do
+				self.lastThree.push([comps[i].name, comps[i].id])
+			end
+		else
+			for i in 0..comps.length-1 do
+				self.lastThree.push([comps[i].name, comps[i].id])
+			end
+		end
+	end
 	
 	def has_password? (submitted_password)
 	    self.encrypted_password == encrypt(submitted_password)

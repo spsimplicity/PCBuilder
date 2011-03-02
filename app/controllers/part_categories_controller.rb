@@ -20,6 +20,7 @@ class PartCategoriesController < ApplicationController
 			end
 		end
 		session[:price] = session[:computer].getPrice
+		session[:user].getLastThree(Computer.find_all_by_user_id(session[:user].id, :order => 'updated_at DESC'))
 	    render :categories
 	end
 	
@@ -27,23 +28,41 @@ class PartCategoriesController < ApplicationController
 	    session[:computer] = Computer.new
 		session[:computer].price = 0
 		session[:computer].other_parts = []
+		if session[:user]
+		    session[:computer].user_id = session[:user].id
+		end
+		session[:user].getLastThree(Computer.find_all_by_user_id(session[:user].id, :order => 'updated_at DESC'))
 	    render :categories
 	end
 	
 	def existingBuild
 	    render :categories
-	    session[:computer] = Computer.find_by_name(params[:existing], :include => :has_parts)
-		session[:ids] = session[:computer].getIds
+	    session[:computer] = Computer.find_by_name(params[:existing])		
 		session[:computer].has_parts.each do |part|
 		    session[:ids].push(part.part_id)
 		end
 	end
 	
-	def savebuild
+	def saveBuild
 	    session[:computer].name = params[:saving]
 	    computer = session[:computer]
-		computer.other_parts.each do |part|
-		    computer.has_parts.build(HasPart.new())
+		if !computer.id && computer.valid?
+		    computer.save!
 		end
+		session[:computer].id = computer.id
+		computer.other_parts.each do |part|
+		    alreadyHas = false
+		    HasPart.find_all_by_computer_id(computer.id).each do |hp|
+			    if hp.part_id == part[0]
+				    alreadyHas = true
+				end
+			end
+			if !alreadyHas
+		        computer.has_parts.build(:computer_id => computer.id, :part_id => part[0], :parttype => part[1])
+			end
+		end
+		computer.save!
+		session[:user].getLastThree(Computer.find_all_by_user_id(session[:user].id, :order => 'updated_at DESC'))
+		redirect_to request.referer
 	end
 end
