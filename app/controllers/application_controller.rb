@@ -64,6 +64,8 @@ class ApplicationController < ActionController::Base
 			page.replace_html 'Nav', :partial => "navigation"
 			if request.referer.include?("part_categories")
 				page.replace_html 'Main', :partial => "categories_partial"
+			else
+			    page.replace_html 'Main', :partial => "parts_partial"
 			end
 		end
 	end

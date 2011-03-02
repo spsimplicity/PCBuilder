@@ -29,13 +29,15 @@
 								<% if i == (session[:user].lastThree.length - 1) %>
 									<li>
 									    <center>
-										    <%= link_to_remote @name, :update => 'Selection', :url => {:controller => :part_categories, :action => :existingBuild, :id => i} %>
+										    <%= link_to_remote @name, :url => {:controller => :part_categories, 
+											    :action => :existingBuild, :id => session[:user].lastThree[i][1]} %>
 										</center>
 									</li>
 								<% else %>
 									<li class="bottom_seperator">
 									    <center>
-										    <%= link_to_remote @name, :update => 'Selection', :url => {:controller => :part_categories, :action => :existingBuild, :id => i} %>
+										    <%= link_to_remote @name, :url => {:controller => :part_categories, 
+											    :action => :existingBuild, :id => session[:user].lastThree[i][1]} %>
 										</center>
 								    </li>
 								<% end %>

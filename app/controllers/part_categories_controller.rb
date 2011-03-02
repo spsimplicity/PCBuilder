@@ -36,11 +36,12 @@ class PartCategoriesController < ApplicationController
 	end
 	
 	def existingBuild
-	    render :categories
-	    session[:computer] = Computer.find_by_name(params[:existing])		
-		session[:computer].has_parts.each do |part|
-		    session[:ids].push(part.part_id)
+	    session[:computer] = Computer.find_by_id(params[:id])
+        session[:computer].other_parts = []
+		HasPart.find_all_by_computer_id(session[:computer].id).each do |part|
+			session[:computer].other_parts.push([part.part_id, part.parttype])
 		end
+	    redirect_to :controller => :application, :action => :loadIn
 	end
 	
 	def saveBuild
