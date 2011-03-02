@@ -14,7 +14,7 @@
 	<div id="Build_box" class="nav_item">
 		<% if session[:user] %>
 			<ul id="Build_options" class="options">
-				<% if session[:user].lastThree == nil %>
+				<% if session[:user].lastThree == nil || session[:user].lastThree.length == 0 %>
 					<li id="New" class="option_link_solo"><center><%= link_to "New", root_path %></center></li>
 				<% else %>
 					<li id="New" class="option_link"><center><center><%= link_to "New", root_path %></center></li>

@@ -4,6 +4,10 @@ class Computer < ActiveRecord::Base
 	attr_accessible :name, :other_parts
 	#Name validations
 	validates_length_of :name, :maximum => 50
+	validates_each :name do |record, attr, value|
+	    record.errors.add(attr, 
+		    " must be alphanumeric characters (including underline)") if value =~ /\W/
+	end
 	#Motherboard_id, cpu_id, cpu_cooler_id, power_supply_id, case_id, and user_id validations
 	validates_numericality_of :price, :only_integer => true, :greater_than => 0
 	#validates_numericality_of :motherboard_id, :cpu_id, :case_id,
