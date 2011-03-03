@@ -47,7 +47,7 @@ class ApplicationController < ActionController::Base
 		else
 			if @user.has_password?(params[:password])
 				session[:user] = @user
-				#session[:user].getLastThree(Computer.find_all_by_user_id(session[:user].id, :order => 'updated_at DESC'))
+				session[:user].getLastThree(Computer.find_all_by_user_id(session[:user].id, :order => 'updated_at DESC'))
 				redirect_to :controller => :application, :action => :loadIn
 			else
 				@in_errors = true
@@ -62,10 +62,30 @@ class ApplicationController < ActionController::Base
 	def loadIn
 		render :update do |page|
 			page.replace_html 'Nav', :partial => "navigation"
-			if request.referer.include?("part_categories")
+			if request.referer.include?("part_categories")			    
+				@gpu = false
+				@mon = false
+				@dd = false
+				@hdd = false
+				@mem = false
+				session[:computer].other_parts.each do |part|
+					if part[1].eql?"Graphics Card"
+						@gpu = true
+					elsif part[1].eql?"Hard Drive"
+						@hdd = true
+					elsif part[1].eql?"Display"
+						@mon = true
+					elsif part[1].eql?"Disc Drive"
+						@dd = true
+					else
+						@mem = true
+					end
+				end
 				page.replace_html 'Main', :partial => "categories_partial"
-			else
+			elsif request.referer.include?("part_selection")	
 			    page.replace_html 'Main', :partial => "parts_partial"
+			else
+				page.replace_html 'Main', :partial => "categories_partial"
 			end
 		end
 	end

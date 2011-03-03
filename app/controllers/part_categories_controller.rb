@@ -20,7 +20,9 @@ class PartCategoriesController < ApplicationController
 			end
 		end
 		session[:price] = session[:computer].getPrice
-		session[:user].getLastThree(Computer.find_all_by_user_id(session[:user].id, :order => 'updated_at DESC'))
+		if session[:user]
+		    session[:user].getLastThree(Computer.find_all_by_user_id(session[:user].id, :order => 'updated_at DESC'))
+		end
 	    render :categories
 	end
 	
@@ -30,8 +32,8 @@ class PartCategoriesController < ApplicationController
 		session[:computer].other_parts = []
 		if session[:user]
 		    session[:computer].user_id = session[:user].id
+		    session[:user].getLastThree(Computer.find_all_by_user_id(session[:user].id, :order => 'updated_at DESC'))
 		end
-		session[:user].getLastThree(Computer.find_all_by_user_id(session[:user].id, :order => 'updated_at DESC'))
 	    render :categories
 	end
 	
