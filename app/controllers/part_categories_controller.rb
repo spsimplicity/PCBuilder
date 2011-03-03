@@ -43,7 +43,7 @@ class PartCategoriesController < ApplicationController
 	    session[:computer].name = params[:saving]
 	    computer = session[:computer]
 		computer.other_parts.each do |part|
-		    computer.has_parts.build(HasPart.new())
+		    computer.has_parts.build()
 		end
 	end
 end
