@@ -97,6 +97,11 @@
 							<%= submit_tag "Save Build", :disable_with => "Saving..." %>
 						<% end %>
 					<% end %>
+					<% if @saveErrors %>
+						<% @saveErrors.each do |error| %>
+							<p class="component-description"><%= error %></p>
+						<% end %>
+					<% end %>
 				<% end %>
 			</div>
 			<div class="component component-bottom-right component-empty">

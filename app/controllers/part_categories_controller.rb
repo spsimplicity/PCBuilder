@@ -1,6 +1,9 @@
 class PartCategoriesController < ApplicationController
     
 	def current
+	    if flash[:errors]
+		    @saveErrors = flash[:errors]
+		end
 	    @gpu = false
 		@mon = false
 		@dd = false
@@ -47,25 +50,28 @@ class PartCategoriesController < ApplicationController
 	end
 	
 	def saveBuild
-	    session[:computer].name = params[:saving]
 	    computer = session[:computer]
-		if !computer.id && computer.valid?
+		computer.name = params[:saving]
+		if computer.valid?
+	        session[:computer].name = params[:saving]
 		    computer.save!
-		end
-		session[:computer].id = computer.id
-		computer.other_parts.each do |part|
-		    alreadyHas = false
-		    HasPart.find_all_by_computer_id(computer.id).each do |hp|
-			    if hp.part_id == part[0]
-				    alreadyHas = true
+			session[:computer].id = computer.id
+			computer.other_parts.each do |part|
+				alreadyHas = false
+				HasPart.find_all_by_computer_id(computer.id).each do |hp|
+					if hp.part_id == part[0]
+						alreadyHas = true
+					end
+				end
+				if !alreadyHas
+					computer.has_parts.build(:computer_id => computer.id, :part_id => part[0], :parttype => part[1])
 				end
 			end
-			if !alreadyHas
-		        computer.has_parts.build(:computer_id => computer.id, :part_id => part[0], :parttype => part[1])
-			end
+			computer.save!
+			session[:user].getLastThree(Computer.find_all_by_user_id(session[:user].id, :order => 'updated_at DESC'))
+		else
+		    flash[:errors] = computer.errors.full_messages
 		end
-		computer.save!
-		session[:user].getLastThree(Computer.find_all_by_user_id(session[:user].id, :order => 'updated_at DESC'))
-		redirect_to request.referer
+		redirect_to :controller => :part_categories, :action => :current
 	end
 end

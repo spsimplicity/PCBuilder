@@ -62,25 +62,27 @@ class ApplicationController < ActionController::Base
 	def loadIn
 		render :update do |page|
 			page.replace_html 'Nav', :partial => "navigation"
-			if request.referer.include?("part_categories")			    
-				@gpu = false
-				@mon = false
-				@dd = false
-				@hdd = false
-				@mem = false
-				session[:computer].other_parts.each do |part|
-					if part[1].eql?"Graphics Card"
-						@gpu = true
-					elsif part[1].eql?"Hard Drive"
-						@hdd = true
-					elsif part[1].eql?"Display"
-						@mon = true
-					elsif part[1].eql?"Disc Drive"
-						@dd = true
-					else
-						@mem = true
-					end
+			
+			@gpu = false
+			@mon = false
+			@dd = false
+			@hdd = false
+			@mem = false
+			session[:computer].other_parts.each do |part|
+				if part[1].eql?"Graphics Card"
+					@gpu = true
+				elsif part[1].eql?"Hard Drive"
+					@hdd = true
+				elsif part[1].eql?"Display"
+					@mon = true
+				elsif part[1].eql?"Disc Drive"
+					@dd = true
+				else
+					@mem = true
 				end
+			end
+			
+			if request.referer.include?("part_categories")			    
 				page.replace_html 'Main', :partial => "categories_partial"
 			elsif request.referer.include?("part_selection")	
 			    page.replace_html 'Main', :partial => "parts_partial"
@@ -179,6 +181,13 @@ class ApplicationController < ActionController::Base
 			redirect_to :controller => :part_selection, :action => :displays, :change => params[:part_id]
 		else
 	        redirect_to :controller => :part_selection, :action => :init, :part_type => params[:change], :change => params[:part_id]
+		end
+	end
+	
+	def export
+	    @fileName = "newComp"
+	    render :update do |page|
+		    page.replace_html 'ExportComp', :partial => "downloadComp"
 		end
 	end
 end
