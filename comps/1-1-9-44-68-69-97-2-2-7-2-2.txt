@@ -1,0 +1,10 @@
+Motherboard:   EVGA 170-BL-E762-A1
+CPU:           Intel Core i7 980X
+CPU Cooler:    Antec KUHLER flow
+Power Supply:  Cooler Master Silent Pro Gold RSC00-80GAD3-US
+Case:          Cooler Master HAF NV-942-KKN1
+Hard Drive:    Hitachi Deskstar 7K2000 HDS722020ALA330
+Memory:        G.Skill F3-12800CL7T2-12GBPI
+Display:       Acer G245H 24 inch
+Graphics Card: MSI R5870 Lightning II ATI 5870
+Graphics Card: MSI R5870 Lightning II ATI 5870

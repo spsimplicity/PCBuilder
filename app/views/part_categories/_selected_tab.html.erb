@@ -149,7 +149,7 @@
 			    <div id="ExportComp" class="export">
 				    <% form_tag :controller => :application, :action => :export do %>
 					    <%= label_tag :build, "Generate .txt file of your build:", :class => "export_label" %>
-					    <%= submit_to_remote 'submit', 'Generate Build', :url => {:controller => :application, :action => :export} %>
+					    <%= submit_tag 'Download Build' %>
 					<% end %>
 				</div>
 			<% end %>
