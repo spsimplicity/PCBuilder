@@ -52,11 +52,13 @@
 	</head>
 	<body onresize="checkSize();">
 		<div id="Center" class="container">
+			<center>
 			<div id="Bound">
 				<div id="Nav">
 					<%= render :partial => "navigation" %>
 				</div>
 			</div>
+			</center>
 			<%= yield %>
 		</div>
 	</body>

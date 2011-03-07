@@ -10,28 +10,34 @@ body {
 #Center
 {
     background-color: #3d4244;
-	min-width: 1024px;
+	min-width: 300px;
 	max-width: 1480px;
-	min-height: 1280px;
-	max-height: 100%;
+	min-height: 240px;
+	max-height: 9999px;
 	margin: 0 auto 0 auto;
-	position: relative;
+	clear: both;
 }
 
 #Bound
 {
-    width: 1024px;
+	clear: both;
+	min-width: 300;
+    max-width: 1480px;
+	width: auto;
 	margin: 0 auto 0 auto;
+	height: auto;
+	position: relative;
 }
 
 #Main
 {
+	clear: both;
 	margin: 0 auto 0 auto;
 }
 
 #Content
 {
-	width: 1024px;
+	width: 300px;
 	margin: 0 auto 0 auto;
 	padding: 0 0 0 0;	
     background-color: #3d4244;
@@ -39,38 +45,29 @@ body {
 
 #Nav
 {
-    width: 1024px;
+    width: 305px;
 	clear: both;
 	z-index: 9000;
 	position: relative;
-	float: left;
-}
-
-#Logo {
-    background-color: #3d4244;
-    width: 290px;
-    height:76px;
-    position: relative;
-	padding: 0 0 0 0;
-	margin: 20px 0 0 0;
-	float: left;
+	height:50px;
 }
 
 #Buttons
 {
-    float: left;
-    height: 120px;
-	width: 734px;
+    height: 30px;
+	width: 305px;
+	position: relative;
+	z-index:8000;
 }
 
 .nav_item
 {
     position: relative;
-    width: 150px;
-	height: 50px;
-	margin-left: 30px;
+    width: 71px;
+	height: 25px;
+	margin-left: 4px;
 	float: left;
-	font-size: larger;
+	font-size: 10pt;
 	z-index: 9050;
 }
 
@@ -83,8 +80,8 @@ body {
 #Signin_link a
 {
     padding: 13px 0 0 0;
-	width: 150px;
-	height: 37px;
+	width: 72px;
+	height: 30px;
     background-color: #636566;
     float: left;
 }
@@ -98,16 +95,16 @@ body {
 .nav_link
 {
     padding: 13px 0 0 0;
-	width: 150px;
-	height: 37px;
+	width: 72px;
+	height: 30px;
     background-color: #636566;
     float: left;
 }
 
 .dummy
 {
-    width: 150px;
-	height: 37px;
+    width: 72px;
+	height: 30px;
 	float: left;
 	clear: both;
     background-color: #636566;
@@ -118,19 +115,19 @@ body {
 #User_box #User_options
 {
     display: none;
-	float: left;
+	/*float: left;*/
 }
 
 #Build_box #Build_options
 {
     display: none;
-	float: left;
+	/*float: left;*/
 }
 
 #Assembly_box #Assembly_options
 {
     display: none;
-	float: left;
+	/*float: left;*/
 }
 
 #User_box:hover #User_options
@@ -153,7 +150,7 @@ body {
     list-style: none;
 	margin: 0 0 0 13px;
 	padding: 0 0 0 0;
-	font-size: medium;
+	font-size: 10pt;
 }
 
 .options li
@@ -162,7 +159,7 @@ body {
 	margin: 0 0 0 0;
 	padding: 0 0 0 0;
 	height: 40px;
-	width: 125px;
+	width: 62px;
 }
 
 .option_link
@@ -175,8 +172,9 @@ body {
     background-color: #212221;
 	float: left;
 	height: 30px;
-	width: 125px;
+	width: 62px;
 	padding: 10px 0 0 0;
+	font-size:10pt;
 }
 
 .option_link_solo a
@@ -243,7 +241,7 @@ body {
     background-color: #212221;
     float: left;
 	height: 30px;
-	width: 125px;
+	width: 62px;
 	padding: 10px 0 0 0;
 }
 
@@ -259,7 +257,7 @@ body {
     width: 110px;
 	height: 19px;
 	padding: 2px 0 0 0;
-	font-size: small;
+	font-size: 10pt;
 }
 
 .bottom_seperator
@@ -270,18 +268,20 @@ body {
 #Signup
 {
     position: relative;
-    float: left;
-    height: 115px;
-	margin-left: 30px;
-	margin-top: 10px;
+	clear: both;
+    height: 230px;
+	width: 372px;
+	margin-left: 5px;
+	margin-top: 25px;
 	margin-right: 14px;
+	padding-top: 25px;
 	z-index: 9030;
 }
 
 #Close
 {
-    float: left;
-	height: 115px;
+	float: left;
+	height: 230px;
 	background-color: #636566;
 }
 
@@ -289,7 +289,7 @@ body {
 {
     background-color: #212221;
     text-decoration: none;
-	font-size: larger;
+	font-size: 10pt;
 	color: #71D0CE;
 	padding-left: 3px;
 	padding-right: 4px;
@@ -303,20 +303,20 @@ body {
 
 #Sign_info
 {
-    float: left;
-	height: 115px;
+	float: left;
+	height: 230px;
 	padding-left: 10px;
 	background-color: #636566;
 }
 
 .form
 {
-    float: left;
+	clear: both;
 }
 
 .header
 {
-    float: left;
+	float: left;
     color: white;
     margin: 5px 0 0 0;
 	padding: 0 0 0 0;
@@ -324,7 +324,7 @@ body {
 
 .form_fields
 {    
-    float: left;
+	float: left;
 	height: 80px;
 	margin-top: 5px;
 	clear: left;
@@ -337,14 +337,14 @@ body {
 
 .label
 {
-    float: left;
+	float: left;
 	clear: left;
 	color: white;
 }
 
 .field
 {
-    float: left;
+	float: left;
 }
 
 #password
@@ -359,7 +359,7 @@ body {
 
 .submit_button
 {
-    float: left;
+	float: left;
 	margin-top: 5px;
 	margin-left: 5px;
 }
@@ -371,7 +371,7 @@ body {
 
 .errors
 {
-    float: left;
+	float: left;
 }
 
 #Signup_errors
@@ -386,7 +386,7 @@ body {
 
 .sign_errors
 {
-    float: left;
+	float: left;
 	clear: left;
 	color: #71D0CE;
     margin: 5px 10px 0 10px;
@@ -394,7 +394,7 @@ body {
 
 .log_errors
 {
-    float: left;
+	float: left;
     margin: 5px 0 0 0;
 	padding: 0 0 0 0;
 	clear: left;

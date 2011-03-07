@@ -1,0 +1,278 @@
+
+body {
+    background-color: rgb(61, 66, 68);
+    font-family:Arial;
+    padding:0px;
+    margin:0px;
+    /* border-right:1px solid red; */
+    color:white;
+    width:320px;
+}
+
+#top {
+    position:fixed;
+    top:0%;
+    width:320px;
+    z-index:100;
+}
+
+#title {
+    background-color:gray;
+    font-size:16pt;
+    line-height:18pt;
+    text-align:center;
+}
+
+#menu {
+    list-style:none;
+    padding:0px;
+    margin:0px;
+}
+
+#menu li {
+    float:left;
+    background-color:grey;
+    width:25%;
+    text-align:center;
+    height:30px;
+    line-height:30px;
+    font-size:14px;
+}
+
+#menu li:hover {
+    color:#71D0CE;   
+}
+
+#content {
+    position:relative;
+    top:60px;
+    font-size:8pt;
+}
+
+#info {
+    clear:both;
+    line-height:20px;
+    margin-left:10px;
+    margin-right:10px;
+    width:300px;
+}
+
+.img {
+    width:66px;
+    height:47px;
+    background-color:white;
+    float:left;
+    vertical-align:middle;
+    margin: 10px;
+}
+
+.component {
+    clear:both;
+    background-color:rgb(30, 36, 38);
+    /* border:1px solid red; */
+    height:70px;
+    margin-left:10px;
+    margin-right:10px;
+    width:300;
+}
+
+.component:hover {
+    background-color:#295666;
+}
+
+.component-description {
+    height:70px;
+    padding-top:10px;
+    padding-right:3px;
+}
+
+#padding {
+    height:50px;
+}
+
+#bottom {
+    position:fixed;
+    left:0px;
+    bottom:0%;
+}
+
+#selected-parts {
+    float:left;
+    background-color:grey;
+    width:200px;
+    text-align:center;
+    line-height:30px;
+    font-size:12pt;
+    margin-right:6px;
+}
+
+#cart {
+    display:none;
+    clear:both;
+    background-color:grey;
+    width:320px;
+    font-size:8pt;
+}
+
+#selected-parts:hover + #cart {
+    display:block;
+}
+
+#cart:hover {
+    display:block;
+}
+
+#cart tr td {
+    text-align:left;
+}
+
+#cart tr td + td {
+    text-align:right;
+}
+
+#selected-parts:hover + #cart {
+    display:block;
+}
+
+#price {
+    float:right;
+    width:114px;
+    background-color:grey;
+    line-height:30px;
+    text-align:center;
+    font-size:10pt;
+}
+
+
+/*
+#Back-to-Categories {
+    width:222px;
+    height:74px;
+    line-height:74px;
+    font-size:16pt;
+    text-align:center;
+    background-color:gray;
+    color:white;
+}
+
+#Sort {
+    position:absolute;
+    left:422px;
+    background-color:gray;
+    text-align:center;
+    line-height:50px;
+    height:50px;
+    width:50px;
+    -webkit-transform: rotate(-270deg);
+    -moz-transform: rotate(-270deg);
+}
+
+#items {
+    position:relative;
+    top:-20px;
+}
+
+.item-specs1, .item-specs2  {
+    list-style:none;
+    padding:0px;
+    margin:0px;
+    margin-left:10px;
+    margin-right:10px;
+}
+
+.brand, .type1, .type2, .price, .add {
+    float:left;
+    color:white;
+    height:30px;
+    line-height:30px;
+    padding:0px;
+    text-align:left;
+}
+
+.brand {
+    width:70px;
+}
+
+.type1 {
+    width:100px;
+}
+
+.type2 {
+    width:500px;
+}
+
+.price {
+    width:85px;
+}
+
+.add {
+    background-color:grey;
+    margin-left:20px;
+    width:45px;
+    text-align:center;
+}
+
+.cores, .frequency, .socket-type {
+    float:left;
+    width:270px;
+    color:white;
+    height:30px;
+    line-height:30px;
+    padding:0px;
+    margin:0px;
+    text-align:left;
+}
+
+.details {
+    clear:both;
+    background-color:gray;
+    height:20px;
+}
+
+.details:hover table {
+    display:block;
+}
+
+.details:hover {
+    height:75px;
+}
+
+.item {
+    margin-left:100px;
+    width:850px;
+    border-bottom:5px solid black;
+}
+
+.details-table {
+    display:none;
+    width:840px;
+}
+
+.details-table td {
+    width:270px;
+}
+
+#title {
+    font-size:24pt;
+    color:white;
+    border-bottom:5px solid black;
+    text-align:center;
+    margin-left:100px;
+    width:850px;
+}
+
+#pages-list {
+    list-style:none;
+    padding:0px;
+    margin-left:100px;
+    width:910px;
+}
+
+#pages-list li {
+    clear:none;
+    float:left;
+    width:10%;
+    line-height:20px;
+    color:white;
+}*/
+

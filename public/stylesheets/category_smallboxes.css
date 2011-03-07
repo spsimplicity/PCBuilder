@@ -1,12 +1,12 @@
 #Components
 {
     position: relative;
-    width: 910px;
-    margin: 50px 0 0 0;
+    min-width: 350;
+	max-width: 900;
+    margin: 0 0 0 0;
 	padding: 0 0 0 0;
 	background-color: #3d4244;
 	z-index: 8000;
-	float: left;
 }
 
 #Components a
@@ -20,11 +20,11 @@
 }
 
 .component {
-    width: 190px; /*224px;*/
-    height: 310px; /* 349px; */
+	clear: both;
+    width: 300px;
+    height: 70px;
     background-color:rgb(33, 34, 33);
-    float:left;
-	margin: 20px 17px 20px 18px;
+	margin: 20px 0 20px 0;
 }
 
 .component:hover {
@@ -32,76 +32,28 @@
 	cursor: pointer;
 }
 
-.component-top-left {
-    border-bottom:1px solid #3d4244;
-    border-right:1px solid #3d4244;
-}
-
-.component-top-middle {
-    border-bottom:1px solid #3d4244;
-    border-right:1px solid #3d4244;
-    border-left:1px solid #3d4244;
-}
-
-.component-top-right {
-    border-bottom:1px solid #3d4244;
-    border-left:1px solid #3d4244;    
-}
-
-.component-middle-left{
-    border-bottom:1px solid #3d4244;
-    border-right:1px solid #3d4244;
-    border-top:1px solid #3d4244;    
-}
-
-.component-middle {
-    border:1px solid #3d4244;     
-}
-
-.component-middle-right {
-    border-bottom:1px solid #3d4244;
-    border-left:1px solid #3d4244;
-    border-top:1px solid #3d4244;       
-}
-
-.component-bottom-left {
-    border-right:1px solid #3d4244;
-    border-top:1px solid #3d4244;       
-}
-
-.component-bottom-middle {
-    border-left:1px solid #3d4244;
-    border-right:1px solid #3d4244;
-    border-top:1px solid #3d4244;       
-}
-
-.component-bottom-right {
-    border-left:1px solid #3d4244;
-    border-top:1px solid #3d4244;        
-}
-
 .component-title {
-    margin-top:15px;
-    margin-left:32px;
-    margin-right:32px;
-    margin-bottom:1em;
+	width: 50px;
+	height: 50px;
+    margin-top:10px;
+    margin-left:5px;
+    margin-bottom:10px;
+	float: left;
 }
 
 .component-description {
-    font-size:10pt;
+    font-size:7pt;
     color: white;
-    margin-left:auto; 
-    margin-right:auto;
-    margin-top:10px;
+    margin-left:60px; 
     text-align:left;
-	height: 110px;
-	width: 140px;
+	height: 40px;
+	width: 235px;
 }
 
 .component-required {
     color:white;
-    text-align:center;
-    font-size:13pt;
+    text-align:left;
+    font-size:10pt;
 }
 
 .component-empty {
@@ -115,8 +67,9 @@
 
 .category_name
 {
-    margin: 0 0 0 0;
-	padding: 0 0 0 0;
+	font-size:8pt;
+    margin-left: 60px;
+	padding-top: 10px;
 	color: white;
 }
 
