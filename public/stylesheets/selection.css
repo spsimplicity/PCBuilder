@@ -1,21 +1,16 @@
 #Back_cats
 {
     background-color: #636566;  
-	margin: 0 0 0 0;
+	margin: 90px 0 0 0;
 	padding: 0 0 0 0;
+	text-align: center;
+	line-height: 35px;
 }
 
 #Back_cats a
 {
-    float: left;
-	position: absolute;
-	z-index: 9050;
-	left: 0px;
-	top: 120px;
     font-size: large;
-    background-color: #636566;  
 	color: white;
-	height: 35px;
 	width: 180px;
 	text-decoration: none;
 	margin: 0 0 0 0;
@@ -30,7 +25,7 @@
 #Parts
 {
     margin: 0 auto 0 auto;
-	width: 820px;
+	width: 320px;
 }
 
 #Part_nav
@@ -38,13 +33,13 @@
     position: relative;
     margin: 0 auto 0 auto;
 	padding: 0 0 0 0;
-	width: 820px;
+	width: 320px;
 	float: left;
+	text-align: center;
 }
 
 #Part_nav a
 {
-    float: left;
     position: relative;
 	padding: 0 0 0 0;
 	color: white;
@@ -60,16 +55,16 @@
 
 #Header
 {
-    float: left;
+    display: inline;
     position: relative;
 	margin: 0 0 0 0;
 	padding: 0 0 0 0;
 	color: white;
-	width: 745px;
 }
 
 #Header h1
 {
+    display: inline;
     padding: 0 0 0 0;
 	margin: 54px 0 0 0;
 }
@@ -77,7 +72,7 @@
 #Parts_list
 {
     position: relative;
-    width: 820px;
+    width: 320px;
 	margin: 0 auto 0 auto;
 	float: left;
 }
@@ -102,7 +97,7 @@
 {
     position: relative;
     float: left;
-	width: 760px;
+	width: 320px;
 	margin: 0 0 0 0;
 }
 
@@ -279,7 +274,7 @@
 #Pages
 {
 	height: 50px;
-	width: 747px;
+	width: 320px;
 	float: left;
 }
 
@@ -304,3 +299,4 @@
 {
     float: left;
 }
+

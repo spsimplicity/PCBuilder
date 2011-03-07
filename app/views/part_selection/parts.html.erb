@@ -12,11 +12,11 @@
 	<div id="Content">
 		<div id="Parts">
 			<div id="Part_nav">
-			    <%= link_to "Prev", :controller => :part_selection, :action => :previous, :changeIt => @changing %>
+			    <%= link_to "<", :controller => :part_selection, :action => :previous, :changeIt => @changing %>
 				<div id="Header">
 					<h1 id="Part_heading" align="center"><%= session[:part_type] %></h1>
 				</div>
-				<%= link_to "Next", :controller => :part_selection, :action => :next, :changeIt => @changing %>
+				<%= link_to ">", :controller => :part_selection, :action => :next, :changeIt => @changing %>
 			</div>
 			<div id="Parts_list">
 			    <% if @parts.length == 0 %>
