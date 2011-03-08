@@ -10,7 +10,7 @@
 			{
 			    $(specNum).toggle();
 				var back = $(arrow).getStyle('backgroundImage');
-				if(back == "url(http://localhost:3000/images/arrow_up.png)")
+				if(back.indexOf("arrow_up.png") != -1)
 				{
 				    $(arrow).setStyle({backgroundImage: 'url(../images/arrow_down.png)'});
 					$(leftSpan).replace('<span id="'+leftSpan+'" style="color: white; font-size: small">Show</span>');
