@@ -12,7 +12,7 @@ body {
     background-color: #3d4244;
 	min-width: 300px;
 	max-width: 1480px;
-	min-height: 240px;
+	min-height: 50px;
 	max-height: 9999px;
 	margin: 0 auto 0 auto;
 	clear: both;
