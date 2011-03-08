@@ -1,20 +1,24 @@
 #Back_cats
 {
-    background-color: #636566;  
-	margin: 90px 0 0 0;
+	position: fixed;
+	bottom: 0;
 	padding: 0 0 0 0;
 	text-align: center;
 	line-height: 35px;
+	width: 100%;
+	z-index: 30;
 }
 
 #Back_cats a
 {
+	display: block;
     font-size: large;
 	color: white;
-	width: 180px;
+	background-color: #636566;  
+	width: 350px;
 	text-decoration: none;
 	margin: 0 0 0 0;
-	padding: 10px 0 0 0;
+	padding: 0 0 0 0;
 }
 
 #Back_cats a:hover
@@ -24,7 +28,7 @@
 
 #Parts
 {
-    margin: 0 auto 0 auto;
+    margin: 80px auto 0 auto;
 	width: 320px;
 }
 
