@@ -3,6 +3,11 @@
 		<center><button class="selected_link tab_link" href="" onclick="$('Selected_parts').toggle()">Selected Parts</button></center>
 	</li>
 	<li id="Selected_parts" class="side_menu" style="display: none">
+		<% if session[:computer].name %>
+			<center><h3 class="selected_header"><%= session[:computer].name %></h3></center>
+		<% else %>
+			<center><h3 class="selected_header">Custom Computer</h3></center>
+		<% end %>
 		<% if comp_mobo %>
 			<div class="part_selected_options">
 				<div class="part_in">

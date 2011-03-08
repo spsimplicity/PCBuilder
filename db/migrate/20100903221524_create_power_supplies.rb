@@ -8,7 +8,7 @@ class CreatePowerSupplies < ActiveRecord::Migration
       t.string :googleprice,         :null => false
       t.integer :price,              :null => false
       t.string :model,               :null => false, :limit => 30
-      t.string :series,              :null => false, :limit => 30
+      t.string :series,              :limit => 30
       t.integer :fansize,            :null => false
       t.integer :mainpower,          :null => false
       t.integer :satapower,          :null => false
