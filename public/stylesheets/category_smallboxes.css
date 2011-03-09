@@ -276,3 +276,53 @@
 	margin: 20px 0 0 0;
 	padding: 0 5px 0 5px;
 }
+
+.save_header
+{
+    float: left;
+	clear: left;
+	color: #71D0CE;
+	padding: 0 0 0 0;
+	margin: 10px 0 0 0;
+}
+
+.save_error
+{
+    float: left;
+	color: #71D0CE;
+	margin: 15px 0 0 0;
+}
+
+.selected_header
+{
+    padding: 0 0 0 0;
+	margin: 5px 0 5px 0;
+	color: white;
+}
+
+.export
+{
+    float: left;
+	margin: 10px 0 0 0;
+}
+
+.export_label
+{
+    color: white;
+	font-size: smaller;
+	float: left;
+	margin: 5px 5px 0 10px;
+}
+
+.compLink
+{
+    float: left;
+	color: #71D0CE;
+	margin: 10px 0 10px 65px;
+	text-decoration: none;
+}
+
+.compLink:hover
+{
+	text-decoration: underline;
+}

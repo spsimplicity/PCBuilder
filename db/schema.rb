@@ -326,7 +326,7 @@ ActiveRecord::Schema.define(:version => 20101115040910) do
     t.string   "googleprice",                       :null => false
     t.integer  "price",                             :null => false
     t.string   "model",               :limit => 30, :null => false
-    t.string   "series",              :limit => 30, :null => false
+    t.string   "series",              :limit => 30
     t.integer  "fansize",                           :null => false
     t.integer  "mainpower",                         :null => false
     t.integer  "satapower",                         :null => false

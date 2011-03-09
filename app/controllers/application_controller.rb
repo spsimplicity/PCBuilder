@@ -62,25 +62,27 @@ class ApplicationController < ActionController::Base
 	def loadIn
 		render :update do |page|
 			page.replace_html 'Nav', :partial => "navigation"
-			if request.referer.include?("part_categories")			    
-				@gpu = false
-				@mon = false
-				@dd = false
-				@hdd = false
-				@mem = false
-				session[:computer].other_parts.each do |part|
-					if part[1].eql?"Graphics Card"
-						@gpu = true
-					elsif part[1].eql?"Hard Drive"
-						@hdd = true
-					elsif part[1].eql?"Display"
-						@mon = true
-					elsif part[1].eql?"Disc Drive"
-						@dd = true
-					else
-						@mem = true
-					end
+			
+			@gpu = false
+			@mon = false
+			@dd = false
+			@hdd = false
+			@mem = false
+			session[:computer].other_parts.each do |part|
+				if part[1].eql?"Graphics Card"
+					@gpu = true
+				elsif part[1].eql?"Hard Drive"
+					@hdd = true
+				elsif part[1].eql?"Display"
+					@mon = true
+				elsif part[1].eql?"Disc Drive"
+					@dd = true
+				else
+					@mem = true
 				end
+			end
+			
+			if request.referer.include?("part_categories")			    
 				page.replace_html 'Main', :partial => "categories_partial"
 			elsif request.referer.include?("part_selection")	
 			    page.replace_html 'Main', :partial => "parts_partial"
@@ -180,5 +182,142 @@ class ApplicationController < ActionController::Base
 		else
 	        redirect_to :controller => :part_selection, :action => :init, :part_type => params[:change], :change => params[:part_id]
 		end
+	end
+	
+	def export
+	    name = createCompName
+		if !File.exists?("comps/"+name)
+			newFile = File.new("comps/"+name, "w+")
+			newFile.close
+			File.open("comps/"+name, "w+") do |file|
+				if session[:computer].motherboard_id
+					mobo = Motherboard.find_by_part_id(session[:computer].motherboard_id)
+					file.puts "Motherboard:   " + mobo.manufacturer + " " + mobo.model + "\n"
+				end
+				
+				if session[:computer].cpu_id
+					cpu = Cpu.find_by_part_id(session[:computer].cpu_id)
+					if cpu.series != "nil"
+						file.puts "CPU:           " + cpu.manufacturer + " " + cpu.series + " " + cpu.model + "\n"
+					else
+						file.puts "CPU:           " + cpu.manufacturer + " " + cpu.model + "\n"
+					end
+				end
+				
+				if session[:computer].cpu_cooler_id
+					cooler = CpuCooler.find_by_part_id(session[:computer].cpu_cooler_id)
+					file.puts "CPU Cooler:    " + cooler.manufacturer + " " + cooler.model + "\n"
+				end
+				
+				if session[:computer].power_supply_id
+					psu = PowerSupply.find_by_part_id(session[:computer].power_supply_id)
+					if psu.series != "nil"
+						file.puts "Power Supply:  " + psu.manufacturer + " " + psu.series + " " + psu.model + "\n"
+					else
+						file.puts "Power Supply:  " + psu.manufacturer + " " + psu.model + "\n"
+					end
+				end
+				
+				if session[:computer].case_id
+					compCase = Case.find_by_part_id(session[:computer].case_id)
+					if compCase.series != "nil"
+						file.puts "Case:          " + compCase.manufacturer + " " + compCase.series + " " + compCase.model + "\n"
+					else
+						file.puts "Case:          " + compCase.manufacturer + " " + compCase.model + "\n"
+					end
+				end
+				
+				session[:computer].other_parts.each do |part|
+					if part[1] == "Graphics Card"
+					    gpu = GraphicsCard.find_by_part_id(part[0])
+						if gpu.series != "nil"
+						    file.puts "Graphics Card: " + gpu.manufacturer + " " + gpu.series + " " + gpu.model + " " + gpu.chipmanufacturer + " " + gpu.gpu + "\n"
+						else
+						    file.puts "Graphics Card: " + gpu.manufacturer + " " + gpu.model + " " + gpu.chipmanufacturer + " " + gpu.gpu + "\n"
+						end
+					elsif part[1] == "Hard Drive"					
+					    hdd = HardDrife.find_by_part_id(part[0])
+						if hdd.series != "nil"
+						    file.puts "Hard Drive:    " + hdd.manufacturer + " " + hdd.series + " " + hdd.model + "\n"
+						else
+						    file.puts "Hard Drive:    " + hdd.manufacturer + " " + hdd.model + "\n"
+						end
+					elsif part[1] == "Disc Drive"
+					    dd = DiscDrife.find_by_part_id(part[0])
+						file.puts "Disc Drive:    " + dd.manufacturer + " " + dd.model + "\n"
+					elsif part[1] == "Memory"
+					    mem = Memory.find_by_part_id(part[0])
+						if mem.series
+						    file.puts "Memory:        " + mem.manufacturer + " " + mem.series + " " + mem.model + "\n"
+						else
+						    file.puts "Memory:        " + mem.manufacturer + " " + mem.model + "\n"
+						end
+					else
+					    disp = Display.find_by_part_id(part[0])
+						file.puts "Display:       " + disp.manufacturer + " " + disp.model + " " + disp.screensize.to_s + " inch" + "\n"
+					end
+				end
+			end
+		end
+		fileName = ""+name
+		send_file 'comps/'+fileName
+	end
+	
+	def createCompName
+	    comp = session[:computer]
+		if session[:user]
+		    compName = "" + session[:user].id.to_s
+		else
+		    compName = "Guest"
+		end
+		
+		if session[:computer].id
+		    compName = compName + "-" + session[:computer].id.to_s
+		else
+		    compName = compName + "-unsaved"
+		end
+		
+		if session[:computer].motherboard_id
+		    compName = compName + "-" + session[:computer].motherboard_id.to_s
+		end
+		
+		if session[:computer].cpu_id
+		    compName = compName + "-" + session[:computer].cpu_id.to_s
+		end
+		
+		if session[:computer].cpu_cooler_id
+		    compName = compName + "-" + session[:computer].cpu_cooler_id.to_s
+		end
+		
+		if session[:computer].power_supply_id
+		    compName = compName + "-" + session[:computer].power_supply_id.to_s
+		end
+		
+		if session[:computer].case_id
+		    compName = compName + "-" + session[:computer].case_id.to_s
+		end
+		
+		if session[:computer].other_parts
+		    gpus = ""
+			hdds = ""
+			mem = ""
+			disp = ""
+			dds = ""
+		    session[:computer].other_parts.each do |part|
+			    if part[1] == "Graphics Card"
+				    gpus = gpus + "-" + GraphicsCard.find_by_part_id(part[0]).id.to_s
+				elsif part[1] == "Hard Drive"
+				    hdds = hdds + "-" + HardDrife.find_by_part_id(part[0]).id.to_s
+				elsif part[1] == "Disc Drive"
+				    dds = dds + "-" + DiscDrife.find_by_part_id(part[0]).id.to_s
+				elsif part[1] == "Memory"
+				    mem = mem + "-" + Memory.find_by_part_id(part[0]).id.to_s
+				else
+				    disp = disp + "-" + Display.find_by_part_id(part[0]).id.to_s
+				end
+			end
+			compName = compName + gpus + hdds + mem + disp + dds
+		end		
+		compName = compName + ".txt"
 	end
 end

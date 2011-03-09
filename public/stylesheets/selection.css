@@ -34,8 +34,8 @@
 
 #Part_nav
 {
-    position: relative;
-    margin: 0 auto 0 auto;
+	position: relative;
+	margin: 0 auto 0 auto;
 	padding: 0 0 0 0;
 	width: 320px;
 	float: left;
@@ -44,12 +44,20 @@
 
 #Part_nav a
 {
-    position: relative;
+	position: relative;
 	padding: 0 0 0 0;
 	color: white;
 	text-decoration: none;
 	font-size: large;
-	margin: 70px 0 0 0;
+	margin: 8px 0 0 0;
+}
+
+#Part_nav a:first-child {
+	float: left;
+}
+
+#Part_nav a:last-child {
+	float: right;
 }
 
 #Part_nav a:hover
