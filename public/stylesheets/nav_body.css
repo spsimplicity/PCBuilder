@@ -11,7 +11,7 @@ body {
 {
     background-color: #3d4244;
 	min-width: 300px;
-	max-width: 1480px;
+	max-width: 600px;
 	min-height: 50px;
 	max-height: 9999px;
 	margin: 0 auto 0 auto;
@@ -22,7 +22,6 @@ body {
 {
 	clear: both;
 	min-width: 300;
-    max-width: 1480px;
 	width: auto;
 	margin: 0 auto 0 auto;
 	height: auto;
@@ -269,8 +268,8 @@ body {
 {
     position: relative;
 	clear: both;
-    height: 230px;
-	width: 372px;
+    max-height: 230px;
+	max-width: 400px;
 	margin-left: 5px;
 	margin-top: 25px;
 	margin-right: 14px;
