@@ -1,6 +1,7 @@
 body {
 	background-image: url(background_center.jpg) repeat-y;
-    background-color: #212221;
+	/*background-color: #212221;*/
+	background-color: #3d4244;
     font-family:Arial;
     padding:0px;
     margin:0px;
@@ -9,9 +10,8 @@ body {
 
 #Center
 {
-    background-color: #3d4244;
-	min-width: 300px;
-	max-width: 600px;
+	background-color: #3d4244;
+	width: 400px;
 	min-height: 50px;
 	max-height: 9999px;
 	margin: 0 auto 0 auto;
@@ -39,7 +39,6 @@ body {
 	width: 300px;
 	margin: 0 auto 0 auto;
 	padding: 0 0 0 0;	
-    background-color: #3d4244;
 }
 
 #Nav
