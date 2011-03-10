@@ -46,7 +46,8 @@
 	text-align: center;
 }
 
-#Part_nav a
+#Part_nav a,
+#Page_nav a
 {
 	position: relative;
 	padding: 0 0 0 0;
@@ -56,11 +57,13 @@
 	margin: 8px 0 0 0;
 }
 
-#Part_nav a:first-child {
+#Part_nav a:first-child,
+#Page_nav>a:first-child {
 	float: left;
 }
 
-#Part_nav a:last-child {
+#Part_nav a:last-child,
+#Page_nav>a:last-child {
 	float: right;
 }
 
@@ -262,10 +265,11 @@
 
 #Page_nav
 {
-    margin: 0 auto 0 auto;
-	width: inherit;
+	margin: 20px auto 52px auto;
+	width: 320px;
 	padding: 0 0 0 0;
 	float: left;
+	text-align: center;
 }
 
 #Page_nav a
@@ -276,7 +280,7 @@
 	color: white;
 	text-decoration: none;
 	font-size: large;
-	margin: 30px 0 0 0;
+	margin: 0 0 0 0;
 }
 
 #Page_nav a:hover
@@ -287,13 +291,16 @@
 #Pages
 {
 	height: 50px;
-	width: 320px;
-	float: left;
+	display: inline;
+	position: relative;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
 }
 
 #Pages h4
 {    
-	margin: 30px 0 0 0;
+	margin: 0 0 0 0;
+	display: inline;
 }
 
 #Pages a

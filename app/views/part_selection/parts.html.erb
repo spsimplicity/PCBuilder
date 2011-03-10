@@ -140,7 +140,7 @@
 				<% end %>
 			</div>
 			<div id="Page_nav">
-			    <%= link_to "Prev", :controller => :part_selection, :action => :previous, :changeIt => @changing %>
+			    <%= link_to "<", :controller => :part_selection, :action => :previous, :changeIt => @changing %>
 				<div id="Pages">
 					<h4 align="center">
 					    <% if !@error %>
@@ -154,7 +154,7 @@
 						<% end %>
 					</h4>
 				</div>
-				<%= link_to "Next", :controller => :part_selection, :action => :next, :changeIt => @changing %>
+				<%= link_to ">", :controller => :part_selection, :action => :next, :changeIt => @changing %>
 			</div>
 		</div>
 	</div>
