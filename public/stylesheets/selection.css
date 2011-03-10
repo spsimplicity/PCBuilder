@@ -6,10 +6,11 @@
 	text-align: center;
 	line-height: 35px;
 	/*width: 100%;*/
-	width: 400px;
+	width: 300px;
 	z-index: 30;
 	margin-left: auto;
 	margin-right: auto;
+	height: 2em;
 }
 
 #Back_cats a

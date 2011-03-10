@@ -126,7 +126,6 @@
 
 #Sort_options
 {
-	left: 0px;
 }
 
 .tab
@@ -208,6 +207,16 @@
 
 #Sort_tab
 {
+	position: fixed;
+	bottom: 0px;
+	margin-left: 305px !important;
+	width: 95px;
+	height: 2em;
+	line-height: 35px;
+}
+
+#Sort_tab a {
+	float: none !important;
 }
 
 .tab_link
