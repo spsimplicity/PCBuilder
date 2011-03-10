@@ -89,12 +89,12 @@
     list-style: none;
 	z-index: 9999;
 	padding: 0 0 0 0;
+	max-height: 35px;
 }
 
 #Selected_options
 {
 	bottom:0;
-
 }
 
 #Comp_price
@@ -242,7 +242,7 @@
 
 .selected_link
 {
-	margin: 5px 0 5px 0;
+	margin: 5px 0 0 0;
 	background: none;
 	border: none;
 }
