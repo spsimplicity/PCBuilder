@@ -159,7 +159,6 @@
     float: left;
 	text-decoration: none;
 	color: white;
-    background-color: #212121;
 	width: 40px;
 	padding: 5px 0 5px 0;
 	margin: 5px 0 0 0;
@@ -177,7 +176,6 @@
 	text-decoration: none;
 	color: white;
 	background-image: none;
-    background-color: #212121;
 	border: none;
 	width: 40px;
 	padding: 5px 0 5px 0;
@@ -197,7 +195,6 @@
     position: relative;
     float: left;
 	width: inherit;
-    background-color: #212121;
 	margin: 0 0 0 0;
 	padding: 0 0 0 0;
 }
