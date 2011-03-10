@@ -1,8 +1,7 @@
 #Components
 {
     position: relative;
-    min-width: 350;
-	max-width: 900;
+    width: 300;
     margin: 0 0 0 0;
 	padding: 0 0 0 0;
 	background-color: #3d4244;
@@ -12,6 +11,7 @@
 #Components a
 {
     text-decoration: none;
+	z-index: 9070;
 }
 
 .component-line {
@@ -58,6 +58,8 @@
 
 .component-empty {
     background-color: rgb(61, 66, 68);
+	height: 40px;
+	width: 310px;
 }
 
 .component-empty:hover {
@@ -76,7 +78,8 @@
 .side_tab
 {
 	position: fixed;	
-	top: 16em;
+	bottom: 0;
+	left: 0;
 	margin: 0 0 0 0;
 }
 
@@ -90,12 +93,13 @@
 
 #Selected_options
 {
-	right: 0px;
+	bottom:0;
+
 }
 
 #Comp_price
 {
-    top: 11em;
+    bottom: 0;
 	right: 0px;
 }
 
@@ -144,7 +148,7 @@
 #Selected_parts
 {
 	position: relative;
-	z-index: 9900;
+	z-index: 9999;
     float: left;
 	width: 310px;
 	min-height: 54px;
@@ -203,6 +207,7 @@
 .side_menu
 {
     background-color: #636566;
+	width: 232px;
 }
 
 #Sort_tab

@@ -7,7 +7,7 @@
 			</ul>
 			<center><span class="dummy">User Info</span></center>
 		<% else %>
-			<div id="Signin_link"><center><%= link_to_remote "Sign Up/In", :update => 'Signup', :url => {:controller => 'application', :action => :showform} %></center></div>
+			<div id="Signin_link" onclick="$('Signup').toggle()"><center><%= link_to_remote "Sign Up/In", :update => 'Signup', :url => {:controller => 'application', :action => :showform} %></center></div>
 		<% end %>
 	</div>
 	<div id="Build_box" class="nav_item">
@@ -77,7 +77,7 @@
 	<div id="Site_box" class="nav_item">
 		<center><a class="nav_link" href="#">Site Info</a></center>
 	</div>
-	<div id="Signup">
+	<div id="Signup" style="display: none;">
 		<% if @errors %>
 			<% if @errors %>
 				<%= render :partial => "signupform"%>

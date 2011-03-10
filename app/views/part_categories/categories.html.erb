@@ -76,30 +76,11 @@
 						<p class="component-description">The larger the resolution, the more that can be displayed on the screen. Can be paired with other monitor for a multi-display setup.</p>
 					<% end %>
 				</div>
-				<div class="component component-empty">
-				    <% if session[:user] %>
-					    <% form_tag :controller => :part_categories, :action => :saveBuild do %>
-						    <%= label_tag :saving, "Save Computer Build", :class => "save_label" %>
-							<% if session[:computer].id %>
-							    <%= text_field_tag :saving, session[:computer].name, :size => 25, :class => "save_field" %>
-							    <%= submit_tag "Update Build", :disable_with => "Updating..." %>
-							<% else %>
-							    <%= text_field_tag :saving, nil, :size => 25, :class => "save_field" %>
-							    <%= submit_tag "Save Build", :disable_with => "Saving..." %>
-							<% end %>
-						<% end %>
-						<% if @saveErrors %>
-						    <h3 class="save_header">Errors:</h3>
-						    <% @saveErrors.each do |error| %>
-						        <p class="save_error"><%= error %></p>
-							<% end %>
-						<% end %>
-					<% end %>
-				</div>
-				<div class="component component-empty">
+
+				<div id="required-text" class="component-empty">
 					<p style="margin:1em; font-size:10pt"><span style="color: #71D0CE">* </span><span style="color:white">Required items are needed only if you are making a complete system.</span></p>
 				</div>
-				<div class="component component-empty">
+				<div id="green-box-text" class="component-empty">
 					<p style="margin:1em; font-size:10pt"><span style="color: #268358">* </span><span style="color:white">A green box signifies that a part from this category has been chosen.</span></p>
 				</div>
 			</div>
