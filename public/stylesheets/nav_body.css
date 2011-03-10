@@ -268,8 +268,8 @@ body {
 {
     position: relative;
 	clear: both;
-    max-height: 230px;
-	max-width: 400px;
+    height: 230px;
+	width: 400px;
 	margin-left: 5px;
 	margin-top: 25px;
 	margin-right: 14px;
