@@ -315,3 +315,7 @@
     float: left;
 }
 
+.price_tab, #Selected_tab {
+	display: none;
+}
+
