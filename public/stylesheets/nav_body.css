@@ -4,16 +4,12 @@ body {
     font-family:Arial;
     padding:0px;
     margin:0px;
-	height: 100%;
 }
 
 #Center
 {
     background-color: #3d4244;
 	min-width: 300px;
-	max-width: 600px;
-	min-height: 50px;
-	max-height: 9999px;
 	margin: 0 auto 0 auto;
 	clear: both;
 }
@@ -31,7 +27,8 @@ body {
 #Main
 {
 	clear: both;
-	margin: 0 auto 0 auto;
+	margin: 0 auto 10px auto;
+	z-index: 9060;
 }
 
 #Content
@@ -268,19 +265,20 @@ body {
 {
     position: relative;
 	clear: both;
-    height: 230px;
-	width: 400px;
+    height: 325px;
+	width: 310px;
 	margin-left: 5px;
 	margin-top: 25px;
 	margin-right: 14px;
 	padding-top: 25px;
 	z-index: 9030;
+	margin-bottom: 10px;
 }
 
 #Close
 {
 	float: left;
-	height: 230px;
+	height: 285px;
 	background-color: #636566;
 }
 
@@ -303,7 +301,7 @@ body {
 #Sign_info
 {
 	float: left;
-	height: 230px;
+	height: 285px;
 	padding-left: 10px;
 	background-color: #636566;
 }
@@ -311,6 +309,8 @@ body {
 .form
 {
 	clear: both;
+	float: left;
+	width: 285px;
 }
 
 .header
@@ -324,14 +324,15 @@ body {
 .form_fields
 {    
 	float: left;
-	height: 80px;
+	min-height: 50px;
 	margin-top: 5px;
 	clear: left;
 }
 
 #Login
 {
-    margin-left: 25px;
+	float: left;
+	width: 285px;
 }
 
 .label
@@ -358,6 +359,7 @@ body {
 
 .submit_button
 {
+	clear: left;
 	float: left;
 	margin-top: 5px;
 	margin-left: 5px;
