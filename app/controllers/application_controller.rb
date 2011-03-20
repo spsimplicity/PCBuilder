@@ -122,7 +122,7 @@ class ApplicationController < ActionController::Base
 		    deleted = false
 		    spot = 0
 		    while(spot < session[:computer].other_parts.length && !deleted)
-			    if session[:computer].other_parts[spot][0] = params[:part_id].to_i
+			    if session[:computer].other_parts[spot][0] == params[:part_id].to_i
 				    if session[:computer].other_parts[spot][1] == "Graphics Card"
 					    session[:computer].price -= GraphicsCard.find_by_part_id(params[:part_id].to_i).price
 					elsif session[:computer].other_parts[spot][1] == "Hard Drive"
@@ -153,7 +153,7 @@ class ApplicationController < ActionController::Base
 				:comp_power => PowerSupply.find_by_part_id(session[:computer].power_supply_id)
 			}
 		else
-		    render :howdidyougethere
+	        redirect_to :controller => :part_categories, :action => :current
 		end
 	end
 	
