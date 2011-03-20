@@ -1,0 +1,11 @@
+Motherboard:   MSI 790FX-GD70
+CPU:           AMD Phenom II X6 1090T
+CPU Cooler:    Antec KUHLER flow
+Power Supply:  Cooler Master Silent Pro Gold RSC00-80GAD3-US
+Case:          NZXT Crafted Phantom
+Display:       Acer G245H 24 inch
+Memory:        OCZ Reaper OCZ3RPR2133LV8GK
+Hard Drive:    Seagate Barracuda ST31000528AS
+Display:       Acer G245H 24 inch
+Graphics Card: MSI R5970-P2D2G ATI 5970
+Graphics Card: MSI R5970-P2D2G ATI 5970

@@ -1,0 +1,5 @@
+Motherboard:   Supermicro C7X58
+CPU:           Intel Core i7 980X
+CPU Cooler:    Antec KUHLER flow
+Graphics Card: MSI R5970-P2D2G ATI 5970
+Memory:        G.Skill F3-12800CL7T2-12GBPI

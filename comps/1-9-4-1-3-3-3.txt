@@ -1,0 +1,5 @@
+Motherboard:   Supermicro C7X58
+Display:       Samsung P2770FH 27 inch
+Display:       Samsung P2770FH 27 inch
+Display:       Samsung P2770FH 27 inch
+Graphics Card: MSI R5970-P2D2G ATI 5970

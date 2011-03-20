@@ -1,0 +1,5 @@
+Motherboard:   Supermicro C2SBE
+CPU:           Intel Core 2 Quad Q9650
+CPU Cooler:    Antec KUHLER flow
+Case:          NZXT Crafted Phantom
+Memory:        G.Skill F2-6400CL5Q-16GBPQ

@@ -1,5 +1,5 @@
 <div id="Main">
-	<div class="side_tab">
+	<div class="sort_side_tab">
 		<ul id="Sort_options" class="tab_options">
 			<li id="Sort_tab" class="tab">
 				<center><a class="sort_link tab_link" href="#">Sort Options</a></center>
@@ -160,6 +160,8 @@
 			</div>
 		</div>
 	</div>
+	<div id="Frame_around_all" style="display: none" onclick="$('Selected_parts').hide(); $('Frame_around_all').hide();">
+    </div>
 	<div id="Selected_Part_On_Side" class="side_tab">
 		<%= render :partial => "selected_tab_ajax", :locals => {
 		    :comp_mobo => Motherboard.find_by_part_id(session[:computer].motherboard_id),

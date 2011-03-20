@@ -80,9 +80,9 @@
 	</div>
 	<div id="Signup">
 		<% if @errors %>
-			<% if @errors %>
-				<%= render :partial => "signupform"%>
-			<% end %>
+			<%= render :partial => "signupform" %>
+		<% else %>
+		    <%= render :partial => "nothing" %>
 		<% end %>
 	</div>
 </div>

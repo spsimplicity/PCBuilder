@@ -63,30 +63,36 @@ class ApplicationController < ActionController::Base
 		render :update do |page|
 			page.replace_html 'Nav', :partial => "navigation"
 			
-			@gpu = false
-			@mon = false
-			@dd = false
-			@hdd = false
-			@mem = false
-			session[:computer].other_parts.each do |part|
-				if part[1].eql?"Graphics Card"
-					@gpu = true
-				elsif part[1].eql?"Hard Drive"
-					@hdd = true
-				elsif part[1].eql?"Display"
-					@mon = true
-				elsif part[1].eql?"Disc Drive"
-					@dd = true
-				else
-					@mem = true
-				end
+			if request.referer.include?("categories")
+				@explain = "cats"
+			elsif request.referer.include?("change")
+				@explain = "change"
+			else
+				@explain = "none"
 			end
+			page.replace_html 'Signup', :partial => "nothing"
 			
-			if request.referer.include?("part_categories")			    
-				page.replace_html 'Main', :partial => "categories_partial"
-			elsif request.referer.include?("part_selection")	
+			if request.referer.include?("part_selection")
 			    page.replace_html 'Main', :partial => "parts_partial"
 			else
+				@gpu = false
+				@mon = false
+				@dd = false
+				@hdd = false
+				@mem = false
+				session[:computer].other_parts.each do |part|
+					if part[1].eql?"Graphics Card"
+						@gpu = true
+					elsif part[1].eql?"Hard Drive"
+						@hdd = true
+					elsif part[1].eql?"Display"
+						@mon = true
+					elsif part[1].eql?"Disc Drive"
+						@dd = true
+					else
+						@mem = true
+					end
+				end
 				page.replace_html 'Main', :partial => "categories_partial"
 			end
 		end
@@ -99,6 +105,13 @@ class ApplicationController < ActionController::Base
 	end
 	
 	def remove
+	    if request.referer.include?("categories")
+		    @explain = "cats"
+		elsif request.referer.include?("change")
+		    @explain = "change"
+		else
+		    @explain = "none"
+		end
 	    render :partial => "nothing"
 	end
 	

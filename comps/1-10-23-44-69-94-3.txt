@@ -1,0 +1,5 @@
+Motherboard:   ASUS P6T
+CPU:           Intel Core i7 980X
+Power Supply:  Cooler Master Silent Pro Gold RSC00-80GAD3-US
+Case:          NZXT Crafted Phantom
+Graphics Card: Power Color AX5970 2GBD5-MD ATI 5970
