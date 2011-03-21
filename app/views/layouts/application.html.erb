@@ -21,36 +21,42 @@
 					$(leftSpan).replace('<span id="'+leftSpan+'" style="color: white; font-size: small">Hide</span>');
 				}
 			}
-		</script>
-		<script>
-		    /**
-			 * RUZEE.Ellisis 0.1
-			 * (c) 2007 Steffen Rusitschka
-			 *
-			 * RUZEE.Ellipsis is freely distributable under the terms of an MIT-style license.
-			 * For details, see http://www.ruzee.com/
-			 */
-
-			(function() {
-			  function ellipsis(e) {
-				var w = e.getWidth() - 10000;
-				var t = e.innerHTML;
-				e.innerHTML = "<span>" + t + "</span>";
-				e = e.down();
-				while (t.length > 0 && e.getWidth() >= w) {
-				  t = t.substr(0, t.length - 1);
-				  e.innerHTML = t + "...";
+			
+			function maskSize()
+			{
+			    mask = document.getElementById("Frame_around_all");
+				var docScrollHeight = document.documentElement.scrollHeight;
+				var docClientHeight = document.documentElement.clientHeight;
+				var docScrollWidth = document.documentElement.scrollWidth;
+				var docClientWidth = document.documentElement.clientWidth;
+				
+				var bigHeight;
+				var bigWidth;
+				
+				if(docScrollHeight > docClientHeight)
+				{
+				    bigHeight = docScrollHeight;
 				}
-			  }
-			  document.write('<style type="text/css">' +
-				'.ellipsis { margin-right:-10000px; }</style>');
-			  Event.observe(window, "load", function() {
-				$$('.ellipsis').each(ellipsis);
-			  });
-			})();
+				else
+				{
+				    bigHeight = docClientHeight;
+				}
+				
+				if(docScrollWidth > docClientWidth)
+				{
+				    bigWidth = docScrollWidth;
+				}
+				else
+				{
+				    bigWidth = docClientWidth;
+				}
+				
+				mask.style.height = bigHeight+'px';
+				mask.style.width = bigWidth+'px';
+			}
 		</script>
 	</head>
-	<body onresize="checkSize();">
+	<body onload="maskSize();">
 		<div id="Center" class="container">
 			<div id="Bound">
 				<div id="Nav">

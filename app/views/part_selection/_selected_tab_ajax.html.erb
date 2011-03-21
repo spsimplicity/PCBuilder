@@ -1,6 +1,6 @@
 <ul id="Selected_options" class="tab_options">
 	<li id="Selected_tab" class="tab">
-		<center><button class="selected_link tab_link" href="" onclick="$('Selected_parts').toggle()">Selected Parts</button></center>
+		<center><button class="selected_link tab_link" href="" onclick="maskSize(); $('Selected_parts').toggle(); $('Frame_around_all').toggle();">Selected Parts</button></center>
 	</li>
 	<li id="Selected_parts" class="side_menu" style="display: none">
 		<% if session[:computer].name %>
@@ -14,6 +14,7 @@
 				<div class="part_in">
 					<p class="part_in_info manu"><%= comp_mobo.manufacturer %></p>
 					<p class="part_in_info"><%= comp_mobo.model %></p>
+					<p class="part_in_info"><%= comp_mobo.parttype %></p>
 				</div>
 				<%= link_to "Change", :controller => :application, :action => :change_part, :change => "Motherboards", :part_id => session[:computer].motherboard_id %>
 				<span>|</span>
@@ -29,6 +30,7 @@
 						<p class="part_in_info"><%= comp_cpu.series %></p>
 					<% end %>
 					<p class="part_in_info"><%= comp_cpu.model %></p>
+					<p class="part_in_info"><%= comp_cpu.parttype %></p>
 				</div>
 				<%= link_to "Change", :controller => :application, :action => :change_part, :change => "Processors", :part_id => session[:computer].cpu_id %>
 				<span>|</span>
@@ -41,6 +43,7 @@
 				<div class="part_in">
 					<p class="part_in_info manu"><%= comp_cooler.manufacturer %></p>
 					<p class="part_in_info"><%= comp_cooler.model %></p>
+					<p class="part_in_info"><%= comp_cooler.parttype %></p>
 				</div>
 				<%= link_to "Change", :controller => :application, :action => :change_part, :change => "CPU Coolers", :part_id => session[:computer].cpu_cooler_id %>
 				<span>|</span>
@@ -53,6 +56,7 @@
 				<div class="part_in">
 					<p class="part_in_info manu"><%= comp_power.manufacturer %></p>
 					<p class="part_in_info"><%= comp_power.model %></p>
+					<p class="part_in_info"><%= comp_power.parttype %></p>
 				</div>
 				<%= link_to "Change", :controller => :application, :action => :change_part, :change => "Power Supplies", :part_id => session[:computer].power_supply_id %>
 				<span>|</span>
@@ -68,6 +72,7 @@
 						<p class="part_in_info"><%= comp_case.series %></p>
 					<% end %>
 					<p class="part_in_info"><%= comp_case.model %></p>
+					<p class="part_in_info"><%= comp_case.parttype %></p>
 				</div>
 				<%= link_to "Change", :controller => :application, :action => :change_part, :change => "Cases", :part_id => session[:computer].case_id %>
 				<span>|</span>
@@ -86,6 +91,7 @@
 								<p class="part_in_info"><%= @dbPart.series %></p>
 							<% end %>
 							<p class="part_in_info"><%= @dbPart.model %></p>
+							<p class="part_in_info"><%= @dbPart.parttype %></p>
 						</div>
 						<%= link_to "Change", :controller => :application, :action => :change_part, :change => "Graphics Cards", :part_id => part[0] %>
 						<span>|</span>
@@ -100,6 +106,7 @@
 								<p class="part_in_info"><%= @dbPart.series %></p>
 							<% end %>
 							<p class="part_in_info"><%= @dbPart.model %></p>
+							<p class="part_in_info"><%= @dbPart.parttype %></p>
 						</div>
 						<%= link_to "Change", :controller => :application, :action => :change_part, :change => "Hard Drives", :part_id => part[0] %>
 						<span>|</span>
@@ -111,6 +118,7 @@
 						<div class="part_in">
 							<p class="part_in_info manu"><%= @dbPart.manufacturer %></p>
 							<p class="part_in_info"><%= @dbPart.model %></p>
+							<p class="part_in_info"><%= @dbPart.parttype %></p>
 						</div>
 						<%= link_to "Change", :controller => :application, :action => :change_part, :change => "Displays", :part_id => part[0] %>
 						<span>|</span>
@@ -122,6 +130,7 @@
 						<div class="part_in">
 							<p class="part_in_info manu"><%= @dbPart.manufacturer %></p>
 							<p class="part_in_info"><%= @dbPart.model %></p>
+							<p class="part_in_info"><%= @dbPart.parttype %></p>
 						</div>
 						<%= link_to "Change", :controller => :application, :action => :change_part, :change => "Disc Drives", :part_id => part[0] %>
 						<span>|</span>
@@ -136,6 +145,7 @@
 								<p class="part_in_info"><%= @dbPart.series %></p>
 							<% end %>
 							<p class="part_in_info"><%= @dbPart.model %></p>
+							<p class="part_in_info"><%= @dbPart.parttype %></p>
 						</div>
 						<%= link_to "Change", :controller => :application, :action => :change_part, :change => "Memory", :part_id => part[0] %>
 						<span>|</span>
@@ -148,7 +158,7 @@
 			<div id="ExportComp" class="export">
 				<% form_tag :controller => :application, :action => :export do %>
 					<%= label_tag :build, "Generate .txt file of your build:", :class => "export_label" %>
-					<%= submit_to_remote 'submit', 'Generate Build', :url => {:controller => :application, :action => :export} %>
+					<%= submit_tag 'Download Build' %>
 				<% end %>
 			</div>
 		<% end %>

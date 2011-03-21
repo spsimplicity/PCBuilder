@@ -120,16 +120,37 @@
 	color: white;
 }
 
+#Frame_around_all
+{
+    z-index: 9998;
+	position: fixed;
+	left: 0; 
+	top: 0;
+}
+
 .side_tab
 {
-	position: fixed;	
+	position: absolute;	
 	top: 16em;
+	right: 0;
+	width: 400px;
 	margin: 0 0 0 0;
+	z-index: 9999;
+}
+
+.sort_side_tab
+{
+	position: absolute;	
+	top: 16em;
+	left: 0;
+	width: 400px;
+	margin: 0 0 0 0;
+	z-index: 9999;
 }
 
 .tab_options
 {
-	position: fixed;
+	position: absolute;
     list-style: none;
 	z-index: 9999;
 	padding: 0 0 0 0;
@@ -142,7 +163,7 @@
 
 #Comp_price
 {
-    top: 11em;
+    top: -5em;
 	right: 0px;
 }
 
@@ -201,7 +222,7 @@
 
 .part_selected_options
 {
-    width: inherit;
+    width: 300;
     float: left;
 	color: white;
 	font-size: small;
