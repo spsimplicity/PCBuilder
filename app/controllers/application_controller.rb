@@ -72,9 +72,8 @@ class ApplicationController < ActionController::Base
 			end
 			page.replace_html 'Signup', :partial => "nothing"
 			
-			if request.referer.include?("part_selection")
-			    page.replace_html 'Main', :partial => "parts_partial"
-			else
+			if request.referer.include?("part_categories") ||
+			   request.referer.include?("http://localhost:3000")
 				@gpu = false
 				@mon = false
 				@dd = false

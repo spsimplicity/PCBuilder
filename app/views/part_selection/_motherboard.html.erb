@@ -1,11 +1,15 @@
-<div class="part">
+<div class="part" <% if makeChange.to_i == moboObj.part_id %> style="background: #268358;" <% end %> >
 	<div class="always_visibile">
 		<div class="part_info">
 			<p class="first_row beginning"><%= moboObj.manufacturer %></p><p class="first_row"><%= moboObj.model %></p><p class="price">$<%= moboObj.price %></p>
 			<p class="second_row beginning">Memorytype: <%= moboObj.memorytype %></p><p class="second_row">Sockettype: <%= moboObj.sockettype %></p><p class="second_row">Size: <%= moboObj.size %></p>
 		</div>
 		<div class="add">
-			<center><%= link_to "Add", :controller => :part_selection, :action => :add_part, :id => moboObj.part_id, :didChange => makeChange %></center>
+		    <% if makeChange && makeChange.to_i != moboObj.part_id%>
+				<center><%= link_to "Sub", :controller => :part_selection, :action => :add_part, :id => moboObj.part_id, :didChange => makeChange %></center>
+			<% elsif !makeChange %>
+				<center><%= link_to "Add", :controller => :part_selection, :action => :add_part, :id => moboObj.part_id, :didChange => makeChange %></center>
+			<% end %>
 		</div>
 	</div>
 	<div id="specs<%= num %>" class="part_specs" style="display: none">

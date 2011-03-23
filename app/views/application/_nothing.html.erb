@@ -12,7 +12,12 @@
 		</p>
 	</div>
 <% elsif request.url.include?("change") || @explain.eql?("change") %>
-
+    <div class="explanation">
+	    <p style="margin:1em; font-size:13pt">
+		    <span style="color: #268358; font-size: larger;">* </span>
+			<span style="color:white">A green box signifies that this part has already been selected by you.</span>
+		</p>
+	</div>
 <% else %>
-    <!-- Dont shot anything -->
+    <!-- Dont show anything -->
 <% end %>

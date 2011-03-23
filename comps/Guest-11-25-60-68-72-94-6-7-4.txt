@@ -1,0 +1,8 @@
+Motherboard:   ASUS M4A88T-M
+CPU:           AMD Phenom II X4 955
+CPU Cooler:    Antec KUHLER flow
+Power Supply:  Thermaltake Toughpower XT TPX-575M
+Case:          NZXT Crafted Phantom
+Memory:        G.Skill Ripjaws F3-10666CL8D-4GBRM
+Graphics Card: Visiontek 900300 ATI 5770
+Graphics Card: Visiontek 900301 ATI 5750

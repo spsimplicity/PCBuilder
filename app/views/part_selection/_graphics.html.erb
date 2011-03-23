@@ -1,4 +1,4 @@
-<div class="part">
+<div class="part" <% if makeChange.to_i == gpuObj.part_id %> style="background: #268358;" <% end %> >
 	<div class="always_visibile">
 		<div class="part_info">
 			<p class="first_row beginning"><%= gpuObj.manufacturer %></p>
@@ -15,7 +15,11 @@
 		    <% if error_case %>
 			    <center><button href="" onclick="alert('<%= error_case %>');">Add</button></center>
 			<% else %>
-			    <center><%= link_to "Add", :controller => :part_selection, :action => :add_part, :id => gpuObj.part_id, :didChange => makeChange %></center>
+				<% if makeChange && makeChange.to_i != gpuObj.part_id%>
+					<center><%= link_to "Sub", :controller => :part_selection, :action => :add_part, :id => gpuObj.part_id, :didChange => makeChange %></center>
+				<% elsif !makeChange %>
+					<center><%= link_to "Add", :controller => :part_selection, :action => :add_part, :id => gpuObj.part_id, :didChange => makeChange %></center>
+				<% end %>
 			<% end %>
 		</div>
 	</div>
