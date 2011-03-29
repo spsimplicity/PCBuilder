@@ -18,6 +18,19 @@
 			<span style="color:white">A green box signifies that this part has already been selected by you.</span>
 		</p>
 	</div>
-<% else %>
+<% elsif request.url.include?("selection")%>
     <!-- Dont show anything -->
+<% else %>
+    <div class="explanation">
+		<p style="margin:1em; font-size:13pt">
+		    <span style="color: #71D0CE; font-size: larger;">* </span>
+			<span style="color:white">Required items are needed only if you are making a complete system.</span>
+		</p>
+	</div>
+	<div class="explanation">
+	    <p style="margin:1em; font-size:13pt">
+		    <span style="color: #268358; font-size: larger;">* </span>
+			<span style="color:white">A green box signifies that a part from this category has been chosen.</span>
+		</p>
+	</div>
 <% end %>

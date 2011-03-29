@@ -1,6 +1,7 @@
 DELIMITER $$
 DROP FUNCTION IF EXISTS graphicsCardMatch$$
-CREATE FUNCTION coolerSocketMatch(coolerId INT, socketToMatch VARCHAR(10))
+CREATE FUNCTION graphicsCardMatch(gpuChipMan VARCHAR(10), graphicsProcessor VARCHAR(10), multiGpuReady INT, 
+    gpu2ChipMan VARCHAR(10), graphics2Processor VARCHAR(10), multiGpu2Ready INT)
     RETURNS INT DETERMINISTIC
 BEGIN
     /*Flag to hold value for wether the sockets match or not*/
@@ -23,20 +24,13 @@ BEGIN
 					/*they cant crossfire*/
 				/*end if*/
 			/*else if it is in 5800*/
-				/*if card is 5870 || 5870 X2*/						    
-					/*if the other card is not 5870 or 5900 or 5870 X2*/
-						/*they cant crossfire*/
-					/*end if*/
-				/*else (card is 5850)*/
-					/*if the other card is not a 5850*/
-						/*they cant crossfire*/
-					/*end if*/
-				/*end if*/
-			/*else if it is in 5700*/
-				/*if it is 5770 and the other card is not 5770*/
+				/*if card is 5870 || 5870 X2 && the other card is not 5870 or 5900 or 5870 X2*/
+				    /*they cant crossfire*/
+				/*else if the other card is not a 5850*/
 					/*they cant crossfire*/
 				/*end if*/
-				/*if it is 5750 and the other card is not 5750*/
+			/*else if it is in 5700*/
+				/*if both cards are not they same*/
 					/*they cant crossfire*/
 				/*end if*/
 			/*else if it is in 5600*/
@@ -44,10 +38,7 @@ BEGIN
 					/*they cant crossfire*/
 				/*end if*/
 			/*else if it is in 5500*/
-				/*if it is 5570 and the other card is not 5570*/
-					/*they cant crossfire*/
-				/*end if*/
-				/*if is 5550 and the other card is not 5550*/
+				/*if both cards are not they same*/
 					/*they cant crossfire*/
 				/*end if*/
 			/*else (it is in 5400)*/
@@ -59,11 +50,9 @@ BEGIN
 			/*if it is in 4800*/
 			    /*if it is 4870 X2 or 4870 or 4890 and the other card is not 4870 X2 or 4870 or 4890*/
 				    /*they cant crossfire*/
-				/*end if*/
-				/*if it is 4850 X2 or 4850 and the other card is not 4850 X2 or 4850*/
+				/*else if it is 4850 X2 or 4850 and the other card is not 4850 X2 or 4850*/
 				    /*they cant crossfire*/
-				/*end if*/
-				/*if it is 4830 and the other card is not 4830*/
+				/*else if it is 4830 and the other card is not 4830*/
 				    /*they cant crossfire*/
 				/*end if*/
 			/*else if it is in 4700*/
@@ -71,11 +60,8 @@ BEGIN
 				    /*they cant crossfire*/
 				/*end if*/
 			/*else if it is in 4600*/
-			    /*if it is 4670 and other card is not 4670*/
-				    /*they cant crossfire*/
-				/*end if*/
-				/*if it is 4650 and other card is not 4650*/
-			        /*they cant crossfire*/
+				/*if both cards are not they same*/
+					/*they cant crossfire*/
 				/*end if*/
 			/*else if it is in 4500*/
 			    /*if the other card is not 4500*/
@@ -88,9 +74,22 @@ BEGIN
 			/*end if*/
 		/*end if*/
 	/*else (its an Nvidia chip)*/
-		/*if it is a 500 series*/
-		/*else if it is a 400 series*/
-		/*else (it is a 200 series)*/
+	    /*if the memory is not the same size*/
+		    /*they cant sli*/
+		/*else*/
+			/*if it is a 500 series*/
+			    /*if both cards are not the same*/
+				    /*they cant sli*/
+				/*end if*/
+			/*else if it is a 400 series*/
+			    /*if both cards are not the same*/
+				    /*they cant sli*/
+				/*end if*/
+			/*else (it is a 200 series)*/
+			    /*if both cards are not the same*/
+				    /*they cant sli*/
+				/*end if*/
+			/*end if*/
 		/*end if*/
 	/*end if*/
 END$$

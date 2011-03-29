@@ -19,10 +19,14 @@
 				<%= link_to "Next", :controller => :part_selection, :action => :next, :changeIt => @changing %>
 			</div>
 			<div id="Parts_list">
-			    <% if @parts.length == 0 %>
-				    <h3 style="color: white;" align="center">No Compatible <%= session[:part_type] %></h3>
-				<% elsif @error %>
+			    <% if @error %>
 				    <h3 style="color: white;" align="center"><%= @error %></h3>
+				<% elsif @parts.length == 0 %>
+				    <% if @potentialError %>
+				        <h3 style="color: white;" align="center"><%= @potentialError %></h3>
+				    <% else %>
+				        <h3 style="color: white;" align="center">No Compatible <%= session[:part_type] %></h3>
+					<% end %>
 				<% else %>
 					<% if session[:page_num] == 1 %>
 						<% if @parts.length < 10 %>

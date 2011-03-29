@@ -82,7 +82,7 @@
 					<% link_to :controller => :part_selection, :action => :init, :part_type => "Displays", :change => nil do %>
 						<center><%= image_tag "Display.jpg", :class => "component-title" %></center>
 						<center><p class="category_name">Displays</p></center>
-						<p class="component-description">The larger the resolution, the more that can be displayed on the screen. Can be paired with other monitor for a multi-display setup.</p>
+						<p class="component-description">The larger the resolution, the more that can be displayed on the screen. Can be paired with other monitors for a multi-display setup.</p>
 						<p class="component-required">Required</p>
 					<% end %>
 				</div>
@@ -116,6 +116,7 @@
 		:comp_cpu => Cpu.find_by_part_id(session[:computer].cpu_id),
 		:comp_cooler => CpuCooler.find_by_part_id(session[:computer].cpu_cooler_id),
 		:comp_case => Case.find_by_part_id(session[:computer].case_id),
-		:comp_power => PowerSupply.find_by_part_id(session[:computer].power_supply_id)
+		:comp_power => PowerSupply.find_by_part_id(session[:computer].power_supply_id),
+		:keepOpen => flash[:keepOpen]
 	} %>
 </div>

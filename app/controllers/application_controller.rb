@@ -155,6 +155,7 @@ class ApplicationController < ActionController::Base
 		
 	    @reference = request.referer
 	    if @reference.include? "part_categories"
+		    flash[:keepOpen] = true
 	        redirect_to :controller => :part_categories, :action => :current
 		elsif @reference.include? "part_selection"
 		    render :partial => "selected_tab_ajax", :locals => {

@@ -34,7 +34,7 @@
 		<div class="col">
 			<p>Manufacturer Website: <a href="<%= cpuObj.manufacturerwebsite %>" target="_blank"><%= cpuObj.manufacturer %> <%= cpuObj.model %></a></p>
 			<p>Google Price: <a href="<%= cpuObj.googleprice %>" target="_blank">Shopping Results</a></p>
-			<% if cpuObj.memchanneltype %>
+			<% if cpuObj.memchanneltype != 0 %>
 				<p>Memory Channel Type: <%= cpuObj.memchanneltype %></p>
 			<% end %>
 		</div>

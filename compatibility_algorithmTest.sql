@@ -369,7 +369,8 @@ BEGIN
                 LEAVE graphicsLoop;
             END IF;
             /*need to test graphics cards with one another*/
-			IF (graphicsCardMatch()) == 0 THEN
+			IF (graphicsCardMatch(gpuChipMan, graphicsProcessor, multiGpuReady, gpu2ChipMan, 
+			    graphics2Processor, multiGpu2Ready)) == 0 THEN
 			    SET nullTest = duplicateTest(part1id, part2id, part1_type, part2_type);
 			END IF;
         END LOOP graphicsLoop;

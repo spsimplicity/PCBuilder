@@ -1,11 +1,19 @@
-<div id="Frame_around_all" style="display: none" onclick="$('Selected_parts').hide(); $('Frame_around_all').hide();">
+<% if keepOpen %>
+    <div id="Frame_around_all" style="display: block" onclick="$('Selected_parts').hide(); $('Frame_around_all').hide();">
+<% else %>
+    <div id="Frame_around_all" style="display: none" onclick="$('Selected_parts').hide(); $('Frame_around_all').hide();">
+<% end %>
 </div>
 <div class="side_tab">
 	<ul id="Selected_options" class="tab_options">
 		<li id="Selected_tab" class="tab">
 			<center><button class="selected_link tab_link" href="" onclick="maskSize(); $('Selected_parts').toggle(); $('Frame_around_all').toggle();">Selected Parts</button></center>
 		</li>
-		<li id="Selected_parts" class="side_menu" style="display: none">
+		<% if keepOpen %>
+		    <li id="Selected_parts" class="side_menu" style="display: block">
+	    <% else %>
+		    <li id="Selected_parts" class="side_menu" style="display: none">
+		<% end %>
 		    <% if session[:computer].name %>
 			    <center><h3 class="selected_header"><%= session[:computer].name %></h3></center>
 			<% else %>

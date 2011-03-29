@@ -1,0 +1,16 @@
+Motherboard:   ASUS P5Q SE PLUS
+CPU:           Intel Core 2 Quad Q9550s
+CPU Cooler:    Antec KUHLER flow
+Power Supply:  Cooler Master Silent Pro Gold RSC00-80GAD3-US
+Case:          NZXT Crafted Phantom
+Graphics Card: Asus Ares ARES/2DIS/4GD5 ATI 5870 X2
+Memory:        G.Skill F2-8500CL5D-4GBPQ
+Memory:        G.Skill F2-8500CL5D-4GBPQ
+Hard Drive:    Western Digital Caviar Blue WD5000AAKB
+Hard Drive:    Seagate Barracuda ST31000528AS
+Hard Drive:    Seagate Barracuda ST31000528AS
+Hard Drive:    Seagate Barracuda ST31000528AS
+Hard Drive:    Seagate Barracuda ST31000528AS
+Hard Drive:    Seagate Barracuda ST31000528AS
+Hard Drive:    Seagate Barracuda ST31000528AS
+Display:       Acer G245H 24 inch
