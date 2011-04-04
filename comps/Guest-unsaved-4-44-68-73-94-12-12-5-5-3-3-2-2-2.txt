@@ -1,0 +1,14 @@
+Motherboard:   Supermicro C7X58
+CPU:           Intel Core i7 980X
+CPU Cooler:    Antec KUHLER flow
+Power Supply:  Thermaltake TR2 TRX-1200M
+Case:          NZXT Crafted Phantom
+Hard Drive:    Seagate Barracuda ST31000528AS
+Hard Drive:    Seagate Barracuda ST31000528AS
+Memory:        G.Skill Ripjaws F3-12800CL7T-6GBRH
+Memory:        G.Skill Ripjaws F3-12800CL7T-6GBRH
+Graphics Card: Asus DirectCU DirectCU/2DIS/1GD5 ATI 5850
+Graphics Card: Asus DirectCU DirectCU/2DIS/1GD5 ATI 5850
+Display:       Acer G245H 24 inch
+Display:       Acer G245H 24 inch
+Display:       Acer G245H 24 inch

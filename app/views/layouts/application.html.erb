@@ -54,9 +54,73 @@
 				mask.style.height = bigHeight+'px';
 				mask.style.width = bigWidth+'px';
 			}
+			
+			function setSizes()
+			{
+			    var docClientWidth;
+				var docClientHeight;
+				var setWidth;
+				var setHeight;
+				var leftMinus;
+				var lmargin;
+				
+				var cent = document.getElementById("Center");
+				var main = document.getElementById("Main");
+				var cont = document.getElementById("Content");
+				var bound = document.getElementById("Bound");
+				
+				var myWidth = 0, myHeight = 0;
+				if(typeof( window.innerWidth ) == 'number')
+				{
+					//Non-IE
+					docClientWidth = window.innerWidth;
+					docClientHeight = window.innerHeight;
+				}
+				else
+				{
+					//IE 6+ in 'standards compliant mode'
+					docClientWidth = document.documentElement.clientWidth;
+					docClientHeight = document.documentElement.clientHeight;
+				}
+				
+				if(docClientWidth > 1480)
+				{
+				    setWidth = 1480;
+				}
+				else
+				{
+				    if(docClientWidth < 1024)
+					{
+					    setWidth = 1024;
+					}
+					else
+					{
+				        setWidth = docClientWidth;
+				    }
+				}
+				var centerHeight = bound.clientHeight + main.clientHeight;
+				
+				if(centerHeight > docClientHeight)
+				{
+				    setHeight = centerHeight;
+				}
+				else
+				{
+				    setHeight = docClientHeight;
+				}
+				leftMinus = setWidth/2;
+				lmargin = (setWidth-1024)/2;
+				
+				cent.style.width = setWidth+'px';
+				cent.style.margin = '0 0 0 -'+leftMinus;
+				cent.style.height = setHeight+'px'
+				
+				cont.style.margin = '0 0 0 '+lmargin
+				bound.style.margin = '0 0 0 '+lmargin
+			}
 		</script>
 	</head>
-	<body onload="maskSize();">
+	<body onload="maskSize(); setSizes();" onresize="setSizes();">
 		<div id="Center" class="container">
 			<div id="Bound">
 				<div id="Nav">

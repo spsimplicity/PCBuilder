@@ -38,6 +38,11 @@ BEGIN
     DECLARE memType VARCHAR(5);
     DECLARE memDimms INT;
     DECLARE memTotalCapacity INT;
+	DECLARE mem2Speed INT;
+	DECLARE mem2MultichannelType INT; 
+	DECLARE mem2Type VARCHAR(5);
+	DECLARE mem2Dimms INT;
+	DECLARE mem2TotalCapacity INT;
 	DECLARE supported INT DEFAULT 1;
     /*Power supply decs*/
     DECLARE psuMainPower INT;
@@ -131,7 +136,7 @@ BEGIN
     DECLARE discDriveCur CURSOR FOR
         SELECT part_id, parttype, interface
         FROM disc_drives;
-        
+    
     DECLARE memoryCur CURSOR FOR
         SELECT part_id, parttype, speed, multichanneltype, memorytype, dimms,
             totalcapacity
@@ -144,9 +149,9 @@ BEGIN
     
     DECLARE graphicsCardCur CURSOR FOR
         SELECT part_id, parttype, chipmanufacturer, width, length, interface, gpu, multigpusupport, 
-            hdmi, dvi, displayport, vga, svideo, minpower, multigpupower, power6pin, power8pin
+            hdmi, dvi, displayport, vga, svideo, minpower, multigpupower, power6pin, power8pin, memorysize
         FROM graphics_cards;
-            
+    
     DECLARE motherboardCur CURSOR FOR
         SELECT id, part_id, parttype, maxmemory, memorytype, memoryslots, memchannel,
             pci_ex16, size, cpupowerpin, fsb, mainpower, crossfire, sli, 
@@ -225,7 +230,7 @@ BEGIN
         graphicsLoop:LOOP
             FETCH graphicsCardCur INTO part2Id, part2_type, gpuChipMan, gpuWidth, gpuLength,
                 gpuInterface, graphicsProcessor, multiGpuReady, gpuHdmi, gpuDvi, gpuDisplayport, 
-				gpuVga, gpuSvideo, gpuMinpower, gpuMultiGpuPower, gpu6PinPower, gpu8PinPower;
+				gpuVga, gpuSvideo, gpuMinpower, gpuMultiGpuPower, gpu6PinPower, gpu8PinPower, gpuMemorysize;
             IF done = 1 THEN
                 LEAVE graphicsLoop;
             END IF;
@@ -293,10 +298,10 @@ BEGIN
 	  WHEN 'Graphics Card' THEN
         /*Get the data for the Motherboard being checked*/
         SELECT chipmanufacturer, width, length, interface, gpu, multigpusupport, hdmi, dvi, 
-	        displayport, vga, svideo, minpower, multigpupower, power6pin, power8pin
+	        displayport, vga, svideo, minpower, multigpupower, power6pin, power8pin, memorysize
 		INTO gpuChipMan, gpuWidth, gpuLength, gpuInterface, graphicsProcessor, multiGpuReady,
 			gpuHdmi, gpuDvi, gpuDisplayPort, gpuVga, gpuSvideo, gpuMinPower, gpuMultiGpuPower,
-			gpu6PinPower, gpu8PinPower
+			gpu6PinPower, gpu8PinPower, gpuMemorysize
         FROM graphics_cards
         WHERE part1Id = graphics_cards.part_id;
 		/*For each Motherboard*/
@@ -364,13 +369,13 @@ BEGIN
             FETCH graphicsCardCur INTO part2Id, part2_type, gpu2ChipMan, gpu2Width, gpu2Length, 
 			    gpu2Interface, graphics2Processor, multiGpu2Ready, gpu2Hdmi, gpu2Dvi, 
 				gpu2DisplayPort, gpu2Vga, gpu2Svideo, gpu2MinPower, gpu2MultiGpuPower, 
-				gpu26PinPower, gpu28PinPower;
+				gpu26PinPower, gpu28PinPower, gpu2Memorysize;
             IF done = 1 THEN
                 LEAVE graphicsLoop;
             END IF;
             /*need to test graphics cards with one another*/
-			IF (graphicsCardMatch(gpuChipMan, graphicsProcessor, multiGpuReady, gpu2ChipMan, 
-			    graphics2Processor, multiGpu2Ready)) == 0 THEN
+			IF (graphicsCardMatch(gpuChipMan, graphicsProcessor, multiGpuReady, gpuMemorysize, gpu2ChipMan, 
+			    graphics2Processor, multiGpu2Ready, gpu2Memorysize)) = 0 THEN
 			    SET nullTest = duplicateTest(part1id, part2id, part1_type, part2_type);
 			END IF;
         END LOOP graphicsLoop;
@@ -431,7 +436,7 @@ BEGIN
         graphicsLoop:LOOP
             FETCH graphicsCardCur INTO part2Id, part2_type, gpuChipMan, gpuWidth, gpuLength,
                 gpuInterface, graphicsProcessor, multiGpuReady, gpuHdmi, gpuDvi, gpuDisplayport, 
-				gpuVga, gpuSvideo, gpuMinpower, gpuMultiGpuPower, gpu6PinPower, gpu8PinPower;
+				gpuVga, gpuSvideo, gpuMinpower, gpuMultiGpuPower, gpu6PinPower, gpu8PinPower, gpuMemorysize;
             IF done = 1 THEN
                 LEAVE graphicsLoop;
             END IF;
@@ -477,8 +482,21 @@ BEGIN
 			    SET nullTest = duplicateTest(part1id, part2id, part1_type, part2_type);
             END IF;
         END LOOP motherboardLoop;
-	  
-	  WHEN 'Disc Drive' THEN        
+		SET done = 0;
+	    /*For each Memory*/
+        OPEN memoryCur;
+        memLoop:LOOP
+            FETCH memoryCur INTO part2Id, part2_type, mem2Speed, mem2MultichannelType, 
+			    mem2Type, mem2Dimms, mem2TotalCapacity;
+            IF done = 1 THEN
+                LEAVE memLoop;
+            END IF;
+            IF memoryMatch(memMultichannelType, memType, mem2MultichannelType, mem2Type) = 0 THEN
+			    SET nullTest = duplicateTest(part1id, part2id, part1_type, part2_type);
+            END IF;
+        END LOOP memLoop;
+		
+	  WHEN 'Disc Drive' THEN
         /*Get data for disc drive being checked*/
         SELECT interface
         INTO ddInterface
@@ -581,7 +599,7 @@ BEGIN
         graphicsLoop:LOOP
             FETCH graphicsCardCur INTO part2Id, part2_type, gpuChipMan, gpuWidth, gpuLength,
                 gpuInterface, graphicsProcessor, multiGpuReady, gpuHdmi, gpuDvi, gpuDisplayport, 
-				gpuVga, gpuSvideo, gpuMinpower, gpuMultiGpuPower, gpu6PinPower, gpu8PinPower;
+				gpuVga, gpuSvideo, gpuMinpower, gpuMultiGpuPower, gpu6PinPower, gpu8PinPower, gpuMemorysize;
             IF done = 1 THEN
                 LEAVE graphicsLoop;
             END IF;
@@ -720,7 +738,7 @@ BEGIN
         graphicsLoop:LOOP
 			FETCH graphicsCardCur INTO part2Id, part2_type, gpuChipMan, gpuWidth, gpuLength,
 				gpuInterface, graphicsProcessor, multiGpuReady, gpuHdmi, gpuDvi, gpuDisplayport, 
-				gpuVga, gpuSvideo, gpuMinpower, gpuMultiGpuPower, gpu6PinPower, gpu8PinPower;
+				gpuVga, gpuSvideo, gpuMinpower, gpuMultiGpuPower, gpu6PinPower, gpu8PinPower, gpuMemorysize;
 			IF done = 1 THEN
 				LEAVE graphicsLoop;
 			END IF;

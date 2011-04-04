@@ -12,28 +12,27 @@ body {
     background-color: #3d4244;
 	min-width: 1024px;
 	max-width: 1480px;
-	min-height: 1280px;
-	max-height: 100%;
-	margin: 0 auto 0 auto;
-	position: relative;
+	position: absolute;
+	left: 50%;
 }
 
 #Bound
 {
-    width: 1024px;
-	margin: 0 auto 0 auto;
+    width: inherit;	
+	float: left;
 }
 
 #Main
 {
-	margin: 0 auto 0 auto;
+	width: inherit;
+	float: left;
 }
 
 #Content
 {
 	width: 1024px;
-	margin: 0 auto 0 auto;
-	padding: 0 0 0 0;	
+	float: left;
+	padding: 0 0 0 0;
     background-color: #3d4244;
 }
 
