@@ -1,13 +1,13 @@
-DELIMITER$$
+DELIMITER $$
 DROP FUNCTION IF EXISTS memoryMoboCompatibility$$
-CREATE FUNCTION memoryMoboCompatibility(moboMemChannel INT, memMultiChannelType INT,
-    moboMemType VARCHAR(5), memType VARCHAR(5), moboMemSlots INT, memDimms INT,
+CREATE DEFINER=CURRENT_USER FUNCTION memoryMoboCompatibility(moboMemChannel INT, memMultiChannelType INT,
+	moboMemType VARCHAR(5), memType VARCHAR(5), moboMemSlots INT, memDimms INT,
 	moboId INT, memSpeed INT, moboMaxMemory INT, memTotalCapacity INT)
-    RETURN INT DETERMINISTIC
+	RETURNS INT DETERMINISTIC
 BEGIN
-    DECLARE supported INT DEFAULT 1;
+	DECLARE supported INT DEFAULT 1;
 
-    /*Its incompatible if memMultichannelType does not match*/
+	/*Its incompatible if memMultichannelType does not match*/
 	IF moboMemChannel != memMultiChannelType THEN
 		SET supported = 0;
 	/*or memType does not match*/
@@ -22,8 +22,7 @@ BEGIN
 	/*or total capacity is greater than mobo total mem capacity*/
 	ELSEIF moboMaxMemory < memTotalCapacity THEN
 		SET supported = 0;
-	END IF;
-	
+	END IF;				
 	RETURN supported;
 END$$
-DELIMITER;
+DELIMITER ;

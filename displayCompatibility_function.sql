@@ -1,13 +1,13 @@
-DELIMITER$$
+DELIMITER $$
 DROP FUNCTION IF EXISTS displayCompatibility$$
-CREATE FUNCTION displayCompatibility(monVga INT, monHdmi INT,
-    monSvideo INT, monDvi INT, monDp INT, gpuVga INT, vgaHdmi,
+CREATE DEFINER=CURRENT_USER FUNCTION displayCompatibility(monVga INT, monHdmi INT,
+	monSvideo INT, monDvi INT, monDp INT, gpuVga INT, gpuHdmi INT,
 	gpuSvideo INT, gpuDvi INT, gpuDp INT)
-    RETURN INT DETERMINISTIC
+	RETURNS INT DETERMINISTIC
 BEGIN
-    DECLARE portMatch INT DEFAULT 0;
+	DECLARE portMatch INT DEFAULT 0;
 	
-    IF monVga > 0 AND gpuVga > 0 THEN
+	IF monVga > 0 AND gpuVga > 0 THEN
 		SET portMatch = 1;
 	ELSEIF monHdmi > 0 AND gpuHdmi > 0 THEN
 		SET portMatch = 1;
@@ -17,8 +17,7 @@ BEGIN
 		SET portMatch = 1;
 	ELSEIF monDp > 0 AND gpuDp > 0 THEN
 		SET portMatch = 1;
-	END IF;
-	
+	END IF;				
 	RETURN portMatch;
 END$$
-DELIMITER;
+DELIMITER ;

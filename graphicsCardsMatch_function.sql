@@ -1,6 +1,6 @@
 DELIMITER $$
 DROP FUNCTION IF EXISTS graphicsCardMatch$$
-CREATE FUNCTION graphicsCardMatch(gpuChipMan VARCHAR(10), graphicsProcessor VARCHAR(10), multiGpuReady INT, 
+CREATE DEFINER=CURRENT_USER FUNCTION graphicsCardMatch(gpuChipMan VARCHAR(10), graphicsProcessor VARCHAR(10), multiGpuReady INT, 
 	gpuMemorysize INT, gpu2ChipMan VARCHAR(10), graphics2Processor VARCHAR(10), multiGpu2Ready INT, gpu2Memorysize INT)
 	RETURNS INT DETERMINISTIC
 BEGIN
